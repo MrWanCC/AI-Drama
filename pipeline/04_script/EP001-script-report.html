@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="zh" data-page-node-id="yyj7mGeBaqV5GCiZUwU79C"><head data-page-node-id="afRCF4Sy4oAlAxKV8bFFl7">
+<meta charset="utf-8" data-page-node-id="CH9uvyOuZJ7vkqAoIjNRFT">
+<meta name="viewport" content="width=device-width,initial-scale=1" data-page-node-id="khDRgwtDNlkVkJsAqhWKjZ">
+<title>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季） · 剧本（第 1 集）</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --band:#3d6b4f22;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .v small{font:400 14px var(--serif);color:var(--ink-2)}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kpi.accent{border-top:2px solid var(--seal)}
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section.top-sec{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+/* 时长仪表 */
+.timing{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 20px 10px}
+.trow{display:grid;grid-template-columns:44px minmax(0,1fr) 220px;gap:12px;align-items:center;padding:5px 0}
+.tep{font:500 12px/1 var(--mono);color:var(--ink-2)}
+.track{position:relative;height:18px;background:var(--paper);border:1px solid var(--rule);border-radius:2px;overflow:hidden}
+.band{position:absolute;top:0;bottom:0;background:var(--band)}
+.fill{position:absolute;top:2px;bottom:2px;border-radius:1px}
+.fill.dlg{left:0;background:var(--seal)}
+.fill.act{background:var(--seal-2)}
+.tval{font:500 12px/1.5 var(--sans);color:var(--ink-2)}
+.tval.okc{color:var(--ok)}
+.tval .over{color:var(--seal);font-weight:600}
+.legend{display:flex;gap:18px;font-size:12px;color:var(--ink-2);margin:8px 0 2px}
+.legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px}
+
+/* 分集剧本：一排两集；场次区默认最多 300px，渐隐截断，点开展开 */
+.eps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start}
+.eps.solo{grid-template-columns:minmax(0,1fr)}
+@media(max-width:1100px){.eps{grid-template-columns:minmax(0,1fr)}}
+.ep{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:18px 22px}
+.scenes{position:relative}
+.scenes.clip{max-height:300px;overflow:hidden}
+.scenes.clip::after{content:'';position:absolute;left:0;right:0;bottom:0;height:70px;
+  background:linear-gradient(180deg,transparent,var(--panel));pointer-events:none}
+.scmore{display:block;width:100%;margin-top:8px;font:500 11.5px/1 var(--sans);letter-spacing:.06em;
+  color:var(--ink-2);background:var(--paper);border:1px solid var(--rule-2);border-radius:2px;
+  padding:7px 0;cursor:pointer;transition:.15s}
+.scmore:hover{border-color:var(--seal);color:var(--seal)}
+.scmore:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.ep-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--rule-2);padding-bottom:10px}
+.ep-n{font:400 22px/1 var(--serif);letter-spacing:.04em;color:var(--seal)}
+.ep-est{font-size:12.5px;color:var(--ink-2)}
+.bt{font-style:normal;font-size:11px;padding:2px 8px;border:1px solid var(--seal);border-radius:99px;color:var(--seal)}
+.hk{display:grid;grid-template-columns:70px minmax(0,1fr);gap:10px;font-size:13px;padding:10px 0;border-bottom:1px solid var(--rule)}
+.hk.cliff{border-bottom:0;border-top:1px solid var(--rule)}
+.hk b{font:500 11px/1.9 var(--sans);letter-spacing:.14em;color:var(--seal)}
+.scene-blk{margin-top:14px}
+.scene-h{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;margin-bottom:8px}
+.scene-h b{font:500 13px var(--serif);letter-spacing:.06em}
+.chip{font:400 10.5px/1.6 var(--mono);border:1px solid var(--rule-2);border-radius:2px;
+  padding:0 6px;background:var(--paper);color:var(--ink-2)}
+.chip.lite{border-color:var(--seal-2);color:var(--seal-2)}
+.chip.prop{border-color:var(--seal);color:var(--seal)}
+.act-line{margin:8px 0;font:400 13.5px/1.9 var(--sans);color:var(--ink-2)}
+.dlg-line{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:12px;align-items:baseline;
+  padding:5px 0 5px 10px;border-left:2px solid var(--rule-2)}
+.dlg-line:hover{border-left-color:var(--seal)}
+.act-line.hooked,.dlg-line.hooked{border-left:2px solid var(--seal);padding-left:10px;background:var(--seal-soft)}
+.hookat{font-style:normal;font-size:11px;padding:1px 8px;border:1px solid var(--seal);border-radius:99px;color:var(--seal);margin-left:8px;white-space:nowrap}
+.who{font:500 13px/1.6 var(--serif)}
+.who i{display:block;font:400 11px var(--sans);color:var(--ink-3);font-style:normal}
+.said{font:400 14.5px/1.8 var(--serif)}
+.dlg-line .copy{opacity:0;transition:.15s}
+.dlg-line:hover .copy{opacity:1}
+
+/* 表格 */
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+
+/* 台词本：一排两个；列表最多 6 行高，纵向滚动 */
+.casts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:1100px){.casts{grid-template-columns:minmax(0,1fr)}}
+.cast-blk{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 18px}
+.cast-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px}
+.cast-h b{font:400 17px/1.2 var(--serif);letter-spacing:.04em}
+.cast-meta{font-size:12px;color:var(--ink-2)}
+.cast-h .copy{margin-left:auto}
+.cast-lines{margin:8px 0 0;padding:0 6px 0 0;list-style:none;max-height:186px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--rule-2) transparent}
+.cast-lines::-webkit-scrollbar{width:6px}
+.cast-lines::-webkit-scrollbar-thumb{background:var(--rule-2);border-radius:3px}
+.cast-lines li{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:12px;align-items:baseline;
+  padding:4.5px 0;border-top:1px solid var(--rule);font-size:13px}
+.cast-lines li:first-child{border-top:0}
+.cast-lines i{font:400 11px/1.8 var(--mono);color:var(--ink-3);font-style:normal}
+.cast-lines span{font-family:var(--serif)}
+.cast-lines em{font-style:normal;font-size:11.5px;color:var(--ink-3)}
+
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.mini{padding:2px 7px;font-size:10.5px}
+
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  .expo,.copy,.scmore{display:none!important}
+  .scenes.clip{max-height:none}
+  .scenes.clip::after{display:none}
+  .cast-lines{max-height:none;overflow:visible}
+  .eps,.casts{grid-template-columns:minmax(0,1fr)}
+  .page{max-width:none;padding:0}
+  section.top-sec,.ep,.cast-blk{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style></head><body data-page-node-id="bISH0JjaFk4BrDeagFlyoD">
+<div class="page" data-page-node-id="xjtaGB0M61OZ5nPzP41ea4">
+
+<header class="hd" data-page-node-id="bi1FmCLCx0rz80KTtRJ9mp">
+  <h1 data-page-node-id="8NU8xbudUEc0bOaW3kuNON">江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）</h1>
+  <span class="sub" data-page-node-id="jlOpi828B8yrZ8eWTfW3kr">剧本 · 第 1 集</span>
+  <span class="right" data-page-node-id="nsbfCBP9FzJM5uAZsYkBsf">
+    <span class="gatepill pass" data-page-node-id="GM1E1EJGO9jgqA3g8g9UDV">✓ 质量门 10 / 10</span>
+    <button class="expo" data-name="江东潜龙（三国：我在东吴从小吏杀到大都督-第一季）-script.json" data-page-node-id="1GiBq5S14A2MHH9Jb1TOVV">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis" data-page-node-id="Us5HkOxMQgR2KGKGktFEay">
+  <div class="kpi accent" data-page-node-id="TLHDV7qBx4B5TDRMhl4k8k"><div class="l" data-page-node-id="Kqixf5L0ER3SYEb92Psh2B">集数</div><div class="v" data-page-node-id="QqEubIiB7nwGnGDP2FaKPG">1</div><div class="d" data-page-node-id="W2UjN0xJhejtRFfE5r93Cr">3 场戏</div></div>
+  <div class="kpi" data-page-node-id="kB0WdlrSXueyMZdKJxC26F"><div class="l" data-page-node-id="e4HUKBxDyNT9q1e2XrZYkZ">预估总时长</div><div class="v" data-page-node-id="CVpltnjjULloqRdbFFHZzf">2 分 36 秒</div><div class="d" data-page-node-id="JA8RXdDzndw2yUOhAlrQ3D">目标 3 分 0 秒</div></div>
+  <div class="kpi" data-page-node-id="rPapVmGXICdAsFuhJEdTEl"><div class="l" data-page-node-id="dfdtFVPDJqOXjPZX7LhbrU">台词</div><div class="v" data-page-node-id="XYP5LtNxJRhwHd5yPpO6Ik">24 <small data-page-node-id="dtgxXeJlHHIr48zYTmMflv">句</small></div><div class="d" data-page-node-id="9ZoASDTmZUiRLJCJvgv7ZT">约 88.4 秒对白</div></div>
+  <div class="kpi" data-page-node-id="MK8GHnzrD3ADX3u2Dog9u5"><div class="l" data-page-node-id="bE7hCvHV02JE3SjhC4OM8E">台词占比</div><div class="v" data-page-node-id="mYVy0HFBa8zrwnrlBRccrj">57<small data-page-node-id="3Q7fHTprKYFqa32T9QH94j">%</small></div><div class="d" data-page-node-id="0Ylglvct6invQg4Ev5NyEo">其余是画面与动作</div></div>
+  <div class="kpi" data-page-node-id="bEmjsq5ODxHrKBSDtUA7AB"><div class="l" data-page-node-id="VyEgCc4gHewu4cDnFxTy0s">平均每场</div><div class="v" data-page-node-id="Q9EncfH5bEJABhYpFx5zfm">52 <small data-page-node-id="pAgb9goACD6beMVbS904A0">秒</small></div><div class="d" data-page-node-id="MWHCbONGRJXUtClAsUM8Tb">换景是统计不是门——AI 换景不要钱</div></div>
+</div>
+
+
+<section class="top-sec" id="sec-timing" data-page-node-id="gadZvH1iwR25AHZitrAJ9V">
+  <div class="sec-h" data-page-node-id="uWYGf8by7HjQRYIDfKVcXt"><span class="no" data-page-node-id="Fkn65vcxucTvzgwk4Qay72">01</span><h2 data-page-node-id="o1ttOuIdADnjzkp9mjrYEi">时长仪表</h2><span class="note" data-page-node-id="Pe0TZU7eBTHuIMtDZ1sS2q">绿带 = 目标 ±15%；台词按语速折算，动作按节拍估时</span></div>
+  <div class="timing" data-page-node-id="d7LV3mgl8HhGgcV6GF4nt9">
+    <div class="legend" data-page-node-id="Ws2WPIbxKJWbSYUDvI1w7h">
+      <i data-page-node-id="sCEuPOogBgqgYNUlelmSPl"><span class="sw" style="background:var(--seal)" data-page-node-id="e650B4S2Hh2DfrxpiUdRXL"></span>台词</i>
+      <i data-page-node-id="GWIB15w2EuB6wRLt7X5NXt"><span class="sw" style="background:var(--seal-2)" data-page-node-id="gdHLDBZbCnkw2NH57d9epU"></span>动作</i>
+      <i data-page-node-id="SqwOsnMALqyZFIzGSvKIc5"><span class="sw" style="background:var(--band)" data-page-node-id="OH6YvEQK1ZVrHttdjjLY1Z"></span>目标区间</i>
+    </div>
+<div class="trow" data-page-node-id="J5cxDiNkUcIziDmY9QWnNt">
+  <span class="tep" data-page-node-id="MQjovxkbND1bvGL5S6WRmh">E01</span>
+  <div class="track" data-page-node-id="1vfdkHq8iHvhm3zhedpzTC">
+    <span class="band" style="left:68.4%;width:24.2%" data-page-node-id="fQ6NrBdcqpl2fo7VyChMCM"></span>
+    <span class="fill dlg" style="width:39.5%" data-page-node-id="EBWIpjjnShNzm1DiE7amnA"></span>
+    <span class="fill act" style="left:39.5%;width:30.2%" data-page-node-id="Mu2tIUq0YnRuXYFU2f113x"></span>
+  </div>
+  <span class="tval okc" data-page-node-id="7uhdJgzzy5Mjj8VMRMXfPo">155.9s / 180s</span>
+</div>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-script" data-page-node-id="zt6yJfaWDVk4uJYWcn2J8q">
+  <div class="sec-h" data-page-node-id="OEIVzpykRqPtOHfQEAVgaj"><span class="no" data-page-node-id="iqVVUygZ8r7Zcis8ZAjDdf">02</span><h2 data-page-node-id="sPmFFwh9Hl9Bxc0h4MOg3r">分集剧本</h2><span class="note" data-page-node-id="bp45a87zkAGuWf1djnDshw"></span></div>
+  <div class="eps solo" data-page-node-id="oMnYjF90VQnrC2FgijqGWs">
+<article class="ep" id="ep-1" data-page-node-id="QEi5kxWWSgfxMaeLakp0PA">
+  <header class="ep-h" data-page-node-id="Xv2WpVLNthVI3Kz3V5W2gW">
+    <span class="ep-n" data-page-node-id="IZ8Nu77QDL3YNNjlemGtvr">E01</span>
+    <span class="ep-est" data-page-node-id="mif3Ysijh2YyEFPL2GFJld">预估 155.9 秒 / 目标 180 秒</span>
+    <i class="bt" data-page-node-id="zlglzvalwUngfQpifSeZyF">穿越死局</i>
+  </header>
+  <div class="hk" data-page-node-id="WS5OQNB1ZcK2GZUkxJ5otX"><b data-page-node-id="GhCTDvS066CNEhlaGNm42a">开场钩子</b><span data-page-node-id="fBI8B9IllpYt9ypNLJPTBM">三十艘破损战船横在雾里，七日修不完就军法处置——沈川醒在刀口下 <i class="hookat" data-page-node-id="X2EqutqLEl3JMmRfoNZNQS">第 1 场第 2 拍兑现</i></span></div>
+  <div class="scenes clip" data-page-node-id="gTSMPBzZ4rL0CM6K2olDfE">
+  <section class="scene-blk" data-page-node-id="FDVgxQXLvAuGQ2PrxCAFAd">
+  <header class="scene-h" data-page-node-id="7qNUHGtwODctEHHzXWcBUW">
+    <b data-page-node-id="XK21UVdgEetLGvnRhBGNX2">第 1 场</b>
+    <span class="chip" data-page-node-id="vlTsPYZDiiN9F0CBUjwLE2">S01 柴桑船坊</span>
+    <span class="chip lite" data-page-node-id="E6FZMvZG11Zz4hFPrNhfbz">光照 · 晨雾未散</span>
+    <span class="chip" data-page-node-id="iL7eAkIyd4QiODiQrRMmUK">沈川</span><span class="chip" data-page-node-id="0arOeB4vJfbMKE8tKNz3DJ">老工匠</span>
+    <span class="chip prop" data-page-node-id="6vnBzetGoF8MRwkqVCWQhN">修船账册</span>
+  </header>
+  <p class="act-line" data-page-node-id="CIldG8fLG8IDWEEFbw1iOu">江雾未散。码头边一字排开的战船，破洞、断桨、没装好的龙骨，从雾里压出来，像一堵摇摇欲坠的墙。</p>
+<p class="act-line hooked" title="开场钩子" data-page-node-id="tKuQtnNKxH6ekGc4lLyqVl">一记军令重重拍在木案上。朱红的印子像道血，落在雾气里。</p>
+<div class="dlg-line" data-page-node-id="qXGg1GolxwFSaZU8ZMiwsn"><span class="who" data-page-node-id="46HYG5PHj01GQIgFIVK1gh">老工匠<i data-page-node-id="jpyeRGRADylhItsmd62TJt">沙哑的嗓子，不耐烦</i></span><span class="said" data-page-node-id="wN7Csl8xgEXEoMwm8ZwZyL">姓沈的，别装死。军令到了。</span><button class="copy mini" data-copy="姓沈的，别装死。军令到了。" data-page-node-id="sdufekggMEWtMRp6bLlpoA">复制</button></div>
+<p class="act-line" data-page-node-id="3Td0ck5IXpkPRgLlROj5hm">沈川从案边直起，额角还沁着冷汗。他盯着那军令上的字，眼珠子一寸寸读过去。</p>
+<div class="dlg-line" data-page-node-id="gqPfyDThMQKKhCDVJNHojm"><span class="who" data-page-node-id="l0Mi802m1KGeFRFCbktP2B">沈川<i data-page-node-id="VHu4rpzHOa1pI2EZxxQksL">声音干涩，像在念自己的死期</i></span><span class="said" data-page-node-id="NPUbyOEEh3zprO6NSnDTP4">三十艘……七日……修不完，军法处置。</span><button class="copy mini" data-copy="三十艘……七日……修不完，军法处置。" data-page-node-id="6tpjdW1lSfE0fReqxeX8Wa">复制</button></div>
+<p class="act-line" data-page-node-id="ULlfVgBu7bpN7ST616TeY0">他抬头望去。雾里三十艘船一艘艘排开，破得数不清。</p>
+<p class="act-line" data-page-node-id="NYCaXzzlW865Q21CjnRByL">沈川的手摸向腰间，摸到一枚铜牌，翻过来，背面刻着：船坊小吏，掌木料、工匠、进度、账目。</p>
+<div class="dlg-line" data-page-node-id="GxDG2WeDvPFUKJE4d3MKAc"><span class="who" data-page-node-id="oNg8cEc3EnEsfTmT0VpVml">画外音<i data-page-node-id="3ND94zrOGl5VNWNyEjL7In">沈川的心声，压着惊疑，只一句</i></span><span class="said" data-page-node-id="AKeayeA48NLu52G09SCOxw">醒过来，就在这了。</span><button class="copy mini" data-copy="醒过来，就在这了。" data-page-node-id="cGB3ibUOReA3DuVcaBLu3M">复制</button></div>
+<div class="dlg-line" data-page-node-id="22wMYyHECfCamqAknkGPi3"><span class="who" data-page-node-id="YRq01JCAxJaoqvX7wAWNKT">老工匠<i data-page-node-id="OL2qpmhL70BjM5UKh2ZmRq">抱着胳膊，冷眼看</i></span><span class="said" data-page-node-id="gSFK9wkvGWbCbP9LZTvbqO">全坊的工匠都到齐了，就等你拿个章程。</span><button class="copy mini" data-copy="全坊的工匠都到齐了，就等你拿个章程。" data-page-node-id="GWRO1WnSsfQsEWZp5vuIXd">复制</button></div>
+<div class="dlg-line" data-page-node-id="1qAFKQYGP2dARPTHtQau1f"><span class="who" data-page-node-id="A1svI1qNBjsSwqltHtDuLh">沈川<i data-page-node-id="nYHhibJdMiLIRtRH4hnnCm">逼自己稳住，问得急</i></span><span class="said" data-page-node-id="Yf9t0QFcatgZ59NCS06lrW">多少工匠？多少木料？船修到哪一步了？</span><button class="copy mini" data-copy="多少工匠？多少木料？船修到哪一步了？" data-page-node-id="PlxFV1mE8cGFJjGEhh8DIr">复制</button></div>
+<p class="act-line" data-page-node-id="s1JVxZDOE4l0EAWjOrtP5z">老工匠一愣，跟身边的人对了下眼，像是头回听见有人问这些。</p>
+<div class="dlg-line" data-page-node-id="uoBQaya4cDwVHgEqd0FzFD"><span class="who" data-page-node-id="xqmNRcK0cn27taKES1egKu">老工匠<i data-page-node-id="C5C3PgHgV2fZ3XLcIIkViK">皱着眉，觉得这小吏疯了</i></span><span class="said" data-page-node-id="2hVnQOBfemh1miuz7IwpCJ">问这些作甚？日子就七天，人都在这，修就是了。</span><button class="copy mini" data-copy="问这些作甚？日子就七天，人都在这，修就是了。" data-page-node-id="Gb21D7uQkqgrmw3Kesmdo6">复制</button></div>
+<div class="dlg-line" data-page-node-id="AVIgRyWhHMid7AofcTugpe"><span class="who" data-page-node-id="bsfO4QieXNN2F34dHOXqlF">沈川<i data-page-node-id="chhTE9IX7jFcxHO3LMFpWS">喉咙发紧</i></span><span class="said" data-page-node-id="tyAiynVsW4yVHbo04bxABb">不数清楚，怎么知道修不修得完。</span><button class="copy mini" data-copy="不数清楚，怎么知道修不修得完。" data-page-node-id="AhQeANEbGawusKZzybGhG3">复制</button></div>
+<p class="act-line" data-page-node-id="FUMwZ3ky4ed2D0fY8vSAJ5">他撑着案站起来，扫过满场工匠，又扫过那三十艘船。</p>
+<div class="dlg-line" data-page-node-id="yYZMpOZH1r1B2flCgxRnYJ"><span class="who" data-page-node-id="BDex7crnBZi64l90XGuNMB">沈川<i data-page-node-id="ZhqltSyEcaDYb8cLZymDyC">声音不高，压住了场子</i></span><span class="said" data-page-node-id="SluJf5Z8RY8z9Wctbhmgag">给我一份花名册。今天，人、料、活，一样一样点。</span><button class="copy mini" data-copy="给我一份花名册。今天，人、料、活，一样一样点。" data-page-node-id="Rtox69PHI0Yqs9tRkvjPpy">复制</button></div>
+</section>
+<section class="scene-blk" data-page-node-id="SmxSBDBTkOdElyuqtufYIl">
+  <header class="scene-h" data-page-node-id="flLXYpwBlo9QdOA7ZwGnet">
+    <b data-page-node-id="b2YEW2NOJ1OaKJHvj9UGY7">第 2 场</b>
+    <span class="chip" data-page-node-id="Nb0jdSjs0dmo64KHNrKgdn">S01 柴桑船坊</span>
+    <span class="chip lite" data-page-node-id="T6vDe7B16C6eRiRb4NCg3C">光照 · 晨雾未散</span>
+    <span class="chip" data-page-node-id="8s0MD0ni9eEwLeKJM0MmML">沈川</span><span class="chip" data-page-node-id="C5X4e9F7DOiG5ZvrnHBnZq">老工匠</span>
+    <span class="chip prop" data-page-node-id="BW1G5SXWbk7fFB0qq5R58S">修船账册</span>
+  </header>
+  <p class="act-line" data-page-node-id="M0PMp5cfPgfdwKY7zU0NHJ">沈川沿着船走，指尖从破损的船帮上擦过去。账册摊着，他边看边在泥地上划记号。</p>
+<div class="dlg-line" data-page-node-id="zUDsHh67ZE6Qo9Z7cb51fv"><span class="who" data-page-node-id="ofiR0ZkbMM2gwXDsG6HIa1">沈川<i data-page-node-id="c9zELrmBwoDFekKQcgl9QF">像给自己报数</i></span><span class="said" data-page-node-id="AgIFblhRJehjE5A0enzCKO">这艘，龙骨没上，船板缺半。</span><button class="copy mini" data-copy="这艘，龙骨没上，船板缺半。" data-page-node-id="LzwfOkGSBryxYJhsXUhD93">复制</button></div>
+<p class="act-line" data-page-node-id="WIz5ujFt3Cu0rYmAlrdI1N">他在一堆半成品前蹲下，捡起两块船板对到一处——缝大得能插进一根手指。</p>
+<div class="dlg-line" data-page-node-id="AxylgPzylszGXHEXK7wOdH"><span class="who" data-page-node-id="peiWPQ3t9jKoZSPlGvsBXL">老工匠<i data-page-node-id="6LUfbnklINOZGRiEOpodLS">不以为然</i></span><span class="said" data-page-node-id="X6VQwHyPfV4oEjgWn17aUd">哪艘坏了补哪艘，一直这样干，能装上就行。</span><button class="copy mini" data-copy="哪艘坏了补哪艘，一直这样干，能装上就行。" data-page-node-id="1AlfebZNaCHMgfauR9aKTj">复制</button></div>
+<p class="act-line" data-page-node-id="ggdja3ENxru7E14InaqLGx">沈川没接话，走到料堆前。原木横七竖八摞着，新料旧料混在一处，几根已经裂了。</p>
+<p class="act-line" data-page-node-id="WZAWTwMBGSw63bdXNCqWCt">他翻开账册对料。册上写着木料若干，地上数不出那个数。</p>
+<div class="dlg-line" data-page-node-id="YEo1oPz8yrCg6QxtTmGuHF"><span class="who" data-page-node-id="JiWCLAqpXZprkEytNO0Pan">沈川<i data-page-node-id="1dKuDmPC1Q8gQfG2Deb2g3">低声，眉头拧起</i></span><span class="said" data-page-node-id="h9Patqn8IbhqKtAD2RyC8l">料和账，对不上。</span><button class="copy mini" data-copy="料和账，对不上。" data-page-node-id="CEMqsAP7Q8ZT7TlUOAi9oZ">复制</button></div>
+<p class="act-line" data-page-node-id="CT1cVy6HroIYAORAEwWpXM">不远处，几个工匠蹲在船边等活，手里的家伙搁在地上，眼睛瞟着这边。</p>
+<div class="dlg-line" data-page-node-id="tcIOQwHjcJbzodnBiceFZx"><span class="who" data-page-node-id="L67FFAbIxs5StwHAjouyTr">老工匠<i data-page-node-id="xjAjseTixSGHASND3lq0qX">追上来，嗓门抬高</i></span><span class="said" data-page-node-id="cCwLjAu73fe7CfVtxnYsNI">小沈官，你数这些有个屁用？船又不会自己长好。</span><button class="copy mini" data-copy="小沈官，你数这些有个屁用？船又不会自己长好。" data-page-node-id="ABzT8nCln2NhD2XgPAKO68">复制</button></div>
+<p class="act-line" data-page-node-id="KH44rd8XCxZMziNuYe5ujR">沈川朝船尾一指——两个匠人正把刚装上的船板又撬下来。</p>
+<div class="dlg-line" data-page-node-id="vW4nmp4UlowrXeYs5yLUtW"><span class="who" data-page-node-id="mAumnjP1G6BydFNEXUQnN9">沈川<i data-page-node-id="nWVt0AICb0kWnKw3hHTo24">指着问</i></span><span class="said" data-page-node-id="uMnwmMYkCFvFD7Rlrbegnv">那板不是才装上去？怎么又拆？</span><button class="copy mini" data-copy="那板不是才装上去？怎么又拆？" data-page-node-id="USzh7uQ55F0oeIM5wvrB1y">复制</button></div>
+<div class="dlg-line" data-page-node-id="n3YcasZcJAKNmcFCZx77pP"><span class="who" data-page-node-id="CW1IJp9wdVHNafl5ptxcj2">老工匠<i data-page-node-id="ofuInr9ozmwWSKAwpItDFy">习以为常</i></span><span class="said" data-page-node-id="HLZywkydN1ru4h0vLy1xla">尺寸错了，不拆重做，下水就散架。返工的活天天有。</span><button class="copy mini" data-copy="尺寸错了，不拆重做，下水就散架。返工的活天天有。" data-page-node-id="8mffpFtGbrgq9XpsFc9F4B">复制</button></div>
+<p class="act-line" data-page-node-id="emEQCYv08crGon1rEXrxYj">沈川回头扫过全场：一堆人等活，一堆人返工，一堆料数不上。他闭了闭眼。</p>
+<div class="dlg-line" data-page-node-id="qF7OqM30FmjCvMzmMqNFRz"><span class="who" data-page-node-id="ENha1YMy7acY3g7S1Bt0jX">画外音<i data-page-node-id="97LJVw7gZzFBIWB3sSilED">沈川的心声</i></span><span class="said" data-page-node-id="n8iJfDYjkiZisK7NSQC4Wa">人够，料也够。是没人把这一摊子捋顺。</span><button class="copy mini" data-copy="人够，料也够。是没人把这一摊子捋顺。" data-page-node-id="SVL34vhe4BACDpy9J27WZC">复制</button></div>
+<p class="act-line" data-page-node-id="9uU7YJyzgjxqAiLFCwO9Cp">他走到码头边，指着那一排破损的战船，回头看向众人。</p>
+<div class="dlg-line" data-page-node-id="H7Ufh0qmtvkCOuRXHiVEfK"><span class="who" data-page-node-id="huDmrCJfr6NjcXbuC6Uq6V">沈川<i data-page-node-id="Si5A10BH3ievN7R1s9zRfU">一条条点，越说越利索</i></span><span class="said" data-page-node-id="yuQgWOYUdPz31KQP51CJcu">船坏得杂，料不齐，有人闲、有人返工——全堵死了。</span><button class="copy mini" data-copy="船坏得杂，料不齐，有人闲、有人返工——全堵死了。" data-page-node-id="KYE4d2qAsqlIfF5UJOQ3Ge">复制</button></div>
+<p class="act-line" data-page-node-id="NdGqQzraWqjSHs1yEyXGdf">满场安静下来。几个刚才冷眼看他的工匠，悄悄往前凑了凑。</p>
+<div class="dlg-line" data-page-node-id="De8RPVLZ1bmfUkd4AHM9p1"><span class="who" data-page-node-id="8OHBmPphiTSneSOLk94ZjC">老工匠<i data-page-node-id="Dhm0fs2Yp7noa8r65tK2uT">嗓子低下去，头回正经问</i></span><span class="said" data-page-node-id="m7E5EdoXcCi1Dft9U2OJjA">……那你倒是说说，头一样先弄哪个？</span><button class="copy mini" data-copy="……那你倒是说说，头一样先弄哪个？" data-page-node-id="vkTn8o6e2pQ56TJUGGbfQW">复制</button></div>
+<div class="dlg-line" data-page-node-id="5MJkxjKeCNYz1EDxQnHiqG"><span class="who" data-page-node-id="XO6BuRXEqpPVvHChbq7s3f">沈川<i data-page-node-id="NtSX1cGQ852GsheEAVyBHw">干脆</i></span><span class="said" data-page-node-id="rkdEpvAFQNK1NsHCyXrC7H">先点清多少人。连人手都数不上，谈什么修船。</span><button class="copy mini" data-copy="先点清多少人。连人手都数不上，谈什么修船。" data-page-node-id="BdrmkZ0DpH55351weXBC60">复制</button></div>
+<p class="act-line" data-page-node-id="07ANBZt5caBDwzCcpc4Vql">老工匠盯着他看了两息，转身一挥手，把散在各处的匠人都吆喝过来。</p>
+</section>
+<section class="scene-blk" data-page-node-id="LawNFJQKDla0FZrC6A7s3p">
+  <header class="scene-h" data-page-node-id="ktEml9NsHyywRsodM29bng">
+    <b data-page-node-id="it8koBLUSqaAFK4FvZ0x3x">第 3 场</b>
+    <span class="chip" data-page-node-id="1dwHTcnzEitlLX36LQgVMg">S01 柴桑船坊</span>
+    <span class="chip lite" data-page-node-id="GB8GLEiZO4lX3wThUkUeba">光照 · 昏黄油灯夜</span>
+    <span class="chip" data-page-node-id="cflxjsP2q2vwERfXuaPHKd">沈川</span><span class="chip" data-page-node-id="r8bjfnG3EKUAydwI2kplyh">老工匠</span>
+    <span class="chip prop" data-page-node-id="yA0CFQAslQu6kn4lMlESAv">修船账册</span>
+  </header>
+  <p class="act-line" data-page-node-id="WUVmdaxUxNDP4cATazvNao">夜。工棚里只点一盏油灯。沈川就着灯，一页页翻那本旧账册。</p>
+<p class="act-line" data-page-node-id="ZJkgCEhf8hxHoWtJC2yFWI">他蘸了墨，在木板上写下五个字：船、人、料、序、账。写完，又各画一条线。</p>
+<div class="dlg-line" data-page-node-id="NcPNa4VGLVcrExcim6Fnoq"><span class="who" data-page-node-id="ak4RB6Wp1IwMDjASZ89eBb">画外音<i data-page-node-id="9odZnIHmlhrzZDUjwhcQwo">沈川的心声</i></span><span class="said" data-page-node-id="C84Kirq8JZd2n83cI6WG9P">七日修船，是五件事压在一处。</span><button class="copy mini" data-copy="七日修船，是五件事压在一处。" data-page-node-id="vLGCyMmwFM5yBu9qJnBiI8">复制</button></div>
+<p class="act-line" data-page-node-id="40OLKVLBa2Zs8BAHMKkof3">油灯忽地跳了一下。沈川翻到一页，指尖停在一处被浓墨涂改过的数目上。</p>
+<p class="act-line" data-page-node-id="B5pNFUaihdry0wbhzXP0QB">他凑近灯下。那一处写着木料三百根，可前页领的是三百五十根，中间凭空少了一截。</p>
+<div class="dlg-line" data-page-node-id="VNkYyk1TL3lRmU71wz5yWU"><span class="who" data-page-node-id="Clhkj1QV3cKJjCnrxt8BQb">沈川<i data-page-node-id="kFa8bTU2iy6cyneaRvFHzp">低声，像怕被人听见</i></span><span class="said" data-page-node-id="NSTvTaiFSWhUYMWSTSlyLZ">三百五十根……进账怎么成了三百？</span><button class="copy mini" data-copy="三百五十根……进账怎么成了三百？" data-page-node-id="1mxKVmLJ1SgAbdMqYFLXcw">复制</button></div>
+<p class="act-line" data-page-node-id="Yi6HucFkXrRUoA00dcm6uF">他翻前翻后反复对，越对脸色越沉。那少掉的五十根，前后几页都没个说法。</p>
+<p class="act-line" data-page-node-id="UJk98c3bKdhh2ii9RzcsKm">身后突然传来一声轻响。老工匠不知何时站在工棚口，手里提着半盏灯。</p>
+<div class="dlg-line" data-page-node-id="gv96w7p1dgSTjlLL2NwzJP"><span class="who" data-page-node-id="gVNnNZfEuAiBUPEtu8tuG2">老工匠<i data-page-node-id="0ZmtVghjXz5rfLfxHwRojr">嗓子发紧，眼睛盯着那页账</i></span><span class="said" data-page-node-id="9OUm0BGuXF5UQhCxV34hO6">小沈官，夜深了。那账……别看那么细。</span><button class="copy mini" data-copy="小沈官，夜深了。那账……别看那么细。" data-page-node-id="cwTeCBMgm7cDIDJiOQIqYC">复制</button></div>
+<div class="dlg-line" data-page-node-id="8VSjeFlGp5A8ASFXNyPTT6"><span class="who" data-page-node-id="k77ZdJcTS7sbiKQIt69A6H">沈川<i data-page-node-id="Vc2kbSI9frSaEBSAeSVpGZ">抬头，目光钉着他</i></span><span class="said" data-page-node-id="SHtDvcy6lnv9efghWiCz3T">这五十根木料，上哪去了？</span><button class="copy mini" data-copy="这五十根木料，上哪去了？" data-page-node-id="UYxJel7F6GH3ePODGVWFz0">复制</button></div>
+<p class="act-line" data-page-node-id="0yBsamXqB6vOnNQmXSc9uk">老工匠脸上的血色一点点退下去。他猛地伸手，要去合那本账册。</p>
+<div class="dlg-line" data-page-node-id="7ECFBwLWqBCssRbCLPeUdH"><span class="who" data-page-node-id="m9jtZKHFTTiQOlRKUGdvIb">老工匠<i data-page-node-id="vGUNcHvaQHCu5yGaclhyPU">压低嗓子，几乎在吼</i></span><span class="said" data-page-node-id="dA5qdztQMorBBphdJV2AmK">别问了。这账查下去，是要出人命的。</span><button class="copy mini" data-copy="别问了。这账查下去，是要出人命的。" data-page-node-id="2ZGMAhUQ38AAI9AJAHd2Fm">复制</button></div>
+<p class="act-line" data-page-node-id="fVfAJyGHOYynumkXuK1n56">他的手悬在账册上方，又缩了回去。油灯的火苗被他的袖风一带，忽明忽灭。</p>
+<div class="dlg-line" data-page-node-id="MOUw5cyCt8edPoOJEA4ZSM"><span class="who" data-page-node-id="osxMslh8OHXlkxrbwS1GtI">沈川<i data-page-node-id="XbTKJohDYGT78o8Esr3HBE">一字一句</i></span><span class="said" data-page-node-id="BLI1R9hp2d1F5P0rXR827q">谁的命？</span><button class="copy mini" data-copy="谁的命？" data-page-node-id="n02aRAgREGzDIGoAu3SYxu">复制</button></div>
+<p class="act-line" data-page-node-id="IgHSNfidUxFq0xSXlFXDjt">老工匠没答，只盯着那页被涂改的账，喉咙滚了滚，转身没入棚外的黑里。</p>
+<p class="act-line" data-page-node-id="cR1M4P6re9fWcTQJkcgN26">江风猛地灌进来，油灯压到几乎熄灭。账册停在涂改的那一页，那个被涂掉的数目像只黑洞。</p>
+</section>
+  </div>
+  <button class="scmore" data-page-node-id="XHDFkHn17p7NFHnYFJCQyt">▾ 展开全部场次</button>
+  <div class="hk cliff" data-page-node-id="NR4em1B0gf2aLYqbRRBGv0"><b data-page-node-id="aqxm5SIcpABksTCebXcZKe">结尾悬念</b><span data-page-node-id="26UwvFFwofNjwC5B8lZCvA">账册里一笔被涂改的木料数目对不上，老工匠一看见那页脸色就变了</span></div>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-scenes" data-page-node-id="lcTA2hKSjXFfkEwpunWyqF">
+  <div class="sec-h" data-page-node-id="uqPPqOnWPIHJlPJzliVh7W"><span class="no" data-page-node-id="ZKtJ2Rbu6oXXwADvZgDH9l">03</span><h2 data-page-node-id="pYsV14p9cUO99KGBiNItQa">场次总表</h2><span class="note" data-page-node-id="iyG4arPUwmXcRrbWUsDpnU">自动汇总 · 模型不写</span></div>
+  <table data-page-node-id="sGJr5OzpwH9kSAccma4xcX"><thead data-page-node-id="mYBEItAA0mPZiGb3MKN2zE"><tr data-page-node-id="XH1tzOd7LQlUANC8djGQ4A"><th data-page-node-id="R7x98gkSCqyrhdGHbPmqVA">集</th><th data-page-node-id="ZdIV3tb9Yf8C9h8ADD28Nv">场</th><th data-page-node-id="RpT9pWWNbvCe4OMaO5IaMQ">场景</th><th data-page-node-id="7ODjLNdE6cEz2ZFYaHxWJX">光照</th><th data-page-node-id="lGDxZrIAIJkccXpwW5DIoy">人物</th><th data-page-node-id="nwaeu2y2KZVzdTIHyYKNdO">台词句数</th><th data-page-node-id="uZeyPL3RPh85aWoYpd9IdU">估秒</th></tr></thead>
+<tbody data-page-node-id="zT77DTDKboBN1RvkhrGC1z"><tr data-page-node-id="77RX7FwLpFUpSnZ10VTp5y"><td data-page-node-id="bow3VlNIcSeYSrtW4cSyx7">1</td><td data-page-node-id="Da6QZnupewnf1fhtqTeoap">1</td><td data-page-node-id="Iml0GzdjL0hFdm1hNwoveN">S01 柴桑船坊</td><td data-page-node-id="tzfHljCRYFMqKARthl2GoP">晨雾未散</td><td data-page-node-id="VKkFCuGXzo4PzBtcXfWlyP">沈川、老工匠</td><td data-page-node-id="1xJDfMdBHEKHzq6f1KrfXd">8</td><td data-page-node-id="ccbP1JkjyZW4tC52BkVOFL">47.7</td></tr>
+<tr data-page-node-id="FhOkaZ6Y53KNN5cJuvWT5Y"><td data-page-node-id="GHTlrIDMktIX0k2re91qko">1</td><td data-page-node-id="BX3BW0zpDBweGzfw6jnVaL">2</td><td data-page-node-id="s7YiHFH3uYVMllwUj8Wkk7">S01 柴桑船坊</td><td data-page-node-id="rhqV8Pl3NQzrkv2kWue0Sd">晨雾未散</td><td data-page-node-id="t8YOZM4dxK5szCPCYUkYSz">沈川、老工匠</td><td data-page-node-id="8iXXwuESdGY2mc8NDLBysK">10</td><td data-page-node-id="xyG9C3CBREPfzcZRUkuDv1">65.2</td></tr>
+<tr data-page-node-id="3QzEh3rd76lmW7fXeojk2A"><td data-page-node-id="DphynjsUiHP0yFAs4Tex5v">1</td><td data-page-node-id="6YAhobqDX6RyK333PXYKWC">3</td><td data-page-node-id="cobxgShGzU3h6LINPuZ2eO">S01 柴桑船坊</td><td data-page-node-id="G4cCZVALcIlM57ixZ07R7x">昏黄油灯夜</td><td data-page-node-id="hmQDz3YG5Bl5KDKOqjFYtd">沈川、老工匠</td><td data-page-node-id="eXSkUxAIkR687QY8utBpq5">6</td><td data-page-node-id="RDp53gP0lmwKBppSwtpEXw">43</td></tr></tbody></table>
+</section>
+
+<section class="top-sec" id="sec-cast" data-page-node-id="wWt1EbfE78IMHhBo9oAz8s">
+  <div class="sec-h" data-page-node-id="GvM3CRersuxXmVy9Quvo53"><span class="no" data-page-node-id="B4QqwSZ5pChHXj11NwgjcQ">04</span><h2 data-page-node-id="15Q4kchxXMEx7famGlhbct">台词本</h2><span class="note" data-page-node-id="6uOkgXvUCTAxL4xjn8uTfP">按角色聚合 · 列表最多显示 6 行可滚动 · 直接对接 TTS 批量生成</span></div>
+  <div class="casts" data-page-node-id="eAxj7QQdsqQEmXaUX2ONbE">
+<section class="cast-blk" data-page-node-id="kdL8Yws8hXBn413LoElStG">
+  <header class="cast-h" data-page-node-id="Sqs185ubMgGxW8X6KugePW">
+    <b data-page-node-id="VUQjhYbu2ed73xwlAEUDgt">沈川</b>
+    <span class="cast-meta" data-page-node-id="5XpME6CSyjedB9O04sqeL8">12 句 · 186 字 · 约 41.3 秒</span>
+    <button class="copy" data-copy="三十艘……七日……修不完，军法处置。
+多少工匠？多少木料？船修到哪一步了？
+不数清楚，怎么知道修不修得完。
+给我一份花名册。今天，人、料、活，一样一样点。
+这艘，龙骨没上，船板缺半。
+料和账，对不上。
+那板不是才装上去？怎么又拆？
+船坏得杂，料不齐，有人闲、有人返工——全堵死了。
+先点清多少人。连人手都数不上，谈什么修船。
+三百五十根……进账怎么成了三百？
+这五十根木料，上哪去了？
+谁的命？" data-page-node-id="zA2vLWjrJrNgjXoywQRNBQ">复制全部台词</button>
+    
+  </header>
+  <ol class="cast-lines" data-page-node-id="5Sga6pfwz8iD8HCsW78ADB"><li data-page-node-id="Gq2zAaPKtTCqSF3ZHi7tQR"><i data-page-node-id="kCN9veywrCODYPiFMkklRo">E01 第 1 场</i><span data-page-node-id="bU7BcKTSjzSDf1G9ybBPVo">三十艘……七日……修不完，军法处置。</span><em data-page-node-id="cgLSfv1oKR2YqHR959GA3H">声音干涩，像在念自己的死期</em></li><li data-page-node-id="Fd2942MaHjw5NzFK2eFuq8"><i data-page-node-id="roewwilEPZi76hrVhQcNHE">E01 第 1 场</i><span data-page-node-id="QbTMnkytSF1Q1EcyDKFxTH">多少工匠？多少木料？船修到哪一步了？</span><em data-page-node-id="MYQn1WB1h7fZRqfm7vNUNB">逼自己稳住，问得急</em></li><li data-page-node-id="aQMfKa9Udnu9s1GBIkuYIk"><i data-page-node-id="CjCMCNCe2wILwLiGr5qco0">E01 第 1 场</i><span data-page-node-id="x2CeXetzM4ZZOqcGFEfUCN">不数清楚，怎么知道修不修得完。</span><em data-page-node-id="T7yQ9WsV8Ao14xlVMCpwgx">喉咙发紧</em></li><li data-page-node-id="qbDgPxg6cT8V9dE6J7oXEE"><i data-page-node-id="bTqmA7wFl9vU8RtcIwqO0w">E01 第 1 场</i><span data-page-node-id="qjGFtihtZgbZD70cvpNMPn">给我一份花名册。今天，人、料、活，一样一样点。</span><em data-page-node-id="amxfsEYCwiDWegOeCXddE2">声音不高，压住了场子</em></li><li data-page-node-id="T0EalxTslCnXLsFebyelfV"><i data-page-node-id="nbodpT9PNsvBTeD3IUuRy6">E01 第 2 场</i><span data-page-node-id="BtigHSaeokmKxxOSsPA0Ge">这艘，龙骨没上，船板缺半。</span><em data-page-node-id="NnnKxS0aNX8bsPoZ79QRnI">像给自己报数</em></li><li data-page-node-id="jrrJrSDlYfpDo2F9jgwI5r"><i data-page-node-id="kwo3xdQm6mDASkVTzPRYY3">E01 第 2 场</i><span data-page-node-id="CmPKYBxvWlMnDi2tkLV08V">料和账，对不上。</span><em data-page-node-id="dJw5wZmNB4F34utkFkB0pC">低声，眉头拧起</em></li><li data-page-node-id="2W2QNhGDToszPbKty6x5og"><i data-page-node-id="f9a2lIJhTWr4WNCawzsLPb">E01 第 2 场</i><span data-page-node-id="0wKBw5nQe3zk9WhjliQ1CC">那板不是才装上去？怎么又拆？</span><em data-page-node-id="eeQi3qH5sHl6fAuJgOvtiV">指着问</em></li><li data-page-node-id="kD5NztYamSTFRU7CRa4UFI"><i data-page-node-id="qsGup7vPUSZJL5t4FHcSkd">E01 第 2 场</i><span data-page-node-id="xCD6FVgwJsSMAyJwK7T1ob">船坏得杂，料不齐，有人闲、有人返工——全堵死了。</span><em data-page-node-id="mbuRYp057RP6mDCGLpo0Hw">一条条点，越说越利索</em></li><li data-page-node-id="fdTJKBdaiGGgodkFviV0cR"><i data-page-node-id="7qEwd5oq9FdhkXvwT8iTWR">E01 第 2 场</i><span data-page-node-id="k54gEps2aqpGF5K9WW7Ii0">先点清多少人。连人手都数不上，谈什么修船。</span><em data-page-node-id="dVCW85VkEDbmGnRiK0gEdK">干脆</em></li><li data-page-node-id="xxo77bAO87SOZdfYavT857"><i data-page-node-id="0O4EHlRLRK0iGSqMrbN2HC">E01 第 3 场</i><span data-page-node-id="D9jbCfX5GB5Undi3xLcavs">三百五十根……进账怎么成了三百？</span><em data-page-node-id="hLzcDGwk5STEBcCHwyHNeV">低声，像怕被人听见</em></li><li data-page-node-id="60nhur0lKF0pjv82a88gka"><i data-page-node-id="Z1GD0uumTCUXxhu6u2Pwdh">E01 第 3 场</i><span data-page-node-id="DNeYMjO8bCOMopclgDDIvO">这五十根木料，上哪去了？</span><em data-page-node-id="SGHDAym2ViOlITzjYFaHEi">抬头，目光钉着他</em></li><li data-page-node-id="0eHHhyjONd5HPGpATCidMj"><i data-page-node-id="e7aW95jomoBr2BzgVuM72C">E01 第 3 场</i><span data-page-node-id="OXKuHsAX2bbYw1FV3jpODS">谁的命？</span><em data-page-node-id="Bw9tEETDmoRd8GlZ6W6rDU">一字一句</em></li></ol>
+</section>
+<section class="cast-blk" data-page-node-id="A2HSVVzfXDiByqKDqYWGNC">
+  <header class="cast-h" data-page-node-id="ZUBs97kGgopg4126WaMuEB">
+    <b data-page-node-id="ugXLlLmFQmdimIRTr1ZneS">老工匠</b>
+    <span class="cast-meta" data-page-node-id="Pc0dPZi05fFZpKZSPDpeUL">9 句 · 171 字 · 约 38 秒</span>
+    <button class="copy" data-copy="姓沈的，别装死。军令到了。
+全坊的工匠都到齐了，就等你拿个章程。
+问这些作甚？日子就七天，人都在这，修就是了。
+哪艘坏了补哪艘，一直这样干，能装上就行。
+小沈官，你数这些有个屁用？船又不会自己长好。
+尺寸错了，不拆重做，下水就散架。返工的活天天有。
+……那你倒是说说，头一样先弄哪个？
+小沈官，夜深了。那账……别看那么细。
+别问了。这账查下去，是要出人命的。" data-page-node-id="Z1sQVqBhbfkrny5ZZLWejj">复制全部台词</button>
+    
+  </header>
+  <ol class="cast-lines" data-page-node-id="x2HBGODxz7HAs9KL9OGKTI"><li data-page-node-id="AEENLZOXeAtMWdq8jxTod0"><i data-page-node-id="ue3MBuQxe6Ra76j0OQi2Nr">E01 第 1 场</i><span data-page-node-id="JN0Y8LOGQGbCw5vzJcs7h9">姓沈的，别装死。军令到了。</span><em data-page-node-id="JMkEFjrLh3hjrWxVQR81m5">沙哑的嗓子，不耐烦</em></li><li data-page-node-id="auzd5RcZXGE57PINPaep2D"><i data-page-node-id="VCVDTlRnXg4D7QPpLVPvFl">E01 第 1 场</i><span data-page-node-id="TRQJ5m6CSDv9A3cV87JQvv">全坊的工匠都到齐了，就等你拿个章程。</span><em data-page-node-id="yhvFmcmWkArEdHFmWwAGAq">抱着胳膊，冷眼看</em></li><li data-page-node-id="Mi6z1nl1RiNXX3WH3aoo2C"><i data-page-node-id="8AhDfPFp3znrlkUfDIt2fY">E01 第 1 场</i><span data-page-node-id="oJ3e3xdTo7ZgNMUfLzCaWv">问这些作甚？日子就七天，人都在这，修就是了。</span><em data-page-node-id="geEDE1k2y5QdYjZibVnmPl">皱着眉，觉得这小吏疯了</em></li><li data-page-node-id="mJCp6ZfwCs48ooXvRgDqEH"><i data-page-node-id="7UyP7lY0DpmFugCrbdWEK6">E01 第 2 场</i><span data-page-node-id="9mVLfN9M2RZBlw4K5j0Jz7">哪艘坏了补哪艘，一直这样干，能装上就行。</span><em data-page-node-id="2XMBIo75DlEbRlbKcilLg7">不以为然</em></li><li data-page-node-id="rx7Gni2W7geMsWvbyoBt69"><i data-page-node-id="g8ZoY9nJD5R2M5XmmdI9Fj">E01 第 2 场</i><span data-page-node-id="StXreLCdcy1ZKpAXn9cgpo">小沈官，你数这些有个屁用？船又不会自己长好。</span><em data-page-node-id="oVIsow9J6u7eLUzIUgjH1b">追上来，嗓门抬高</em></li><li data-page-node-id="gBRbF2OgwCPcRAX0jD1Utq"><i data-page-node-id="sI6rmtVJ2U4p9O2hcOPxlF">E01 第 2 场</i><span data-page-node-id="NmRGAMX3TKRLb8LA0Oh8U2">尺寸错了，不拆重做，下水就散架。返工的活天天有。</span><em data-page-node-id="bVoYXuD8NuTB4DTyLZ0ONX">习以为常</em></li><li data-page-node-id="gKrvArt6P3xaeqivAy0eWa"><i data-page-node-id="ASxURYD127b8XIacGCY5Sd">E01 第 2 场</i><span data-page-node-id="Ig5oBbwP2sBt1QrHq6MMDG">……那你倒是说说，头一样先弄哪个？</span><em data-page-node-id="SnjnFUeP5pHt70Bx3HzhGk">嗓子低下去，头回正经问</em></li><li data-page-node-id="3Q6ZXKx5vv7Y3pV7CJpsd1"><i data-page-node-id="py2CvbSi4qYTA9WB4NZVDK">E01 第 3 场</i><span data-page-node-id="1kDriDdlNIIEDiYKFaiHo7">小沈官，夜深了。那账……别看那么细。</span><em data-page-node-id="jnajsK7DMYcGKkGjAL080N">嗓子发紧，眼睛盯着那页账</em></li><li data-page-node-id="lDuDzu7uyr7lcx5TX5Ylfb"><i data-page-node-id="XlgYzzYZeALDVnvQwksuCJ">E01 第 3 场</i><span data-page-node-id="4ge67sxo8h1qpZt3v8Eb75">别问了。这账查下去，是要出人命的。</span><em data-page-node-id="yGxdA5UJQtfTdXiuf2TyQS">压低嗓子，几乎在吼</em></li></ol>
+</section>
+<section class="cast-blk" data-page-node-id="Jq4nTq4WAKrOMxJ5B0Heex">
+  <header class="cast-h" data-page-node-id="x1wZQKZlqQBbcy7FfqbdHZ">
+    <b data-page-node-id="jhFlNRq4G6KBYk7HRPQTyO">画外音</b>
+    <span class="cast-meta" data-page-node-id="qzA6u9tIzHZnclam6Ih6H7">3 句 · 41 字 · 约 9.1 秒</span>
+    <button class="copy" data-copy="醒过来，就在这了。
+人够，料也够。是没人把这一摊子捋顺。
+七日修船，是五件事压在一处。" data-page-node-id="ynGEfSKSnMmlKzMqSJgi3S">复制全部台词</button>
+    
+  </header>
+  <ol class="cast-lines" data-page-node-id="Ky2kzTlPy0HGszTt9khJQO"><li data-page-node-id="YGBaZWusVo6VA4o6gYBVpi"><i data-page-node-id="NsdBxjT91rJ5he40Hx51QE">E01 第 1 场</i><span data-page-node-id="9hEb0vvPfyHhVmjUrgIq9S">醒过来，就在这了。</span><em data-page-node-id="E0p9iALGxbFAiVzJzPrm8G">沈川的心声，压着惊疑，只一句</em></li><li data-page-node-id="sIPRT2xQGF7D7bm5BGROcE"><i data-page-node-id="luDoMAXn6ETF7hDWZQvhQh">E01 第 2 场</i><span data-page-node-id="jFL0sdE4UhmLfBIMY9Z577">人够，料也够。是没人把这一摊子捋顺。</span><em data-page-node-id="wuxcAa59dUXO8UAdeeKROR">沈川的心声</em></li><li data-page-node-id="HfX42mcvOPYWpikU9FjH1Q"><i data-page-node-id="58AW7AFC2oNsWK3779PtET">E01 第 3 场</i><span data-page-node-id="UF6ypj1H8mbaD7m4p5CrdT">七日修船，是五件事压在一处。</span><em data-page-node-id="QXDsOBxUmweiELjY6Ho6bx">沈川的心声</em></li></ol>
+</section>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-gates" data-page-node-id="0VMgqJRwDILWsCxSAjETB0">
+  <div class="sec-h" data-page-node-id="clHxZ49w7AsxDzjDXqpTAz"><span class="no" data-page-node-id="wIleACALUAihFgLI2AZqO0">05</span><h2 data-page-node-id="P8ASmVVIrgcwsWMvMFsvXr">质量门</h2></div>
+  <ul class="gate" data-page-node-id="AU4LGDP2LDBsfHuPiwZsC8">
+  <li class="ok" data-page-node-id="9jOF3Sgw3Ph5VXeQiByXff"><span class="m" data-page-node-id="wzMB5ZAL88LAUWEruqLTAq">✓</span><span data-page-node-id="q8efpIQuqLJmS2gqek3bBx">每集时长在目标 ±15% 内</span></li>
+  <li class="ok" data-page-node-id="GNkllaSfguWjBM7U3KfbAZ"><span class="m" data-page-node-id="542lhnBwg3xS7hx4zcF1BA">✓</span><span data-page-node-id="JDXNb4WDnufGxgSQjMTQ5K">单句台词 ≤ 35 字</span></li>
+  <li class="ok" data-page-node-id="kawJApkkTwy6Om4BJLG2Cf"><span class="m" data-page-node-id="nWF9DaLgkqH8HJiXLDOyMY">✓</span><span data-page-node-id="ONsb5EP7Svpy4wQawFdhed">说话人在本场人物里，或明确标画外音 VO</span></li>
+  <li class="ok" data-page-node-id="OQ0JTXAVb6sE6dI6FI3iso"><span class="m" data-page-node-id="nRn4QXhRitb2Um1B2FWKIe">✓</span><span data-page-node-id="B9RZjSfptbmrDHdHrxYB47">每集开场钩子与结尾悬念都落在纸面</span></li>
+  <li class="ok" data-page-node-id="M06LG52B72u9GdJsgWWGfz"><span class="m" data-page-node-id="vu3stqPaToMjlmut5Sayhs">✓</span><span data-page-node-id="CGuhFeVmxnqnThdRxXmnON">钩子的具象在全集前 3 拍内兑现（hookBeat 认领）</span></li>
+  <li class="ok" data-page-node-id="m0d3QIyIpaEFDdVaNqDA3x"><span class="m" data-page-node-id="Hnx5uSxUIlrHqII9rC9eCr">✓</span><span data-page-node-id="XtzBLozTrBB1oyAOh9DweM">每场至少一个动作节拍——纯对白的场是广播剧</span></li>
+  <li class="ok" data-page-node-id="tozHaD9vBSHOCME8sj8cko"><span class="m" data-page-node-id="nWrwG0FwMK9AqAUNQhexXY">✓</span><span data-page-node-id="QhPTwgg4ZFcRiHoKDBjt6X">动作描述叙述体，台词只进 dialogue 字段</span></li>
+  <li class="ok" data-page-node-id="SckCOXThsJmyEY6EEmMf2A"><span class="m" data-page-node-id="puJs7GrTq0e62FzGOBLT78">✓</span><span data-page-node-id="lz802Dp3iRkxQLF7S7Qkl0">大纲爽点逐集认领</span></li>
+  <li class="ok" data-page-node-id="Hf5VT8rpYlehbgQywECcDA"><span class="m" data-page-node-id="FUv3pTBGnbsZ8c4dRcDU9F">✓</span><span data-page-node-id="L2zbCreVBDPEv0YP6EE2xH">角色引用对账大纲</span></li>
+  <li class="ok" data-page-node-id="EehtUnoUgI0i0U8KJCgcB0"><span class="m" data-page-node-id="h8aHuhi7HwVZ305eCbLgFy">✓</span><span data-page-node-id="Vom5ufGNFSPiecZXpPJYVR">场景／光照／道具对账美术设定</span></li>
+</ul>
+  <p class="gsum" data-page-node-id="aw4u4DJmztrXV2bUzjYdHB">全部通过</p>
+</section>
+
+<p class="foot" data-page-node-id="ZVG9LqqzO8qPTtjQidlbPs">剧本由模型依据大纲与美术设定生成，时长与引用由脚本确定性检查。分镜与首帧提示词是下一层的事，不在本报告里。</p>
+</div>
+
+<script type="application/json" id="script-data">{"source":"江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）","params":{"charsPerSecond":4.5,"actionSeconds":2.5,"tolerance":0.15,"maxLineChars":35},"episodes":[{"ep":1,"targetSeconds":180,"hook":"三十艘破损战船横在雾里，七日修不完就军法处置——沈川醒在刀口下","cliff":"账册里一笔被涂改的木料数目对不上，老工匠一看见那页脸色就变了","beatsClaimed":["穿越死局"],"scenes":[{"sceneId":"S01","lighting":"晨雾未散","characters":["C01","C06"],"props":["P01"],"flow":[{"action":"江雾未散。码头边一字排开的战船，破洞、断桨、没装好的龙骨，从雾里压出来，像一堵摇摇欲坠的墙。"},{"action":"一记军令重重拍在木案上。朱红的印子像道血，落在雾气里。"},{"speaker":"C06","line":"姓沈的，别装死。军令到了。","delivery":"沙哑的嗓子，不耐烦"},{"action":"沈川从案边直起，额角还沁着冷汗。他盯着那军令上的字，眼珠子一寸寸读过去。"},{"speaker":"C01","line":"三十艘……七日……修不完，军法处置。","delivery":"声音干涩，像在念自己的死期"},{"action":"他抬头望去。雾里三十艘船一艘艘排开，破得数不清。"},{"action":"沈川的手摸向腰间，摸到一枚铜牌，翻过来，背面刻着：船坊小吏，掌木料、工匠、进度、账目。"},{"speaker":"VO","line":"醒过来，就在这了。","delivery":"沈川的心声，压着惊疑，只一句"},{"speaker":"C06","line":"全坊的工匠都到齐了，就等你拿个章程。","delivery":"抱着胳膊，冷眼看"},{"speaker":"C01","line":"多少工匠？多少木料？船修到哪一步了？","delivery":"逼自己稳住，问得急"},{"action":"老工匠一愣，跟身边的人对了下眼，像是头回听见有人问这些。"},{"speaker":"C06","line":"问这些作甚？日子就七天，人都在这，修就是了。","delivery":"皱着眉，觉得这小吏疯了"},{"speaker":"C01","line":"不数清楚，怎么知道修不修得完。","delivery":"喉咙发紧"},{"action":"他撑着案站起来，扫过满场工匠，又扫过那三十艘船。"},{"speaker":"C01","line":"给我一份花名册。今天，人、料、活，一样一样点。","delivery":"声音不高，压住了场子"}]},{"sceneId":"S01","lighting":"晨雾未散","characters":["C01","C06"],"props":["P01"],"flow":[{"action":"沈川沿着船走，指尖从破损的船帮上擦过去。账册摊着，他边看边在泥地上划记号。"},{"speaker":"C01","line":"这艘，龙骨没上，船板缺半。","delivery":"像给自己报数"},{"action":"他在一堆半成品前蹲下，捡起两块船板对到一处——缝大得能插进一根手指。"},{"speaker":"C06","line":"哪艘坏了补哪艘，一直这样干，能装上就行。","delivery":"不以为然"},{"action":"沈川没接话，走到料堆前。原木横七竖八摞着，新料旧料混在一处，几根已经裂了。"},{"action":"他翻开账册对料。册上写着木料若干，地上数不出那个数。"},{"speaker":"C01","line":"料和账，对不上。","delivery":"低声，眉头拧起"},{"action":"不远处，几个工匠蹲在船边等活，手里的家伙搁在地上，眼睛瞟着这边。"},{"speaker":"C06","line":"小沈官，你数这些有个屁用？船又不会自己长好。","delivery":"追上来，嗓门抬高"},{"action":"沈川朝船尾一指——两个匠人正把刚装上的船板又撬下来。"},{"speaker":"C01","line":"那板不是才装上去？怎么又拆？","delivery":"指着问"},{"speaker":"C06","line":"尺寸错了，不拆重做，下水就散架。返工的活天天有。","delivery":"习以为常"},{"action":"沈川回头扫过全场：一堆人等活，一堆人返工，一堆料数不上。他闭了闭眼。"},{"speaker":"VO","line":"人够，料也够。是没人把这一摊子捋顺。","delivery":"沈川的心声"},{"action":"他走到码头边，指着那一排破损的战船，回头看向众人。"},{"speaker":"C01","line":"船坏得杂，料不齐，有人闲、有人返工——全堵死了。","delivery":"一条条点，越说越利索"},{"action":"满场安静下来。几个刚才冷眼看他的工匠，悄悄往前凑了凑。"},{"speaker":"C06","line":"……那你倒是说说，头一样先弄哪个？","delivery":"嗓子低下去，头回正经问"},{"speaker":"C01","line":"先点清多少人。连人手都数不上，谈什么修船。","delivery":"干脆"},{"action":"老工匠盯着他看了两息，转身一挥手，把散在各处的匠人都吆喝过来。"}]},{"sceneId":"S01","lighting":"昏黄油灯夜","characters":["C01","C06"],"props":["P01"],"flow":[{"action":"夜。工棚里只点一盏油灯。沈川就着灯，一页页翻那本旧账册。"},{"action":"他蘸了墨，在木板上写下五个字：船、人、料、序、账。写完，又各画一条线。"},{"speaker":"VO","line":"七日修船，是五件事压在一处。","delivery":"沈川的心声"},{"action":"油灯忽地跳了一下。沈川翻到一页，指尖停在一处被浓墨涂改过的数目上。"},{"action":"他凑近灯下。那一处写着木料三百根，可前页领的是三百五十根，中间凭空少了一截。"},{"speaker":"C01","line":"三百五十根……进账怎么成了三百？","delivery":"低声，像怕被人听见"},{"action":"他翻前翻后反复对，越对脸色越沉。那少掉的五十根，前后几页都没个说法。"},{"action":"身后突然传来一声轻响。老工匠不知何时站在工棚口，手里提着半盏灯。"},{"speaker":"C06","line":"小沈官，夜深了。那账……别看那么细。","delivery":"嗓子发紧，眼睛盯着那页账"},{"speaker":"C01","line":"这五十根木料，上哪去了？","delivery":"抬头，目光钉着他"},{"action":"老工匠脸上的血色一点点退下去。他猛地伸手，要去合那本账册。"},{"speaker":"C06","line":"别问了。这账查下去，是要出人命的。","delivery":"压低嗓子，几乎在吼"},{"action":"他的手悬在账册上方，又缩了回去。油灯的火苗被他的袖风一带，忽明忽灭。"},{"speaker":"C01","line":"谁的命？","delivery":"一字一句"},{"action":"老工匠没答，只盯着那页被涂改的账，喉咙滚了滚，转身没入棚外的黑里。"},{"action":"江风猛地灌进来，油灯压到几乎熄灭。账册停在涂改的那一页，那个被涂掉的数目像只黑洞。"}]}],"hookBeat":[1,2]}]}</script>
+<script>
+const L = {"copied":"已复制","failed":"复制失败","show":"▾ 展开全部场次","hide":"▴ 收起场次"};
+
+// 分集剧本：场次区默认最多 300px。不够高的集直接放开；超高的集点开/收起
+document.querySelectorAll('.scmore').forEach((btn) => {
+  const zone = btn.previousElementSibling;
+  if (zone.scrollHeight <= 320) {
+    zone.classList.remove('clip');
+    btn.remove();
+    return;
+  }
+  btn.addEventListener('click', () => {
+    const clipped = zone.classList.toggle('clip');
+    btn.textContent = clipped ? L.show : L.hide;
+    if (clipped) zone.closest('.ep').scrollIntoView({ block: 'nearest' });
+  });
+});
+
+// 复制按钮（单句台词 / 整个角色的台词本）
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+// 导出：报告自己带着完整的 script.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('script-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别立刻回收——Safari 会抢在下载读完之前撤掉 blob
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>
