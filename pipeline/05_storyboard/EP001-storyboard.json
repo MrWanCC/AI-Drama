@@ -38,7 +38,7 @@
               "camera": "Static Shot",
               "characters": [],
               "props": [
-                "P01"
+                "P02"
               ],
               "frame": "a weathered military order bearing a large vermilion seal slapped hard onto a wooden desk, the red seal stain vivid against aged paper, wisps of fog curling over the wood, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
               "postOverlay": [
@@ -58,7 +58,7 @@
                 "C01"
               ],
               "props": [
-                "P01"
+                "P02"
               ],
               "frame": "an old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
             },
@@ -74,7 +74,7 @@
                 "C01"
               ],
               "props": [
-                "P01"
+                "P02"
               ],
               "frame": "a young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
             },
@@ -89,7 +89,9 @@
               "characters": [
                 "C01"
               ],
-              "props": [],
+              "props": [
+                "P02"
+              ],
               "frame": "a young clerk reading a weathered military order aloud, his voice dry as if pronouncing his own death sentence, the sealed paper held in both hands, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
               "postOverlay": [
                 "三十艘 · 七日 · 军法处置"
@@ -128,7 +130,7 @@
                 "C01"
               ],
               "props": [
-                "P01"
+                "P03"
               ],
               "frame": "a hand touching a weathered bronze identity token at the waist and turning it over, worn engraved marks on the bronze catching the cold light, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
               "postOverlay": [
@@ -147,7 +149,7 @@
                 "C01"
               ],
               "props": [
-                "P01"
+                "P03"
               ],
               "frame": "a young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
             },
@@ -240,9 +242,7 @@
               "characters": [
                 "C01"
               ],
-              "props": [
-                "P01"
-              ],
+              "props": [],
               "frame": "a young clerk pushing up from the desk, sweeping his eyes over blurred silhouettes of gathered craftsmen and the row of broken warships in the far fog, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
             }
           ],
@@ -617,9 +617,7 @@
               "characters": [
                 "C01"
               ],
-              "props": [
-                "P01"
-              ],
+              "props": [],
               "frame": "a hand dipping a brush in ink and writing on a wooden board, then drawing a line beneath each mark, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
               "postOverlay": [
                 "船 · 人 · 料 · 序 · 账"
@@ -695,7 +693,9 @@
               "characters": [
                 "C01"
               ],
-              "props": [],
+              "props": [
+                "P01"
+              ],
               "frame": "a young clerk's face tightening as he reads the crossed-out entry against a different count on the prior page, close-up,  semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
             },
             {
@@ -739,7 +739,9 @@
               "characters": [
                 "C06"
               ],
-              "props": [],
+              "props": [
+                "P01"
+              ],
               "frame": "an old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
             }
           ],
@@ -791,7 +793,9 @@
               "characters": [
                 "C06"
               ],
-              "props": [],
+              "props": [
+                "P01"
+              ],
               "frame": "an old craftsman hissing in a near-roar that this account will cost a life if it is followed, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
             },
             {

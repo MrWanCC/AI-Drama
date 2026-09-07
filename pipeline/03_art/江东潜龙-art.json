@@ -48,8 +48,24 @@
         ]
       },
       "usage": {
-        "episodes": [1, 2, 3, 4, 5, 16, 17],
-        "beats": ["穿越死局", "混乱被看见", "示范见效", "透明账目反将一军", "三十一艘翻盘", "软刀子困局", "供应链自救"]
+        "episodes": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          16,
+          17
+        ],
+        "beats": [
+          "穿越死局",
+          "混乱被看见",
+          "示范见效",
+          "透明账目反将一军",
+          "三十一艘翻盘",
+          "软刀子困局",
+          "供应链自救"
+        ]
       }
     },
     {
@@ -98,8 +114,22 @@
         ]
       },
       "usage": {
-        "episodes": [2, 3, 4, 15, 16, 18],
-        "beats": ["混乱被看见", "示范见效", "透明账目反将一军", "名动江东", "软刀子困局", "政治小胜"]
+        "episodes": [
+          2,
+          3,
+          4,
+          15,
+          16,
+          18
+        ],
+        "beats": [
+          "混乱被看见",
+          "示范见效",
+          "透明账目反将一军",
+          "名动江东",
+          "软刀子困局",
+          "政治小胜"
+        ]
       }
     },
     {
@@ -148,8 +178,29 @@
         ]
       },
       "usage": {
-        "episodes": [5, 6, 7, 8, 10, 22, 23, 24, 26, 27],
-        "beats": ["三十一艘翻盘", "被顶级智力碾压", "另辟蹊径答问", "百人调度权", "历史记忆同步", "数据判断", "历史偏移", "国策层面认可", "互补成形"]
+        "episodes": [
+          5,
+          6,
+          7,
+          8,
+          10,
+          22,
+          23,
+          24,
+          26,
+          27
+        ],
+        "beats": [
+          "三十一艘翻盘",
+          "被顶级智力碾压",
+          "另辟蹊径答问",
+          "百人调度权",
+          "历史记忆同步",
+          "数据判断",
+          "历史偏移",
+          "国策层面认可",
+          "互补成形"
+        ]
       }
     },
     {
@@ -192,8 +243,14 @@
         ]
       },
       "usage": {
-        "episodes": [2, 5],
-        "beats": ["混乱被看见", "三十一艘翻盘"]
+        "episodes": [
+          2,
+          5
+        ],
+        "beats": [
+          "混乱被看见",
+          "三十一艘翻盘"
+        ]
       }
     }
   ],
@@ -227,8 +284,13 @@
           "prompt": "the ledger lying open, yellowed pages of handwritten vertical Chinese characters, one entry visibly crossed out with thick ink, the mismatched numbers catching the light"
         }
       ],
-      "relatedScenes": ["S01", "S02"],
-      "carriedBy": ["沈川"],
+      "relatedScenes": [
+        "S01",
+        "S02"
+      ],
+      "carriedBy": [
+        "沈川"
+      ],
       "image": {
         "prompt": "A worn hand-bound account ledger from the late Eastern Han Dynasty, at handheld scale, yellowed hemp paper pages with vertical handwritten Chinese characters, one entry crossed out with thick ink, bound with rough hemp cord and a small wooden tag, isolated on a pure white background, no people, no hands",
         "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature",
@@ -242,12 +304,132 @@
         ]
       },
       "usage": {
-        "episodes": [1, 2, 4],
-        "beats": ["穿越死局", "混乱被看见", "透明账目反将一军"]
+        "episodes": [
+          1,
+          2,
+          4
+        ],
+        "beats": [
+          "穿越死局",
+          "混乱被看见",
+          "透明账目反将一军"
+        ]
       }
     },
     {
       "id": "P02",
+      "name": "东吴军令",
+      "scale": "手持级",
+      "summary": "压给沈川的一纸军法处置令：三十艘战船、七日死线、修不完军法处置。朱红官印像道血，是穿越后砸下来的第一道死局压力。军令正文不要求 AI 绘制，只生成带朱红大印的泛黄公文纸载体，具体字走后期叠加。",
+      "anchors": [
+        {
+          "name": "朱红官印",
+          "desc": "军令上盖着一方朱红官印，印色鲜红如血，是权威与死线的视觉核心"
+        },
+        {
+          "name": "泛黄公文纸",
+          "desc": "东汉麻纸公文，泛黄发脆，竖排无正文的留白版面，右下角有一处折角"
+        },
+        {
+          "name": "卷起的纸边",
+          "desc": "纸面有自然卷起的边与折痕，透着刚被重重拍在案上的力度"
+        }
+      ],
+      "states": [
+        {
+          "state": "平摊案上",
+          "prompt": "the military order lying flat on a wooden desk, the vermilion official seal vivid against the aged yellow paper"
+        },
+        {
+          "state": "被人持握",
+          "prompt": "the military order held in both hands, the red seal catching the light, the aged paper edge curling"
+        }
+      ],
+      "relatedScenes": [
+        "S01"
+      ],
+      "carriedBy": [
+        "沈川"
+      ],
+      "image": {
+        "prompt": "A weathered military order document from the late Eastern Han Dynasty Three Kingdoms era, at handheld scale, aged yellow hemp paper with a large vivid vermilion official seal, blank vertical writing area with no legible text, curled and creased paper edges, isolated on a pure white background, no people, no hands",
+        "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature",
+        "sheet": "Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the military order lying flat, three-quarter hero view at handheld scale — the canonical look of this prop. RIGHT COLUMN, stacked small panels: close-up detail studies of the large vermilion official seal and the curled aged paper edge. BOTTOM ROW beneath the main zone: the order held at an angle showing the blank vertical writing area, a straight-on view, and a macro close-up of the red seal stamp. Every panel shows the SAME document — same wear, same seal, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows",
+        "tags": [
+          "prop sheet",
+          "semi-realistic",
+          "painterly",
+          "military order",
+          "white background"
+        ]
+      },
+      "usage": {
+        "episodes": [
+          1
+        ],
+        "beats": [
+          "穿越死局"
+        ]
+      }
+    },
+    {
+      "id": "P03",
+      "name": "船坊小吏铜牌",
+      "scale": "手持级",
+      "summary": "沈川随身的一枚铜牌，背面刻着'船坊小吏，掌木料、工匠、进度、账目'，是他穿越后拼出自己身份的钥匙。铜牌文字不要求 AI 绘制，只生成带磨损刻痕的旧铜牌载体，具体字走后期叠加。",
+      "anchors": [
+        {
+          "name": "磨损的铜面",
+          "desc": "铜牌表面斑驳，边角磨得发亮，透着常年佩在腰间的旧意"
+        },
+        {
+          "name": "刻痕凹槽",
+          "desc": "铜牌背面有錾刻的凹槽痕迹，字迹走向但无可读正文"
+        },
+        {
+          "name": "系绳小孔",
+          "desc": "铜牌一角有小孔，穿过一段磨旧的麻绳"
+        }
+      ],
+      "states": [
+        {
+          "state": "正面",
+          "prompt": "the bronze identity token showing its worn front face, the edges bright from years of wear"
+        },
+        {
+          "state": "翻到背面",
+          "prompt": "the bronze identity token turned over, showing faint chiselled groove marks on the back, a small hole threaded with worn hemp cord"
+        }
+      ],
+      "relatedScenes": [
+        "S01"
+      ],
+      "carriedBy": [
+        "沈川"
+      ],
+      "image": {
+        "prompt": "A weathered bronze identity token from the late Eastern Han Dynasty Three Kingdoms era, at handheld scale, a small worn bronze plate with bright worn edges, faint chiselled groove marks on the back with no legible text, a small hole threaded with worn hemp cord, isolated on a pure white background, no people, no hands",
+        "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature",
+        "sheet": "Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the bronze token showing its worn front face, three-quarter hero view at handheld scale — the canonical look of this prop. RIGHT COLUMN, stacked small panels: close-up detail studies of the bright worn edges and the small cord hole. BOTTOM ROW beneath the main zone: the token turned over showing the faint chiselled groove marks, a straight-on side profile, and a macro close-up of the worn edge. Every panel shows the SAME token — same wear, same patina, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows",
+        "tags": [
+          "prop sheet",
+          "semi-realistic",
+          "painterly",
+          "identity token",
+          "white background"
+        ]
+      },
+      "usage": {
+        "episodes": [
+          1
+        ],
+        "beats": [
+          "穿越死局"
+        ]
+      }
+    },
+    {
+      "id": "P04",
       "name": "墨斗与定尺",
       "scale": "手持级",
       "summary": "沈川推行'标准化'的实体工具。第3、4集他靠墨斗弹线、定尺卡尺寸来统一零件标准、破除返工——这是'现代工程思维'在古代船坊第一次落地的道具化身，也是老工匠们从将信将疑到服气的见证物。",
@@ -275,8 +457,12 @@
           "prompt": "the ink line pulled taut out of the ink box, the black-stained line stretched straight, the marked ruler laid across a timber surface"
         }
       ],
-      "relatedScenes": ["S01"],
-      "carriedBy": ["沈川"],
+      "relatedScenes": [
+        "S01"
+      ],
+      "carriedBy": [
+        "沈川"
+      ],
       "image": {
         "prompt": "A traditional carpenter's ink line tool and a marked wooden ruler from the late Eastern Han Dynasty, at handheld scale, a wooden ink box with a wound string reel and an ink-soaked line, a wooden measuring ruler with worn bright edges and even graduation marks, isolated on a pure white background, no people, no hands",
         "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature",
@@ -290,8 +476,14 @@
         ]
       },
       "usage": {
-        "episodes": [3, 4],
-        "beats": ["示范见效", "透明账目反将一军"]
+        "episodes": [
+          3,
+          4
+        ],
+        "beats": [
+          "示范见效",
+          "透明账目反将一军"
+        ]
       }
     }
   ]

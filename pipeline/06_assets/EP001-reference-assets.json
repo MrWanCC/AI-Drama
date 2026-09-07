@@ -1,0 +1,158 @@
+{
+  "source": "江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）",
+  "style": "semi-realistic painterly",
+  "purpose": "EP001 基础资产生产清单 —— 第一批必须生成的视觉参考图",
+  "note": "当前只建立生产规范和清单，不生成图片。文字类资产只生成无可读正文的视觉载体，汉字/数字走 postOverlay。",
+  "groups": [
+    {
+      "id": "C01",
+      "name": "沈川",
+      "primaryRef": "C01_bust",
+      "outputFile": "refs/characters/C01_shenchuan.png",
+      "items": [
+        {
+          "name": "正面半身基准图",
+          "id": "C01_bust",
+          "type": "character",
+          "prompt": "A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing., frontal bust portrait, calm observant expression, direct eye contact with a hint of caution, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        },
+        {
+          "name": "全身正面",
+          "id": "C01_front",
+          "type": "character",
+          "prompt": "A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing., full-body frontal view standing, faded coarse linen short robe with sleeves rolled up, thin cloth sash at the waist, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        },
+        {
+          "name": "侧面",
+          "id": "C01_side",
+          "type": "character",
+          "prompt": "A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing., full-body side profile view, hands at sides, the rolled sleeves and sash visible, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        },
+        {
+          "name": "背面",
+          "id": "C01_back",
+          "type": "character",
+          "prompt": "A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing., full-body back view, the faded robe and loosely tied hair seen from behind, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        },
+        {
+          "name": "表情参考",
+          "id": "C01_expressions",
+          "type": "character",
+          "prompt": "A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing., expression sheet, five expressions: neutral observing, tense worried with cold sweat, focused calculating, grim determined, steady commanding, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        },
+        {
+          "name": "服装细节",
+          "id": "C01_costume",
+          "type": "character",
+          "prompt": "close-up detail studies of A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing., the rolled-up sleeves, the cloth sash knot, measuring calluses on the fingers, a small ledger scroll tucked at the waist, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        }
+      ]
+    },
+    {
+      "id": "C06",
+      "name": "老工匠",
+      "primaryRef": "C06_bust",
+      "outputFile": "refs/characters/C06_laogongjiang.png",
+      "items": [
+        {
+          "name": "半身主图",
+          "id": "C06_bust",
+          "type": "character",
+          "prompt": "A weathered elderly Chinese shipwright, in his fifties, Eastern Han Dynasty Three Kingdoms era. Dark rough skin, hands full of calluses and old scars from decades of axe and saw work, slightly stooped back. A stubborn set to his jaw, a loud forthright manner. Wearing a wood-dust-covered short robe with a carpenter's ink line and ruler tucked at the waist., bust portrait, stubborn set to the jaw, loud forthright manner, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        },
+        {
+          "name": "全身主图",
+          "id": "C06_full",
+          "type": "character",
+          "prompt": "A weathered elderly Chinese shipwright, in his fifties, Eastern Han Dynasty Three Kingdoms era. Dark rough skin, hands full of calluses and old scars from decades of axe and saw work, slightly stooped back. A stubborn set to his jaw, a loud forthright manner. Wearing a wood-dust-covered short robe with a carpenter's ink line and ruler tucked at the waist., full-body frontal view standing, slightly stooped back, wood-dust-covered short robe, carpenter's ink line and ruler tucked at the waist, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        },
+        {
+          "name": "侧面参考",
+          "id": "C06_side",
+          "type": "character",
+          "prompt": "A weathered elderly Chinese shipwright, in his fifties, Eastern Han Dynasty Three Kingdoms era. Dark rough skin, hands full of calluses and old scars from decades of axe and saw work, slightly stooped back. A stubborn set to his jaw, a loud forthright manner. Wearing a wood-dust-covered short robe with a carpenter's ink line and ruler tucked at the waist., full-body side profile view, the stooped shoulders and calloused hands visible, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background"
+        }
+      ]
+    },
+    {
+      "id": "S01",
+      "name": "柴桑船坊",
+      "primaryRef": "S01_morning",
+      "outputFile": "refs/scenes/S01_chaisang_shipyard.png",
+      "items": [
+        {
+          "name": "晨雾主视角",
+          "id": "S01_morning",
+          "type": "scene",
+          "prompt": "A riverside shipyard in Chaisang during the late Eastern Han Dynasty Three Kingdoms era, rows of half-repaired wooden warships along a wooden dock, thatched work-shed roofs with light shafts piercing through holes, scattered timber and unfinished ship parts everywhere, a wooden pier extending into the river, empty scene with no people, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature"
+        },
+        {
+          "name": "油灯夜版本",
+          "id": "S01_night",
+          "type": "scene",
+          "prompt": "A riverside shipyard in Chaisang during the late Eastern Han Dynasty Three Kingdoms era, rows of half-repaired wooden warships along a wooden dock, thatched work-shed roofs with light shafts piercing through holes, scattered timber and unfinished ship parts everywhere, a wooden pier extending into the river, empty scene with no people, night interior lit by a single oil lamp, warm amber pool of light with deep shadows beyond, same spatial layout as the morning view, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature",
+          "constraint": "必须与晨雾主视角保持同一空间结构，只是换光照，不允许像换了一个船坊"
+        }
+      ]
+    },
+    {
+      "id": "P01",
+      "name": "修船账册",
+      "primaryRef": "P01_ref",
+      "outputFile": "refs/props/P01_shipyard_ledger.png",
+      "items": [
+        {
+          "name": "修船账册",
+          "id": "P01_ref",
+          "type": "prop",
+          "prompt": "A worn hand-bound account ledger from the late Eastern Han Dynasty, at handheld scale, yellowed hemp paper pages with vertical handwritten Chinese characters, one entry crossed out with thick ink, bound with rough hemp cord and a small wooden tag, isolated on a pure white background, no people, no hands, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature",
+          "constraint": "只生成无可读正文的视觉载体，具体汉字走 postOverlay"
+        }
+      ]
+    },
+    {
+      "id": "P02",
+      "name": "东吴军令",
+      "primaryRef": "P02_ref",
+      "outputFile": "refs/props/P02_military_order.png",
+      "items": [
+        {
+          "name": "东吴军令",
+          "id": "P02_ref",
+          "type": "prop",
+          "prompt": "A weathered military order document from the late Eastern Han Dynasty Three Kingdoms era, at handheld scale, aged yellow hemp paper with a large vivid vermilion official seal, blank vertical writing area with no legible text, curled and creased paper edges, isolated on a pure white background, no people, no hands, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature",
+          "constraint": "只生成无可读正文的视觉载体，具体汉字走 postOverlay"
+        }
+      ]
+    },
+    {
+      "id": "P03",
+      "name": "船坊小吏铜牌",
+      "primaryRef": "P03_ref",
+      "outputFile": "refs/props/P03_identity_token.png",
+      "items": [
+        {
+          "name": "船坊小吏铜牌",
+          "id": "P03_ref",
+          "type": "prop",
+          "prompt": "A weathered bronze identity token from the late Eastern Han Dynasty Three Kingdoms era, at handheld scale, a small worn bronze plate with bright worn edges, faint chiselled groove marks on the back with no legible text, a small hole threaded with worn hemp cord, isolated on a pure white background, no people, no hands, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting",
+          "negativePrompt": "people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature",
+          "constraint": "只生成无可读正文的视觉载体，具体汉字走 postOverlay"
+        }
+      ]
+    }
+  ]
+}
