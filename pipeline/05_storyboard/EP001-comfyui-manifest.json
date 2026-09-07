@@ -1,0 +1,1119 @@
+{
+  "source": "江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）",
+  "style": "semi-realistic painterly",
+  "generatedFor": "ComfyUI local production",
+  "note": "H3 Prompt 保留为原始生产资料（novel-storyboard），本清单为本地 ComfyUI 图生视频生产清单",
+  "referenceImageConvention": "角色参考图按 characters 自动列出；场景引用对应场景基准图（夜戏用 S01_night）",
+  "shots": [
+    {
+      "shotId": "E01-S01",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [],
+      "props": [],
+      "shotSize": "extreme-wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall, extreme wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S02",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a weathered military order bearing a large vermilion seal slapped hard onto a wooden desk, the red seal stain vivid against aged paper, wisps of fog curling over the wood, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [
+        "军令"
+      ],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S03",
+      "seconds": 2.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06",
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "medium"
+    },
+    {
+      "shotId": "E01-S04",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S05",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk reading a weathered military order aloud, his voice dry as if pronouncing his own death sentence, the sealed paper held in both hands, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [
+        "三十艘 · 七日 · 军法处置"
+      ],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S06",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S07",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a hand touching a weathered bronze identity token at the waist and turning it over, worn engraved marks on the bronze catching the cold light, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [
+        "船坊小吏"
+      ],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S08",
+      "seconds": 2.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S09",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S10",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01",
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Push In",
+      "firstFramePrompt": "a young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "slow push in toward the subject; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "medium"
+    },
+    {
+      "shotId": "E01-S11",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "the old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S12",
+      "seconds": 4.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "the old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S13",
+      "seconds": 3.3,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk answering back with a tight throat, refusing to be waved off, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S14",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk pushing up from the desk, sweeping his eyes over blurred silhouettes of gathered craftsmen and the row of broken warships in the far fog, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "high"
+    },
+    {
+      "shotId": "E01-S15",
+      "seconds": 5.1,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Push In",
+      "firstFramePrompt": "a young clerk standing and addressing the gathered craftsmen, his voice low but holding the yard, the craftsmen a soft out-of-focus crowd behind him, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "slow push in toward the subject; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "high"
+    },
+    {
+      "shotId": "E01-S16",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "wide",
+      "camera": "Tracking Shot",
+      "firstFramePrompt": "a young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "tracking follow as the subject walks; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S17",
+      "seconds": 2.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk muttering a tally to himself, eyes still on the broken hull, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S18",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S19",
+      "seconds": 4.4,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S20",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Pan Left",
+      "firstFramePrompt": "a young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "gentle pan left; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S21",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk's fingers flipping a weathered ledger open, counting the timber against the marked entries, the yellowed pages catching the cold light, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S22",
+      "seconds": 2.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk's brow knotting as the counted timber and the ledger entries refuse to match in the cold light, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S23",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a few craftsmen squatting idle by a hull in the distance, tools resting on the ground, blurred and out of focus, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S24",
+      "seconds": 4.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S25",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Pan Right",
+      "firstFramePrompt": "a young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "gentle pan right; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S26",
+      "seconds": 3.1,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk asking why the plank is being taken down again, his finger still leveled at the stern, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S27",
+      "seconds": 5.3,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S28",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk turning to scan the whole yard, blurred craftsmen idle in the far ground, some redoing finished work, the timber that does not add up, his eyes closing once, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "high"
+    },
+    {
+      "shotId": "E01-S29",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk with lips closed in silent inner thought, the realization settling over his face, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S30",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk walking to the dock edge and pointing back at the row of broken warships, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S31",
+      "seconds": 5.3,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Push In",
+      "firstFramePrompt": "a young clerk at the dock edge pointing back at the row of broken warships, laying out the flaws one by one to an out-of-focus crowd of craftsmen seen from behind, shoulders and backs, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "slow push in toward the subject; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "high"
+    },
+    {
+      "shotId": "E01-S32",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "the yard falling still, a few craftsmen in the foreground as blurred silhouettes and turned backs shuffling a half step closer, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "high"
+    },
+    {
+      "shotId": "E01-S33",
+      "seconds": 3.8,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S34",
+      "seconds": 4.7,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk answering flatly to count the hands first, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S35",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "the old craftsman staring two beats, then turning to wave the scattered craftsmen over, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S36",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S37",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a hand dipping a brush in ink and writing on a wooden board, then drawing a line beneath each mark, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [
+        "船 · 人 · 料 · 序 · 账"
+      ],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S38",
+      "seconds": 3.1,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk with lips closed in silent inner thought, the fresh ink marks on the wooden board catching the lamp glow, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S39",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a finger stopping on a page where an entry has been smeared over with thick ink, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [
+        "三百"
+      ],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S40",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk leaning into the lamp, a thickly crossed-out entry on the ledger page sitting against a different count on the prior page, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [
+        "三百 · 三百五十"
+      ],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S41",
+      "seconds": 3.6,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "camera": "Push In",
+      "firstFramePrompt": "a young clerk's face tightening as he reads the crossed-out entry against a different count on the prior page, close-up,  semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "slow push in toward the subject; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S42",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "hands flipping forward and back through the ledger, the crossed-out entry nowhere reconciled on any page, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S43",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S44",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S45",
+      "seconds": 2.7,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01",
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk looking up and pinning the old man with a question, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "medium"
+    },
+    {
+      "shotId": "E01-S46",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C06"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "camera": "Static Shot",
+      "firstFramePrompt": "the old craftsman's face draining of color as he lurches to close the ledger, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S47",
+      "seconds": 3.8,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "camera": "Push In",
+      "firstFramePrompt": "an old craftsman hissing in a near-roar that this account will cost a life if it is followed, medium shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "slow push in toward the subject; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S48",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C06"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S49",
+      "seconds": 2.0,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C01",
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "camera": "Static Shot",
+      "firstFramePrompt": "a young clerk's lips moving in a single low word, his eyes fixed on the old craftsman, close-up, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C01_shenchuan.png",
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "medium"
+    },
+    {
+      "shotId": "E01-S50",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "an old craftsman turning and vanishing into the dark outside the workshop, his throat working, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/characters/C06_laogongjiang.png",
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    },
+    {
+      "shotId": "E01-S51",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "characters": [],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "wide",
+      "camera": "Static Shot",
+      "firstFramePrompt": "the wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole, wide shot, semi-realistic painterly cinematic illustration, Three Kingdoms late Eastern Han aesthetic, cinematic composition, painterly rendering, grounded anatomy, weathered realistic materials, visible fabric and wood texture, dramatic but natural lighting, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette",
+      "negativePrompt": "plastic CG look, photorealistic, 3D game render, waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, extra fingers, malformed hands, text, watermark, signature, busy patterned background, warped perspective, melted geometry, oversaturated colours",
+      "motionPrompt": "no camera movement, static hold; the subject performs the action described in the shot",
+      "referenceImages": [
+        "refs/scenes/S01_chaisang_shipyard_night.png"
+      ],
+      "postOverlayText": [],
+      "difficulty": "low"
+    }
+  ]
+}
