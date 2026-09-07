@@ -1,0 +1,12 @@
+# WorkBuddy 项目本地数据（不提交到远程）
+.workbuddy/
+
+# OS 文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# Python
+__pycache__/
+*.pyc

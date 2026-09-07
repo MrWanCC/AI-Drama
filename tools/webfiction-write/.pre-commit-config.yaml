@@ -1,0 +1,16 @@
+# pre-commit framework 配置
+# 安装 pre-commit: pip install pre-commit
+# 启用: pre-commit install
+# 手动运行: pre-commit run --all-files
+
+repos:
+  - repo: local
+    hooks:
+      - id: check-encoding
+        name: 检查文件编码（UTF-8 无 BOM，无乱码）
+        entry: python scripts/check_encoding.py
+        language: system
+        # check_encoding.py 接受一个目录并递归检查；不要只传入 pre-commit 命中的第一个文件。
+        pass_filenames: false
+        files: \.(md|py|json|ya?ml)$
+        exclude: '^_damaged_backup/'
