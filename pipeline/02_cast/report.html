@@ -1,0 +1,1578 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季） · 角色设定集</title>
+<style>
+/* 冷灰印张 + 铁锈红印记。红色只用在与原文有关的地方和当前选中态。 */
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-soft:#8a332412;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,"Iowan Old Style",serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --top:60px; --side-w:400px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);
+  -webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{margin:0;font-weight:400}
+button{font-family:inherit}
+
+/* ---------- 顶栏 ---------- */
+.top{position:sticky;top:0;z-index:20;height:var(--top);display:flex;align-items:center;gap:24px;
+  padding:0 20px;background:var(--panel);border-bottom:1px solid var(--rule-2)}
+.brand{display:flex;align-items:baseline;gap:10px;flex:none}
+.brand h1{font:400 22px/1 var(--serif);letter-spacing:.04em}
+.brand em{font:italic 12px/1 var(--serif);color:var(--ink-3)}
+.search{flex:1;max-width:720px;position:relative}
+.search input{width:100%;height:34px;padding:0 12px 0 32px;border:1px solid var(--rule-2);
+  border-radius:3px;background:var(--paper);color:var(--ink);font:14px/1 var(--sans);outline:none}
+.search input:focus{border-color:var(--seal)}
+.search svg{position:absolute;left:10px;top:9px;width:14px;height:14px;stroke:var(--ink-3);fill:none}
+.topmeta{margin-left:auto;font-size:12px;color:var(--ink-3);display:flex;align-items:center;
+  gap:10px;flex:none}
+.topmeta i{font-style:normal;color:var(--rule-2)}
+/* 导出：下载的就是内嵌的那份 cast.json，编辑完能直接喂回 render */
+.expo{margin-left:4px;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:6px 10px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+/* ---------- 骨架 ---------- */
+.shell{display:grid;grid-template-columns:var(--side-w) minmax(0,1fr);align-items:start}
+@media(max-width:1080px){:root{--side-w:100%}.shell{grid-template-columns:1fr}}
+
+/* ---------- 左栏 ---------- */
+.side{position:sticky;top:var(--top);height:calc(100vh - var(--top));overflow-y:auto;
+  background:var(--side);border-right:1px solid var(--rule-2)}
+@media(max-width:1080px){.side{position:static;height:auto}}
+.synopsis{padding:18px 20px;border-bottom:1px solid var(--rule)}
+.lbl{font:500 10px/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--ink-3)}
+.synopsis p{margin:10px 0 0;font:400 14px/1.95 var(--serif)}
+/* 摘要默认三行，底部渐隐——左栏第一屏要留给角色列表。点一下展开，之后不再收起 */
+.syn-clamp{cursor:pointer}
+.syn-clamp p{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+  -webkit-mask-image:linear-gradient(180deg,#000 58%,transparent);
+  mask-image:linear-gradient(180deg,#000 58%,transparent)}
+.syn-more{display:none;margin-top:7px;padding:0;background:none;border:0;cursor:pointer;
+  font:500 11px/1 var(--sans);letter-spacing:.06em;color:var(--seal)}
+.syn-clamp .syn-more{display:block}
+.syn-more:hover{text-decoration:underline}
+.syn-more:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.roster-h{padding:14px 20px 8px}
+.roster{display:block}
+.rost{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;width:100%;text-align:left;
+  padding:12px 20px;background:none;border:0;border-bottom:1px solid var(--rule);
+  border-left:2px solid transparent;cursor:pointer;color:inherit}
+.rost:hover{background:#00000006}
+.rost.on{background:var(--panel);border-left-color:var(--seal)}
+.rost:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+/* 缩略图 = 设定图的左栏切片。设定图固定 16:9、左栏占约 34%，
+   所以把整图按 1/0.34 ≈ 294% 放大再左上对齐，裁出来正好是半身像。
+   比 <img> + object-position 可控：不依赖浏览器怎么 cover。 */
+.rost-thumb{display:block;width:76px;height:76px;border:1px solid var(--rule-2);border-radius:6px;
+  background:#fff no-repeat left top;background-size:294% auto}
+.rost-body{min-width:0}
+.rost-top{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap}
+.rost-n{font:500 10px/1 var(--mono);color:var(--ink-3);font-style:normal}
+.rost-name{font:400 17px/1.2 var(--serif);letter-spacing:.03em}
+.rost-meta{font-size:11px;color:var(--ink-3)}
+.rost-one{display:block;margin-top:5px;font-size:12.5px;line-height:1.65;color:var(--ink-2)}
+.rost-chips{display:flex;flex-wrap:wrap;gap:4px;margin-top:7px}
+.rost-chips i{font-style:normal;font-size:11px;padding:1px 6px;border:1px solid var(--rule-2);
+  border-radius:2px;color:var(--ink-2);background:var(--paper)}
+.side-foot{padding:14px 20px 28px;font-size:11px;line-height:1.7;color:var(--ink-3)}
+.badge{font-size:11px;padding:1px 7px;border:1px solid var(--rule-2);border-radius:2px;color:var(--ink-2)}
+.rost.on .badge,.char-h .badge{border-color:var(--seal);color:var(--seal)}
+
+/* ---------- 主区 ---------- */
+.main{padding:26px 28px 72px;min-width:0;max-width:1500px}
+.char{display:none}
+.char.on{display:block}
+.char-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:1px solid var(--rule-2)}
+.char-n{font:500 13px/1 var(--mono);color:var(--seal)}
+.char-h h2{font:400 clamp(24px,2.4vw,30px)/1.1 var(--serif);letter-spacing:.05em}
+.aka{font-size:12px;color:var(--ink-3)}
+.char-one{margin-left:auto;font:400 14px/1.7 var(--serif);color:var(--ink-2);text-align:right;max-width:44ch}
+@media(max-width:900px){.char-one{margin-left:0;text-align:left}}
+
+.upper{display:grid;grid-template-columns:minmax(0,1fr) 500px;gap:26px;align-items:start;margin-top:20px}
+@media(max-width:1240px){.upper{grid-template-columns:1fr}}
+
+/* 设定图是白底印张 */
+.plate-wrap{position:relative;margin:0}
+.plate{display:block;width:100%;padding:0;background:#fff;border:1px solid var(--rule-2);
+  border-radius:2px;overflow:hidden;cursor:zoom-in}
+.plate img{display:block;width:100%;height:auto}
+.plate:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+/* 右下角浮在图上，hover 才明显——别挡住画面 */
+.copy-img{position:absolute;right:10px;bottom:10px;font:500 11px/1 var(--sans);color:var(--ink-2);
+  background:var(--paper);border:1px solid var(--rule-2);border-radius:3px;padding:6px 10px;
+  cursor:pointer;opacity:.55;transition:.15s}
+.plate-wrap:hover .copy-img{opacity:1}
+.copy-img:hover{border-color:var(--seal);color:var(--seal)}
+.copy-img:focus-visible{opacity:1;outline:2px solid var(--seal);outline-offset:2px}
+.copy-img[data-done]{border-color:var(--seal);color:var(--seal);opacity:1}
+
+/* 弹层 */
+.lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;
+  background:#191d21e6;padding:32px;cursor:zoom-out}
+.lightbox.on{display:grid}
+.lightbox img{max-width:100%;max-height:100%;background:#fff;border-radius:2px;
+  box-shadow:0 8px 40px #0006}
+.lightbox-x{position:absolute;top:18px;right:22px;font:500 13px/1 var(--sans);color:#fff;
+  background:none;border:1px solid #fff6;border-radius:3px;padding:8px 12px;cursor:pointer}
+.lightbox-x:hover{border-color:#fff}
+.plate-empty{display:grid;place-items:center;min-height:220px;text-align:center;
+  border:1px dashed var(--rule-2);background:var(--panel);color:var(--ink-3);font-size:13px}
+.plate-empty em{font-style:normal;font-size:12px;opacity:.8}
+.plate-c{margin:7px 0 0;font-size:11px;letter-spacing:.1em;color:var(--ink-3)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;margin-top:24px}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+.blk{margin-bottom:20px}
+.blk h3{font:500 11px/1 var(--sans);letter-spacing:.2em;color:var(--seal);margin-bottom:7px}
+.blk p{margin:0;font-size:13.5px;line-height:1.85}
+
+/* 原文：衬线体，铁锈红边栏。这里是书自己在说话 */
+.source .quotes{display:grid;grid-template-columns:1fr 1fr;gap:10px 30px}
+@media(max-width:700px){.source .quotes{grid-template-columns:1fr}}
+.source blockquote{margin:0;padding-left:13px;border-left:2px solid var(--seal);
+  font:400 13.5px/1.85 var(--serif)}
+
+/* ---------- 右侧信息卡 ---------- */
+.side-cards{display:flex;flex-direction:column;gap:14px}
+.card{border:1px solid var(--rule);border-radius:2px;background:var(--panel);padding:14px 16px}
+.card h4{font:500 11px/1 var(--sans);letter-spacing:.2em;color:var(--ink-3);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px}
+.tag-en{font:500 9px/1 var(--mono);letter-spacing:.22em;color:var(--rule-2);font-style:normal}
+.card dl{margin:0}
+.kv{display:flex;gap:12px;padding:2.5px 0;font-size:13px}
+.kv dt{color:var(--ink-3);flex:none;width:46px}
+.kv dd{margin:0;min-width:0}
+.rel-n{color:var(--ink)!important;width:auto!important;min-width:46px}
+.style{margin:0;font-size:12.5px;line-height:1.7;color:var(--ink-2)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin:10px 0 0;padding:0;list-style:none}
+.tags li{font:400 11px/1.5 var(--mono);color:var(--ink-2);border:1px solid var(--rule-2);
+  background:var(--paper);border-radius:2px;padding:1px 6px}
+
+/* ---------- 提示词 ---------- */
+.prompts{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:28px}
+@media(max-width:900px){.prompts{grid-template-columns:1fr}}
+.pgroup{border:1px solid var(--rule);border-radius:2px;background:var(--panel);padding:6px 14px 10px}
+.pr{border-bottom:1px solid var(--rule)}
+.pgroup .pr:last-of-type{border-bottom:0}
+.pr summary{display:flex;align-items:center;gap:10px;padding:11px 0;cursor:pointer;list-style:none;
+  font:500 12px/1 var(--sans);letter-spacing:.04em}
+.pr summary::-webkit-details-marker{display:none}
+.pr summary::before{content:"▸";color:var(--seal);font-size:11px;transition:transform .15s}
+.pr[open] summary::before{transform:rotate(90deg)}
+.pr summary span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pr p{margin:0 0 12px;padding:11px 12px;background:var(--paper);border:1px solid var(--rule);
+  border-radius:2px;font:400 12px/1.75 var(--mono);white-space:pre-wrap;word-break:break-word}
+.pgroup-f{padding:12px 0 4px}
+
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.wide{width:100%;padding:9px}
+
+/* ---------- 关系图谱 ---------- */
+/* 布局在 Node 里算好写进 SVG，这里只管高亮。红色仍然只给选中态 */
+.gtoggle{display:flex;align-items:center;gap:9px;width:100%;padding:13px 20px;text-align:left;
+  background:none;border:0;border-bottom:1px solid var(--rule);border-left:2px solid transparent;
+  cursor:pointer;color:var(--ink-2);font:500 12px/1 var(--sans);letter-spacing:.1em}
+.gtoggle:hover{background:#00000006}
+.gtoggle.on{background:var(--panel);border-left-color:var(--seal);color:var(--seal)}
+.gtoggle:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.gtoggle svg{width:15px;height:15px;flex:none;stroke:currentColor;fill:none;stroke-width:1.3}
+.graph{display:none}
+.graph.on{display:block}
+.main.gmode .char{display:none}
+.graph-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  padding-bottom:14px;border-bottom:1px solid var(--rule-2)}
+.graph-h h2{font:400 clamp(22px,2.2vw,28px)/1.1 var(--serif);letter-spacing:.05em}
+.graph-h .hint{margin-left:auto;font-size:12px;color:var(--ink-3)}
+.graph-body{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:26px;
+  align-items:start;margin-top:20px}
+@media(max-width:1100px){.graph-body{grid-template-columns:1fr}}
+.graph-canvas{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:10px}
+.graph-canvas svg{display:block;width:100%;height:auto}
+.graph-empty{margin:0 0 8px;text-align:center;font-size:12.5px;color:var(--ink-3)}
+.gedge{fill:none;stroke:var(--rule-2);stroke-width:1.1;transition:.15s}
+.gedge.hot{stroke:var(--seal);stroke-width:2}
+.gedge.dim{opacity:.15}
+.gnode{cursor:pointer;transition:.15s}
+.gnode .gdot{fill:var(--paper);stroke:var(--ink-2);stroke-width:1.5}
+/* 看不见的命中区：节点本身才十来个像素，光标很难压准。
+   单独一个类，免得被下面 .lead / .hot 的规则一起染色 */
+.gnode .ghit{fill:none;stroke:none;pointer-events:all}
+.gnode text{font:400 13px var(--serif);fill:var(--ink)}
+.gnode.lead .gdot{fill:var(--seal);stroke:var(--seal)}
+.gnode.hot .gdot{stroke:var(--seal);stroke-width:2.5}
+.gnode.hot text{fill:var(--seal)}
+.gnode.dim{opacity:.22}
+.gnode:focus-visible{outline:2px solid var(--seal)}
+/* 弦上的关系文字。默认按边数决定开不开，悬停的那条永远显示。
+   paint-order + 同色描边 = 给字加一圈底衬，压在弦上也读得清 */
+.glabel{display:none;font:400 9px var(--sans);fill:var(--ink-3);pointer-events:none;
+  paint-order:stroke;stroke:var(--panel);stroke-width:3px;stroke-linejoin:round}
+.graph.labels .glabel{display:block}
+.glabel.dim{opacity:.15}
+.glabel.hot{display:block;fill:var(--seal);font-weight:500}
+.glabtoggle{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--paper);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.glabtoggle:hover{border-color:var(--seal);color:var(--seal)}
+.glabtoggle.on{border-color:var(--seal);color:var(--seal);background:var(--seal-soft)}
+.glabtoggle:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.grel{border:1px solid var(--rule);border-radius:2px;background:var(--panel)}
+.grel h4{font:500 11px/1 var(--sans);letter-spacing:.2em;color:var(--ink-3);padding:14px 16px 11px}
+.grel-list{max-height:56vh;overflow-y:auto;border-top:1px solid var(--rule)}
+.grow{display:block;width:100%;text-align:left;padding:11px 16px;background:none;border:0;
+  border-bottom:1px solid var(--rule);cursor:pointer;color:inherit;transition:.15s}
+.grow:last-child{border-bottom:0}
+.grow:hover,.grow.hot{background:var(--seal-soft)}
+.grow.dim{opacity:.3}
+.grow:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.grow b{font:400 14px/1.4 var(--serif);letter-spacing:.03em}
+.grow i{font-style:normal;color:var(--ink-3);padding:0 6px}
+.grow span{display:block;margin-top:4px;font-size:12.5px;line-height:1.65;color:var(--ink-2)}
+.grow em{font-style:normal;color:var(--ink-3)}
+.grel-foot{margin:0;padding:11px 16px;border-top:1px solid var(--rule);
+  font-size:11px;line-height:1.6;color:var(--ink-3)}
+
+/* 签名：推断标记 */
+.inf{color:var(--ink-3);font-size:.88em;background:var(--seal-soft);padding:0 3px;border-radius:2px}
+
+.nomatch{display:none;padding:20px;font-size:13px;color:var(--ink-3)}
+.nomatch.on{display:block}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+/* 屏幕上一次一个角色，纸上要完整 */
+@media print{
+  .top,.side,.copy{display:none!important}
+  .shell{display:block}
+  .main{padding:0}
+  .graph{display:block!important;page-break-after:always}
+  .char{display:block!important;page-break-after:always}
+  .pr p{display:block!important}
+  .pr summary::before{content:""}
+  body{background:#fff}
+}
+</style></head><body>
+
+<header class="top">
+  <div class="brand"><h1>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）</h1></div>
+  <div class="search">
+    <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" stroke-width="1.5"/><path d="M11 11l4 4" stroke-width="1.5"/></svg>
+    <input id="q" type="search" placeholder="搜索角色、特质、身份" aria-label="搜索角色、特质、身份" autocomplete="off">
+  </div>
+  <div class="topmeta">
+    <span>角色设定集</span><i>·</i>
+    <span>6 位角色 · 按戏份排序</span>
+    <button class="expo" data-name="江东潜龙（三国：我在东吴从小吏杀到大都督-第一季）-cast.json">导出 JSON</button>
+  </div>
+</header>
+
+<div class="shell">
+  <aside class="side">
+    <section class="synopsis syn-clamp"><div class="lbl">故事摘要</div><p>建安十三年（208年）秋，赤壁之战前夜。一个现代机械系大学生沈川穿越成江东柴桑船坊的底层小吏，睁眼就被一纸军法处置逼进七日修船的死局。他靠现代工程管理的方法论，从死局翻盘，被大都督周瑜注意到，一路从修船小吏摸到兵权、卷入江东士族与寒门的暗流，最终在赤壁前夜以最末位之身站上江东最高军议。围绕他的，是守旧体系的门人顾承、识才善任的周瑜、洞见长远的鲁肃，以及用帝王心术审视每一个新面孔的年轻君主孙权。</p><button class="syn-more">全部展开</button></section>
+    <button class="gtoggle" aria-controls="graph">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="3.2" cy="4" r="1.9"/><circle cx="12.8" cy="6.2" r="1.9"/><circle cx="7.2" cy="13" r="1.9"/><path d="M5 4.6l6 1.2M4 5.9l2.5 5.4M11.7 7.9l-3.3 3.7"/></svg>
+      <span>关系图谱</span>
+    </button>
+    <div class="roster-h lbl">角色 · 按戏份排序</div>
+    <nav class="roster" aria-label="角色索引">
+      <button class="rost on" data-target="p-沈川" data-hay="沈川 沈小吏 那小子 修船的 柴桑船坊底层小吏（穿越者，原为机械设计制造及其自动化专业大学生） 男 约二十二岁（穿越前为机械专业大四学生） 务实 谨慎 善于拆解 惜命 不跪权贵 一个只想活命、却靠拆解问题的本事一步步往高处走的现代穿越者。">
+  <span class="rost-thumb"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">01</em>
+      <b class="rost-name">沈川</b>
+      <span class="badge">主角</span>
+      <span class="rost-meta">男 · 约二十二岁（穿越前为机械专业大四学生）</span>
+    </span>
+    <span class="rost-one">一个只想活命、却靠拆解问题的本事一步步往高处走的现代穿越者。</span>
+    <span class="rost-chips"><i>务实</i><i>谨慎</i><i>善于拆解</i><i>惜命</i><i>不跪权贵</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-顾承" data-hay="顾承 顾主事 顾氏 江东豪族顾氏旁支，船坊主事之一（实权在木料调配与工籍登记） 男 约三十八到四十岁 老成 城府深 实干 守旧 有底线 把一门手艺和一套关系网吃透的旧体系守门人，不是恶人，只是不肯让沈川拿江东船坊做试验田。">
+  <span class="rost-thumb"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">02</em>
+      <b class="rost-name">顾承</b>
+      <span class="badge">主要角色</span>
+      <span class="rost-meta">男 · 约三十八到四十岁</span>
+    </span>
+    <span class="rost-one">把一门手艺和一套关系网吃透的旧体系守门人，不是恶人，只是不肯让沈川拿江东船坊做试验田。</span>
+    <span class="rost-chips"><i>老成</i><i>城府深</i><i>实干</i><i>守旧</i><i>有底线</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-周瑜" data-hay="周瑜 周都督 公瑾 大都督 江东大都督，赤壁联军统帅 男 约三十四岁 天才 睿智 果决 惜才 警惕 江东第一智将，天才却非全能，一眼看穿沈川，也一眼看出他正补上自己缺的那块板。">
+  <span class="rost-thumb"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">03</em>
+      <b class="rost-name">周瑜</b>
+      <span class="badge">主要角色</span>
+      <span class="rost-meta">男 · 约三十四岁</span>
+    </span>
+    <span class="rost-one">江东第一智将，天才却非全能，一眼看穿沈川，也一眼看出他正补上自己缺的那块板。</span>
+    <span class="rost-chips"><i>天才</i><i>睿智</i><i>果决</i><i>惜才</i><i>警惕</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-鲁肃" data-hay="鲁肃 鲁子敬 子敬 江东战略家，主张联刘抗曹的核心人物 男 约三十四岁（与周瑜同辈） 远见 洞察 宽和 务实 沉稳 江东第一流的战略眼光与人情洞察，看的是长远格局，也看透了沈川身上江东旧人没有的东西。">
+  <span class="rost-thumb"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">04</em>
+      <b class="rost-name">鲁肃</b>
+      <span class="badge">主要角色</span>
+      <span class="rost-meta">男 · 约三十四岁（与周瑜同辈）</span>
+    </span>
+    <span class="rost-one">江东第一流的战略眼光与人情洞察，看的是长远格局，也看透了沈川身上江东旧人没有的东西。</span>
+    <span class="rost-chips"><i>远见</i><i>洞察</i><i>宽和</i><i>务实</i><i>沉稳</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-孙权" data-hay="孙权 孙仲谋 吴侯 江东君主，刚坐稳江东的年轻统治者 男 约二十七岁 多疑 善权衡 懂制衡 果断 有城府 有帝王心术的年轻君主，多疑擅权衡，看沈川不是看有没有才，而是看能否驾驭。">
+  <span class="rost-thumb"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">05</em>
+      <b class="rost-name">孙权</b>
+      <span class="badge">主要角色</span>
+      <span class="rost-meta">男 · 约二十七岁</span>
+    </span>
+    <span class="rost-one">有帝王心术的年轻君主，多疑擅权衡，看沈川不是看有没有才，而是看能否驾驭。</span>
+    <span class="rost-chips"><i>多疑</i><i>善权衡</i><i>懂制衡</i><i>果断</i><i>有城府</i></span>
+  </span>
+</button>
+<button class="rost" data-target="p-老工匠" data-hay="老工匠 老师傅 柴桑船坊老资格的造船工匠代表 男 约五十多岁 倔强 守旧 手艺精湛 重实际 直率 船坊里修了几十年船的老资格，传统手艺的守门人，从甩手抵制到将信将疑地服了沈川。">
+  <span class="rost-thumb"></span>
+  <span class="rost-body">
+    <span class="rost-top">
+      <em class="rost-n">06</em>
+      <b class="rost-name">老工匠</b>
+      <span class="badge">配角</span>
+      <span class="rost-meta">男 · 约五十多岁</span>
+    </span>
+    <span class="rost-one">船坊里修了几十年船的老资格，传统手艺的守门人，从甩手抵制到将信将疑地服了沈川。</span>
+    <span class="rost-chips"><i>倔强</i><i>守旧</i><i>手艺精湛</i><i>重实际</i><i>直率</i></span>
+  </span>
+</button>
+    </nav>
+    <p class="nomatch">没有匹配的角色</p>
+    <p class="side-foot">标注（推断）的条目为原文未明写、依据文本推演。</p>
+  </aside>
+
+  <main class="main">
+    <section class="graph labels" id="graph">
+  <header class="graph-h">
+    <h2>关系图谱</h2>
+    <span class="badge">6 位角色 · 11 组关系</span>
+    <button class="glabtoggle on" aria-pressed="true">关系文字</button>
+    <span class="hint">悬停看关系，点击进角色</span>
+  </header>
+  <div class="graph-body">
+    <div class="graph-canvas">
+      <svg viewBox="0 0 480 480" role="img" aria-label="关系图谱">
+        <g class="gedges"><path class="gedge" data-a="沈川" data-b="顾承" d="M240 110 Q259.7 205.9 352.6 175"></path><path class="gedge" data-a="周瑜" data-b="沈川" d="M352.6 305 Q259.7 228.6 240 110"></path><path class="gedge" data-a="沈川" data-b="鲁肃" d="M240 110 Q240 240 240 370"></path><path class="gedge" data-a="孙权" data-b="沈川" d="M127.4 305 Q220.3 228.6 240 110"></path><path class="gedge" data-a="周瑜" data-b="顾承" d="M352.6 305 Q279.4 240 352.6 175"></path><path class="gedge" data-a="孙权" data-b="顾承" d="M127.4 305 Q240 240 352.6 175"></path><path class="gedge" data-a="周瑜" data-b="孙权" d="M352.6 305 Q240 262.8 127.4 305"></path><path class="gedge" data-a="周瑜" data-b="鲁肃" d="M352.6 305 Q259.7 274.1 240 370"></path><path class="gedge" data-a="孙权" data-b="鲁肃" d="M127.4 305 Q220.3 274.1 240 370"></path><path class="gedge" data-a="沈川" data-b="老工匠" d="M240 110 Q220.3 205.9 127.4 175"></path><path class="gedge" data-a="老工匠" data-b="顾承" d="M127.4 175 Q240 217.3 352.6 175"></path></g>
+        <g class="gnodes"><g class="gnode lead" data-node="沈川" data-target="p-沈川" tabindex="0" role="button" aria-label="沈川">
+  <circle class="ghit" cx="240" cy="110" r="24"></circle>
+  <circle class="gdot" cx="240" cy="110" r="11"></circle>
+  <text x="240" y="89" text-anchor="middle">沈川</text>
+</g><g class="gnode" data-node="顾承" data-target="p-顾承" tabindex="0" role="button" aria-label="顾承">
+  <circle class="ghit" cx="352.6" cy="175" r="24"></circle>
+  <circle class="gdot" cx="352.6" cy="175" r="9"></circle>
+  <text x="365.6" y="172" text-anchor="start">顾承</text>
+</g><g class="gnode" data-node="周瑜" data-target="p-周瑜" tabindex="0" role="button" aria-label="周瑜">
+  <circle class="ghit" cx="352.6" cy="305" r="24"></circle>
+  <circle class="gdot" cx="352.6" cy="305" r="9"></circle>
+  <text x="365.6" y="317" text-anchor="start">周瑜</text>
+</g><g class="gnode" data-node="鲁肃" data-target="p-鲁肃" tabindex="0" role="button" aria-label="鲁肃">
+  <circle class="ghit" cx="240" cy="370" r="24"></circle>
+  <circle class="gdot" cx="240" cy="370" r="9"></circle>
+  <text x="240" y="399" text-anchor="middle">鲁肃</text>
+</g><g class="gnode" data-node="孙权" data-target="p-孙权" tabindex="0" role="button" aria-label="孙权">
+  <circle class="ghit" cx="127.4" cy="305" r="24"></circle>
+  <circle class="gdot" cx="127.4" cy="305" r="9"></circle>
+  <text x="114.4" y="317" text-anchor="end">孙权</text>
+</g><g class="gnode" data-node="老工匠" data-target="p-老工匠" tabindex="0" role="button" aria-label="老工匠">
+  <circle class="ghit" cx="127.4" cy="175" r="24"></circle>
+  <circle class="gdot" cx="127.4" cy="175" r="7"></circle>
+  <text x="114.4" y="172" text-anchor="end">老工匠</text>
+</g></g>
+        <g class="glabels"><text class="glabel" data-a="沈川" data-b="顾承" x="263.7" y="162.6" text-anchor="middle" dominant-baseline="middle">动摇他体系根…<title>沈川 · 旧体系的守门人，从冷眼旁观到与他正面交锋的对手
+顾承 · 动摇他体系根基的变革者，从看戏到正面交锋</title></text><text class="glabel" data-a="周瑜" data-b="沈川" x="278" y="218.1" text-anchor="middle" dominant-baseline="middle">识才善任的大…<title>沈川 · 识才善任的大都督，用他也防他
+周瑜 · 用他也防他的统帅，看中他补上组织力这块短板</title></text><text class="glabel" data-a="沈川" data-b="鲁肃" x="240" y="276.4" text-anchor="middle" dominant-baseline="middle">暗中观察、有…<title>沈川 · 暗中观察、有意保护培养他的战略家
+鲁肃 · 暗中观察、有意保护培养的寒门才俊</title></text><text class="glabel" data-a="孙权" data-b="沈川" x="184.8" y="244.5" text-anchor="middle" dominant-baseline="middle">用帝王心术审…<title>沈川 · 用帝王心术审视他的年轻君主
+孙权 · 用帝王心术审视的孤臣，好用也需驾驭</title></text><text class="glabel" data-a="周瑜" data-b="顾承" x="316" y="240" text-anchor="middle" dominant-baseline="middle">忌惮又不得不…<title>顾承 · 忌惮又不得不依附的大都督</title></text><text class="glabel" data-a="孙权" data-b="顾承" x="271.5" y="221.8" text-anchor="middle" dominant-baseline="middle">豪族在君主面…<title>顾承 · 豪族在君主面前的政治靠山与博弈对象</title></text><text class="glabel" data-a="周瑜" data-b="孙权" x="271.5" y="285.5" text-anchor="middle" dominant-baseline="middle">倚重的大都督<title>周瑜 · 辅佐的年轻君主
+孙权 · 倚重的大都督</title></text><text class="glabel" data-a="周瑜" data-b="鲁肃" x="278" y="305.8" text-anchor="middle" dominant-baseline="middle">同殿为臣、抗…<title>周瑜 · 同殿为臣、抗曹大计的同路人
+鲁肃 · 同殿为臣、抗曹大计的同路人</title></text><text class="glabel" data-a="孙权" data-b="鲁肃" x="216.3" y="317.4" text-anchor="middle" dominant-baseline="middle">倚重的战略家<title>鲁肃 · 辅佐的年轻君主
+孙权 · 倚重的战略家</title></text><text class="glabel" data-a="沈川" data-b="老工匠" x="216.3" y="162.6" text-anchor="middle" dominant-baseline="middle">从瞧不起到服…<title>老工匠 · 从瞧不起到服气的对象，传统手艺 vs 标准化的具象代表</title></text><text class="glabel" data-a="老工匠" data-b="顾承" x="240" y="196.1" text-anchor="middle" dominant-baseline="middle">船坊主事，旧…<title>老工匠 · 船坊主事，旧体系里的上峰</title></text></g>
+      </svg>
+      
+    </div>
+    <aside class="grel">
+      <h4>全部关系</h4>
+      <div class="grel-list"><button class="grow" data-a="沈川" data-b="顾承" data-target="p-沈川">
+  <b>沈川</b><i>—</i><b>顾承</b>
+  <span><em>沈川</em> 旧体系的守门人，从冷眼旁观到与他正面交锋的对手</span><span><em>顾承</em> 动摇他体系根基的变革者，从看戏到正面交锋</span>
+</button><button class="grow" data-a="周瑜" data-b="沈川" data-target="p-周瑜">
+  <b>周瑜</b><i>—</i><b>沈川</b>
+  <span><em>沈川</em> 识才善任的大都督，用他也防他</span><span><em>周瑜</em> 用他也防他的统帅，看中他补上组织力这块短板</span>
+</button><button class="grow" data-a="沈川" data-b="鲁肃" data-target="p-沈川">
+  <b>沈川</b><i>—</i><b>鲁肃</b>
+  <span><em>沈川</em> 暗中观察、有意保护培养他的战略家</span><span><em>鲁肃</em> 暗中观察、有意保护培养的寒门才俊</span>
+</button><button class="grow" data-a="孙权" data-b="沈川" data-target="p-孙权">
+  <b>孙权</b><i>—</i><b>沈川</b>
+  <span><em>沈川</em> 用帝王心术审视他的年轻君主</span><span><em>孙权</em> 用帝王心术审视的孤臣，好用也需驾驭</span>
+</button><button class="grow" data-a="周瑜" data-b="顾承" data-target="p-周瑜">
+  <b>周瑜</b><i>—</i><b>顾承</b>
+  <span><em>顾承</em> 忌惮又不得不依附的大都督</span>
+</button><button class="grow" data-a="孙权" data-b="顾承" data-target="p-孙权">
+  <b>孙权</b><i>—</i><b>顾承</b>
+  <span><em>顾承</em> 豪族在君主面前的政治靠山与博弈对象</span>
+</button><button class="grow" data-a="周瑜" data-b="孙权" data-target="p-周瑜">
+  <b>周瑜</b><i>—</i><b>孙权</b>
+  <span><em>周瑜</em> 辅佐的年轻君主</span><span><em>孙权</em> 倚重的大都督</span>
+</button><button class="grow" data-a="周瑜" data-b="鲁肃" data-target="p-周瑜">
+  <b>周瑜</b><i>—</i><b>鲁肃</b>
+  <span><em>周瑜</em> 同殿为臣、抗曹大计的同路人</span><span><em>鲁肃</em> 同殿为臣、抗曹大计的同路人</span>
+</button><button class="grow" data-a="孙权" data-b="鲁肃" data-target="p-孙权">
+  <b>孙权</b><i>—</i><b>鲁肃</b>
+  <span><em>鲁肃</em> 辅佐的年轻君主</span><span><em>孙权</em> 倚重的战略家</span>
+</button><button class="grow" data-a="沈川" data-b="老工匠" data-target="p-沈川">
+  <b>沈川</b><i>—</i><b>老工匠</b>
+  <span><em>老工匠</em> 从瞧不起到服气的对象，传统手艺 vs 标准化的具象代表</span>
+</button><button class="grow" data-a="老工匠" data-b="顾承" data-target="p-老工匠">
+  <b>老工匠</b><i>—</i><b>顾承</b>
+  <span><em>老工匠</em> 船坊主事，旧体系里的上峰</span>
+</button></div>
+      
+    </aside>
+  </div>
+</section>
+    <article class="char on" id="p-沈川">
+  <header class="char-h">
+    <span class="char-n">01</span>
+    <h2>沈川</h2>
+    <span class="badge">主角</span>
+    <span class="aka">又称　沈小吏 · 那小子 · 修船的</span>
+    <span class="char-one">一个只想活命、却靠拆解问题的本事一步步往高处走的现代穿越者。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <div class="plate plate-empty">
+         <span>沈川 · 尚未出图<br><em>用下方提示词生成</em></span>
+       </div>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>清瘦，肤色偏白，眉目有股学生气。常穿一身洗得发白的粗布短褐，袖口习惯性卷起，手指因经常画图和测量而显得灵活。眼神里有种与周遭古人不同的、习惯先观察再动手的审慎。</p></section>
+        <section class="blk"><h3>性情</h3><p>说话快而直接，喜欢把事情拆成一二三四点。遇事先求稳、先盘点，再动手。骨子里有穷怕了的精打细算，也有年轻人赢了就容易飘的毛病。</p></section>
+        <section class="blk"><h3>动机</h3><p>先活下去。在死局里求生，然后一步步向上，直到敢对天下负责。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从一个只想活命的现代小吏，长出一个能扛起天下责任的肩膀——季末他依然不是大将，只是刚刚有资格开口。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>一个只想活命的现代小吏，一步步长出&quot;敢对天下负责&quot;的肩膀</blockquote><blockquote>从小成绩中上但不是第一</blockquote><blockquote>穷怕了</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约二十二岁（穿越前为机械专业大四学生）</dd></div><div class="kv"><dt>身份</dt><dd>柴桑船坊底层小吏（穿越者，原为机械设计制造及其自动化专业大学生）</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">顾承</dt><dd>旧体系的守门人，从冷眼旁观到与他正面交锋的对手</dd></div><div class="kv"><dt class="rel-n">周瑜</dt><dd>识才善任的大都督，用他也防他</dd></div><div class="kv"><dt class="rel-n">鲁肃</dt><dd>暗中观察、有意保护培养他的战略家</dd></div><div class="kv"><dt class="rel-n">孙权</dt><dd>用帝王心术审视他的年轻君主</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>清亮的青年男声，中音区，带一点学生气的干净</dd></div><div class="kv"><dt>音高</dt><dd>中</dd></div><div class="kv"><dt>语速</dt><dd>偏快，喜欢把话说成有条理的一二三点</dd></div><div class="kv"><dt>口音</dt><dd>普通话，偶尔带现代口癖</dd></div><div class="kv"><dt>情绪</dt><dd>冷静务实，危急时压得住场</dd></div><div class="kv"><dt>类比</dt><dd>像一个习惯列清单、先想清楚再动手的工科生</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>young male</li><li>Han Dynasty clerk</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词</span><button class="copy" data-copy="一名清瘦的中国青年男子，二十出头，东汉末年三国时代，船坊底层小吏。短发松束，肤色偏白，带学生气的面容。穿洗得发白的粗布短褐，袖口习惯性卷起，腰间系一条细布带。眼神敏锐带审慎，双手灵巧，惯于测量画图。半写实厚涂。">复制</button></summary>
+  <p>一名清瘦的中国青年男子，二十出头，东汉末年三国时代，船坊底层小吏。短发松束，肤色偏白，带学生气的面容。穿洗得发白的粗布短褐，袖口习惯性卷起，腰间系一条细布带。眼神敏锐带审慎，双手灵巧，惯于测量画图。半写实厚涂。</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词 EN</span><button class="copy" data-copy="A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing. Semi-realistic character illustration, painterly rendering.">复制</button></summary>
+  <p>A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing. Semi-realistic character illustration, painterly rendering.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the lean young Chinese clerk as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the faded coarse linen short robe with rolled sleeves. PROPORTIONS ARE CRITICAL: the three full-body figures must keep identical, anatomically grounded proportions; do not squash the figure to fit detail. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the rolled sleeves, the cloth sash knot, the measuring calluses on his fingers, a small ledger scroll tucked at the waist. Every detail panel is a close-up crop of the SAME character; the three-quarter and side faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the lean young Chinese clerk as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the faded coarse linen short robe with rolled sleeves. PROPORTIONS ARE CRITICAL: the three full-body figures must keep identical, anatomically grounded proportions; do not squash the figure to fit detail. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the rolled sleeves, the cloth sash knot, the measuring calluses on his fingers, a small ledger scroll tucked at the waist. Every detail panel is a close-up crop of the SAME character; the three-quarter and side faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词</span><button class="copy" data-copy="清亮的中国青年男声，中音区，二十出头。干净的、略带书卷气的音色，语速偏快，说话像在列条目。冷静务实，危急时沉稳。">复制</button></summary>
+  <p>清亮的中国青年男声，中音区，二十出头。干净的、略带书卷气的音色，语速偏快，说话像在列条目。冷静务实，危急时沉稳。</p>
+</details>
+      <details class="pr">
+  <summary><span>音色提示词 EN</span><button class="copy" data-copy="A clear young Chinese male voice, mid-range, early twenties. A clean, slightly bookish tone with a modern cadence, speaking in brisk measured clauses as if listing points. Calm and pragmatic, steady under pressure.">复制</button></summary>
+  <p>A clear young Chinese male voice, mid-range, early twenties. A clean, slightly bookish tone with a modern cadence, speaking in brisk measured clauses as if listing points. Calm and pragmatic, steady under pressure.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C01&quot;,
+  &quot;name&quot;: &quot;沈川&quot;,
+  &quot;aliases&quot;: [
+    &quot;沈小吏&quot;,
+    &quot;那小子&quot;,
+    &quot;修船的&quot;
+  ],
+  &quot;importance&quot;: &quot;protagonist&quot;,
+  &quot;oneLiner&quot;: &quot;一个只想活命、却靠拆解问题的本事一步步往高处走的现代穿越者。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约二十二岁（穿越前为机械专业大四学生）&quot;,
+    &quot;identity&quot;: &quot;柴桑船坊底层小吏（穿越者，原为机械设计制造及其自动化专业大学生）&quot;,
+    &quot;appearance&quot;: &quot;清瘦，肤色偏白，眉目有股学生气。常穿一身洗得发白的粗布短褐，袖口习惯性卷起，手指因经常画图和测量而显得灵活。眼神里有种与周遭古人不同的、习惯先观察再动手的审慎。&quot;,
+    &quot;personality&quot;: [
+      &quot;务实&quot;,
+      &quot;谨慎&quot;,
+      &quot;善于拆解&quot;,
+      &quot;惜命&quot;,
+      &quot;不跪权贵&quot;
+    ],
+    &quot;temperament&quot;: &quot;说话快而直接，喜欢把事情拆成一二三四点。遇事先求稳、先盘点，再动手。骨子里有穷怕了的精打细算，也有年轻人赢了就容易飘的毛病。&quot;,
+    &quot;motivation&quot;: &quot;先活下去。在死局里求生，然后一步步向上，直到敢对天下负责。&quot;,
+    &quot;arc&quot;: &quot;从一个只想活命的现代小吏，长出一个能扛起天下责任的肩膀——季末他依然不是大将，只是刚刚有资格开口。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;顾承&quot;,
+        &quot;relation&quot;: &quot;旧体系的守门人，从冷眼旁观到与他正面交锋的对手&quot;
+      },
+      {
+        &quot;name&quot;: &quot;周瑜&quot;,
+        &quot;relation&quot;: &quot;识才善任的大都督，用他也防他&quot;
+      },
+      {
+        &quot;name&quot;: &quot;鲁肃&quot;,
+        &quot;relation&quot;: &quot;暗中观察、有意保护培养他的战略家&quot;
+      },
+      {
+        &quot;name&quot;: &quot;孙权&quot;,
+        &quot;relation&quot;: &quot;用帝王心术审视他的年轻君主&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;一个只想活命的现代小吏，一步步长出\&quot;敢对天下负责\&quot;的肩膀&quot;,
+      &quot;从小成绩中上但不是第一&quot;,
+      &quot;穷怕了&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂&quot;,
+    &quot;prompt&quot;: &quot;A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing. Semi-realistic character illustration, painterly rendering.&quot;,
+    &quot;promptLocal&quot;: &quot;一名清瘦的中国青年男子，二十出头，东汉末年三国时代，船坊底层小吏。短发松束，肤色偏白，带学生气的面容。穿洗得发白的粗布短褐，袖口习惯性卷起，腰间系一条细布带。眼神敏锐带审慎，双手灵巧，惯于测量画图。半写实厚涂。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;young male&quot;,
+      &quot;Han Dynasty clerk&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the lean young Chinese clerk as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the faded coarse linen short robe with rolled sleeves. PROPORTIONS ARE CRITICAL: the three full-body figures must keep identical, anatomically grounded proportions; do not squash the figure to fit detail. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the rolled sleeves, the cloth sash knot, the measuring calluses on his fingers, a small ledger scroll tucked at the waist. Every detail panel is a close-up crop of the SAME character; the three-quarter and side faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;清亮的青年男声，中音区，带一点学生气的干净&quot;,
+    &quot;pitch&quot;: &quot;中&quot;,
+    &quot;pace&quot;: &quot;偏快，喜欢把话说成有条理的一二三点&quot;,
+    &quot;accent&quot;: &quot;普通话，偶尔带现代口癖&quot;,
+    &quot;emotion&quot;: &quot;冷静务实，危急时压得住场&quot;,
+    &quot;referenceHint&quot;: &quot;像一个习惯列清单、先想清楚再动手的工科生&quot;,
+    &quot;prompt&quot;: &quot;A clear young Chinese male voice, mid-range, early twenties. A clean, slightly bookish tone with a modern cadence, speaking in brisk measured clauses as if listing points. Calm and pragmatic, steady under pressure.&quot;,
+    &quot;promptLocal&quot;: &quot;清亮的中国青年男声，中音区，二十出头。干净的、略带书卷气的音色，语速偏快，说话像在列条目。冷静务实，危急时沉稳。&quot;
+  }
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-顾承">
+  <header class="char-h">
+    <span class="char-n">02</span>
+    <h2>顾承</h2>
+    <span class="badge">主要角色</span>
+    <span class="aka">又称　顾主事 · 顾氏</span>
+    <span class="char-one">把一门手艺和一套关系网吃透的旧体系守门人，不是恶人，只是不肯让沈川拿江东船坊做试验田。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <div class="plate plate-empty">
+         <span>顾承 · 尚未出图<br><em>用下方提示词生成</em></span>
+       </div>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>中年，体态沉稳，衣着考究但不过分。面容沉静，眉宇间有久居其位养出的威仪与城府。手上指节粗大，是精于造船工艺留下的痕迹。笑的时候眼睛不笑，是那种绵里藏针的和善。</p></section>
+        <section class="blk"><h3>性情</h3><p>话不多，但每句都拿捏分寸，绵里藏针。精于工籍调配与人情世故，是体系里熬上来的中年人，做事讲究体面，不屑下三滥。</p></section>
+        <section class="blk"><h3>动机</h3><p>守住顾氏一族在江东船坊的权、钱、地位，也守住让江东安稳运转的旧规矩。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从认定沈川是跳梁小吏、冷眼旁观，到被逼到台前正面交锋；曹军南下后内心松动，面临继续斗沈川还是先救江东的抉择。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>他身后站着整个顾氏的几百张嘴</blockquote><blockquote>江东能稳，靠的是现有的规矩</blockquote><blockquote>是体系运转的守门人</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约三十八到四十岁</dd></div><div class="kv"><dt>身份</dt><dd>江东豪族顾氏旁支，船坊主事之一（实权在木料调配与工籍登记）</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">沈川</dt><dd>动摇他体系根基的变革者，从看戏到正面交锋</dd></div><div class="kv"><dt class="rel-n">周瑜</dt><dd>忌惮又不得不依附的大都督</dd></div><div class="kv"><dt class="rel-n">孙权</dt><dd>豪族在君主面前的政治靠山与博弈对象</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>低沉稳重的中年男声，中低音区，声音里带着久居其位的从容</dd></div><div class="kv"><dt>音高</dt><dd>中低</dd></div><div class="kv"><dt>语速</dt><dd>慢，字斟句酌，绵里藏针</dd></div><div class="kv"><dt>口音</dt><dd>略带江东士族的口音，尾音拿捏</dd></div><div class="kv"><dt>情绪</dt><dd>克制内敛，笑意里藏着锋芒</dd></div><div class="kv"><dt>类比</dt><dd>像一个在衙门里熬了半辈子、说话从不露破绽的老吏</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>middle-aged male</li><li>Han Dynasty gentry</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词</span><button class="copy" data-copy="一位有威仪的中年中国男子，三十八到四十岁，东汉末年三国时代，江东豪族旁支、船坊主事。体态沉稳，衣着考究但不过分的深色长袍，自带威严。面容沉静，眼窝深邃，笑时眼睛不笑。双手粗大，是多年造船工艺留下的痕迹。半写实厚涂。">复制</button></summary>
+  <p>一位有威仪的中年中国男子，三十八到四十岁，东汉末年三国时代，江东豪族旁支、船坊主事。体态沉稳，衣着考究但不过分的深色长袍，自带威严。面容沉静，眼窝深邃，笑时眼睛不笑。双手粗大，是多年造船工艺留下的痕迹。半写实厚涂。</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词 EN</span><button class="copy" data-copy="A dignified middle-aged Chinese man, late thirties to forty, Eastern Han Dynasty Three Kingdoms era, an aristocratic gentry clan shipyard supervisor. Composed bearing, refined but understated robes of dark cloth, a subtle air of authority. A calm, impassive face with deep-set eyes that do not smile even when his mouth does. Large weathered hands marked by years of shipwright craft. Semi-realistic character illustration, painterly rendering.">复制</button></summary>
+  <p>A dignified middle-aged Chinese man, late thirties to forty, Eastern Han Dynasty Three Kingdoms era, an aristocratic gentry clan shipyard supervisor. Composed bearing, refined but understated robes of dark cloth, a subtle air of authority. A calm, impassive face with deep-set eyes that do not smile even when his mouth does. Large weathered hands marked by years of shipwright craft. Semi-realistic character illustration, painterly rendering.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the dignified middle-aged gentry supervisor as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the refined dark robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the weathered shipwright hands, the subtle folds of the dark robe, the cloth sash and jade pendant at the waist, the impassive mouth that never quite smiles. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the dignified middle-aged gentry supervisor as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the refined dark robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the weathered shipwright hands, the subtle folds of the dark robe, the cloth sash and jade pendant at the waist, the impassive mouth that never quite smiles. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词</span><button class="copy" data-copy="低沉稳重的中年男声，中低音区。从容不迫，字斟句酌，和善表象下藏着锋芒。克制内敛，略带江东士族口音。">复制</button></summary>
+  <p>低沉稳重的中年男声，中低音区。从容不迫，字斟句酌，和善表象下藏着锋芒。克制内敛，略带江东士族口音。</p>
+</details>
+      <details class="pr">
+  <summary><span>音色提示词 EN</span><button class="copy" data-copy="A steady low mid-range Chinese male voice, middle-aged. Composed and unhurried, each word measured, carrying a subtle edge beneath an affable surface. Restrained, with a faint Jiangdong gentry accent.">复制</button></summary>
+  <p>A steady low mid-range Chinese male voice, middle-aged. Composed and unhurried, each word measured, carrying a subtle edge beneath an affable surface. Restrained, with a faint Jiangdong gentry accent.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C02&quot;,
+  &quot;name&quot;: &quot;顾承&quot;,
+  &quot;aliases&quot;: [
+    &quot;顾主事&quot;,
+    &quot;顾氏&quot;
+  ],
+  &quot;importance&quot;: &quot;major&quot;,
+  &quot;oneLiner&quot;: &quot;把一门手艺和一套关系网吃透的旧体系守门人，不是恶人，只是不肯让沈川拿江东船坊做试验田。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约三十八到四十岁&quot;,
+    &quot;identity&quot;: &quot;江东豪族顾氏旁支，船坊主事之一（实权在木料调配与工籍登记）&quot;,
+    &quot;appearance&quot;: &quot;中年，体态沉稳，衣着考究但不过分。面容沉静，眉宇间有久居其位养出的威仪与城府。手上指节粗大，是精于造船工艺留下的痕迹。笑的时候眼睛不笑，是那种绵里藏针的和善。&quot;,
+    &quot;personality&quot;: [
+      &quot;老成&quot;,
+      &quot;城府深&quot;,
+      &quot;实干&quot;,
+      &quot;守旧&quot;,
+      &quot;有底线&quot;
+    ],
+    &quot;temperament&quot;: &quot;话不多，但每句都拿捏分寸，绵里藏针。精于工籍调配与人情世故，是体系里熬上来的中年人，做事讲究体面，不屑下三滥。&quot;,
+    &quot;motivation&quot;: &quot;守住顾氏一族在江东船坊的权、钱、地位，也守住让江东安稳运转的旧规矩。&quot;,
+    &quot;arc&quot;: &quot;从认定沈川是跳梁小吏、冷眼旁观，到被逼到台前正面交锋；曹军南下后内心松动，面临继续斗沈川还是先救江东的抉择。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;沈川&quot;,
+        &quot;relation&quot;: &quot;动摇他体系根基的变革者，从看戏到正面交锋&quot;
+      },
+      {
+        &quot;name&quot;: &quot;周瑜&quot;,
+        &quot;relation&quot;: &quot;忌惮又不得不依附的大都督&quot;
+      },
+      {
+        &quot;name&quot;: &quot;孙权&quot;,
+        &quot;relation&quot;: &quot;豪族在君主面前的政治靠山与博弈对象&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;他身后站着整个顾氏的几百张嘴&quot;,
+      &quot;江东能稳，靠的是现有的规矩&quot;,
+      &quot;是体系运转的守门人&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂&quot;,
+    &quot;prompt&quot;: &quot;A dignified middle-aged Chinese man, late thirties to forty, Eastern Han Dynasty Three Kingdoms era, an aristocratic gentry clan shipyard supervisor. Composed bearing, refined but understated robes of dark cloth, a subtle air of authority. A calm, impassive face with deep-set eyes that do not smile even when his mouth does. Large weathered hands marked by years of shipwright craft. Semi-realistic character illustration, painterly rendering.&quot;,
+    &quot;promptLocal&quot;: &quot;一位有威仪的中年中国男子，三十八到四十岁，东汉末年三国时代，江东豪族旁支、船坊主事。体态沉稳，衣着考究但不过分的深色长袍，自带威严。面容沉静，眼窝深邃，笑时眼睛不笑。双手粗大，是多年造船工艺留下的痕迹。半写实厚涂。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;middle-aged male&quot;,
+      &quot;Han Dynasty gentry&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the dignified middle-aged gentry supervisor as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the refined dark robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the weathered shipwright hands, the subtle folds of the dark robe, the cloth sash and jade pendant at the waist, the impassive mouth that never quite smiles. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;低沉稳重的中年男声，中低音区，声音里带着久居其位的从容&quot;,
+    &quot;pitch&quot;: &quot;中低&quot;,
+    &quot;pace&quot;: &quot;慢，字斟句酌，绵里藏针&quot;,
+    &quot;accent&quot;: &quot;略带江东士族的口音，尾音拿捏&quot;,
+    &quot;emotion&quot;: &quot;克制内敛，笑意里藏着锋芒&quot;,
+    &quot;referenceHint&quot;: &quot;像一个在衙门里熬了半辈子、说话从不露破绽的老吏&quot;,
+    &quot;prompt&quot;: &quot;A steady low mid-range Chinese male voice, middle-aged. Composed and unhurried, each word measured, carrying a subtle edge beneath an affable surface. Restrained, with a faint Jiangdong gentry accent.&quot;,
+    &quot;promptLocal&quot;: &quot;低沉稳重的中年男声，中低音区。从容不迫，字斟句酌，和善表象下藏着锋芒。克制内敛，略带江东士族口音。&quot;
+  }
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-周瑜">
+  <header class="char-h">
+    <span class="char-n">03</span>
+    <h2>周瑜</h2>
+    <span class="badge">主要角色</span>
+    <span class="aka">又称　周都督 · 公瑾 · 大都督</span>
+    <span class="char-one">江东第一智将，天才却非全能，一眼看穿沈川，也一眼看出他正补上自己缺的那块板。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <div class="plate plate-empty">
+         <span>周瑜 · 尚未出图<br><em>用下方提示词生成</em></span>
+       </div>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>三十出头，风姿出众，衣冠整肃，眉眼间是运筹帷幄的锐气与儒将的温雅。身形挺拔，佩剑，举止间自带统帅的威仪。眼神极亮，看人时仿佛能直抵人心。</p></section>
+        <section class="blk"><h3>性情</h3><p>思维极快，三言两语便能看穿人。长于战略、军令与临机决断，短于系统性工程与标准化管理。惜才，但始终在用才的同时防着才。</p></section>
+        <section class="blk"><h3>动机</h3><p>辅佐孙权，保住江东基业，抗曹存国。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从这是谁，到此人可以用，再到此事让沈川来——始终清醒地用沈川、也防沈川。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>既可能是奇才，也可能是变数</blockquote><blockquote>天才型</blockquote><blockquote>把生产当系统来拆</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约三十四岁</dd></div><div class="kv"><dt>身份</dt><dd>江东大都督，赤壁联军统帅</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">沈川</dt><dd>用他也防他的统帅，看中他补上组织力这块短板</dd></div><div class="kv"><dt class="rel-n">孙权</dt><dd>辅佐的年轻君主</dd></div><div class="kv"><dt class="rel-n">鲁肃</dt><dd>同殿为臣、抗曹大计的同路人</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>清朗有力的男声，中音偏亮，带儒将的从容与统帅的威仪</dd></div><div class="kv"><dt>音高</dt><dd>中</dd></div><div class="kv"><dt>语速</dt><dd>适中，条理清晰，关键时刻斩钉截铁</dd></div><div class="kv"><dt>口音</dt><dd>略带江东口音的雅言</dd></div><div class="kv"><dt>情绪</dt><dd>沉稳自信，运筹帷幄的笃定</dd></div><div class="kv"><dt>类比</dt><dd>像一个三言两语就能把人看透、又让人心悦诚服的天才统帅</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>scholar-general</li><li>Han Dynasty commander</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词</span><button class="copy" data-copy="一位风姿出众的中国儒将，三十出头，东汉末年三国时代，江东江东主帅。身形挺拔，衣冠整肃，佩剑，兼具儒将温雅与统帅威仪。眼神极亮，仿佛能看穿人心，面容俊朗。半写实厚涂。">复制</button></summary>
+  <p>一位风姿出众的中国儒将，三十出头，东汉末年三国时代，江东江东主帅。身形挺拔，衣冠整肃，佩剑，兼具儒将温雅与统帅威仪。眼神极亮，仿佛能看穿人心，面容俊朗。半写实厚涂。</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词 EN</span><button class="copy" data-copy="A handsome Chinese military commander, early thirties, Eastern Han Dynasty Three Kingdoms era, the Grand Commander of Jiangdong. Tall upright bearing, immaculate robes with a sword at his side, the elegant bearing of a scholar-general and the sharpness of a strategist. Very bright perceptive eyes that seem to see through people, refined features. Semi-realistic character illustration, painterly rendering.">复制</button></summary>
+  <p>A handsome Chinese military commander, early thirties, Eastern Han Dynasty Three Kingdoms era, the Grand Commander of Jiangdong. Tall upright bearing, immaculate robes with a sword at his side, the elegant bearing of a scholar-general and the sharpness of a strategist. Very bright perceptive eyes that seem to see through people, refined features. Semi-realistic character illustration, painterly rendering.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the handsome scholar-general as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the immaculate robes with the sword at his side. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the bright perceptive eyes, the sword hilt and scabbard, the commander's headpiece, the refined fold of his robes. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the handsome scholar-general as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the immaculate robes with the sword at his side. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the bright perceptive eyes, the sword hilt and scabbard, the commander's headpiece, the refined fold of his robes. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词</span><button class="copy" data-copy="清朗有力的男声，中音偏亮，三十出头。沉稳自信，从容而果决，是天才统帅的笃定。带江东口音的雅言。">复制</button></summary>
+  <p>清朗有力的男声，中音偏亮，三十出头。沉稳自信，从容而果决，是天才统帅的笃定。带江东口音的雅言。</p>
+</details>
+      <details class="pr">
+  <summary><span>音色提示词 EN</span><button class="copy" data-copy="A clear strong Chinese male voice, mid-range with a bright edge, early thirties. Composed and authoritative, unhurried yet decisive, the calm assurance of a brilliant strategist. A refined Jiangdong accent.">复制</button></summary>
+  <p>A clear strong Chinese male voice, mid-range with a bright edge, early thirties. Composed and authoritative, unhurried yet decisive, the calm assurance of a brilliant strategist. A refined Jiangdong accent.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C03&quot;,
+  &quot;name&quot;: &quot;周瑜&quot;,
+  &quot;aliases&quot;: [
+    &quot;周都督&quot;,
+    &quot;公瑾&quot;,
+    &quot;大都督&quot;
+  ],
+  &quot;importance&quot;: &quot;major&quot;,
+  &quot;oneLiner&quot;: &quot;江东第一智将，天才却非全能，一眼看穿沈川，也一眼看出他正补上自己缺的那块板。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约三十四岁&quot;,
+    &quot;identity&quot;: &quot;江东大都督，赤壁联军统帅&quot;,
+    &quot;appearance&quot;: &quot;三十出头，风姿出众，衣冠整肃，眉眼间是运筹帷幄的锐气与儒将的温雅。身形挺拔，佩剑，举止间自带统帅的威仪。眼神极亮，看人时仿佛能直抵人心。&quot;,
+    &quot;personality&quot;: [
+      &quot;天才&quot;,
+      &quot;睿智&quot;,
+      &quot;果决&quot;,
+      &quot;惜才&quot;,
+      &quot;警惕&quot;
+    ],
+    &quot;temperament&quot;: &quot;思维极快，三言两语便能看穿人。长于战略、军令与临机决断，短于系统性工程与标准化管理。惜才，但始终在用才的同时防着才。&quot;,
+    &quot;motivation&quot;: &quot;辅佐孙权，保住江东基业，抗曹存国。&quot;,
+    &quot;arc&quot;: &quot;从这是谁，到此人可以用，再到此事让沈川来——始终清醒地用沈川、也防沈川。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;沈川&quot;,
+        &quot;relation&quot;: &quot;用他也防他的统帅，看中他补上组织力这块短板&quot;
+      },
+      {
+        &quot;name&quot;: &quot;孙权&quot;,
+        &quot;relation&quot;: &quot;辅佐的年轻君主&quot;
+      },
+      {
+        &quot;name&quot;: &quot;鲁肃&quot;,
+        &quot;relation&quot;: &quot;同殿为臣、抗曹大计的同路人&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;既可能是奇才，也可能是变数&quot;,
+      &quot;天才型&quot;,
+      &quot;把生产当系统来拆&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂&quot;,
+    &quot;prompt&quot;: &quot;A handsome Chinese military commander, early thirties, Eastern Han Dynasty Three Kingdoms era, the Grand Commander of Jiangdong. Tall upright bearing, immaculate robes with a sword at his side, the elegant bearing of a scholar-general and the sharpness of a strategist. Very bright perceptive eyes that seem to see through people, refined features. Semi-realistic character illustration, painterly rendering.&quot;,
+    &quot;promptLocal&quot;: &quot;一位风姿出众的中国儒将，三十出头，东汉末年三国时代，江东江东主帅。身形挺拔，衣冠整肃，佩剑，兼具儒将温雅与统帅威仪。眼神极亮，仿佛能看穿人心，面容俊朗。半写实厚涂。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;scholar-general&quot;,
+      &quot;Han Dynasty commander&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the handsome scholar-general as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the immaculate robes with the sword at his side. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the bright perceptive eyes, the sword hilt and scabbard, the commander's headpiece, the refined fold of his robes. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;清朗有力的男声，中音偏亮，带儒将的从容与统帅的威仪&quot;,
+    &quot;pitch&quot;: &quot;中&quot;,
+    &quot;pace&quot;: &quot;适中，条理清晰，关键时刻斩钉截铁&quot;,
+    &quot;accent&quot;: &quot;略带江东口音的雅言&quot;,
+    &quot;emotion&quot;: &quot;沉稳自信，运筹帷幄的笃定&quot;,
+    &quot;referenceHint&quot;: &quot;像一个三言两语就能把人看透、又让人心悦诚服的天才统帅&quot;,
+    &quot;prompt&quot;: &quot;A clear strong Chinese male voice, mid-range with a bright edge, early thirties. Composed and authoritative, unhurried yet decisive, the calm assurance of a brilliant strategist. A refined Jiangdong accent.&quot;,
+    &quot;promptLocal&quot;: &quot;清朗有力的男声，中音偏亮，三十出头。沉稳自信，从容而果决，是天才统帅的笃定。带江东口音的雅言。&quot;
+  }
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-鲁肃">
+  <header class="char-h">
+    <span class="char-n">04</span>
+    <h2>鲁肃</h2>
+    <span class="badge">主要角色</span>
+    <span class="aka">又称　鲁子敬 · 子敬</span>
+    <span class="char-one">江东第一流的战略眼光与人情洞察，看的是长远格局，也看透了沈川身上江东旧人没有的东西。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <div class="plate plate-empty">
+         <span>鲁肃 · 尚未出图<br><em>用下方提示词生成</em></span>
+       </div>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>中年，面容宽和敦厚，但眼神极深，藏着洞察人心与格局的锐利。衣着朴素得体，不尚奢华。举止从容，有士大夫的涵养，却绝无老好人式的软。</p></section>
+        <section class="blk"><h3>性情</h3><p>不露声色，但步步都在试探。看人不看门第看结果，说话温和却总能点到要害。是那种不显山露水、却掌握全局的人。</p></section>
+        <section class="blk"><h3>动机</h3><p>促成孙刘联盟抗曹，为江东谋长远，也为江东物色未来的基石。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从暗中观察到正面试探，再到对沈川起保护培养之心，赌他能否成为江东的下一块基石。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>别人巴结、依附、求庇护，沈川却是&quot;想做事、敢担责、还不跪&quot;</blockquote><blockquote>他在赌沈川能不能成为&quot;江东的下一块基石&quot;</blockquote><blockquote>不看门第、只看结果、还能把复杂问题讲清楚</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约三十四岁（与周瑜同辈）</dd></div><div class="kv"><dt>身份</dt><dd>江东战略家，主张联刘抗曹的核心人物</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">沈川</dt><dd>暗中观察、有意保护培养的寒门才俊</dd></div><div class="kv"><dt class="rel-n">周瑜</dt><dd>同殿为臣、抗曹大计的同路人</dd></div><div class="kv"><dt class="rel-n">孙权</dt><dd>辅佐的年轻君主</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>温和宽厚的中年男声，中音区，语气平缓但字字有分量</dd></div><div class="kv"><dt>音高</dt><dd>中</dd></div><div class="kv"><dt>语速</dt><dd>不疾不徐，点到要害</dd></div><div class="kv"><dt>口音</dt><dd>带江东口音的雅言</dd></div><div class="kv"><dt>情绪</dt><dd>沉静宽和，藏着洞察的锐利</dd></div><div class="kv"><dt>类比</dt><dd>像一个说话温和却总能一句话说中要害的长者</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>strategist</li><li>Han Dynasty scholar-official</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词</span><button class="copy" data-copy="一位宽和敦厚的中国谋士，三十五六岁，东汉末年三国时代，江东战略家。面容和善但眼神极深，洞察一切。衣着朴素得体，有士大夫的涵养与不显山露水的威仪。半写实厚涂。">复制</button></summary>
+  <p>一位宽和敦厚的中国谋士，三十五六岁，东汉末年三国时代，江东战略家。面容和善但眼神极深，洞察一切。衣着朴素得体，有士大夫的涵养与不显山露水的威仪。半写实厚涂。</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词 EN</span><button class="copy" data-copy="A broad-faced calm Chinese statesman, mid-thirties, Eastern Han Dynasty Three Kingdoms era, a Jiangdong strategist. Kindly composed features but with very deep, perceptive eyes that miss nothing. Simple well-kept robes without ostentation, the bearing of a scholar-official with quiet authority. Semi-realistic character illustration, painterly rendering.">复制</button></summary>
+  <p>A broad-faced calm Chinese statesman, mid-thirties, Eastern Han Dynasty Three Kingdoms era, a Jiangdong strategist. Kindly composed features but with very deep, perceptive eyes that miss nothing. Simple well-kept robes without ostentation, the bearing of a scholar-official with quiet authority. Semi-realistic character illustration, painterly rendering.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the calm perceptive statesman as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the simple well-kept scholar robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the deep perceptive eyes, the modest cloth sash, the scholar's headpiece, the unhurried fold of his hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the calm perceptive statesman as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the simple well-kept scholar robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the deep perceptive eyes, the modest cloth sash, the scholar's headpiece, the unhurried fold of his hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词</span><button class="copy" data-copy="温和宽厚的中年男声，中音区。语气平缓但字字有分量，沉静宽和，温和外表下藏着洞察的锐利。带江东口音的雅言。">复制</button></summary>
+  <p>温和宽厚的中年男声，中音区。语气平缓但字字有分量，沉静宽和，温和外表下藏着洞察的锐利。带江东口音的雅言。</p>
+</details>
+      <details class="pr">
+  <summary><span>音色提示词 EN</span><button class="copy" data-copy="A warm steady Chinese male voice, mid-range, mid-thirties. Gentle and unhurried, calm yet weighty, a quiet perceptive sharpness beneath a mild exterior. A refined Jiangdong accent.">复制</button></summary>
+  <p>A warm steady Chinese male voice, mid-range, mid-thirties. Gentle and unhurried, calm yet weighty, a quiet perceptive sharpness beneath a mild exterior. A refined Jiangdong accent.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C04&quot;,
+  &quot;name&quot;: &quot;鲁肃&quot;,
+  &quot;aliases&quot;: [
+    &quot;鲁子敬&quot;,
+    &quot;子敬&quot;
+  ],
+  &quot;importance&quot;: &quot;major&quot;,
+  &quot;oneLiner&quot;: &quot;江东第一流的战略眼光与人情洞察，看的是长远格局，也看透了沈川身上江东旧人没有的东西。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约三十四岁（与周瑜同辈）&quot;,
+    &quot;identity&quot;: &quot;江东战略家，主张联刘抗曹的核心人物&quot;,
+    &quot;appearance&quot;: &quot;中年，面容宽和敦厚，但眼神极深，藏着洞察人心与格局的锐利。衣着朴素得体，不尚奢华。举止从容，有士大夫的涵养，却绝无老好人式的软。&quot;,
+    &quot;personality&quot;: [
+      &quot;远见&quot;,
+      &quot;洞察&quot;,
+      &quot;宽和&quot;,
+      &quot;务实&quot;,
+      &quot;沉稳&quot;
+    ],
+    &quot;temperament&quot;: &quot;不露声色，但步步都在试探。看人不看门第看结果，说话温和却总能点到要害。是那种不显山露水、却掌握全局的人。&quot;,
+    &quot;motivation&quot;: &quot;促成孙刘联盟抗曹，为江东谋长远，也为江东物色未来的基石。&quot;,
+    &quot;arc&quot;: &quot;从暗中观察到正面试探，再到对沈川起保护培养之心，赌他能否成为江东的下一块基石。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;沈川&quot;,
+        &quot;relation&quot;: &quot;暗中观察、有意保护培养的寒门才俊&quot;
+      },
+      {
+        &quot;name&quot;: &quot;周瑜&quot;,
+        &quot;relation&quot;: &quot;同殿为臣、抗曹大计的同路人&quot;
+      },
+      {
+        &quot;name&quot;: &quot;孙权&quot;,
+        &quot;relation&quot;: &quot;辅佐的年轻君主&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;别人巴结、依附、求庇护，沈川却是\&quot;想做事、敢担责、还不跪\&quot;&quot;,
+      &quot;他在赌沈川能不能成为\&quot;江东的下一块基石\&quot;&quot;,
+      &quot;不看门第、只看结果、还能把复杂问题讲清楚&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂&quot;,
+    &quot;prompt&quot;: &quot;A broad-faced calm Chinese statesman, mid-thirties, Eastern Han Dynasty Three Kingdoms era, a Jiangdong strategist. Kindly composed features but with very deep, perceptive eyes that miss nothing. Simple well-kept robes without ostentation, the bearing of a scholar-official with quiet authority. Semi-realistic character illustration, painterly rendering.&quot;,
+    &quot;promptLocal&quot;: &quot;一位宽和敦厚的中国谋士，三十五六岁，东汉末年三国时代，江东战略家。面容和善但眼神极深，洞察一切。衣着朴素得体，有士大夫的涵养与不显山露水的威仪。半写实厚涂。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;strategist&quot;,
+      &quot;Han Dynasty scholar-official&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the calm perceptive statesman as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the simple well-kept scholar robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the deep perceptive eyes, the modest cloth sash, the scholar's headpiece, the unhurried fold of his hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;温和宽厚的中年男声，中音区，语气平缓但字字有分量&quot;,
+    &quot;pitch&quot;: &quot;中&quot;,
+    &quot;pace&quot;: &quot;不疾不徐，点到要害&quot;,
+    &quot;accent&quot;: &quot;带江东口音的雅言&quot;,
+    &quot;emotion&quot;: &quot;沉静宽和，藏着洞察的锐利&quot;,
+    &quot;referenceHint&quot;: &quot;像一个说话温和却总能一句话说中要害的长者&quot;,
+    &quot;prompt&quot;: &quot;A warm steady Chinese male voice, mid-range, mid-thirties. Gentle and unhurried, calm yet weighty, a quiet perceptive sharpness beneath a mild exterior. A refined Jiangdong accent.&quot;,
+    &quot;promptLocal&quot;: &quot;温和宽厚的中年男声，中音区。语气平缓但字字有分量，沉静宽和，温和外表下藏着洞察的锐利。带江东口音的雅言。&quot;
+  }
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-孙权">
+  <header class="char-h">
+    <span class="char-n">05</span>
+    <h2>孙权</h2>
+    <span class="badge">主要角色</span>
+    <span class="aka">又称　孙仲谋 · 吴侯</span>
+    <span class="char-one">有帝王心术的年轻君主，多疑擅权衡，看沈川不是看有没有才，而是看能否驾驭。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <div class="plate plate-empty">
+         <span>孙权 · 尚未出图<br><em>用下方提示词生成</em></span>
+       </div>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>年轻，面容英挺，眉宇间有不怒自威的帝王气。衣饰华贵而庄重，举止间是久居人上养出的从容与审视。眼神沉静而多疑，看人时习惯性地先掂量。</p></section>
+        <section class="blk"><h3>性情</h3><p>沉稳有度，心思深沉。看人不看才气看能否驾驭，擅长在群臣之间制衡。季末在军议上突然点名沈川，是试探、立威与借刀的三重心术。</p></section>
+        <section class="blk"><h3>动机</h3><p>坐稳江东，守住父兄留下的基业，在存亡关头决断抗曹。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从不知道此人，到听过名字，再到第一次主动问意见——本质是在物色一把没有旧势力背景的刀。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>此人能否为我所用、是否可控、会不会威胁平衡</blockquote><blockquote>君王在物色一把没有旧势力背景的刀</blockquote><blockquote>无根无靠的孤臣</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约二十七岁</dd></div><div class="kv"><dt>身份</dt><dd>江东君主，刚坐稳江东的年轻统治者</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">沈川</dt><dd>用帝王心术审视的孤臣，好用也需驾驭</dd></div><div class="kv"><dt class="rel-n">周瑜</dt><dd>倚重的大都督</dd></div><div class="kv"><dt class="rel-n">鲁肃</dt><dd>倚重的战略家</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>低沉有威仪的年轻男声，中低音区，自带帝王的沉稳与审视</dd></div><div class="kv"><dt>音高</dt><dd>中低</dd></div><div class="kv"><dt>语速</dt><dd>缓慢而有力，每句话都像在权衡</dd></div><div class="kv"><dt>口音</dt><dd>雅言，字正腔圆</dd></div><div class="kv"><dt>情绪</dt><dd>沉稳多疑，喜怒不形于色</dd></div><div class="kv"><dt>类比</dt><dd>像一个在群臣之间活成君主、每句话都掂量再三的年轻帝王</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>young ruler</li><li>Han Dynasty lord</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词</span><button class="copy" data-copy="一位年轻的江东君主，二十七八岁，东汉末年三国时代。面容英挺，眉宇间有不怒自威的帝王气，衣着华贵庄重，久居人上养出的从容审视。眼神沉静多疑，看人时习惯性先掂量。半写实厚涂。">复制</button></summary>
+  <p>一位年轻的江东君主，二十七八岁，东汉末年三国时代。面容英挺，眉宇间有不怒自威的帝王气，衣着华贵庄重，久居人上养出的从容审视。眼神沉静多疑，看人时习惯性先掂量。半写实厚涂。</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词 EN</span><button class="copy" data-copy="A young Chinese ruler, late twenties, Eastern Han Dynasty Three Kingdoms era, the lord of Jiangdong. Handsome commanding features with an unspoken royal authority, ornate dignified robes, the composed self-possession of one born to rule. Calm watchful eyes that weigh everyone he looks at. Semi-realistic character illustration, painterly rendering.">复制</button></summary>
+  <p>A young Chinese ruler, late twenties, Eastern Han Dynasty Three Kingdoms era, the lord of Jiangdong. Handsome commanding features with an unspoken royal authority, ornate dignified robes, the composed self-possession of one born to rule. Calm watchful eyes that weigh everyone he looks at. Semi-realistic character illustration, painterly rendering.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the young lord as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the ornate dignified robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the watchful weighing eyes, the ornate headpiece, the elaborate robes and belt ornaments, the composed hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the young lord as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the ornate dignified robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the watchful weighing eyes, the ornate headpiece, the elaborate robes and belt ornaments, the composed hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词</span><button class="copy" data-copy="低沉有威仪的年轻男声，中低音区。缓慢而有力，每句话都像在权衡，沉稳多疑，喜怒不形于色。字正腔圆的雅言。">复制</button></summary>
+  <p>低沉有威仪的年轻男声，中低音区。缓慢而有力，每句话都像在权衡，沉稳多疑，喜怒不形于色。字正腔圆的雅言。</p>
+</details>
+      <details class="pr">
+  <summary><span>音色提示词 EN</span><button class="copy" data-copy="A deep composed young Chinese male voice, low mid-range, late twenties. Slow and measured, each sentence weighted as if weighing, calm and watchful with little outward emotion. Precise formal speech.">复制</button></summary>
+  <p>A deep composed young Chinese male voice, low mid-range, late twenties. Slow and measured, each sentence weighted as if weighing, calm and watchful with little outward emotion. Precise formal speech.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C05&quot;,
+  &quot;name&quot;: &quot;孙权&quot;,
+  &quot;aliases&quot;: [
+    &quot;孙仲谋&quot;,
+    &quot;吴侯&quot;
+  ],
+  &quot;importance&quot;: &quot;major&quot;,
+  &quot;oneLiner&quot;: &quot;有帝王心术的年轻君主，多疑擅权衡，看沈川不是看有没有才，而是看能否驾驭。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约二十七岁&quot;,
+    &quot;identity&quot;: &quot;江东君主，刚坐稳江东的年轻统治者&quot;,
+    &quot;appearance&quot;: &quot;年轻，面容英挺，眉宇间有不怒自威的帝王气。衣饰华贵而庄重，举止间是久居人上养出的从容与审视。眼神沉静而多疑，看人时习惯性地先掂量。&quot;,
+    &quot;personality&quot;: [
+      &quot;多疑&quot;,
+      &quot;善权衡&quot;,
+      &quot;懂制衡&quot;,
+      &quot;果断&quot;,
+      &quot;有城府&quot;
+    ],
+    &quot;temperament&quot;: &quot;沉稳有度，心思深沉。看人不看才气看能否驾驭，擅长在群臣之间制衡。季末在军议上突然点名沈川，是试探、立威与借刀的三重心术。&quot;,
+    &quot;motivation&quot;: &quot;坐稳江东，守住父兄留下的基业，在存亡关头决断抗曹。&quot;,
+    &quot;arc&quot;: &quot;从不知道此人，到听过名字，再到第一次主动问意见——本质是在物色一把没有旧势力背景的刀。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;沈川&quot;,
+        &quot;relation&quot;: &quot;用帝王心术审视的孤臣，好用也需驾驭&quot;
+      },
+      {
+        &quot;name&quot;: &quot;周瑜&quot;,
+        &quot;relation&quot;: &quot;倚重的大都督&quot;
+      },
+      {
+        &quot;name&quot;: &quot;鲁肃&quot;,
+        &quot;relation&quot;: &quot;倚重的战略家&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;此人能否为我所用、是否可控、会不会威胁平衡&quot;,
+      &quot;君王在物色一把没有旧势力背景的刀&quot;,
+      &quot;无根无靠的孤臣&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂&quot;,
+    &quot;prompt&quot;: &quot;A young Chinese ruler, late twenties, Eastern Han Dynasty Three Kingdoms era, the lord of Jiangdong. Handsome commanding features with an unspoken royal authority, ornate dignified robes, the composed self-possession of one born to rule. Calm watchful eyes that weigh everyone he looks at. Semi-realistic character illustration, painterly rendering.&quot;,
+    &quot;promptLocal&quot;: &quot;一位年轻的江东君主，二十七八岁，东汉末年三国时代。面容英挺，眉宇间有不怒自威的帝王气，衣着华贵庄重，久居人上养出的从容审视。眼神沉静多疑，看人时习惯性先掂量。半写实厚涂。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;young ruler&quot;,
+      &quot;Han Dynasty lord&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the young lord as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the ornate dignified robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the watchful weighing eyes, the ornate headpiece, the elaborate robes and belt ornaments, the composed hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;低沉有威仪的年轻男声，中低音区，自带帝王的沉稳与审视&quot;,
+    &quot;pitch&quot;: &quot;中低&quot;,
+    &quot;pace&quot;: &quot;缓慢而有力，每句话都像在权衡&quot;,
+    &quot;accent&quot;: &quot;雅言，字正腔圆&quot;,
+    &quot;emotion&quot;: &quot;沉稳多疑，喜怒不形于色&quot;,
+    &quot;referenceHint&quot;: &quot;像一个在群臣之间活成君主、每句话都掂量再三的年轻帝王&quot;,
+    &quot;prompt&quot;: &quot;A deep composed young Chinese male voice, low mid-range, late twenties. Slow and measured, each sentence weighted as if weighing, calm and watchful with little outward emotion. Precise formal speech.&quot;,
+    &quot;promptLocal&quot;: &quot;低沉有威仪的年轻男声，中低音区。缓慢而有力，每句话都像在权衡，沉稳多疑，喜怒不形于色。字正腔圆的雅言。&quot;
+  }
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+<article class="char" id="p-老工匠">
+  <header class="char-h">
+    <span class="char-n">06</span>
+    <h2>老工匠</h2>
+    <span class="badge">配角</span>
+    <span class="aka">又称　老师傅</span>
+    <span class="char-one">船坊里修了几十年船的老资格，传统手艺的守门人，从甩手抵制到将信将疑地服了沈川。</span>
+  </header>
+
+  <div class="upper">
+    <div class="stage">
+      <div class="plate plate-empty">
+         <span>老工匠 · 尚未出图<br><em>用下方提示词生成</em></span>
+       </div>
+
+      <div class="grid2">
+        <section class="blk"><h3>外貌</h3><p>皮肤黝黑粗糙，满手老茧与旧伤，是几十年抡斧拉锯留下的印记。背微驼，眼神倔强，说话嗓门大。常穿沾满木屑的短褐，腰间别着墨斗与尺。</p></section>
+        <section class="blk"><h3>性情</h3><p>嗓门大，脾气直，认死理。瞧不起嘴上没毛的小吏，但一旦被真本事折服，会是最实在的拥护者。看人不看身份，看手上的活。</p></section>
+        <section class="blk"><h3>动机</h3><p>把手艺和饭碗守好，不让人拿他修了几十年的船当儿戏。</p></section>
+        <section class="blk"><h3>人物弧光</h3><p>从集体抵制到被沈川做给你看打动，从将信将疑到心甘情愿地跟着干。</p></section>
+      </div>
+
+      <section class="blk source"><h3>原文依据</h3>
+               <div class="quotes"><blockquote>从&quot;不信&quot;到&quot;将信将疑&quot;</blockquote><blockquote>嘴上没毛</blockquote><blockquote>传统手艺</blockquote></div>
+             </section>
+    </div>
+
+    <aside class="side-cards">
+      <div class="card">
+        <dl><div class="kv"><dt>性别</dt><dd>男</dd></div><div class="kv"><dt>年龄</dt><dd>约五十多岁</dd></div><div class="kv"><dt>身份</dt><dd>柴桑船坊老资格的造船工匠代表</dd></div></dl>
+      </div>
+
+      <div class="card"><h4>关系</h4>
+               <dl><div class="kv"><dt class="rel-n">沈川</dt><dd>从瞧不起到服气的对象，传统手艺 vs 标准化的具象代表</dd></div><div class="kv"><dt class="rel-n">顾承</dt><dd>船坊主事，旧体系里的上峰</dd></div></dl>
+             </div>
+
+      <div class="card">
+        <h4>声音<i class="tag-en">VOICE</i></h4>
+        <dl><div class="kv"><dt>音色</dt><dd>沙哑粗犷的老年男声，中低音区，嗓门大</dd></div><div class="kv"><dt>音高</dt><dd>中低</dd></div><div class="kv"><dt>语速</dt><dd>偏快，说话冲，爱抬杠</dd></div><div class="kv"><dt>口音</dt><dd>带江东柴桑一带的口音</dd></div><div class="kv"><dt>情绪</dt><dd>倔强直率，不服就顶，服了就实</dd></div><div class="kv"><dt>类比</dt><dd>像一个在船厂吼了半辈子、认死理也认真本事的老师傅</dd></div></dl>
+      </div>
+
+      <div class="card">
+        <h4>画风</h4>
+        <p class="style">半写实厚涂</p>
+        <ul class="tags"><li>semi-realistic</li><li>painterly</li><li>character sheet</li><li>elderly craftsman</li><li>Han Dynasty shipwright</li></ul>
+      </div>
+    </aside>
+  </div>
+
+  <div class="prompts">
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>出图提示词</span><button class="copy" data-copy="一位饱经风霜的老船匠，五十多岁，东汉末年三国时代。皮肤黝黑粗糙，满手老茧旧伤，背微驼，下颌倔强，嗓门大。穿沾满木屑的短褐，腰间别着墨斗和尺。半写实厚涂。">复制</button></summary>
+  <p>一位饱经风霜的老船匠，五十多岁，东汉末年三国时代。皮肤黝黑粗糙，满手老茧旧伤，背微驼，下颌倔强，嗓门大。穿沾满木屑的短褐，腰间别着墨斗和尺。半写实厚涂。</p>
+</details>
+      <details class="pr">
+  <summary><span>出图提示词 EN</span><button class="copy" data-copy="A weathered elderly Chinese shipwright, in his fifties, Eastern Han Dynasty Three Kingdoms era. Dark rough skin, hands full of calluses and old scars from decades of axe and saw work, slightly stooped back. A stubborn set to his jaw, a loud forthright manner. Wearing a wood-dust-covered short robe with a carpenter's ink line and ruler tucked at the waist. Semi-realistic character illustration, painterly rendering.">复制</button></summary>
+  <p>A weathered elderly Chinese shipwright, in his fifties, Eastern Han Dynasty Three Kingdoms era. Dark rough skin, hands full of calluses and old scars from decades of axe and saw work, slightly stooped back. A stubborn set to his jaw, a loud forthright manner. Wearing a wood-dust-covered short robe with a carpenter's ink line and ruler tucked at the waist. Semi-realistic character illustration, painterly rendering.</p>
+</details>
+      <details class="pr">
+  <summary><span>角色设定图提示词 EN</span><button class="copy" data-copy="Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the weathered elderly shipwright as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the wood-dust-covered short robe. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the calloused scarred hands, the carpenter's ink line and ruler, the stooped stubborn set of his shoulders, the wood dust on his robe. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.">复制</button></summary>
+  <p>Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the weathered elderly shipwright as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the wood-dust-covered short robe. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the calloused scarred hands, the carpenter's ink line and ruler, the stooped stubborn set of his shoulders, the wood dust on his robe. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.</p>
+</details>
+      <details class="pr">
+  <summary><span>反向提示词</span><button class="copy" data-copy="plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop">复制</button></summary>
+  <p>plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop</p>
+</details>
+    </div>
+    <div class="pgroup">
+      <details class="pr">
+  <summary><span>音色提示词</span><button class="copy" data-copy="沙哑粗犷的老年男声，中低音区。嗓门大，说话冲，爱抬杠，但一旦服了就实在。带江东柴桑口音。">复制</button></summary>
+  <p>沙哑粗犷的老年男声，中低音区。嗓门大，说话冲，爱抬杠，但一旦服了就实在。带江东柴桑口音。</p>
+</details>
+      <details class="pr">
+  <summary><span>音色提示词 EN</span><button class="copy" data-copy="A hoarse gruff elderly Chinese male voice, low mid-range, fifties. Loud and blunt, quick to argue, but plainspoken and sincere once won over. A rustic Chaisang Jiangdong accent.">复制</button></summary>
+  <p>A hoarse gruff elderly Chinese male voice, low mid-range, fifties. Loud and blunt, quick to argue, but plainspoken and sincere once won over. A rustic Chaisang Jiangdong accent.</p>
+</details>
+      <div class="pgroup-f">
+        <button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;C06&quot;,
+  &quot;name&quot;: &quot;老工匠&quot;,
+  &quot;aliases&quot;: [
+    &quot;老师傅&quot;
+  ],
+  &quot;importance&quot;: &quot;supporting&quot;,
+  &quot;oneLiner&quot;: &quot;船坊里修了几十年船的老资格，传统手艺的守门人，从甩手抵制到将信将疑地服了沈川。&quot;,
+  &quot;persona&quot;: {
+    &quot;gender&quot;: &quot;男&quot;,
+    &quot;ageRange&quot;: &quot;约五十多岁&quot;,
+    &quot;identity&quot;: &quot;柴桑船坊老资格的造船工匠代表&quot;,
+    &quot;appearance&quot;: &quot;皮肤黝黑粗糙，满手老茧与旧伤，是几十年抡斧拉锯留下的印记。背微驼，眼神倔强，说话嗓门大。常穿沾满木屑的短褐，腰间别着墨斗与尺。&quot;,
+    &quot;personality&quot;: [
+      &quot;倔强&quot;,
+      &quot;守旧&quot;,
+      &quot;手艺精湛&quot;,
+      &quot;重实际&quot;,
+      &quot;直率&quot;
+    ],
+    &quot;temperament&quot;: &quot;嗓门大，脾气直，认死理。瞧不起嘴上没毛的小吏，但一旦被真本事折服，会是最实在的拥护者。看人不看身份，看手上的活。&quot;,
+    &quot;motivation&quot;: &quot;把手艺和饭碗守好，不让人拿他修了几十年的船当儿戏。&quot;,
+    &quot;arc&quot;: &quot;从集体抵制到被沈川做给你看打动，从将信将疑到心甘情愿地跟着干。&quot;,
+    &quot;relationships&quot;: [
+      {
+        &quot;name&quot;: &quot;沈川&quot;,
+        &quot;relation&quot;: &quot;从瞧不起到服气的对象，传统手艺 vs 标准化的具象代表&quot;
+      },
+      {
+        &quot;name&quot;: &quot;顾承&quot;,
+        &quot;relation&quot;: &quot;船坊主事，旧体系里的上峰&quot;
+      }
+    ],
+    &quot;evidence&quot;: [
+      &quot;从\&quot;不信\&quot;到\&quot;将信将疑\&quot;&quot;,
+      &quot;嘴上没毛&quot;,
+      &quot;传统手艺&quot;
+    ]
+  },
+  &quot;image&quot;: {
+    &quot;style&quot;: &quot;半写实厚涂&quot;,
+    &quot;prompt&quot;: &quot;A weathered elderly Chinese shipwright, in his fifties, Eastern Han Dynasty Three Kingdoms era. Dark rough skin, hands full of calluses and old scars from decades of axe and saw work, slightly stooped back. A stubborn set to his jaw, a loud forthright manner. Wearing a wood-dust-covered short robe with a carpenter's ink line and ruler tucked at the waist. Semi-realistic character illustration, painterly rendering.&quot;,
+    &quot;promptLocal&quot;: &quot;一位饱经风霜的老船匠，五十多岁，东汉末年三国时代。皮肤黝黑粗糙，满手老茧旧伤，背微驼，下颌倔强，嗓门大。穿沾满木屑的短褐，腰间别着墨斗和尺。半写实厚涂。&quot;,
+    &quot;negativePrompt&quot;: &quot;plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;character sheet&quot;,
+      &quot;elderly craftsman&quot;,
+      &quot;Han Dynasty shipwright&quot;
+    ],
+    &quot;sheet&quot;: &quot;Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the weathered elderly shipwright as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the wood-dust-covered short robe. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the calloused scarred hands, the carpenter's ink line and ruler, the stooped stubborn set of his shoulders, the wood dust on his robe. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded.&quot;
+  },
+  &quot;voice&quot;: {
+    &quot;timbre&quot;: &quot;沙哑粗犷的老年男声，中低音区，嗓门大&quot;,
+    &quot;pitch&quot;: &quot;中低&quot;,
+    &quot;pace&quot;: &quot;偏快，说话冲，爱抬杠&quot;,
+    &quot;accent&quot;: &quot;带江东柴桑一带的口音&quot;,
+    &quot;emotion&quot;: &quot;倔强直率，不服就顶，服了就实&quot;,
+    &quot;referenceHint&quot;: &quot;像一个在船厂吼了半辈子、认死理也认真本事的老师傅&quot;,
+    &quot;prompt&quot;: &quot;A hoarse gruff elderly Chinese male voice, low mid-range, fifties. Loud and blunt, quick to argue, but plainspoken and sincere once won over. A rustic Chaisang Jiangdong accent.&quot;,
+    &quot;promptLocal&quot;: &quot;沙哑粗犷的老年男声，中低音区。嗓门大，说话冲，爱抬杠，但一旦服了就实在。带江东柴桑口音。&quot;
+  }
+}">复制整份角色 JSON</button>
+      </div>
+    </div>
+  </div>
+</article>
+  </main>
+</div>
+
+<div class="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-x" aria-label="关闭">关闭</button>
+  <img alt="">
+</div>
+
+<script type="application/json" id="cast-data">{"source":"江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）","lang":"zh","style":"realistic","summary":"建安十三年（208年）秋，赤壁之战前夜。一个现代机械系大学生沈川穿越成江东柴桑船坊的底层小吏，睁眼就被一纸军法处置逼进七日修船的死局。他靠现代工程管理的方法论，从死局翻盘，被大都督周瑜注意到，一路从修船小吏摸到兵权、卷入江东士族与寒门的暗流，最终在赤壁前夜以最末位之身站上江东最高军议。围绕他的，是守旧体系的门人顾承、识才善任的周瑜、洞见长远的鲁肃，以及用帝王心术审视每一个新面孔的年轻君主孙权。","characters":[{"id":"C01","name":"沈川","aliases":["沈小吏","那小子","修船的"],"importance":"protagonist","oneLiner":"一个只想活命、却靠拆解问题的本事一步步往高处走的现代穿越者。","persona":{"gender":"男","ageRange":"约二十二岁（穿越前为机械专业大四学生）","identity":"柴桑船坊底层小吏（穿越者，原为机械设计制造及其自动化专业大学生）","appearance":"清瘦，肤色偏白，眉目有股学生气。常穿一身洗得发白的粗布短褐，袖口习惯性卷起，手指因经常画图和测量而显得灵活。眼神里有种与周遭古人不同的、习惯先观察再动手的审慎。","personality":["务实","谨慎","善于拆解","惜命","不跪权贵"],"temperament":"说话快而直接，喜欢把事情拆成一二三四点。遇事先求稳、先盘点，再动手。骨子里有穷怕了的精打细算，也有年轻人赢了就容易飘的毛病。","motivation":"先活下去。在死局里求生，然后一步步向上，直到敢对天下负责。","arc":"从一个只想活命的现代小吏，长出一个能扛起天下责任的肩膀——季末他依然不是大将，只是刚刚有资格开口。","relationships":[{"name":"顾承","relation":"旧体系的守门人，从冷眼旁观到与他正面交锋的对手"},{"name":"周瑜","relation":"识才善任的大都督，用他也防他"},{"name":"鲁肃","relation":"暗中观察、有意保护培养他的战略家"},{"name":"孙权","relation":"用帝王心术审视他的年轻君主"}],"evidence":["一个只想活命的现代小吏，一步步长出\"敢对天下负责\"的肩膀","从小成绩中上但不是第一","穷怕了"]},"image":{"style":"半写实厚涂","prompt":"A lean young Chinese man in his early twenties, Eastern Han Dynasty Three Kingdoms era, a low-ranking shipyard clerk. Short dark hair tied loosely, fair skin, a studious youthful look. Wearing a faded coarse linen short robe with sleeves habitually rolled up, a thin cloth sash at the waist. Sharp observant eyes with a hint of caution, nimble hands used to measuring and drawing. Semi-realistic character illustration, painterly rendering.","promptLocal":"一名清瘦的中国青年男子，二十出头，东汉末年三国时代，船坊底层小吏。短发松束，肤色偏白，带学生气的面容。穿洗得发白的粗布短褐，袖口习惯性卷起，腰间系一条细布带。眼神敏锐带审慎，双手灵巧，惯于测量画图。半写实厚涂。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","young male","Han Dynasty clerk"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the lean young Chinese clerk as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the faded coarse linen short robe with rolled sleeves. PROPORTIONS ARE CRITICAL: the three full-body figures must keep identical, anatomically grounded proportions; do not squash the figure to fit detail. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the rolled sleeves, the cloth sash knot, the measuring calluses on his fingers, a small ledger scroll tucked at the waist. Every detail panel is a close-up crop of the SAME character; the three-quarter and side faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded."},"voice":{"timbre":"清亮的青年男声，中音区，带一点学生气的干净","pitch":"中","pace":"偏快，喜欢把话说成有条理的一二三点","accent":"普通话，偶尔带现代口癖","emotion":"冷静务实，危急时压得住场","referenceHint":"像一个习惯列清单、先想清楚再动手的工科生","prompt":"A clear young Chinese male voice, mid-range, early twenties. A clean, slightly bookish tone with a modern cadence, speaking in brisk measured clauses as if listing points. Calm and pragmatic, steady under pressure.","promptLocal":"清亮的中国青年男声，中音区，二十出头。干净的、略带书卷气的音色，语速偏快，说话像在列条目。冷静务实，危急时沉稳。"}},{"id":"C02","name":"顾承","aliases":["顾主事","顾氏"],"importance":"major","oneLiner":"把一门手艺和一套关系网吃透的旧体系守门人，不是恶人，只是不肯让沈川拿江东船坊做试验田。","persona":{"gender":"男","ageRange":"约三十八到四十岁","identity":"江东豪族顾氏旁支，船坊主事之一（实权在木料调配与工籍登记）","appearance":"中年，体态沉稳，衣着考究但不过分。面容沉静，眉宇间有久居其位养出的威仪与城府。手上指节粗大，是精于造船工艺留下的痕迹。笑的时候眼睛不笑，是那种绵里藏针的和善。","personality":["老成","城府深","实干","守旧","有底线"],"temperament":"话不多，但每句都拿捏分寸，绵里藏针。精于工籍调配与人情世故，是体系里熬上来的中年人，做事讲究体面，不屑下三滥。","motivation":"守住顾氏一族在江东船坊的权、钱、地位，也守住让江东安稳运转的旧规矩。","arc":"从认定沈川是跳梁小吏、冷眼旁观，到被逼到台前正面交锋；曹军南下后内心松动，面临继续斗沈川还是先救江东的抉择。","relationships":[{"name":"沈川","relation":"动摇他体系根基的变革者，从看戏到正面交锋"},{"name":"周瑜","relation":"忌惮又不得不依附的大都督"},{"name":"孙权","relation":"豪族在君主面前的政治靠山与博弈对象"}],"evidence":["他身后站着整个顾氏的几百张嘴","江东能稳，靠的是现有的规矩","是体系运转的守门人"]},"image":{"style":"半写实厚涂","prompt":"A dignified middle-aged Chinese man, late thirties to forty, Eastern Han Dynasty Three Kingdoms era, an aristocratic gentry clan shipyard supervisor. Composed bearing, refined but understated robes of dark cloth, a subtle air of authority. A calm, impassive face with deep-set eyes that do not smile even when his mouth does. Large weathered hands marked by years of shipwright craft. Semi-realistic character illustration, painterly rendering.","promptLocal":"一位有威仪的中年中国男子，三十八到四十岁，东汉末年三国时代，江东豪族旁支、船坊主事。体态沉稳，衣着考究但不过分的深色长袍，自带威严。面容沉静，眼窝深邃，笑时眼睛不笑。双手粗大，是多年造船工艺留下的痕迹。半写实厚涂。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","middle-aged male","Han Dynasty gentry"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the dignified middle-aged gentry supervisor as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the refined dark robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the weathered shipwright hands, the subtle folds of the dark robe, the cloth sash and jade pendant at the waist, the impassive mouth that never quite smiles. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded."},"voice":{"timbre":"低沉稳重的中年男声，中低音区，声音里带着久居其位的从容","pitch":"中低","pace":"慢，字斟句酌，绵里藏针","accent":"略带江东士族的口音，尾音拿捏","emotion":"克制内敛，笑意里藏着锋芒","referenceHint":"像一个在衙门里熬了半辈子、说话从不露破绽的老吏","prompt":"A steady low mid-range Chinese male voice, middle-aged. Composed and unhurried, each word measured, carrying a subtle edge beneath an affable surface. Restrained, with a faint Jiangdong gentry accent.","promptLocal":"低沉稳重的中年男声，中低音区。从容不迫，字斟句酌，和善表象下藏着锋芒。克制内敛，略带江东士族口音。"}},{"id":"C03","name":"周瑜","aliases":["周都督","公瑾","大都督"],"importance":"major","oneLiner":"江东第一智将，天才却非全能，一眼看穿沈川，也一眼看出他正补上自己缺的那块板。","persona":{"gender":"男","ageRange":"约三十四岁","identity":"江东大都督，赤壁联军统帅","appearance":"三十出头，风姿出众，衣冠整肃，眉眼间是运筹帷幄的锐气与儒将的温雅。身形挺拔，佩剑，举止间自带统帅的威仪。眼神极亮，看人时仿佛能直抵人心。","personality":["天才","睿智","果决","惜才","警惕"],"temperament":"思维极快，三言两语便能看穿人。长于战略、军令与临机决断，短于系统性工程与标准化管理。惜才，但始终在用才的同时防着才。","motivation":"辅佐孙权，保住江东基业，抗曹存国。","arc":"从这是谁，到此人可以用，再到此事让沈川来——始终清醒地用沈川、也防沈川。","relationships":[{"name":"沈川","relation":"用他也防他的统帅，看中他补上组织力这块短板"},{"name":"孙权","relation":"辅佐的年轻君主"},{"name":"鲁肃","relation":"同殿为臣、抗曹大计的同路人"}],"evidence":["既可能是奇才，也可能是变数","天才型","把生产当系统来拆"]},"image":{"style":"半写实厚涂","prompt":"A handsome Chinese military commander, early thirties, Eastern Han Dynasty Three Kingdoms era, the Grand Commander of Jiangdong. Tall upright bearing, immaculate robes with a sword at his side, the elegant bearing of a scholar-general and the sharpness of a strategist. Very bright perceptive eyes that seem to see through people, refined features. Semi-realistic character illustration, painterly rendering.","promptLocal":"一位风姿出众的中国儒将，三十出头，东汉末年三国时代，江东江东主帅。身形挺拔，衣冠整肃，佩剑，兼具儒将温雅与统帅威仪。眼神极亮，仿佛能看穿人心，面容俊朗。半写实厚涂。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","scholar-general","Han Dynasty commander"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the handsome scholar-general as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the immaculate robes with the sword at his side. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the bright perceptive eyes, the sword hilt and scabbard, the commander's headpiece, the refined fold of his robes. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded."},"voice":{"timbre":"清朗有力的男声，中音偏亮，带儒将的从容与统帅的威仪","pitch":"中","pace":"适中，条理清晰，关键时刻斩钉截铁","accent":"略带江东口音的雅言","emotion":"沉稳自信，运筹帷幄的笃定","referenceHint":"像一个三言两语就能把人看透、又让人心悦诚服的天才统帅","prompt":"A clear strong Chinese male voice, mid-range with a bright edge, early thirties. Composed and authoritative, unhurried yet decisive, the calm assurance of a brilliant strategist. A refined Jiangdong accent.","promptLocal":"清朗有力的男声，中音偏亮，三十出头。沉稳自信，从容而果决，是天才统帅的笃定。带江东口音的雅言。"}},{"id":"C04","name":"鲁肃","aliases":["鲁子敬","子敬"],"importance":"major","oneLiner":"江东第一流的战略眼光与人情洞察，看的是长远格局，也看透了沈川身上江东旧人没有的东西。","persona":{"gender":"男","ageRange":"约三十四岁（与周瑜同辈）","identity":"江东战略家，主张联刘抗曹的核心人物","appearance":"中年，面容宽和敦厚，但眼神极深，藏着洞察人心与格局的锐利。衣着朴素得体，不尚奢华。举止从容，有士大夫的涵养，却绝无老好人式的软。","personality":["远见","洞察","宽和","务实","沉稳"],"temperament":"不露声色，但步步都在试探。看人不看门第看结果，说话温和却总能点到要害。是那种不显山露水、却掌握全局的人。","motivation":"促成孙刘联盟抗曹，为江东谋长远，也为江东物色未来的基石。","arc":"从暗中观察到正面试探，再到对沈川起保护培养之心，赌他能否成为江东的下一块基石。","relationships":[{"name":"沈川","relation":"暗中观察、有意保护培养的寒门才俊"},{"name":"周瑜","relation":"同殿为臣、抗曹大计的同路人"},{"name":"孙权","relation":"辅佐的年轻君主"}],"evidence":["别人巴结、依附、求庇护，沈川却是\"想做事、敢担责、还不跪\"","他在赌沈川能不能成为\"江东的下一块基石\"","不看门第、只看结果、还能把复杂问题讲清楚"]},"image":{"style":"半写实厚涂","prompt":"A broad-faced calm Chinese statesman, mid-thirties, Eastern Han Dynasty Three Kingdoms era, a Jiangdong strategist. Kindly composed features but with very deep, perceptive eyes that miss nothing. Simple well-kept robes without ostentation, the bearing of a scholar-official with quiet authority. Semi-realistic character illustration, painterly rendering.","promptLocal":"一位宽和敦厚的中国谋士，三十五六岁，东汉末年三国时代，江东战略家。面容和善但眼神极深，洞察一切。衣着朴素得体，有士大夫的涵养与不显山露水的威仪。半写实厚涂。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","strategist","Han Dynasty scholar-official"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the calm perceptive statesman as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the simple well-kept scholar robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the deep perceptive eyes, the modest cloth sash, the scholar's headpiece, the unhurried fold of his hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded."},"voice":{"timbre":"温和宽厚的中年男声，中音区，语气平缓但字字有分量","pitch":"中","pace":"不疾不徐，点到要害","accent":"带江东口音的雅言","emotion":"沉静宽和，藏着洞察的锐利","referenceHint":"像一个说话温和却总能一句话说中要害的长者","prompt":"A warm steady Chinese male voice, mid-range, mid-thirties. Gentle and unhurried, calm yet weighty, a quiet perceptive sharpness beneath a mild exterior. A refined Jiangdong accent.","promptLocal":"温和宽厚的中年男声，中音区。语气平缓但字字有分量，沉静宽和，温和外表下藏着洞察的锐利。带江东口音的雅言。"}},{"id":"C05","name":"孙权","aliases":["孙仲谋","吴侯"],"importance":"major","oneLiner":"有帝王心术的年轻君主，多疑擅权衡，看沈川不是看有没有才，而是看能否驾驭。","persona":{"gender":"男","ageRange":"约二十七岁","identity":"江东君主，刚坐稳江东的年轻统治者","appearance":"年轻，面容英挺，眉宇间有不怒自威的帝王气。衣饰华贵而庄重，举止间是久居人上养出的从容与审视。眼神沉静而多疑，看人时习惯性地先掂量。","personality":["多疑","善权衡","懂制衡","果断","有城府"],"temperament":"沉稳有度，心思深沉。看人不看才气看能否驾驭，擅长在群臣之间制衡。季末在军议上突然点名沈川，是试探、立威与借刀的三重心术。","motivation":"坐稳江东，守住父兄留下的基业，在存亡关头决断抗曹。","arc":"从不知道此人，到听过名字，再到第一次主动问意见——本质是在物色一把没有旧势力背景的刀。","relationships":[{"name":"沈川","relation":"用帝王心术审视的孤臣，好用也需驾驭"},{"name":"周瑜","relation":"倚重的大都督"},{"name":"鲁肃","relation":"倚重的战略家"}],"evidence":["此人能否为我所用、是否可控、会不会威胁平衡","君王在物色一把没有旧势力背景的刀","无根无靠的孤臣"]},"image":{"style":"半写实厚涂","prompt":"A young Chinese ruler, late twenties, Eastern Han Dynasty Three Kingdoms era, the lord of Jiangdong. Handsome commanding features with an unspoken royal authority, ornate dignified robes, the composed self-possession of one born to rule. Calm watchful eyes that weigh everyone he looks at. Semi-realistic character illustration, painterly rendering.","promptLocal":"一位年轻的江东君主，二十七八岁，东汉末年三国时代。面容英挺，眉宇间有不怒自威的帝王气，衣着华贵庄重，久居人上养出的从容审视。眼神沉静多疑，看人时习惯性先掂量。半写实厚涂。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","young ruler","Han Dynasty lord"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the young lord as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the ornate dignified robes. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the watchful weighing eyes, the ornate headpiece, the elaborate robes and belt ornaments, the composed hands. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded."},"voice":{"timbre":"低沉有威仪的年轻男声，中低音区，自带帝王的沉稳与审视","pitch":"中低","pace":"缓慢而有力，每句话都像在权衡","accent":"雅言，字正腔圆","emotion":"沉稳多疑，喜怒不形于色","referenceHint":"像一个在群臣之间活成君主、每句话都掂量再三的年轻帝王","prompt":"A deep composed young Chinese male voice, low mid-range, late twenties. Slow and measured, each sentence weighted as if weighing, calm and watchful with little outward emotion. Precise formal speech.","promptLocal":"低沉有威仪的年轻男声，中低音区。缓慢而有力，每句话都像在权衡，沉稳多疑，喜怒不形于色。字正腔圆的雅言。"}},{"id":"C06","name":"老工匠","aliases":["老师傅"],"importance":"supporting","oneLiner":"船坊里修了几十年船的老资格，传统手艺的守门人，从甩手抵制到将信将疑地服了沈川。","persona":{"gender":"男","ageRange":"约五十多岁","identity":"柴桑船坊老资格的造船工匠代表","appearance":"皮肤黝黑粗糙，满手老茧与旧伤，是几十年抡斧拉锯留下的印记。背微驼，眼神倔强，说话嗓门大。常穿沾满木屑的短褐，腰间别着墨斗与尺。","personality":["倔强","守旧","手艺精湛","重实际","直率"],"temperament":"嗓门大，脾气直，认死理。瞧不起嘴上没毛的小吏，但一旦被真本事折服，会是最实在的拥护者。看人不看身份，看手上的活。","motivation":"把手艺和饭碗守好，不让人拿他修了几十年的船当儿戏。","arc":"从集体抵制到被沈川做给你看打动，从将信将疑到心甘情愿地跟着干。","relationships":[{"name":"沈川","relation":"从瞧不起到服气的对象，传统手艺 vs 标准化的具象代表"},{"name":"顾承","relation":"船坊主事，旧体系里的上峰"}],"evidence":["从\"不信\"到\"将信将疑\"","嘴上没毛","传统手艺"]},"image":{"style":"半写实厚涂","prompt":"A weathered elderly Chinese shipwright, in his fifties, Eastern Han Dynasty Three Kingdoms era. Dark rough skin, hands full of calluses and old scars from decades of axe and saw work, slightly stooped back. A stubborn set to his jaw, a loud forthright manner. Wearing a wood-dust-covered short robe with a carpenter's ink line and ruler tucked at the waist. Semi-realistic character illustration, painterly rendering.","promptLocal":"一位饱经风霜的老船匠，五十多岁，东汉末年三国时代。皮肤黝黑粗糙，满手老茧旧伤，背微驼，下颌倔强，嗓门大。穿沾满木屑的短褐，腰间别着墨斗和尺。半写实厚涂。","negativePrompt":"plastic or waxy skin, over-smoothed airbrushed complexion, poreless doll face, perfectly symmetrical face, dead flat eyes without specular highlight, helmet-like hair with no loose strands, flat untextured fabric with no weave or wear, stiff mannequin posing, extra fingers, malformed hands, text, watermark, signature, busy or patterned background, harsh cast shadows on the backdrop","tags":["semi-realistic","painterly","character sheet","elderly craftsman","Han Dynasty shipwright"],"sheet":"Single character model sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. LEFT ZONE, about 34% of the canvas width: one bust portrait of the weathered elderly shipwright as the facial design baseline. RIGHT-TOP ZONE: three full-body views — front, side, back — wearing the wood-dust-covered short robe. PROPORTIONS ARE CRITICAL: keep identical anatomically grounded proportions across the three full-body figures. RIGHT-BOTTOM ZONE: four to five small isolated close-up studies of key details — the calloused scarred hands, the carpenter's ink line and ruler, the stooped stubborn set of his shoulders, the wood dust on his robe. Every detail panel is a close-up crop of the SAME character; all faces must match the bust portrait exactly. Absolutely no text and no name labels anywhere.  Skin with visible pores and uneven tone, individual flyaway hair strands; fabric with a visible weave and natural wear. Semi-realistic character illustration, painterly rendering with soft blended edges and visible brush texture, anatomically grounded."},"voice":{"timbre":"沙哑粗犷的老年男声，中低音区，嗓门大","pitch":"中低","pace":"偏快，说话冲，爱抬杠","accent":"带江东柴桑一带的口音","emotion":"倔强直率，不服就顶，服了就实","referenceHint":"像一个在船厂吼了半辈子、认死理也认真本事的老师傅","prompt":"A hoarse gruff elderly Chinese male voice, low mid-range, fifties. Loud and blunt, quick to argue, but plainspoken and sincere once won over. A rustic Chaisang Jiangdong accent.","promptLocal":"沙哑粗犷的老年男声，中低音区。嗓门大，说话冲，爱抬杠，但一旦服了就实在。带江东柴桑口音。"}}]}</script>
+
+<script>
+const L = {"copied":"已复制","failed":"复制失败"};
+
+// 导出：报告自己就带着完整的 cast.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('cast-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别在 click 之后立刻回收——Safari 上会抢在下载读完之前把 blob 撤掉，存出来是空文件
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+
+// 左栏切换：一次只显示一个角色
+document.querySelector('.roster').addEventListener('click', (e) => {
+  const btn = e.target.closest('.rost');
+  if (!btn) return;
+  document.querySelectorAll('.rost').forEach((b) => b.classList.toggle('on', b === btn));
+  document.querySelectorAll('.char').forEach((a) => a.classList.toggle('on', a.id === btn.dataset.target));
+  showGraph(false);
+  document.querySelector('.main').scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
+
+// 关系图谱：一张全景视图，跟角色详情互斥
+const gv = document.querySelector('.graph');
+const gbtn = document.querySelector('.gtoggle');
+function showGraph(on) {
+  gv.classList.toggle('on', on);
+  gbtn.classList.toggle('on', on);
+  document.querySelector('.main').classList.toggle('gmode', on);
+}
+gbtn.addEventListener('click', () => {
+  showGraph(true);
+  document.querySelector('.main').scrollIntoView({ block: 'start', behavior: 'smooth' });
+});
+{
+  // 弦和弦上的文字共用 data-a/data-b，高亮逻辑完全一样，放一个数组里
+  const edges = [...gv.querySelectorAll('.gedge, .glabel')];
+  const nodes = [...gv.querySelectorAll('.gnode')];
+  const rows = [...gv.querySelectorAll('.grow')];
+  const clear = () => [...edges, ...nodes, ...rows].forEach((el) => el.classList.remove('hot', 'dim'));
+
+  // 悬停一个人：他的关系线亮起来，没关系的压到背景里
+  const byNode = (name) => {
+    const near = new Set([name]);
+    for (const e of edges) {
+      if (e.dataset.a === name) near.add(e.dataset.b);
+      if (e.dataset.b === name) near.add(e.dataset.a);
+    }
+    for (const e of edges) {
+      const hot = e.dataset.a === name || e.dataset.b === name;
+      e.classList.toggle('hot', hot);
+      e.classList.toggle('dim', !hot);
+    }
+    for (const nd of nodes) {
+      nd.classList.toggle('hot', nd.dataset.node === name);
+      nd.classList.toggle('dim', !near.has(nd.dataset.node));
+    }
+    for (const r of rows) {
+      const hot = r.dataset.a === name || r.dataset.b === name;
+      r.classList.toggle('hot', hot);
+      r.classList.toggle('dim', !hot);
+    }
+  };
+
+  // 悬停关系表的一行：只亮那一条弦
+  const byEdge = (a, b) => {
+    for (const e of edges) {
+      const hot = e.dataset.a === a && e.dataset.b === b;
+      e.classList.toggle('hot', hot);
+      e.classList.toggle('dim', !hot);
+    }
+    for (const nd of nodes) {
+      const hot = nd.dataset.node === a || nd.dataset.node === b;
+      nd.classList.toggle('hot', hot);
+      nd.classList.toggle('dim', !hot);
+    }
+    for (const r of rows) {
+      const hot = r.dataset.a === a && r.dataset.b === b;
+      r.classList.toggle('hot', hot);
+      r.classList.toggle('dim', !hot);
+    }
+  };
+
+  const jump = (el) => {
+    const item = document.querySelector('.rost[data-target="' + el.dataset.target + '"]');
+    if (item) item.click();
+  };
+
+  // 关系文字的总开关：人多的时候标签会盖住图，一键收起
+  const glab = gv.querySelector('.glabtoggle');
+  glab.addEventListener('click', () => {
+    const on = !gv.classList.contains('labels');
+    gv.classList.toggle('labels', on);
+    glab.classList.toggle('on', on);
+    glab.setAttribute('aria-pressed', String(on));
+  });
+
+  gv.addEventListener('mouseover', (e) => {
+    const nd = e.target.closest('.gnode');
+    const row = e.target.closest('.grow');
+    if (nd) byNode(nd.dataset.node);
+    else if (row) byEdge(row.dataset.a, row.dataset.b);
+    else clear();
+  });
+  gv.addEventListener('mouseleave', clear);
+  gv.addEventListener('focusin', (e) => {
+    const nd = e.target.closest('.gnode');
+    if (nd) byNode(nd.dataset.node);
+  });
+  gv.addEventListener('click', (e) => {
+    const hit = e.target.closest('.gnode, .grow');
+    if (hit) jump(hit);
+  });
+  // SVG 的 <g> 不是原生按钮，回车/空格要自己接
+  gv.addEventListener('keydown', (e) => {
+    const nd = e.target.closest('.gnode');
+    if (!nd || (e.key !== 'Enter' && e.key !== ' ')) return;
+    e.preventDefault();
+    jump(nd);
+  });
+}
+
+// 搜索：过滤左栏；结果只剩一个就直接切过去
+document.getElementById('q').addEventListener('input', (e) => {
+  const q = e.target.value.trim().toLowerCase();
+  let hits = [];
+  document.querySelectorAll('.rost').forEach((b) => {
+    const hit = !q || b.dataset.hay.toLowerCase().includes(q);
+    b.style.display = hit ? '' : 'none';
+    if (hit) hits.push(b);
+  });
+  document.querySelector('.nomatch').classList.toggle('on', hits.length === 0);
+  if (q && hits.length === 1) hits[0].click();
+});
+
+// 摘要默认三行，点一下展开全部；短到不需要折叠的就直接去掉折叠态
+const syn = document.querySelector('.synopsis');
+if (syn) {
+  const body = syn.querySelector('p');
+  if (body.scrollHeight <= body.clientHeight + 1) syn.classList.remove('syn-clamp');
+  syn.addEventListener('click', () => syn.classList.remove('syn-clamp'));
+}
+
+// 图片弹层
+const lb = document.querySelector('.lightbox');
+const lbImg = lb.querySelector('img');
+function closeLb() { lb.classList.remove('on'); lbImg.removeAttribute('src'); }
+document.addEventListener('click', (e) => {
+  const z = e.target.closest('.zoom');
+  if (z) { lbImg.src = z.dataset.src; lb.classList.add('on'); return; }
+  if (e.target.closest('.lightbox')) closeLb();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+// 复制图片本身到剪贴板（不是路径）
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy-img');
+  if (!btn) return;
+  e.preventDefault();
+  e.stopPropagation();
+  const label = btn.textContent;
+  try {
+    const blob = await (await fetch(btn.dataset.img)).blob();
+    // Safari 只认 image/png，其它格式先过一遍 canvas
+    let png = blob;
+    if (blob.type !== 'image/png') {
+      const bmp = await createImageBitmap(blob);
+      const cv = Object.assign(document.createElement('canvas'), { width: bmp.width, height: bmp.height });
+      cv.getContext('2d').drawImage(bmp, 0, 0);
+      png = await new Promise((r) => cv.toBlob(r, 'image/png'));
+    }
+    await navigator.clipboard.write([new ClipboardItem({ 'image/png': png })]);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+</script>
+</body></html>

@@ -1,0 +1,287 @@
+---
+name: novel-characters
+version: 1.7.0
+description: |
+  从小说或短故事里拆出角色表、人物画像、形象提示词、音色提示词，
+  并给每个角色出角色设定图（左半身像 + 右全身三视图 + 细节条），产出 JSON + Markdown + 可交互的 report.html。
+  报告语言可指定（--lang），默认中文，任意语言都支持；
+  出图风格可指定（--style），默认半写实，也可以出吉卜力动画风。
+  零依赖、零 API key，用当前会话额度；出图走 codex 内置 $imagegen（可选）。
+  Use when asked to 拆小说角色、分析人物、生成角色卡、character sheets from a novel。
+allowed-tools:
+  - Read
+  - Write
+  - Bash
+  - Task
+  - Glob
+triggers:
+  - novel-characters
+  - 拆角色
+  - 拆书角色
+  - 小说角色
+  - 人物画像
+  - 角色卡
+  - 三视图
+  - character sheet from novel
+metadata:
+  license: Apache-2.0
+  requires:
+    bins:
+      - node          # >= 18，只用标准库，无 npm 依赖
+    optional:
+      - codex         # 有才出三视图；没有就只交提示词，其余照常
+  runtimes:
+    - claude-code
+    - codex
+---
+
+## novel-characters
+
+输入一篇小说/短故事，输出每个角色的：人物画像、形象提示词、音色提示词、角色设定图。
+
+`{baseDir}` = 本文件所在目录。脚本 `{baseDir}/scripts/novel-characters.mjs`，零依赖，`node` 直接跑。
+
+**运行环境**：Claude Code 和 codex 都能跑。差别只在第 8 步出图——见 `references/sheet.md`。
+
+---
+
+### Step 0 — 确定报告语言
+
+用户可以指定语言，比如「用英文」「--lang en」「日本語で」。**没说就是中文（`zh`）。**
+
+这个 `lang` 会一路传下去：第二趟生成角色卡时决定人类可读字段用什么语言，`validate` 和 `render` 也都要带上。
+
+**界面文案分两种情况：**
+
+- `zh` / `en` / `ja` —— 内置，不用管
+- **其他任何语言** —— 你要现场翻一份。跑
+
+  ```bash
+  node {baseDir}/scripts/novel-characters.mjs ui-template <lang>
+  ```
+
+  它打印一份英文骨架，把每个值翻译成目标语言，整块放进 `cast.json` 顶层的 `ui` 字段。渲染时会合并进内置表。
+
+  **不给 `ui` 的话 `validate` 会直接报错**——否则报告会是「角色内容是法语、界面标签是英文」的半吊子状态。
+
+支持的语言不受内置表限制，法语韩语西班牙语都能出完整报告。
+
+### Step 0.5 — 确定画风
+
+#### ⚠️ 风格必须先选（且跟 art 同一档）（硬卡点 C2）
+> 交互约定见 `novel-project/references/interaction-checkpoints.md` 的 **C2 风格决策** +
+> **开工前对齐①**：风格是整套管线的第一道决策，若从本 skill 启动需先确认上游 art.json.style
+> 已定且沿用，不要临时另选。
+
+出图风格在角色这步就要跟 `novel-art` 对齐——**整套管线第一道风格决策在 novel-art，这里只是沿用**。用户可以指定，但必须跟美术场景同一档，否则合成时人物与场景质感对不上。
+
+常见可选风格（`STYLE_PRESETS` 的 `id`）：
+
+| id | 说明 | 典型用途 |
+| --- | --- | --- |
+| `realistic` | 半写实厚涂（**默认**） | 真人感短剧、纪实、情感向 |
+| `ghibli` | 吉卜力式手绘赛璐璐动画 | 治愈、童话、低龄向 |
+| `photorealistic` | 纯写实（照片级） | 真人感、写实短剧、纪录片质感 |
+| `comic` | 美式漫画 / 粗线赛璐璐 | 爽文、热血、条漫改 |
+| `ink` | 水墨 / 国风写意 | 古风、武侠、文艺向 |
+| `noir` | 暗调胶片 / 高反差 | 悬疑、犯罪、黑色电影感 |
+
+> 注：当前内置预设为 `realistic`、`ghibli`、`photorealistic`；`comic`/`ink`/`noir` 为扩展方向，使用前需在 `STYLE_PRESETS` 补齐对应五块（`render/surface/lighting/negative/tags`），否则 `validate` 会因风格与反向词不匹配报错。
+
+```bash
+node {baseDir}/scripts/novel-characters.mjs styles   # 打印预设的完整内容
+```
+
+读 `{baseDir}/references/style-presets.md`。**换风格是整套换**——每个预设自带 render / surface / lighting / negative / tags 五块，整块取用，不要混搭。
+
+最容易搞反的是反向提示词：`realistic` 绝不能禁 `photorealistic`，`ghibli` 必须禁。`validate` 会拦这个。**改风格需重跑上游全链路**（art → characters → script → storyboard），单改角色会让人物与场景/分镜不一致。
+
+版面规则（16:9 三区、比例、细节让位）**不随风格变**，变的只有渲染质感。
+
+### Step 1 — 定位输入
+
+用户给文件路径就直接用。直接粘正文的，**先落到一个临时 .txt**——后面校验「引文是否逐字」要拿原文比对，没有原文文件这步就没法做。
+
+确定输出目录：用户指定就用；没指定就用原书同级目录。
+
+### Step 2 — 分块
+
+```bash
+node {baseDir}/scripts/novel-characters.mjs chunk <book.txt> <workdir>
+```
+
+打印 `{"chunks": N, ...}`。
+
+- **N == 1**：跳过 Step 3，直接在当前会话读原文做第一趟，结果自己写成 `<workdir>/roster-00.json`
+- **N > 1**：进 Step 3
+- `truncated: true`：明确告诉用户尾部没扫到，别闷着
+
+### Step 3 — 第一趟扫描（仅 N > 1）
+
+**当前环境支持子代理就并发**（Claude Code 的 Task、codex 的 subagent）：每块一个子代理，**所有调用放在同一条消息里**才是真并发。不支持就一块一块串行读，结果一样，只是慢。
+
+每个子代理的任务：
+1. 读 `{baseDir}/references/roster-pass.md`，照它执行
+2. 读 `<workdir>/chunk-NN.txt`
+3. 把 roster JSON 写到 `<workdir>/roster-NN.json`
+4. 只回一句「done NN，抽到 X 个角色」
+
+### Step 4 — 归并 + 复核
+
+```bash
+node {baseDir}/scripts/novel-characters.mjs merge <workdir> | tee <workdir>/merged.json
+```
+
+落到 `merged.json` 不只是留档：Step 6 的 assemble 靠它拿同档角色的戏份顺序。
+
+按名字+别名精确收敛（某块把「陆」列成「陆行远」的别名，两条就并成一个人），notes 累加、quotes 去重，按出现块数降序——出现的块越多戏份越重。
+
+输出是 `{ "characters": [...], "mergeCandidates": [...] }`。**`mergeCandidates` 要逐条复核**：精确匹配只能收敛两块恰好写了相同称呼的情况，剩下的是语义判断，脚本做不了。候选来自名字包含关系（`「陆」⊂「陆行远」`）——是强信号不是判决，同姓的父子、兄弟就不能合。候选之外你自己看出来的同人（「陆先生」和「行远」没有包含关系，不会进候选）也要合。
+
+要合并就写一份 merges.json 再落地：
+
+```json
+{ "merges": [{ "keep": "陆行远", "absorb": ["陆", "陆先生"] }] }
+```
+
+```bash
+node {baseDir}/scripts/novel-characters.mjs merge <workdir> --apply merges.json | tee <workdir>/merged.json
+```
+
+`keep`/`absorb` 用名字或任一别名定位都行，找不到会直接报错。输出仍带 `mergeCandidates`，剩下的都确认是不同的人（或清空）再进下一步。没有要合的就直接往下走——但 `merged.json` 必须留着。
+
+### Step 5 — 选角
+
+取前 N 位。默认 30，用户说了就听用户的。剩下的角色在最后汇报里提一句「还识别出 X 位没做画像」。
+
+### Step 6 — 第二趟出卡
+
+每个角色一份，同样能并发就并发。
+
+每份任务拿到：
+- `{baseDir}/references/profile-pass.md` 和 `{baseDir}/references/schema.md`（读它们，照着做）
+- **报告语言 `lang`**（Step 0 定的）
+- 该角色归并后的 `name` / `aliases` / `notes` / `quotes`
+- **同批其他角色的名字**（避免长相声线撞车）
+
+角色卡 JSON 写到 `<workdir>/card-<slug>.json`。**断点续跑**：`card-<slug>.json` 已存在的角色不必重跑。
+
+**同时写一段故事摘要**：用 `lang` 指定的语言，3–5 句，交代时空背景、核心情境、这几个人聚在一起的由头。短篇直接从原文写；长篇从各块的 roster note 归纳。不剧透结局，不写成推荐语。写到 `<workdir>/summary.txt`。非内置语言的话，把 Step 0 翻好的 ui 整块存成 `<workdir>/ui.json`。
+
+然后合成 cast.json——**用 assemble，不要手拼**（手拼会丢字段、写错顶层键）：
+
+```bash
+node {baseDir}/scripts/novel-characters.mjs assemble <workdir> \
+  --source <书名> --lang <lang> --style <style> \
+  --out <输出目录>/<书名>-cast.json
+```
+
+坏卡会被逐个点名——哪份 `card-*.json` 坏了就只重跑那个角色，其他不用动。
+
+同档角色的先后是戏份顺序，来自 Step 4 留下的 `<workdir>/merged.json`（assemble 自动读，也可用 `--order` 指别的文件）。报告左栏「按戏份排序」的序号就靠它——看到「同档角色将按文件名序」的警告说明 merged.json 丢了，回 Step 4 重新生成。
+
+### Step 7 — 校验 ⛔ 不能跳
+
+```bash
+node {baseDir}/scripts/novel-characters.mjs validate <cast.json> <book.txt>
+```
+
+记得带上 `--lang`（Step 0 定的）。检查：结构、`importance` 枚举、**引文逐字**、**出图提示词不含人名**、**语言分工**（人类字段跟随 `lang`、出图/TTS 提示词永远英文）、以及**非内置语言必须带 `ui`**。
+
+**有违规就按报错逐条修，改完重跑，直到通过。** 这四类错模型真的会犯——这套检查就是被真实输出打出来的。
+
+### Step 8 — 出图（可选 · 默认只给提示词，由你在外处生成）（硬卡点 C3）
+
+> 交互约定见 `novel-project/references/interaction-checkpoints.md` 的 **C3 角色出图 / 回填**：
+> 这是流程中必须和用户确认的环节——是否在此出图、还是只交提示词由用户去别处生成后回填，
+> **绝不能替用户默认生图**。
+
+> ⚠️ **本 skill 不强制出图**。标准交付是 `image.sheet` / `image.prompt` 提示词，你拿去别处（Krea2 / codex `$imagegen` / 其他生图工具）出角色图，生成后把定稿路径回填到 cast.json 的 `image.portrait`（或 `image.sheet` 引用路径）即可。只有当当前环境确有 codex 时，才走下方自动出图分支。
+
+**每个角色一张**（若你选择在此出图），用 `image.sheet`，落到 `./images/<slug>-sheet.png`。一张横构图内部左右分栏：
+
+```
+┌──────────┬────────────────────────────┐
+│  半身像   │   正视    侧视    背视       │
+│ （证件照） ├────────────────────────────┤
+│  面部基准  │  细节 · 细节 · 细节 · 细节   │
+│   ~34%   │            16:9            │
+└──────────┴────────────────────────────┘
+```
+
+左栏半身像是面部设计基准，右上三视图的脸照它画，右下是关键细节的小特写。**两条硬要求**：三视图的脸必须与半身像一致（否则一张图两个长相）；三个全身像的比例必须协调（模型会为了塞下细节把人压扁）。
+
+读 `{baseDir}/references/sheet.md`，照它的调用契约做。要点：
+
+- **没有 codex 就整步跳过**，只交提示词，后面照常走
+- 跑在 codex 里就直接用 `$imagegen`；跑在别处就 shell 调 codex，先按那里的脚本探测版本最高的 binary（旧版会直接报错）
+- **一个角色一次调用，绝不批量**
+- 单个失败就跳过，不阻断；最后汇总说明
+- **断点续跑**：`images/<slug>-sheet.png` 已存在就跳过，失败重来时只补缺的
+
+**不按 `importance` 筛，选中的角色全都出。** 一个角色一次调用，30 个就是 30 次——这是整条管线里最慢的一步，开始前跟用户说一声要出多少张。用户想省就让他给个数，或者明说只要 `protagonist` / `major`。
+
+**另外每个角色出一张干净单视角参考图（推荐，供下游首帧/H3 复用）**：sheet 是"半身像+三视图+细节条"的合成板，直接拿它当 Krea2/H3 的角色一致性参考会把多视角和细节条一起喂进生成，污染角色一致性。所以 sheet 之外，每个选中角色再出一张**纯正面半身像参考图**：
+
+- 内容：和 sheet 左栏同一个人、同一套服装，但**只一个视角、无分栏、无文字、无细节条**
+- 背景：纯白（道具类角色图可后续抠图）
+- 落盘：`<输出目录>/assets/cast/<角色名>-portrait.png`
+- 回填：把路径写进 cast.json 对应角色的 `image.portrait`（schema 见 `references/schema.md`）
+- 断点续跑：文件已存在就跳过；一次调用一张，绝不批量
+
+用户只要提示词不想出图，`image.portrait` 留空即可——`novel-project verify` 会以"参考图占位/缺失"提醒，出片前补上就行。
+
+### Step 9 — 输出
+
+```bash
+cd <输出目录>
+node {baseDir}/scripts/novel-characters.mjs render <cast.json> --md   > <书名>-cast.md
+node {baseDir}/scripts/novel-characters.mjs render <cast.json> --html > report.html
+```
+
+语言取 `cast.json` 里的 `lang`，要临时覆盖就加 `--lang <code>`。
+
+`render` 会自动去 `images/<slug>-sheet.png` 找图。所以**先出图再 render**。
+
+report.html 的样式约定见 `{baseDir}/references/report-style.md`——要改样式先读它，别把它改回通用卡片墙。
+
+最终落地：
+
+```
+<输出目录>/
+├── <书名>-cast.json
+├── <书名>-cast.md
+├── report.html                    ← 双击就能开
+└── images/
+    ├── <slug>-model-sheet.png     ← 定稿角色图（有 codex 才有）
+    └── candidates/               ← 候选图，供挑选定稿
+```
+
+> 实际项目里本目录对应 `02_cast/`，角色图引用路径写 `images/<角色>-model-sheet.png`，
+> 跨阶段引用约定见 `novel-project/references/project-layout.md`。
+
+### Step 10 — 汇报
+
+一句话说清：角色数、出图数、报告路径。校验一次没过的话，说明修了什么。有角色出图失败、被截断、或因为没有 codex 而没出图，明确说清楚。
+
+---
+
+## 边界
+
+- 单次上限 24 块（净覆盖约 93 万字符），超了会明确报 `truncated`，不静默截断
+- 人类可读字段跟随 `--lang`（默认中文）；出图和 TTS 提示词**永远英文**，那些引擎吃英文最稳
+- 设定图最容易出的两个问题：**一张图里两个长相**、**为了塞细节把人物压扁**。拿到图先扫一眼，见 `references/sheet.md`
+- 出图只走 codex built-in `$imagegen`。**不用它的 CLI fallback**（要 `OPENAI_API_KEY`）
+- 想要能实时编辑、边跑边看的交互界面，那是另一个东西，不在这个 skill 里
+
+## 自测
+
+```bash
+node {baseDir}/scripts/selftest.mjs
+```
+
+307 项断言，不调模型、不花额度，覆盖分块 / 归并 / 合成 / 多语言 / 校验 / 渲染的全部确定性逻辑。改完脚本先跑这个。
+
+## 自带样例
+
+`{baseDir}/examples/渡口.txt` 是一篇短故事，4 个角色，其中货郎全程只有绰号、船夫只被叫过「老伯」——专门用来验别名归并。对应产出 `渡口-cast.json` / `渡口-cast.md` 可以当质量基准，也是校验的自检夹具。

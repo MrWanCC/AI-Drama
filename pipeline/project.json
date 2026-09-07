@@ -1,0 +1,28 @@
+{
+  "projectId": "jiangdong-qianlong-001",
+  "title": "江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）",
+  "genre": "男频穿越逆袭爽剧",
+  "lang": "zh",
+  "episodes": 30,
+  "episodeMinutes": 3,
+  "source": "",
+  "paths": {
+    "cast": "02_cast/江东潜龙-cast.json",
+    "outline": "01_outline/江东潜龙-outline.json",
+    "art": "03_art/江东潜龙-art.json",
+    "script": "",
+    "storyboard": ""
+  },
+  "reports": {
+    "novel-outline": "01_outline/outline-report.html",
+    "novel-characters": "02_cast/report.html",
+    "novel-art": "03_art/art-report.html"
+  },
+  "skills": {
+    "novel-characters": "passed",
+    "novel-outline": "passed",
+    "novel-art": "passed",
+    "novel-script": "pending",
+    "novel-storyboard": "pending"
+  }
+}

@@ -1,0 +1,892 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季） · 短剧改编大纲</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .v small{font:400 14px var(--serif);color:var(--ink-2)}
+.kpi .v.mode{font-size:21px;padding-top:5px}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kpi.accent{border-top:2px solid var(--seal)}
+
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+/* 爽点节奏的图/表 tab */
+.tabs{display:flex;width:max-content;margin-bottom:12px;border:1px solid var(--rule-2);
+  border-radius:2px;overflow:hidden}
+.tab{font:500 12px/1 var(--sans);letter-spacing:.06em;padding:7px 16px;background:var(--panel);
+  border:0;cursor:pointer;color:var(--ink-2);transition:.15s}
+.tab + .tab{border-left:1px solid var(--rule-2)}
+.tab.on{background:var(--seal);color:#fff}
+.tab:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.tabpane{display:none}
+.tabpane.on{display:block}
+
+/* 分集概览：默认前三张卡，底部渐隐 + 展开 */
+.epswrap{position:relative}
+.eps{position:relative}
+.epswrap.clip .eps .ep:nth-child(n+4){display:none}
+.epswrap.clip .eps::after{content:'';position:absolute;left:0;right:0;bottom:0;height:90px;
+  background:linear-gradient(180deg,transparent,var(--paper));pointer-events:none}
+.epsmore{display:block;margin:10px auto 0;font:500 12px/1 var(--sans);letter-spacing:.06em;
+  color:var(--ink-2);background:var(--panel);border:1px solid var(--rule-2);border-radius:2px;
+  padding:8px 18px;cursor:pointer;transition:.15s}
+.epsmore:hover{border-color:var(--seal);color:var(--seal)}
+.epsmore:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+/* 关键决策：拍板三件事 */
+.dec3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;align-items:start}
+@media(max-width:1080px){.dec3{grid-template-columns:1fr}}
+.dcol{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:4px 18px 14px}
+.dhead{margin:8px 0 0;font-size:12.5px;color:var(--ink-2)}
+.dlist{list-style:none;margin:8px 0 0;padding:0}
+.dlist li{padding:7px 0;border-top:1px solid var(--rule)}
+.dlist li:first-child{border-top:0}
+.dlist b{display:block;font:400 13.5px/1.6 var(--serif)}
+.dlist small{display:block;font-size:11.5px;color:var(--ink-2);line-height:1.6}
+.dnote{margin:10px 0 0;font-size:12px;color:var(--ink-2);line-height:1.7}
+.dnote.seal{color:var(--seal);background:var(--seal-soft);padding:7px 10px;border-radius:2px}
+.dmaj{list-style:none;margin:8px 0 0;padding:0}
+.dmaj li{display:flex;gap:9px;align-items:baseline;padding:5.5px 0;border-top:1px solid var(--rule);font-size:12.5px}
+.dmaj li:first-child{border-top:0}
+.dmaj i{flex:none;font:500 11px/1 var(--mono);color:var(--seal);font-style:normal;min-width:38px}
+.dmaj b{font:400 12.5px var(--serif)}
+.dmaj span{min-width:0}
+.dmaj em{flex:none;margin-left:auto;font:500 10px/1 var(--sans);letter-spacing:.1em;font-style:normal;
+  color:var(--seal);border:1px solid var(--seal);border-radius:99px;padding:2px 7px}
+
+/* 爽点节奏时间轴 */
+.chart{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 20px 10px}
+.chart .legend{display:flex;gap:18px;font-size:12px;color:var(--ink-2);margin-bottom:2px}
+.chart .legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.dotk{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--seal-2)}
+.dotk.major{width:12px;height:12px;background:var(--seal)}
+.rhythm svg{display:block;width:100%;height:auto}
+.rhythm .axis{stroke:var(--rule-2);stroke-width:1.5}
+.rhythm .tick{font:400 10.5px var(--mono);fill:var(--ink-3);paint-order:stroke;stroke:var(--panel);stroke-width:3px}
+.rhythm .stem{stroke:var(--seal-2);stroke-width:1.5}
+.rhythm .stem.major{stroke:var(--seal)}
+.rhythm .bdot{fill:var(--seal-2);stroke:var(--panel);stroke-width:2}
+.rhythm .bdot.major{fill:var(--seal)}
+.rhythm .blabel{font:500 12px var(--sans);fill:var(--ink)}
+.rhythm .bsub{font:400 10.5px var(--sans);fill:var(--ink-2)}
+.rhythm .gapnote{font:400 10.5px var(--sans);fill:var(--ink-3)}
+.rhythm .gapnote.bad{fill:var(--seal);font-weight:500}
+
+/* 爽点明细表 + 通用表格 */
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+q{quotes:"「" "」";font-family:var(--serif);border-left:2px solid var(--seal);padding-left:8px;display:inline-block}
+
+/* 分集卡 */
+.eps{display:grid;grid-template-columns:repeat(auto-fill,minmax(430px,1fr));gap:13px}
+.ep{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 16px 12px;position:relative}
+.ep .num{position:absolute;top:10px;right:14px;font:400 30px/1 var(--serif);color:var(--rule-2)}
+.ep header{display:flex;align-items:center;gap:8px;margin-bottom:8px;padding-right:44px;flex-wrap:wrap}
+.ep header b{font:500 15px var(--serif);letter-spacing:.04em}
+.bt{font-style:normal;font-size:11px;padding:2px 8px;border:1px solid var(--seal);border-radius:99px;color:var(--seal)}
+.bt.major{background:var(--seal);color:#fff}
+.ep .syn{margin:0 0 8px;font-size:13px;line-height:1.75}
+.hk{display:grid;grid-template-columns:46px 1fr;gap:8px;font-size:12.5px;padding:6px 0;border-top:1px solid var(--rule)}
+.hk b{font:500 11px/1.8 var(--sans);letter-spacing:.14em;color:var(--seal)}
+.ep .meta{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px}
+.ep .meta i{font-style:normal;font:400 10.5px/1.5 var(--mono);border:1px solid var(--rule-2);
+  border-radius:2px;padding:0 5px;background:var(--paper);color:var(--ink-2)}
+.ep .meta .warn{border-color:var(--seal);color:var(--seal);background:var(--seal-soft)}
+
+/* 每集调度矩阵 */
+.matrix{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 18px;overflow-x:auto}
+.matrix table{border-collapse:separate;border-spacing:3px;font-size:12px;background:none;border:0;width:auto}
+.matrix th,.matrix td{border:0;padding:0}
+.matrix th{font:500 10px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:none;
+  text-align:left;padding:0 8px 5px 0;white-space:nowrap}
+.matrix th.ep-h{text-align:center;padding:0 0 5px;font-family:var(--mono)}
+.matrix td.name{padding-right:10px;white-space:nowrap;font-family:var(--serif);font-size:13px}
+.matrix td.tier{padding-right:10px;color:var(--ink-3);font-size:11px;white-space:nowrap}
+.matrix td.mc{width:var(--cw,26px);min-width:var(--cw,26px);height:22px;border-radius:2px;
+  background:var(--paper);border:1px solid var(--rule)}
+.matrix td.mc.on{background:var(--seal);border-color:var(--seal)}
+.matrix td.mc.on.sc{background:var(--seal-2);border-color:var(--seal-2)}
+.matrix td.n{padding-left:10px;font-family:var(--mono);font-size:11px;color:var(--ink-2);white-space:nowrap}
+.matrix tr.div td{padding:8px 0 3px;font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.matrix .mnote{font-size:11px;color:var(--ink-3);margin:10px 0 0}
+
+/* 场景概览卡：整行多列网格——场景多的时候塞半栏怎么排都难看 */
+.scenes{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:13px;align-items:start}
+.scard{position:relative;background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 16px}
+.snum{position:absolute;top:10px;right:16px;font:400 26px/1 var(--serif);color:var(--rule-2);letter-spacing:.04em}
+.scard h3{font:400 16px/1.3 var(--serif);letter-spacing:.03em;display:flex;align-items:center;gap:8px;
+  padding-right:90px;flex-wrap:wrap}
+.scard h3 .id{font:400 10.5px var(--mono);color:var(--ink-3)}
+.badge{font:500 10.5px/1 var(--sans);padding:2px 8px;border-radius:99px;border:1px solid var(--seal);color:var(--seal)}
+.badge.once{border-color:var(--seal-2);color:var(--seal-2)}
+.strip{display:flex;flex-wrap:wrap;gap:3px;margin:7px 0 6px}
+.strip i{width:16px;height:10px;border-radius:2px;background:var(--paper);border:1px solid var(--rule)}
+.strip i.on{background:var(--seal);border-color:var(--seal)}
+.strip i.on.lt{background:var(--seal-2);border-color:var(--seal-2)}
+.srow{font-size:11.5px;color:var(--ink-2);display:flex;gap:6px;flex-wrap:wrap;align-items:baseline;margin-top:3px}
+.srow b{font:500 10px/1.8 var(--sans);letter-spacing:.12em;color:var(--ink-3);flex:none}
+.srow i{font-style:normal;font:400 10.5px/1.5 var(--mono);border:1px solid var(--rule-2);
+  border-radius:2px;padding:0 5px;background:var(--paper)}
+.srow .reuse{color:var(--seal)}
+
+/* 资产量折算 */
+.plan{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 18px}
+.plan table{background:none;border:0}
+.plan th{background:none;padding-left:0}
+.plan td{padding-left:0;border-top:1px solid var(--rule);border-bottom:0}
+.plan tr:first-child td{border-top:0}
+.plan td:first-child{font-family:var(--serif);font-size:13px;color:var(--ink)}
+
+/* 改编说明 */
+.core{font:400 17px/1.9 var(--serif);margin:0 0 6px}
+h3.sub{font:500 12px/1 var(--sans);letter-spacing:.18em;color:var(--seal);margin:20px 0 8px}
+
+/* 质量门 */
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate .ok .m,.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* 屏幕上收，纸上全展开：tab 两个面板都打印、分集全部展开 */
+@media print{
+  .expo,.tabs,.epsmore{display:none!important}
+  .tabpane{display:block!important;margin-bottom:14px}
+  .epswrap.clip .eps .ep{display:block!important}
+  .epswrap.clip .eps::after{display:none}
+  .page{max-width:none;padding:0}
+  section,.ep,.scard{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style></head><body>
+<div class="page">
+
+<header class="hd">
+  <h1>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）</h1>
+  <span class="sub">短剧改编大纲 · 30 集 × 3 分钟 · 男频穿越逆袭爽剧 · 抽核改编</span>
+  <span class="right">
+    <span class="gatepill pass">✓ 质量门 13 / 13</span>
+    <button class="expo" data-name="江东潜龙（三国：我在东吴从小吏杀到大都督-第一季）-outline.json">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis">
+  <div class="kpi accent"><div class="l">总集数</div><div class="v">30 <small>× 3 分钟</small></div><div class="d">正片约 90 分钟</div></div>
+  <div class="kpi"><div class="l">爽点</div><div class="v">26</div><div class="d">9 大爆点 · 最大间隔 3 集</div></div>
+  <div class="kpi"><div class="l">角色</div><div class="v">6</div><div class="d">主角 5 · 配角 1 · 功能 0</div></div>
+  <div class="kpi"><div class="l">主场景</div><div class="v">5 <small>+2</small></div><div class="d">无一次性场景</div></div>
+  <div class="kpi"><div class="l">生成难点</div><div class="v">9</div><div class="d">人群 ×8（第 5、9、10、11、14、26、…</div></div>
+  <div class="kpi"><div class="l">改编幅度</div><div class="v mode">抽核</div><div class="d">砍 1 线 · 合 1 组</div></div>
+</div>
+
+
+<section id="sec-rhythm">
+  <div class="sec-h"><span class="no">01</span><h2>爽点节奏</h2></div>
+  <div class="tabs" role="tablist">
+    <button class="tab on" data-pane="pane-timeline">时间轴</button>
+    <button class="tab" data-pane="pane-table">明细表</button>
+  </div>
+  <div class="tabpane on" id="pane-timeline"><div class="chart rhythm">
+  <div class="legend">
+    <i><span class="dotk major"></span>大爆点</i>
+    <i><span class="dotk"></span>常规爽点</i>
+  </div>
+  <svg viewBox="0 0 1520 352" role="img" aria-label="爽点节奏">
+    <line class="axis" x1="30" y1="92" x2="1490" y2="92"/>
+    <line class="axis" x1="66.5" y1="88" x2="66.5" y2="96"/>
+    <line class="axis" x1="139.5" y1="88" x2="139.5" y2="96"/>
+    <line class="axis" x1="212.5" y1="88" x2="212.5" y2="96"/>
+    <line class="axis" x1="285.5" y1="88" x2="285.5" y2="96"/>
+    <line class="axis" x1="358.5" y1="88" x2="358.5" y2="96"/>
+    <line class="axis" x1="431.5" y1="88" x2="431.5" y2="96"/>
+    <line class="axis" x1="504.5" y1="88" x2="504.5" y2="96"/>
+    <line class="axis" x1="577.5" y1="88" x2="577.5" y2="96"/>
+    <line class="axis" x1="650.5" y1="88" x2="650.5" y2="96"/>
+    <line class="axis" x1="723.5" y1="88" x2="723.5" y2="96"/>
+    <line class="axis" x1="796.5" y1="88" x2="796.5" y2="96"/>
+    <line class="axis" x1="869.5" y1="88" x2="869.5" y2="96"/>
+    <line class="axis" x1="942.5" y1="88" x2="942.5" y2="96"/>
+    <line class="axis" x1="1015.5" y1="88" x2="1015.5" y2="96"/>
+    <line class="axis" x1="1088.5" y1="88" x2="1088.5" y2="96"/>
+    <line class="axis" x1="1161.5" y1="88" x2="1161.5" y2="96"/>
+    <line class="axis" x1="1234.5" y1="88" x2="1234.5" y2="96"/>
+    <line class="axis" x1="1307.5" y1="88" x2="1307.5" y2="96"/>
+    <line class="axis" x1="1380.5" y1="88" x2="1380.5" y2="96"/>
+    <line class="axis" x1="1453.5" y1="88" x2="1453.5" y2="96"/>
+    <line class="axis" x1="30" y1="268" x2="760" y2="268"/>
+    <line class="axis" x1="66.5" y1="264" x2="66.5" y2="272"/>
+    <line class="axis" x1="139.5" y1="264" x2="139.5" y2="272"/>
+    <line class="axis" x1="212.5" y1="264" x2="212.5" y2="272"/>
+    <line class="axis" x1="285.5" y1="264" x2="285.5" y2="272"/>
+    <line class="axis" x1="358.5" y1="264" x2="358.5" y2="272"/>
+    <line class="axis" x1="431.5" y1="264" x2="431.5" y2="272"/>
+    <line class="axis" x1="504.5" y1="264" x2="504.5" y2="272"/>
+    <line class="axis" x1="577.5" y1="264" x2="577.5" y2="272"/>
+    <line class="axis" x1="650.5" y1="264" x2="650.5" y2="272"/>
+    <line class="axis" x1="723.5" y1="264" x2="723.5" y2="272"/>
+    <text class="gapnote" x="577.5" y="80" text-anchor="middle">— 1 集空档 —</text>
+    <text class="gapnote" x="906" y="80" text-anchor="middle">— 2 集空档 —</text>
+    <text class="gapnote" x="650.5" y="256" text-anchor="middle">— 1 集空档 —</text>
+    <line class="stem major" x1="66.5" y1="92" x2="66.5" y2="57"/>
+    <circle class="bdot major" cx="66.5" cy="48" r="9"><title>B01 穿越死局｜沈川穿越醒来即被告知三十艘船七日修不完军法处置 → 他用现代盘点眼光看穿：人不是问题，管理才是问题</title></circle>
+    <text class="blabel" x="66.5" y="26" text-anchor="middle">穿越死局</text>
+    <text class="bsub" x="66.5" y="12" text-anchor="middle">沈川穿越醒来即被告知三十艘船…</text>
+    <line class="stem" x1="139.5" y1="92" x2="139.5" y2="122"/>
+    <circle class="bdot" cx="139.5" cy="128" r="6"><title>B02 混乱被看见｜船坊五大困境一团乱麻 → 沈川把五大问题拆成一张人人能懂的清单，混乱第一次被看见</title></circle>
+    <text class="blabel" x="139.5" y="150" text-anchor="middle">混乱被看见</text>
+    <text class="bsub" x="139.5" y="164" text-anchor="middle">船坊五大困境一团乱麻</text>
+    <line class="stem" x1="212.5" y1="92" x2="212.5" y2="62"/>
+    <circle class="bdot" cx="212.5" cy="56" r="6"><title>B03 示范见效｜老工匠集体抵制标准化 → 沈川选最易见效的工序示范，提速肉眼可见，老工匠将信将疑</title></circle>
+    <text class="blabel" x="212.5" y="34" text-anchor="middle">示范见效</text>
+    <text class="bsub" x="212.5" y="20" text-anchor="middle">老工匠集体抵制标准化</text>
+    <line class="stem" x1="285.5" y1="92" x2="285.5" y2="122"/>
+    <circle class="bdot" cx="285.5" cy="128" r="6"><title>B04 透明账目反将一军｜顾承的人把账目漏洞往沈川身上引 → 沈川当众摊账，让漏洞在阳光下无处遁形，顾承第一次警觉</title></circle>
+    <text class="blabel" x="285.5" y="150" text-anchor="middle">透明账目反将…</text>
+    <text class="bsub" x="285.5" y="164" text-anchor="middle">顾承的人把账目漏洞往沈川身上…</text>
+    <line class="stem major" x1="358.5" y1="92" x2="358.5" y2="57"/>
+    <circle class="bdot major" cx="358.5" cy="48" r="9"><title>B05 三十一艘翻盘｜第七日最后关头木料被卡，工期看似已死 → 沈川启动应急预案+亲手补位，三十艘要求下水三十一艘，超额翻盘</title></circle>
+    <text class="blabel" x="358.5" y="26" text-anchor="middle">三十一艘翻盘</text>
+    <text class="bsub" x="358.5" y="12" text-anchor="middle">第七日最后关头木料被卡，工期…</text>
+    <line class="stem" x1="431.5" y1="92" x2="431.5" y2="122"/>
+    <circle class="bdot" cx="431.5" cy="128" r="6"><title>B06 被顶级智力碾压｜沈川以为凭现代知识能惊艳周瑜 → 被周瑜三言两语看穿表层心思，第一次意识到历史人物不是NPC</title></circle>
+    <text class="blabel" x="431.5" y="150" text-anchor="middle">被顶级智力碾…</text>
+    <text class="bsub" x="431.5" y="164" text-anchor="middle">沈川以为凭现代知识能惊艳周瑜</text>
+    <line class="stem" x1="504.5" y1="92" x2="504.5" y2="62"/>
+    <circle class="bdot" cx="504.5" cy="56" r="6"><title>B07 另辟蹊径答问｜周瑜抛出'若曹军百万南下你当如何'的军事之问 → 沈川不答怎么打赢、答怎么不输，转成资源后勤问题，两人第一次互补</title></circle>
+    <text class="blabel" x="504.5" y="34" text-anchor="middle">另辟蹊径答问</text>
+    <text class="bsub" x="504.5" y="20" text-anchor="middle">周瑜抛出'若曹军百万南下你当…</text>
+    <line class="stem" x1="650.5" y1="92" x2="650.5" y2="122"/>
+    <circle class="bdot" cx="650.5" cy="128" r="6"><title>B08 用工程思维办军事｜沈川第一次碰兵，纸上谈兵撞上现实 → 把押运拆成路线+节点+冗余，用非军事方法办成军事的事</title></circle>
+    <text class="blabel" x="650.5" y="150" text-anchor="middle">用工程思维办…</text>
+    <text class="bsub" x="650.5" y="164" text-anchor="middle">沈川第一次碰兵，纸上谈兵撞上…</text>
+    <line class="stem major" x1="723.5" y1="92" x2="723.5" y2="57"/>
+    <circle class="bdot major" cx="723.5" cy="48" r="9"><title>B09 百人调度权｜一百个兵不服一个修船小吏 → 用纪律+分工+赏罚快速立威，第一次真正掌兵，身份质变</title></circle>
+    <text class="blabel" x="723.5" y="26" text-anchor="middle">百人调度权</text>
+    <text class="bsub" x="723.5" y="12" text-anchor="middle">一百个兵不服一个修船小吏</text>
+    <line class="stem" x1="796.5" y1="92" x2="796.5" y2="122"/>
+    <circle class="bdot" cx="796.5" cy="128" r="6"><title>B10 反高潮失败｜沈川第一次真正进入战争，期待主角发威 → 被现实打蒙，跪在尸体旁明白知道结果不等于会打仗</title></circle>
+    <text class="blabel" x="796.5" y="150" text-anchor="middle">反高潮失败</text>
+    <text class="bsub" x="796.5" y="164" text-anchor="middle">沈川第一次真正进入战争，期待…</text>
+    <line class="stem major" x1="1015.5" y1="92" x2="1015.5" y2="57"/>
+    <circle class="bdot major" cx="1015.5" cy="48" r="9"><title>B11 以弱胜强｜兵力劣势、时间劣势、内部怀疑 → 纪律+情报+地形+工程+组织五样武器全用，一个不会打仗的人打赢了</title></circle>
+    <text class="blabel" x="1015.5" y="26" text-anchor="middle">以弱胜强</text>
+    <text class="bsub" x="1015.5" y="12" text-anchor="middle">兵力劣势、时间劣势、内部怀疑</text>
+    <line class="stem major" x1="1088.5" y1="92" x2="1088.5" y2="127"/>
+    <circle class="bdot major" cx="1088.5" cy="136" r="9"><title>B12 名动江东｜胜利消息层层上报，功劳被争抢稀释 → 沈川不争功让功劳自己说话，消息第一次传到孙权耳中</title></circle>
+    <text class="blabel" x="1088.5" y="158" text-anchor="middle">名动江东</text>
+    <text class="bsub" x="1088.5" y="172" text-anchor="middle">胜利消息层层上报，功劳被争抢…</text>
+    <line class="stem" x1="1161.5" y1="92" x2="1161.5" y2="62"/>
+    <circle class="bdot" cx="1161.5" cy="56" r="6"><title>B13 软刀子困局｜士族下场不杀沈川，让他什么都做不成 → 反高潮，有力使不出，连周瑜的面都见不到</title></circle>
+    <text class="blabel" x="1161.5" y="34" text-anchor="middle">软刀子困局</text>
+    <text class="bsub" x="1161.5" y="20" text-anchor="middle">士族下场不杀沈川，让他什么都…</text>
+    <line class="stem" x1="1234.5" y1="92" x2="1234.5" y2="122"/>
+    <circle class="bdot" cx="1234.5" cy="128" r="6"><title>B14 供应链自救｜粮断了，一百号人等着吃饭 → 用成本意识+调度自谋生路，无中生有搞到粮</title></circle>
+    <text class="blabel" x="1234.5" y="150" text-anchor="middle">供应链自救</text>
+    <text class="bsub" x="1234.5" y="164" text-anchor="middle">粮断了，一百号人等着吃饭</text>
+    <line class="stem" x1="1307.5" y1="92" x2="1307.5" y2="62"/>
+    <circle class="bdot" cx="1307.5" cy="56" r="6"><title>B15 政治小胜｜现代平等观撞上门第观 → 学会借势，第一次玩政治小胜一局</title></circle>
+    <text class="blabel" x="1307.5" y="34" text-anchor="middle">政治小胜</text>
+    <text class="bsub" x="1307.5" y="20" text-anchor="middle">现代平等观撞上门第观</text>
+    <line class="stem" x1="1380.5" y1="92" x2="1380.5" y2="122"/>
+    <circle class="bdot" cx="1380.5" cy="128" r="6"><title>B16 战略眼光获认可｜鲁肃不露声色地试探 → 沈川第一次展战略眼光，鲁肃判断此人与普通寒门不同</title></circle>
+    <text class="blabel" x="1380.5" y="150" text-anchor="middle">战略眼光获认…</text>
+    <text class="bsub" x="1380.5" y="164" text-anchor="middle">鲁肃不露声色地试探</text>
+    <line class="stem major" x1="1453.5" y1="92" x2="1453.5" y2="57"/>
+    <circle class="bdot major" cx="1453.5" cy="48" r="9"><title>B17 孙权召见｜孙权第一次正式召见沈川 → 不谄媚不夸大不藏拙，用诚实+有用通过第一道筛选</title></circle>
+    <text class="blabel" x="1453.5" y="26" text-anchor="middle">孙权召见</text>
+    <text class="bsub" x="1453.5" y="12" text-anchor="middle">孙权第一次正式召见沈川</text>
+    <line class="stem" x1="66.5" y1="268" x2="66.5" y2="298"/>
+    <circle class="bdot" cx="66.5" cy="304" r="6"><title>B17b 格局骤升｜曹操南下，个人恩怨被江东存亡碾压 → 沈川第一次跳出小格局看大棋，从内部竞争跳到天下大势</title></circle>
+    <text class="blabel" x="66.5" y="326" text-anchor="middle">格局骤升</text>
+    <text class="bsub" x="66.5" y="340" text-anchor="middle">曹操南下，个人恩怨被江东存亡…</text>
+    <line class="stem" x1="139.5" y1="268" x2="139.5" y2="238"/>
+    <circle class="bdot" cx="139.5" cy="232" r="6"><title>B17c 历史记忆同步｜刘表病逝刘琮降曹，荆州尽归曹操 → 观众看到主角的历史记忆与现实同步，代入感拉满</title></circle>
+    <text class="blabel" x="139.5" y="210" text-anchor="middle">历史记忆同步</text>
+    <text class="bsub" x="139.5" y="196" text-anchor="middle">刘表病逝刘琮降曹，荆州尽归曹…</text>
+    <line class="stem" x1="212.5" y1="268" x2="212.5" y2="298"/>
+    <circle class="bdot" cx="212.5" cy="304" r="6"><title>B17d 数据判断｜主战主降撕裂，主降派喊曹操势大 → 沈川用数据加逻辑在内部发声，曹操的军力没有想象中可怕</title></circle>
+    <text class="blabel" x="212.5" y="326" text-anchor="middle">数据判断</text>
+    <text class="bsub" x="212.5" y="340" text-anchor="middle">主战主降撕裂，主降派喊曹操势…</text>
+    <line class="stem major" x1="285.5" y1="268" x2="285.5" y2="233"/>
+    <circle class="bdot major" cx="285.5" cy="224" r="9"><title>B18 历史偏移｜记忆中本该发生的事没有发生 → 最大的外挂历史记忆第一次失灵，恐惧与重新校准</title></circle>
+    <text class="blabel" x="285.5" y="202" text-anchor="middle">历史偏移</text>
+    <text class="bsub" x="285.5" y="188" text-anchor="middle">记忆中本该发生的事没有发生</text>
+    <line class="stem major" x1="358.5" y1="268" x2="358.5" y2="303"/>
+    <circle class="bdot major" cx="358.5" cy="312" r="9"><title>B19 认知蜕变｜失去预知安全感 → 想通真正强的从来不是知道答案，而是能拆问题</title></circle>
+    <text class="blabel" x="358.5" y="334" text-anchor="middle">认知蜕变</text>
+    <text class="bsub" x="358.5" y="348" text-anchor="middle">失去预知安全感</text>
+    <line class="stem" x1="431.5" y1="268" x2="431.5" y2="238"/>
+    <circle class="bdot" cx="431.5" cy="232" r="6"><title>B20 国策层面认可｜主战主降之争朝堂爆发 → 沈川用工程+后勤+数据为主战派提供可守的技术底气</title></circle>
+    <text class="blabel" x="431.5" y="210" text-anchor="middle">国策层面认可</text>
+    <text class="bsub" x="431.5" y="196" text-anchor="middle">主战主降之争朝堂爆发</text>
+    <line class="stem" x1="504.5" y1="268" x2="504.5" y2="298"/>
+    <circle class="bdot" cx="504.5" cy="304" r="6"><title>B21 互补成形｜周瑜统帅之才与沈川组织之才需磨合 → 沈川主动补位，周瑜管怎么打、沈川管怎么把仗打得起</title></circle>
+    <text class="blabel" x="504.5" y="326" text-anchor="middle">互补成形</text>
+    <text class="bsub" x="504.5" y="340" text-anchor="middle">周瑜统帅之才与沈川组织之才需…</text>
+    <line class="stem" x1="577.5" y1="268" x2="577.5" y2="238"/>
+    <circle class="bdot" cx="577.5" cy="232" r="6"><title>B22 参与天下棋局｜鲁肃奔走孙刘之间，联刘抗曹 → 沈川用战略眼光帮鲁肃补上联盟一块拼图，参与顶层设计</title></circle>
+    <text class="blabel" x="577.5" y="210" text-anchor="middle">参与天下棋局</text>
+    <text class="bsub" x="577.5" y="196" text-anchor="middle">鲁肃奔走孙刘之间，联刘抗曹</text>
+    <line class="stem major" x1="723.5" y1="268" x2="723.5" y2="303"/>
+    <circle class="bdot major" cx="723.5" cy="312" r="9"><title>B23 拆穿八十万｜群臣争论曹操八十万大军，主降派气势汹汹 → 最末位的小吏走到地图前，用数据+逻辑拆穿八十万的虚妄，全剧最大爽点</title></circle>
+    <text class="blabel" x="723.5" y="334" text-anchor="middle">拆穿八十万</text>
+    <text class="bsub" x="723.5" y="348" text-anchor="middle">群臣争论曹操八十万大军，主降…</text>
+    <text class="tick" x="66.5" y="112" text-anchor="middle">1</text>
+    <text class="tick" x="139.5" y="112" text-anchor="middle">2</text>
+    <text class="tick" x="212.5" y="112" text-anchor="middle">3</text>
+    <text class="tick" x="285.5" y="112" text-anchor="middle">4</text>
+    <text class="tick" x="358.5" y="112" text-anchor="middle">5</text>
+    <text class="tick" x="431.5" y="112" text-anchor="middle">6</text>
+    <text class="tick" x="504.5" y="112" text-anchor="middle">7</text>
+    <text class="tick" x="577.5" y="112" text-anchor="middle">8</text>
+    <text class="tick" x="650.5" y="112" text-anchor="middle">9</text>
+    <text class="tick" x="723.5" y="112" text-anchor="middle">10</text>
+    <text class="tick" x="796.5" y="112" text-anchor="middle">11</text>
+    <text class="tick" x="869.5" y="112" text-anchor="middle">12</text>
+    <text class="tick" x="942.5" y="112" text-anchor="middle">13</text>
+    <text class="tick" x="1015.5" y="112" text-anchor="middle">14</text>
+    <text class="tick" x="1088.5" y="112" text-anchor="middle">15</text>
+    <text class="tick" x="1161.5" y="112" text-anchor="middle">16</text>
+    <text class="tick" x="1234.5" y="112" text-anchor="middle">17</text>
+    <text class="tick" x="1307.5" y="112" text-anchor="middle">18</text>
+    <text class="tick" x="1380.5" y="112" text-anchor="middle">19</text>
+    <text class="tick" x="1453.5" y="112" text-anchor="middle">20</text>
+    <text class="tick" x="66.5" y="288" text-anchor="middle">21</text>
+    <text class="tick" x="139.5" y="288" text-anchor="middle">22</text>
+    <text class="tick" x="212.5" y="288" text-anchor="middle">23</text>
+    <text class="tick" x="285.5" y="288" text-anchor="middle">24</text>
+    <text class="tick" x="358.5" y="288" text-anchor="middle">25</text>
+    <text class="tick" x="431.5" y="288" text-anchor="middle">26</text>
+    <text class="tick" x="504.5" y="288" text-anchor="middle">27</text>
+    <text class="tick" x="577.5" y="288" text-anchor="middle">28</text>
+    <text class="tick" x="650.5" y="288" text-anchor="middle">29</text>
+    <text class="tick" x="723.5" y="288" text-anchor="middle">30</text>
+  </svg>
+</div></div>
+  <div class="tabpane" id="pane-table">
+  <table><thead><tr><th>ID</th><th>类型</th><th>量级</th><th>集</th><th>铺垫</th><th>兑现</th></tr></thead>
+<tbody><tr><td>B01</td><td>穿越死局</td><td>大爆点</td><td>1</td><td>沈川穿越醒来即被告知三十艘船七日修不完军法处置</td><td>他用现代盘点眼光看穿：人不是问题，管理才是问题</td></tr>
+<tr><td>B02</td><td>混乱被看见</td><td>常规</td><td>2</td><td>船坊五大困境一团乱麻</td><td>沈川把五大问题拆成一张人人能懂的清单，混乱第一次被看见</td></tr>
+<tr><td>B03</td><td>示范见效</td><td>常规</td><td>3</td><td>老工匠集体抵制标准化</td><td>沈川选最易见效的工序示范，提速肉眼可见，老工匠将信将疑</td></tr>
+<tr><td>B04</td><td>透明账目反将一军</td><td>常规</td><td>4</td><td>顾承的人把账目漏洞往沈川身上引</td><td>沈川当众摊账，让漏洞在阳光下无处遁形，顾承第一次警觉</td></tr>
+<tr><td>B05</td><td>三十一艘翻盘</td><td>大爆点</td><td>5</td><td>第七日最后关头木料被卡，工期看似已死</td><td>沈川启动应急预案+亲手补位，三十艘要求下水三十一艘，超额翻盘</td></tr>
+<tr><td>B06</td><td>被顶级智力碾压</td><td>常规</td><td>6</td><td>沈川以为凭现代知识能惊艳周瑜</td><td>被周瑜三言两语看穿表层心思，第一次意识到历史人物不是NPC</td></tr>
+<tr><td>B07</td><td>另辟蹊径答问</td><td>常规</td><td>7</td><td>周瑜抛出'若曹军百万南下你当如何'的军事之问</td><td>沈川不答怎么打赢、答怎么不输，转成资源后勤问题，两人第一次互补</td></tr>
+<tr><td>B08</td><td>用工程思维办军事</td><td>常规</td><td>9</td><td>沈川第一次碰兵，纸上谈兵撞上现实</td><td>把押运拆成路线+节点+冗余，用非军事方法办成军事的事</td></tr>
+<tr><td>B09</td><td>百人调度权</td><td>大爆点</td><td>10</td><td>一百个兵不服一个修船小吏</td><td>用纪律+分工+赏罚快速立威，第一次真正掌兵，身份质变</td></tr>
+<tr><td>B10</td><td>反高潮失败</td><td>常规</td><td>11</td><td>沈川第一次真正进入战争，期待主角发威</td><td>被现实打蒙，跪在尸体旁明白知道结果不等于会打仗</td></tr>
+<tr><td>B11</td><td>以弱胜强</td><td>大爆点</td><td>14</td><td>兵力劣势、时间劣势、内部怀疑</td><td>纪律+情报+地形+工程+组织五样武器全用，一个不会打仗的人打赢了</td></tr>
+<tr><td>B12</td><td>名动江东</td><td>大爆点</td><td>15</td><td>胜利消息层层上报，功劳被争抢稀释</td><td>沈川不争功让功劳自己说话，消息第一次传到孙权耳中</td></tr>
+<tr><td>B13</td><td>软刀子困局</td><td>常规</td><td>16</td><td>士族下场不杀沈川，让他什么都做不成</td><td>反高潮，有力使不出，连周瑜的面都见不到</td></tr>
+<tr><td>B14</td><td>供应链自救</td><td>常规</td><td>17</td><td>粮断了，一百号人等着吃饭</td><td>用成本意识+调度自谋生路，无中生有搞到粮</td></tr>
+<tr><td>B15</td><td>政治小胜</td><td>常规</td><td>18</td><td>现代平等观撞上门第观</td><td>学会借势，第一次玩政治小胜一局</td></tr>
+<tr><td>B16</td><td>战略眼光获认可</td><td>常规</td><td>19</td><td>鲁肃不露声色地试探</td><td>沈川第一次展战略眼光，鲁肃判断此人与普通寒门不同</td></tr>
+<tr><td>B17</td><td>孙权召见</td><td>大爆点</td><td>20</td><td>孙权第一次正式召见沈川</td><td>不谄媚不夸大不藏拙，用诚实+有用通过第一道筛选</td></tr>
+<tr><td>B17b</td><td>格局骤升</td><td>常规</td><td>21</td><td>曹操南下，个人恩怨被江东存亡碾压</td><td>沈川第一次跳出小格局看大棋，从内部竞争跳到天下大势</td></tr>
+<tr><td>B17c</td><td>历史记忆同步</td><td>常规</td><td>22</td><td>刘表病逝刘琮降曹，荆州尽归曹操</td><td>观众看到主角的历史记忆与现实同步，代入感拉满</td></tr>
+<tr><td>B17d</td><td>数据判断</td><td>常规</td><td>23</td><td>主战主降撕裂，主降派喊曹操势大</td><td>沈川用数据加逻辑在内部发声，曹操的军力没有想象中可怕</td></tr>
+<tr><td>B18</td><td>历史偏移</td><td>大爆点</td><td>24</td><td>记忆中本该发生的事没有发生</td><td>最大的外挂历史记忆第一次失灵，恐惧与重新校准</td></tr>
+<tr><td>B19</td><td>认知蜕变</td><td>大爆点</td><td>25</td><td>失去预知安全感</td><td>想通真正强的从来不是知道答案，而是能拆问题</td></tr>
+<tr><td>B20</td><td>国策层面认可</td><td>常规</td><td>26</td><td>主战主降之争朝堂爆发</td><td>沈川用工程+后勤+数据为主战派提供可守的技术底气</td></tr>
+<tr><td>B21</td><td>互补成形</td><td>常规</td><td>27</td><td>周瑜统帅之才与沈川组织之才需磨合</td><td>沈川主动补位，周瑜管怎么打、沈川管怎么把仗打得起</td></tr>
+<tr><td>B22</td><td>参与天下棋局</td><td>常规</td><td>28</td><td>鲁肃奔走孙刘之间，联刘抗曹</td><td>沈川用战略眼光帮鲁肃补上联盟一块拼图，参与顶层设计</td></tr>
+<tr><td>B23</td><td>拆穿八十万</td><td>大爆点</td><td>30</td><td>群臣争论曹操八十万大军，主降派气势汹汹</td><td>最末位的小吏走到地图前，用数据+逻辑拆穿八十万的虚妄，全剧最大爽点</td></tr></tbody></table>
+  </div>
+</section>
+
+<section id="sec-episodes">
+  <div class="sec-h"><span class="no">02</span><h2>分集概览</h2><span class="note">核心交付 · 每集三栏齐全</span></div>
+  <div class="epswrap clip">
+    <div class="eps">
+<article class="ep" id="ep-1">
+  <span class="num">1</span>
+  <header><b>第 1 集</b><i class="bt major">穿越死局</i></header>
+  <p class="syn">沈川穿越醒来即被告知三十艘战船七日修不完就要军法处置。他头痛欲裂中翻找这具身体的随身物件，拼出自己是负责木料、工匠、修船进度和账目的底层小吏。他强压慌乱开始盘点，问清船、工匠、木料、工期，工匠们以为这小吏疯了。盘点后他得出第一个判断：修不完不是人少，是管理混乱，并第一次用现代眼光把这个死局拆成五个可拆解的问题。夜里翻账册，突然发现一笔木料去向不明——这不止是修船，账里有别人的命。</p>
+  <div class="hk"><b>钩子</b><span>军法处置的刀，已经架在脖子上了——三十艘船七日修不完，死</span></div>
+  <div class="hk"><b>悬念</b><span>账目对不上，这个洞可能藏着别人的命</span></div>
+  <div class="meta"><i>S01</i><i>C01</i></div>
+</article>
+<article class="ep" id="ep-2">
+  <span class="num">2</span>
+  <header><b>第 2 集</b><i class="bt">混乱被看见</i></header>
+  <p class="syn">沈川反复核对账册，确认有漏洞、有人做假账，意识到船坊本就是个烂摊子，有人正等着一个替罪羊。他第一次见顾承，顾承和善却话里有话，笑意里藏着等他摔死。沈川不用聪明用笨办法，逐项查清五大困境：木料乱、零件不统一、工序互相等待、调度混乱、账目漏洞。他把五大问题拆成一张问题清单，用最直白的话讲给工匠听，工匠们第一次听懂自己卡在哪。追到木料来源，发现被卡住了，回头看见顾承笑得意味深长。</p>
+  <div class="hk"><b>钩子</b><span>有人要借这艘烂船，让他顶罪</span></div>
+  <div class="hk"><b>悬念</b><span>木料被谁卡着？顾承笑得意味深长</span></div>
+  <div class="meta"><i>S01</i><i>S02</i><i>S06</i><i>C01</i><i>C02</i><i>C06</i><i class="warn" title="三人分处不同场次：沈川查账在木棚、顾承在主事厅、老工匠在工棚，无同框，分场拍">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-3">
+  <span class="num">3</span>
+  <header><b>第 3 集</b><i class="bt">示范见效</i></header>
+  <p class="syn">沈川宣布要把修船拆成标准工序，老工匠们当场炸了，传统手艺与标准化正面碰撞。沈川不硬顶也不讲大道理，只挑最容易见效的一道工序，说别的先不动就这一道听我一天。他亲手示范流水线式分工，第一道工序提速肉眼可见，老工匠们从不信到将信将疑，有人不自觉地跟着做。收工后几个工匠私下嘀咕这小子好像有点门道，但老资格的仍不服。船坊外一个小吏匆匆离开，把沈川的新法子报了上去，沈川意识到自己每一步都被盯着。</p>
+  <div class="hk"><b>钩子</b><span>老工匠当场甩手，嘴上没毛修什么船</span></div>
+  <div class="hk"><b>悬念</b><span>有人把新法子报给了上面，是福是祸</span></div>
+  <div class="meta"><i>S01</i><i>S02</i><i>C01</i><i>C06</i></div>
+</article>
+<article class="ep" id="ep-4">
+  <span class="num">4</span>
+  <header><b>第 4 集</b><i class="bt">透明账目反将一军</i></header>
+  <p class="syn">零件尺寸不统一，一艘船返工三遍，工期被白白吃掉。沈川推行统一标准，用墨线定尺卡尺寸，返工率骤降。顾承的人开始把账目漏洞往沈川身上引，沈川意识到补账等于动别人蛋糕、不补就替人顶罪的两难。他没有私下补账，而是当众把账目摊开，让漏洞在阳光下无处遁形，做假账的人慌了，顾承第一次认真打量沈川。第六日天色渐暗，船还差得多，时间不够了。</p>
+  <div class="hk"><b>钩子</b><span>零件不统一，一艘船返工了三遍</span></div>
+  <div class="hk"><b>悬念</b><span>第六日，船还差得多，时间不够了</span></div>
+  <div class="meta"><i>S01</i><i>S02</i><i>C01</i><i>C02</i></div>
+</article>
+<article class="ep" id="ep-5">
+  <span class="num">5</span>
+  <header><b>第 5 集</b><i class="bt major">三十一艘翻盘</i></header>
+  <p class="syn">第七日清晨雾气未散，期限已到，工匠们垂头丧气准备等死。沈川去领最后一批木料，发现被卡住了，明白这是要让他差一艘。他没有慌，启动应急预案：提前备好的余量木料、早已说好的替补工匠，连自己都撸起袖子。他脱下外衣亲手加入修船，和工匠一起扛木头拼船板，工匠们真正服了他。要求三十艘最终下水三十一艘，多出的那一艘是留余量思维的胜利。都督府里，周瑜看着简报上的数字，抬起眼说把那个沈川带来。</p>
+  <div class="hk"><b>钩子</b><span>第七日清晨，工期看似已死</span></div>
+  <div class="hk"><b>悬念</b><span>周瑜下令，把那个沈川带来</span></div>
+  <div class="meta"><i>S01</i><i>S06</i><i>S03</i><i>C01</i><i>C06</i><i>C03</i><i class="warn">人群</i><i class="warn" title="周瑜仅在片尾都督府单切，与沈川、工匠分处两场，无同框，分场拍">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-6">
+  <span class="num">6</span>
+  <header><b>第 6 集</b><i class="bt">被顶级智力碾压</i></header>
+  <p class="syn">沈川第一次站到周瑜面前，以为凭现代知识能惊艳全场，被周瑜三言两语看穿表层心思。他第一次意识到自己引以为傲的现代知识在真正的天才面前不够看，也第一次明白历史人物不是电视剧NPC。他选择不硬装，承认自己懂工不懂兵，反而让周瑜高看一眼。周瑜抛出一个问题：若曹军百万南下，你当如何。</p>
+  <div class="hk"><b>钩子</b><span>沈川第一次站到周瑜面前，以为能惊艳全场</span></div>
+  <div class="hk"><b>悬念</b><span>若曹军百万南下，你当如何</span></div>
+  <div class="meta"><i>S03</i><i>C01</i><i>C03</i></div>
+</article>
+<article class="ep" id="ep-7">
+  <span class="num">7</span>
+  <header><b>第 7 集</b><i class="bt">另辟蹊径答问</i></header>
+  <p class="syn">周瑜的军事之问把沈川架在火上，答不好就是欺世盗名。沈川没有军事经验，他不答怎么打赢，而答怎么不输，把军事问题转成他擅长的资源与后勤问题。周瑜第一次没有完全听懂，两人第一次产生互补。周瑜说，你这样的人不该只修船。</p>
+  <div class="hk"><b>钩子</b><span>答不好就是欺世盗名</span></div>
+  <div class="hk"><b>悬念</b><span>你这样的人，不该只修船</span></div>
+  <div class="meta"><i>S03</i><i>C01</i><i>C03</i></div>
+</article>
+<article class="ep" id="ep-8">
+  <span class="num">8</span>
+  <header><b>第 8 集</b></header>
+  <p class="syn">周瑜暗中设局考察沈川的真才实学、野心与底线，沈川浑然不觉。他的现代人平等观在江东体系里频频踩雷，但靠做实事、不站队、敢担责一点点过关。观众以上帝视角看周瑜如何面试主角。周瑜递给沈川一项真实的军事任务。</p>
+  <div class="hk"><b>钩子</b><span>周瑜暗中设局考察沈川，沈川浑然不觉</span></div>
+  <div class="hk"><b>悬念</b><span>周瑜递给沈川一项真实的军事任务</span></div>
+  <div class="meta"><i>S03</i><i>C01</i><i>C03</i></div>
+</article>
+<article class="ep" id="ep-9">
+  <span class="num">9</span>
+  <header><b>第 9 集</b><i class="bt">用工程思维办军事</i></header>
+  <p class="syn">沈川第一次碰兵，完成一项看似不起眼实则凶险的军务。他的纸上谈兵第一次撞上现实，他把押运拆成路线加节点加冗余，用工程思维办成一件军事的事。任务成功，但他看到了不该看到的东西。</p>
+  <div class="hk"><b>钩子</b><span>不是修船，是真实的军务</span></div>
+  <div class="hk"><b>悬念</b><span>任务成功，但沈川看到了不该看到的东西</span></div>
+  <div class="meta"><i>S04</i><i>C01</i><i>C03</i><i class="warn">人群</i></div>
+</article>
+<article class="ep" id="ep-10">
+  <span class="num">10</span>
+  <header><b>第 10 集</b><i class="bt major">百人调度权</i></header>
+  <p class="syn">周瑜把一百人的调度权交到沈川手里。一百个兵不服一个修船的小吏，沈川用纪律加分工加明确赏罚快速立威，而非靠武力或空谈，第一次真正掌兵，身份质变。周瑜意味深长地说，接下来你要见的不是船，是血。</p>
+  <div class="hk"><b>钩子</b><span>周瑜把一百人的调度权交到沈川手里</span></div>
+  <div class="hk"><b>悬念</b><span>接下来你要见的不是船，是血</span></div>
+  <div class="meta"><i>S04</i><i>S03</i><i>C01</i><i>C03</i><i class="warn">人群</i><i class="warn" title="沈川与百人同场以队列远景表现，周瑜片尾单切，分场拍">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-11">
+  <span class="num">11</span>
+  <header><b>第 11 集</b><i class="bt">反高潮失败</i></header>
+  <p class="syn">沈川第一次真正进入战争，战争的无序、血腥、信息混乱远超想象。观众期待主角发威，结果主角第一次被现实打蒙，第一次真正面对死人。这一集不破局，重在破碎。沈川跪在尸体旁，第一次明白知道结果不等于会打仗。</p>
+  <div class="hk"><b>钩子</b><span>沈川第一次真正进入战争</span></div>
+  <div class="hk"><b>悬念</b><span>跪在尸体旁，第一次明白知道结果不等于会打仗</span></div>
+  <div class="meta"><i>S04</i><i>C01</i><i class="warn">人群</i><i class="warn">肢体接触</i></div>
+</article>
+<article class="ep" id="ep-12">
+  <span class="num">12</span>
+  <header><b>第 12 集</b></header>
+  <p class="syn">失败后沈川面临问责与自我怀疑，军中对书生掌兵充满嘲讽。他把失败拆成系统问题，纪律、情报、地形、工程、组织逐个补齐，第一次完成从会算资源到会算战场的认知升级。他忽然发现，敌方的破绽恰好是他最擅长的地方。</p>
+  <div class="hk"><b>钩子</b><span>失败后，沈川面临问责与自我怀疑</span></div>
+  <div class="hk"><b>悬念</b><span>敌方的破绽，恰好是他最擅长的地方</span></div>
+  <div class="meta"><i>S04</i><i>C01</i></div>
+</article>
+<article class="ep" id="ep-13">
+  <span class="num">13</span>
+  <header><b>第 13 集</b></header>
+  <p class="syn">沈川决定不跟名将比用兵，而比工程与组织。他用工程手段创造局部优势，军方旧将反对不务正业的打法。他赌上仅剩的信任换一条非常规路，用一个规模小见效快的工程胜利证明这条路走得通，获得一支愿意听他的小队。更大的敌人来了，这次是真刀真枪。</p>
+  <div class="hk"><b>钩子</b><span>沈川决定不比用兵，比工程与组织</span></div>
+  <div class="hk"><b>悬念</b><span>更大的敌人来了，这次是真刀真枪</span></div>
+  <div class="meta"><i>S04</i><i>C01</i></div>
+</article>
+<article class="ep" id="ep-14">
+  <span class="num">14</span>
+  <header><b>第 14 集</b><i class="bt major">以弱胜强</i></header>
+  <p class="syn">沈川用纪律、情报、地形、工程、组织五样武器打一场硬仗，兵力劣势、时间劣势、内部怀疑。一个不会打仗的人打赢了，全剧第二次大爽点。捷报北上，一个人的名字第一次被写进奏报。</p>
+  <div class="hk"><b>钩子</b><span>沈川用五样武器打一场硬仗</span></div>
+  <div class="hk"><b>悬念</b><span>捷报北上，一个名字第一次被写进奏报</span></div>
+  <div class="meta"><i>S04</i><i>C01</i><i class="warn">人群</i></div>
+</article>
+<article class="ep" id="ep-15">
+  <span class="num">15</span>
+  <header><b>第 15 集</b><i class="bt major">名动江东</i></header>
+  <p class="syn">胜利消息层层上报，功劳被争抢、被稀释、被质疑。沈川不争功，让功劳自己说话。消息第一次传到孙权耳中，孙权第一次记住沈川这个名字。同时，士族集团也记住了这个名字，他们决定动手。</p>
+  <div class="hk"><b>钩子</b><span>胜利的消息层层上报</span></div>
+  <div class="hk"><b>悬念</b><span>士族集团也记住了这个名字，他们决定动手</span></div>
+  <div class="meta"><i>S05</i><i>S02</i><i>C01</i><i>C02</i><i>C05</i><i class="warn" title="孙权在宫室、顾承在主事厅、沈川不在场，三人分处不同场景，无同框，分场拍">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-16">
+  <span class="num">16</span>
+  <header><b>第 16 集</b><i class="bt">软刀子困局</i></header>
+  <p class="syn">沈川发现敌人换了打法，不杀他而是让他什么都做不成。士族卡粮、卡人、卡船、卡任命、卡资源的阳谋软刀子全开，沈川第一次感到技术能力在规则面前失灵，有力使不出。连周瑜的面都见不到了，他被架起来了。</p>
+  <div class="hk"><b>钩子</b><span>敌人换了打法，让他什么都做不成</span></div>
+  <div class="hk"><b>悬念</b><span>连周瑜的面都见不到了，他被架起来了</span></div>
+  <div class="meta"><i>S02</i><i>S01</i><i>C01</i><i>C02</i></div>
+</article>
+<article class="ep" id="ep-17">
+  <span class="num">17</span>
+  <header><b>第 17 集</b><i class="bt">供应链自救</i></header>
+  <p class="syn">粮断了，一百号人等着吃饭，士族把路一条条堵死。沈川用成本意识加调度自谋生路，第一次理解乱世里资源就是命，硬是无中生有搞到了粮。但他搞到粮的方式，埋下了政治上的隐患。</p>
+  <div class="hk"><b>钩子</b><span>粮断了，一百号人等着吃饭</span></div>
+  <div class="hk"><b>悬念</b><span>搞到粮的方式，埋下了政治上的隐患</span></div>
+  <div class="meta"><i>S04</i><i>S01</i><i>C01</i></div>
+</article>
+<article class="ep" id="ep-18">
+  <span class="num">18</span>
+  <header><b>第 18 集</b><i class="bt">政治小胜</i></header>
+  <p class="syn">沈川终于明白挡在面前不是资源是规则，从解决技术问题转向学习江东的政治规则。现代人的平等观与士族的门第观正面碰撞。他不硬碰，学会借势，借周瑜的势、借军功的势、借寒门的势，第一次玩政治并小胜一局。他忽然意识到，鲁肃一直在暗中看他。</p>
+  <div class="hk"><b>钩子</b><span>挡在面前的不是资源，是规则</span></div>
+  <div class="hk"><b>悬念</b><span>鲁肃一直在暗中看他</span></div>
+  <div class="meta"><i>S02</i><i>S07</i><i>C01</i><i>C04</i></div>
+</article>
+<article class="ep" id="ep-19">
+  <span class="num">19</span>
+  <header><b>第 19 集</b><i class="bt">战略眼光获认可</i></header>
+  <p class="syn">鲁肃正面接触沈川，进行不露声色的试探，步步致命。沈川第一次展现战略眼光，不只看眼前敢谈长远。鲁肃判断此人与普通寒门不同，起了保护培养之心。鲁肃说了一句让沈川心惊的话：你似乎在等一场仗。</p>
+  <div class="hk"><b>钩子</b><span>鲁肃开始正面接触沈川</span></div>
+  <div class="hk"><b>悬念</b><span>你似乎在等一场仗</span></div>
+  <div class="meta"><i>S07</i><i>C01</i><i>C04</i></div>
+</article>
+<article class="ep" id="ep-20">
+  <span class="num">20</span>
+  <header><b>第 20 集</b><i class="bt major">孙权召见</i></header>
+  <p class="syn">孙权第一次正式召见沈川。孙权多疑，沈川每一句话都在被帝王心术审视。沈川不谄媚、不夸大、不藏拙，用诚实加有用通过孙权的第一道筛选，底层小吏第一次站到江东最高统治者面前。就在这时，八百里加急，曹操南下了。</p>
+  <div class="hk"><b>钩子</b><span>孙权第一次正式召见沈川</span></div>
+  <div class="hk"><b>悬念</b><span>八百里加急，曹操南下了</span></div>
+  <div class="meta"><i>S05</i><i>C01</i><i>C05</i></div>
+</article>
+<article class="ep" id="ep-21">
+  <span class="num">21</span>
+  <header><b>第 21 集</b><i class="bt">格局骤升</i></header>
+  <p class="syn">曹操大军南征，荆州告急。个人恩怨瞬间被江东存亡碾压，沈川意识到之前斗的一切在亡国面前都不值一提。格局骤升，从内部竞争跳到天下大势，沈川第一次跳出小格局看大棋。刘表病重，荆州危在旦夕。</p>
+  <div class="hk"><b>钩子</b><span>曹操大军南征，荆州告急</span></div>
+  <div class="hk"><b>悬念</b><span>刘表病重，荆州危在旦夕</span></div>
+  <div class="meta"><i>S05</i><i>C01</i><i>C05</i></div>
+</article>
+<article class="ep" id="ep-22">
+  <span class="num">22</span>
+  <header><b>第 22 集</b><i class="bt">历史记忆同步</i></header>
+  <p class="syn">刘表病逝，刘琮投降，荆州尽归曹操。沈川发现自己知道的历史正走向记忆中的结局，既安心又恐惧，第一次认真思考我到底能改变什么。观众看到主角的历史记忆与现实同步，代入感拉满。曹军前锋已经逼近江东。</p>
+  <div class="hk"><b>钩子</b><span>刘表病逝，刘琮投降，荆州尽归曹操</span></div>
+  <div class="hk"><b>悬念</b><span>曹军前锋，已经逼近江东</span></div>
+  <div class="meta"><i>S05</i><i>S03</i><i>C01</i><i>C03</i></div>
+</article>
+<article class="ep" id="ep-23">
+  <span class="num">23</span>
+  <header><b>第 23 集</b><i class="bt">数据判断</i></header>
+  <p class="syn">曹军压境，江东人心惶惶，主战派与主降派开始撕裂。沈川用数据加逻辑在内部发声，曹操的军力没有想象中可怕，第一次在天下大事上亮出自己的判断。但有一个他记忆中本该发生的事，迟迟没有发生。</p>
+  <div class="hk"><b>钩子</b><span>曹军压境，江东人心惶惶</span></div>
+  <div class="hk"><b>悬念</b><span>一个记忆中本该发生的事，迟迟没有发生</span></div>
+  <div class="meta"><i>S03</i><i>S05</i><i>C01</i><i>C03</i><i>C05</i><i class="warn" title="沈川与周瑜在都督府、孙权在宫室，分处两场，无同框，分场拍">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-24">
+  <span class="num">24</span>
+  <header><b>第 24 集</b><i class="bt major">历史偏移</i></header>
+  <p class="syn">沈川发现一个记忆中本该发生的事件没有按原历史发生。一直以来最大的外挂，历史记忆，第一次失灵。他第一次真正恐惧：如果历史是错的，我还有什么。这是反爽点设计，为下一集认知升级蓄力。他做了一个决定：从今以后记忆只作参考不作答案。</p>
+  <div class="hk"><b>钩子</b><span>一个本该发生的事件，没有发生</span></div>
+  <div class="hk"><b>悬念</b><span>从今以后，记忆只作参考，不作答案</span></div>
+  <div class="meta"><i>S03</i><i>C01</i><i>C04</i></div>
+</article>
+<article class="ep" id="ep-25">
+  <span class="num">25</span>
+  <header><b>第 25 集</b><i class="bt major">认知蜕变</i></header>
+  <p class="syn">沈川完成一次根本性的认知蜕变，把历史记忆从答案降级为参考。失去预知安全感的恐惧与重新站起来的勇气碰撞，他想通自己真正强的地方从来不是知道答案，而是能拆问题。主角失去金手指式的安全感，却因此变得更真实更强。主战主降之争在朝堂上彻底爆发。</p>
+  <div class="hk"><b>钩子</b><span>沈川完成一次根本性的认知蜕变</span></div>
+  <div class="hk"><b>悬念</b><span>主战主降之争，在朝堂上彻底爆发</span></div>
+  <div class="meta"><i>S05</i><i>C01</i><i>C05</i></div>
+</article>
+<article class="ep" id="ep-26">
+  <span class="num">26</span>
+  <header><b>第 26 集</b><i class="bt">国策层面认可</i></header>
+  <p class="syn">江东主战派与主降派正面交锋，主降派以曹操势大论压人。沈川用工程加后勤加数据的视角，为主战派提供可守的技术底气，他的现代思维第一次在国策层面被认可，成为主战派的关键助力。周瑜回归，局势为之一变。</p>
+  <div class="hk"><b>钩子</b><span>主战派与主降派正面交锋</span></div>
+  <div class="hk"><b>悬念</b><span>周瑜回归，局势为之一变</span></div>
+  <div class="meta"><i>S05</i><i>S03</i><i>C01</i><i>C03</i><i>C05</i><i class="warn">人群</i><i class="warn" title="朝堂群臣之争以全景表现，周瑜片尾回归单切，分场拍">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-27">
+  <span class="num">27</span>
+  <header><b>第 27 集</b><i class="bt">互补成形</i></header>
+  <p class="syn">周瑜回归，主战派有了主心骨。周瑜的统帅之才与沈川的组织之才需要磨合。沈川主动补位，周瑜管怎么打、沈川管怎么把仗打得起，两人互补关系彻底成形，成为抗曹的双核。孙权决意抗曹，但需要一个说得过去的理由。</p>
+  <div class="hk"><b>钩子</b><span>周瑜回归，主战派有了主心骨</span></div>
+  <div class="hk"><b>悬念</b><span>孙权决意抗曹，但需要一个说得过去的理由</span></div>
+  <div class="meta"><i>S03</i><i>S05</i><i>C01</i><i>C03</i><i>C05</i><i class="warn" title="沈川与周瑜在都督府、孙权在宫室，分处两场，无同框，分场拍">同框拆解 ✓</i></div>
+</article>
+<article class="ep" id="ep-28">
+  <span class="num">28</span>
+  <header><b>第 28 集</b><i class="bt">参与天下棋局</i></header>
+  <p class="syn">鲁肃奔走于孙刘之间，联刘抗曹的大计正在成形，孙刘联盟内部信任与猜忌并存。沈川用战略眼光帮鲁肃补上联盟中的一块拼图，第一次参与天下棋局的顶层设计。曹操的大军终于到了江对岸。</p>
+  <div class="hk"><b>钩子</b><span>鲁肃奔走于孙刘之间，联刘抗曹大计成形</span></div>
+  <div class="hk"><b>悬念</b><span>曹操的大军，终于到了江对岸</span></div>
+  <div class="meta"><i>S07</i><i>C01</i><i>C04</i></div>
+</article>
+<article class="ep" id="ep-29">
+  <span class="num">29</span>
+  <header><b>第 29 集</b></header>
+  <p class="syn">孙刘联军与曹军隔江对峙，大战一触即发。战前动员、后勤、水军整备千头万绪时间紧迫。沈川用标准化加调度把混乱的备战变成井井有条，组织能力在大战前夜达到第一季顶峰，获得战前整备的实权。一封密信送到孙权案头，有人主张投降。</p>
+  <div class="hk"><b>钩子</b><span>孙刘联军与曹军隔江对峙，大战一触即发</span></div>
+  <div class="hk"><b>悬念</b><span>一封密信送到孙权案头，有人主张投降</span></div>
+  <div class="meta"><i>S04</i><i>S05</i><i>C01</i><i>C05</i><i class="warn">人群</i></div>
+</article>
+<article class="ep" id="ep-30">
+  <span class="num">30</span>
+  <header><b>第 30 集</b><i class="bt major">拆穿八十万</i></header>
+  <p class="syn">孙权召开最高军事会议，沈川以最末位入席。群臣争论曹操八十万大军，主降派气势汹汹。沈川走到地图前，用数据加逻辑拆穿八十万的虚妄。全剧最大爽点：最末位的小吏，说出改变江东命运的一句话。孙权点名沈川你来说，沈川说曹操没有八十万大军，黑屏。</p>
+  <div class="hk"><b>钩子</b><span>沈川以最末位入席最高军议</span></div>
+  <div class="hk"><b>悬念</b><span>孙权点名，沈川说曹操没有八十万大军，黑屏</span></div>
+  <div class="meta"><i>S05</i><i>C01</i><i>C05</i><i class="warn">人群</i><i class="warn" title="朝堂群臣以全景表现，沈川末位入席与孙权点名以正反打聚焦，群臣用背影与反应分摊">同框拆解 ✓</i></div>
+</article>
+    </div>
+    <button class="epsmore">▾ 展开全部 30 集</button>
+  </div>
+</section>
+
+<section id="sec-scenes">
+  <div class="sec-h"><span class="no">03</span><h2>场景概览</h2><span class="note">右上 = 出现集</span></div>
+  <div class="scenes">
+<article class="scard">
+  <span class="snum">7 集</span>
+  <h3><span class="id">S01</span>柴桑船坊<span class="badge">主场景</span></h3>
+  <div class="strip"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>穿越死局 · 混乱被看见 · 示范见效 · 透明账目反将一军 · 三十一艘翻盘 · 软刀子困局 · 供应链自救</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C02</i><i>C06</i><i>C03</i></div>
+</article>
+<article class="scard">
+  <span class="snum">6 集</span>
+  <h3><span class="id">S02</span>船坊主事厅<span class="badge">主场景</span></h3>
+  <div class="strip"><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>混乱被看见 · 示范见效 · 透明账目反将一军 · 名动江东 · 软刀子困局 · 政治小胜</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C02</i><i>C06</i><i>C05</i><i>C04</i></div>
+</article>
+<article class="scard">
+  <span class="snum">10 集</span>
+  <h3><span class="id">S03</span>都督府<span class="badge">主场景</span></h3>
+  <div class="strip"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>三十一艘翻盘 · 被顶级智力碾压 · 另辟蹊径答问 · 百人调度权 · 历史记忆同步 · 数据判断 · 历史偏移 · 国策层面认可 · 互补成形</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C06</i><i>C03</i><i>C05</i><i>C04</i></div>
+</article>
+<article class="scard">
+  <span class="snum">8 集</span>
+  <h3><span class="id">S04</span>战场/行军<span class="badge">主场景</span></h3>
+  <div class="strip"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>用工程思维办军事 · 百人调度权 · 反高潮失败 · 以弱胜强 · 供应链自救</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C03</i><i>C05</i></div>
+</article>
+<article class="scard">
+  <span class="snum">10 集</span>
+  <h3><span class="id">S05</span>孙权宫室/朝堂<span class="badge">主场景</span></h3>
+  <div class="strip"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i><i class="on"></i><i class=""></i><i class="on"></i><i class="on"></i></div>
+  <div class="srow"><b>承载爽点</b><span>名动江东 · 孙权召见 · 格局骤升 · 历史记忆同步 · 数据判断 · 认知蜕变 · 国策层面认可 · 互补成形 · 拆穿八十万</span></div>
+  <div class="srow"><b>出场角色</b><i>C01</i><i>C02</i><i>C05</i><i>C03</i></div>
+</article>
+<article class="scard">
+  <span class="snum">2 · 5</span>
+  <h3><span class="id">S06</span>木料场<span class="badge once">一次性</span></h3>
+  <div class="strip"><i class=""></i><i class="on lt"></i><i class=""></i><i class=""></i><i class="on lt"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>混乱被看见 · 三十一艘翻盘</span></div>
+  <div class="srow"><b>复用方案</b><span class="reuse">复用船坊工棚的木质环境资产，换码头上堆放的原木与料堆前景，作为船坊的室外延伸</span></div>
+</article>
+<article class="scard">
+  <span class="snum">18 · 19 · 28</span>
+  <h3><span class="id">S07</span>鲁肃会客处<span class="badge once">一次性</span></h3>
+  <div class="strip"><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on lt"></i><i class="on lt"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class="on lt"></i><i class=""></i><i class=""></i></div>
+  <div class="srow"><b>承载爽点</b><span>政治小胜 · 战略眼光获认可 · 参与天下棋局</span></div>
+  <div class="srow"><b>复用方案</b><span class="reuse">复用都督府的厅堂环境资产，换更朴素的陈设与案几，弱化军旗武备元素</span></div>
+</article>
+  </div>
+</section>
+
+<section id="sec-decisions">
+  <div class="sec-h"><span class="no">04</span><h2>关键决策</h2><span class="note">拍板过的三件事，落进纸面</span></div>
+  <div class="dec3">
+  <div class="dcol">
+    <h3 class="sub">砍了哪条线</h3>
+    <ul class="dlist"><li><b>第五篇之后的历史偏移事件的具体内容（本季仅确立'偏移'这一机制，不展开偏移后的具体走向）</b><small>第一季终点是赤壁前夜军议，历史偏移是第二季及以后的命题，本季只做'金手指失灵'的认知转折</small></li></ul>
+    <p class="dnote seal">这意味着：第一季终点是赤壁前夜军议上沈川开口说'曹操没有八十万大军'，赤壁大战本身与历史偏移后的走向均属后续季，本季不拍。</p>
+  </div>
+  <div class="dcol">
+    <h3 class="sub">合了哪些人</h3>
+    <p class="dhead">6 个角色位（主角组 5 · 重要配角 1 · 功能性 0）</p>
+    <p class="dhead">主角组：沈川、顾承、周瑜、鲁肃、孙权</p>
+    <ul class="dlist"><li><b>船坊内多个工匠/小吏的功能，收敛为'老工匠'这一代表性角色</b><small>功能性背景角色不占脸，集中在'传统手艺 vs 标准化'冲突的具象代表上</small></li></ul>
+    <p class="dnote seal">主角组定的是沈川一人，顾承作为第一季主反派、周瑜/鲁肃/孙权作为历史核心人物，共同构成第一季人物骨架。</p>
+  </div>
+  <div class="dcol">
+    <h3 class="sub">大爆点落在第几集</h3>
+    <ul class="dmaj"><li><i>ep1</i><span><b>穿越死局</b> 他用现代盘点眼光看穿：人不是问题，管理才…</span><em>首个</em></li><li><i>ep5</i><span><b>三十一艘翻盘</b> 沈川启动应急预案+亲手补位，三十艘要求下…</span></li><li><i>ep10</i><span><b>百人调度权</b> 用纪律+分工+赏罚快速立威，第一次真正掌…</span></li><li><i>ep14</i><span><b>以弱胜强</b> 纪律+情报+地形+工程+组织五样武器全用…</span></li><li><i>ep15</i><span><b>名动江东</b> 沈川不争功让功劳自己说话，消息第一次传到…</span></li><li><i>ep20</i><span><b>孙权召见</b> 不谄媚不夸大不藏拙，用诚实+有用通过第一…</span></li><li><i>ep24</i><span><b>历史偏移</b> 最大的外挂历史记忆第一次失灵，恐惧与重新…</span></li><li><i>ep25</i><span><b>认知蜕变</b> 想通真正强的从来不是知道答案，而是能拆问…</span></li><li><i>ep30</i><span><b>拆穿八十万</b> 最末位的小吏走到地图前，用数据+逻辑拆穿…</span><em>终局</em></li></ul>
+  </div>
+</div>
+</section>
+
+<section id="sec-matrix">
+  <div class="sec-h"><span class="no">05</span><h2>每集调度矩阵</h2><span class="note">一列 = 这一集要谁、在哪拍</span></div>
+  <div class="matrix" style="--cw:20px">
+  <table>
+    <tr><th>角色 / 场景</th><th>层级</th><th class="ep-h">1</th><th class="ep-h">2</th><th class="ep-h">3</th><th class="ep-h">4</th><th class="ep-h">5</th><th class="ep-h">6</th><th class="ep-h">7</th><th class="ep-h">8</th><th class="ep-h">9</th><th class="ep-h">10</th><th class="ep-h">11</th><th class="ep-h">12</th><th class="ep-h">13</th><th class="ep-h">14</th><th class="ep-h">15</th><th class="ep-h">16</th><th class="ep-h">17</th><th class="ep-h">18</th><th class="ep-h">19</th><th class="ep-h">20</th><th class="ep-h">21</th><th class="ep-h">22</th><th class="ep-h">23</th><th class="ep-h">24</th><th class="ep-h">25</th><th class="ep-h">26</th><th class="ep-h">27</th><th class="ep-h">28</th><th class="ep-h">29</th><th class="ep-h">30</th><th>合计</th></tr>
+    <tr><td class="name">沈川</td><td class="tier">主角组</td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="n">30</td></tr>
+<tr><td class="name">顾承</td><td class="tier">主角组</td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">4</td></tr>
+<tr><td class="name">周瑜</td><td class="tier">主角组</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">10</td></tr>
+<tr><td class="name">鲁肃</td><td class="tier">主角组</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="n">4</td></tr>
+<tr><td class="name">孙权</td><td class="tier">主角组</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="n">9</td></tr>
+<tr><td class="name">老工匠</td><td class="tier">重要配角</td><td class="mc"></td><td class="mc on"></td><td class="mc on"></td><td class="mc"></td><td class="mc on"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">3</td></tr>
+<tr class="div"><td colspan="33">场　景</td></tr>
+<tr><td class="name">柴桑船坊</td><td class="tier">主场景</td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">7</td></tr>
+<tr><td class="name">船坊主事厅</td><td class="tier">主场景</td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">6</td></tr>
+<tr><td class="name">都督府</td><td class="tier">主场景</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">10</td></tr>
+<tr><td class="name">战场/行军</td><td class="tier">主场景</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="n">8</td></tr>
+<tr><td class="name">孙权宫室/朝堂</td><td class="tier">主场景</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="n">10</td></tr>
+<tr><td class="name">木料场</td><td class="tier">一次性</td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="n">2</td></tr>
+<tr><td class="name">鲁肃会客处</td><td class="tier">一次性</td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc"></td><td class="mc on sc"></td><td class="mc"></td><td class="mc"></td><td class="n">3</td></tr>
+  </table>
+  
+</div>
+</section>
+
+<section id="sec-plan">
+  <div class="sec-h"><span class="no">06</span><h2>资产量折算</h2><span class="note">按档自动折算 · 不让模型写</span></div>
+  <div class="plan">
+  <table><thead><tr><th>层级</th><th>人数</th><th>角色</th><th>资产量</th></tr></thead>
+<tbody><tr><td>主角组</td><td>5</td><td>沈川、顾承、周瑜、鲁肃、孙权</td><td>全套角色设定图 + 逐镜一致性核对</td></tr>
+<tr><td>重要配角</td><td>1</td><td>老工匠</td><td>半身参考图，关键戏核对</td></tr>
+<tr><td>功能性角色</td><td>0</td><td>—</td><td>提示词直出，松散一致即可</td></tr>
+<tr><td>场景环境</td><td>5</td><td>柴桑船坊、船坊主事厅、都督府、战场/行军、孙权宫室/朝堂</td><td>主场景各一套环境参考 + 光照基调</td></tr>
+<tr><td>生成难点</td><td>9</td><td>人群 ×8（第 5、9、10、11、14、26、29、30 集） · 肢体接触 ×1（第 11 集）</td><td>拍摄前逐条过预警清单</td></tr></tbody></table>
+  </div>
+</section>
+
+<section id="sec-characters">
+  <div class="sec-h"><span class="no">07</span><h2>人物表</h2></div>
+  <table><thead><tr><th>ID</th><th>角色</th><th>层级</th><th>定位</th><th>人物弧</th><th>← 改动记录</th></tr></thead>
+<tbody><tr><td>C01</td><td>沈川</td><td>主角组</td><td>男主 / 穿越者，柴桑船坊底层小吏</td><td>从只想活命的现代小吏，一步步长出'敢对天下负责'的肩膀，季末以最末位之身站上最高军议</td><td>原创</td></tr>
+<tr><td>C02</td><td>顾承</td><td>主角组</td><td>主反派 / 江东豪族顾氏旁支，船坊主事</td><td>从冷眼旁观的体系守门人，到被迫与沈川正面交锋，曹军南下后内心松动、面临'继续斗还是先救江东'的抉择</td><td>原创</td></tr>
+<tr><td>C03</td><td>周瑜</td><td>主角组</td><td>江东大都督 / 第一智将</td><td>从'这是谁'到'此人可以用'再到'此事让沈川来'，始终在用沈川也防沈川</td><td>历史人物周瑜</td></tr>
+<tr><td>C04</td><td>鲁肃</td><td>主角组</td><td>江东战略家 / 联刘抗曹的关键人物</td><td>从暗中观察到正面试探，再到对沈川起保护培养之心，赌他能否成为江东下一块基石</td><td>历史人物鲁肃</td></tr>
+<tr><td>C05</td><td>孙权</td><td>主角组</td><td>江东君主 / 年轻帝王</td><td>从不知道此人到听过名字再到主动问意见，本质是在物色一把没有旧势力背景的刀</td><td>历史人物孙权</td></tr>
+<tr><td>C06</td><td>老工匠</td><td>重要配角</td><td>船坊老资格的工匠代表，传统手艺的守门人</td><td>从'嘴上没毛修什么船'的集体抵制，到被沈川'做给你看'打动、将信将疑地跟随</td><td>原创（合并：船坊众工匠）</td></tr></tbody></table>
+</section>
+
+<section id="sec-adaptation">
+  <div class="sec-h"><span class="no">08</span><h2>改编说明</h2><span class="note">为什么这么改 · 附原文依据</span></div>
+  <p class="core">一个只想活命的现代机械系大学生沈川，穿越成江东柴桑船坊的底层小吏，被一纸军法处置逼进七日修船的死局，靠现代工程管理方法一步步从死局翻盘，最终在赤壁前夜以最末位之身站上江东最高军议。</p>
+  <h3 class="sub">保留</h3><table><thead><tr><th>内容</th><th>理由</th><th>原文依据</th></tr></thead>
+<tbody><tr><td>沈川穿越开局即死局（七日修船、军法处置）</td><td>全季最强开场钩子，生死倒计时 + 穿越双重冲击，前3集的核心引擎</td><td><q>三十艘战船，七日内修复，逾期军法处置。</q></td></tr>
+<tr><td>沈川的现代武器是工程管理方法论（标准化/工序/流水线/库存/成本），而非历史预知</td><td>这是全剧区别于常见三国穿越爽文的核心差异化，也是人物长期弧的根基</td><td><q>他不是聪明，是执行力与拆解能力。</q></td></tr>
+<tr><td>周瑜、鲁肃、孙权绝不降智，沈川靠被他们'用得上'而赢</td><td>尊重历史人物的真实能力是本剧铁律，也是人物关系可信的前提</td><td><q>沈川的每一次赢，都是在三个人清醒甚至看穿他的前提下，靠他们暂时用得上他而赢的。</q></td></tr>
+<tr><td>顾承作为非脸谱化反派，是'旧体系守门人'而非恶人</td><td>结构性冲突（新旧路线之争）而非私怨，让人物有尊严、冲突有厚度</td><td><q>江东能稳，靠的是现有的规矩。你可以有本事，但不能拿江东的船坊做你的试验田。</q></td></tr></tbody></table>
+  <h3 class="sub">砍掉</h3><table><thead><tr><th>内容</th><th>理由</th></tr></thead>
+<tbody><tr><td>第五篇之后的历史偏移事件的具体内容（本季仅确立'偏移'这一机制，不展开偏移后的具体走向）</td><td>第一季终点是赤壁前夜军议，历史偏移是第二季及以后的命题，本季只做'金手指失灵'的认知转折</td></tr></tbody></table>
+  <h3 class="sub">合并</h3><table><thead><tr><th>内容</th><th>理由</th></tr></thead>
+<tbody><tr><td>船坊内多个工匠/小吏的功能，收敛为'老工匠'这一代表性角色</td><td>功能性背景角色不占脸，集中在'传统手艺 vs 标准化'冲突的具象代表上</td></tr></tbody></table>
+  <h3 class="sub">风险与对策</h3><table><thead><tr><th>内容</th><th>对策</th></tr></thead>
+<tbody><tr><td>前5集只有修船一条线，场景高度集中，容易视觉疲劳</td><td>每集固定一次外部压力（军法倒计时、顾承使绊、木料被卡）打进来，场景在木棚/工棚/码头/木料场间轮换</td></tr>
+<tr><td>周瑜、孙权、鲁肃的能力极强，沈川的胜利容易显得主角光环</td><td>沈川的赢全部限定在'工程/组织'这一块历史人物不擅长的领域，且每次都赢得险、有代价</td></tr>
+<tr><td>现代工程知识在古代的合理性边界难以把控</td><td>所有方法都限定在机械专业大学生合理知识内：工序拆分、标准化、测量、库存、成本，不用任何超纲技术（无火药、无高炉、无蒸汽机）</td></tr></tbody></table>
+</section>
+
+<section id="sec-gates">
+  <div class="sec-h"><span class="no">09</span><h2>质量门</h2></div>
+  <ul class="gate">
+  <li class="ok"><span class="m">✓</span><span>主角组 1–5 人</span></li>
+  <li class="ok"><span class="m">✓</span><span>重要配角 ≤ 10 人</span></li>
+  <li class="ok"><span class="m">✓</span><span>功能性角色 ≤ 10 人</span></li>
+  <li class="ok"><span class="m">✓</span><span>主场景 ≤ 7</span></li>
+  <li class="ok"><span class="m">✓</span><span>一次性场景已标注规避方案</span></li>
+  <li class="ok"><span class="m">✓</span><span>爽点间隔 ≤ 3 集，无真空区</span></li>
+  <li class="ok"><span class="m">✓</span><span>第 1 集有钩子</span></li>
+  <li class="ok"><span class="m">✓</span><span>大爆点不在最后一集才首次出现</span></li>
+  <li class="ok"><span class="m">✓</span><span>每集梗概三栏齐全（含【钩子】【悬念】）</span></li>
+  <li class="ok"><span class="m">✓</span><span>三人以上同框已标注拆解方案</span></li>
+  <li class="ok"><span class="m">✓</span><span>生成难点已进预警清单</span></li>
+  <li class="ok"><span class="m">✓</span><span>场景/角色引用完整，无失业角色、无空转场景</span></li>
+  <li class="ok"><span class="m">✓</span><span>梗概是叙述体，无引号对白</span></li>
+</ul>
+  <p class="gsum">全部通过</p>
+</section>
+
+<p class="foot">大纲由模型依据原文生成，质量门由脚本确定性检查。</p>
+</div>
+
+<script type="application/json" id="outline-data">{"source":"江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）","lang":"zh","params":{"episodes":30,"minutesPerEpisode":3,"genre":"男频穿越逆袭爽剧","adaptMode":"抽核","preferences":["保留 story-bible 确立的核心设定与30集结构，不得推翻重写","历史人物（周瑜/鲁肃/孙权/曹操）不得降智","主角现代知识限于普通机械专业大学生合理边界，无系统无商城","前3集必须极强，第5集形成第一次明显高潮"]},"adaptation":{"core":"一个只想活命的现代机械系大学生沈川，穿越成江东柴桑船坊的底层小吏，被一纸军法处置逼进七日修船的死局，靠现代工程管理方法一步步从死局翻盘，最终在赤壁前夜以最末位之身站上江东最高军议。","keep":[{"what":"沈川穿越开局即死局（七日修船、军法处置）","why":"全季最强开场钩子，生死倒计时 + 穿越双重冲击，前3集的核心引擎","evidence":"三十艘战船，七日内修复，逾期军法处置。"},{"what":"沈川的现代武器是工程管理方法论（标准化/工序/流水线/库存/成本），而非历史预知","why":"这是全剧区别于常见三国穿越爽文的核心差异化，也是人物长期弧的根基","evidence":"他不是聪明，是执行力与拆解能力。"},{"what":"周瑜、鲁肃、孙权绝不降智，沈川靠被他们'用得上'而赢","why":"尊重历史人物的真实能力是本剧铁律，也是人物关系可信的前提","evidence":"沈川的每一次赢，都是在三个人清醒甚至看穿他的前提下，靠他们暂时用得上他而赢的。"},{"what":"顾承作为非脸谱化反派，是'旧体系守门人'而非恶人","why":"结构性冲突（新旧路线之争）而非私怨，让人物有尊严、冲突有厚度","evidence":"江东能稳，靠的是现有的规矩。你可以有本事，但不能拿江东的船坊做你的试验田。"}],"cut":[{"what":"第五篇之后的历史偏移事件的具体内容（本季仅确立'偏移'这一机制，不展开偏移后的具体走向）","why":"第一季终点是赤壁前夜军议，历史偏移是第二季及以后的命题，本季只做'金手指失灵'的认知转折"}],"merge":[{"what":"船坊内多个工匠/小吏的功能，收敛为'老工匠'这一代表性角色","why":"功能性背景角色不占脸，集中在'传统手艺 vs 标准化'冲突的具象代表上"}],"risks":[{"what":"前5集只有修船一条线，场景高度集中，容易视觉疲劳","plan":"每集固定一次外部压力（军法倒计时、顾承使绊、木料被卡）打进来，场景在木棚/工棚/码头/木料场间轮换"},{"what":"周瑜、孙权、鲁肃的能力极强，沈川的胜利容易显得主角光环","plan":"沈川的赢全部限定在'工程/组织'这一块历史人物不擅长的领域，且每次都赢得险、有代价"},{"what":"现代工程知识在古代的合理性边界难以把控","plan":"所有方法都限定在机械专业大学生合理知识内：工序拆分、标准化、测量、库存、成本，不用任何超纲技术（无火药、无高炉、无蒸汽机）"}],"cutNote":"这意味着：第一季终点是赤壁前夜军议上沈川开口说'曹操没有八十万大军'，赤壁大战本身与历史偏移后的走向均属后续季，本季不拍。","mergeNote":"主角组定的是沈川一人，顾承作为第一季主反派、周瑜/鲁肃/孙权作为历史核心人物，共同构成第一季人物骨架。"},"characters":[{"id":"C01","name":"沈川","role":"男主 / 穿越者，柴桑船坊底层小吏","arc":"从只想活命的现代小吏，一步步长出'敢对天下负责'的肩膀，季末以最末位之身站上最高军议","from":["原创"],"tier":"lead"},{"id":"C02","name":"顾承","role":"主反派 / 江东豪族顾氏旁支，船坊主事","arc":"从冷眼旁观的体系守门人，到被迫与沈川正面交锋，曹军南下后内心松动、面临'继续斗还是先救江东'的抉择","from":["原创"],"tier":"lead"},{"id":"C03","name":"周瑜","role":"江东大都督 / 第一智将","arc":"从'这是谁'到'此人可以用'再到'此事让沈川来'，始终在用沈川也防沈川","from":["历史人物周瑜"],"tier":"lead"},{"id":"C04","name":"鲁肃","role":"江东战略家 / 联刘抗曹的关键人物","arc":"从暗中观察到正面试探，再到对沈川起保护培养之心，赌他能否成为江东下一块基石","from":["历史人物鲁肃"],"tier":"lead"},{"id":"C05","name":"孙权","role":"江东君主 / 年轻帝王","arc":"从不知道此人到听过名字再到主动问意见，本质是在物色一把没有旧势力背景的刀","from":["历史人物孙权"],"tier":"lead"},{"id":"C06","name":"老工匠","role":"船坊老资格的工匠代表，传统手艺的守门人","arc":"从'嘴上没毛修什么船'的集体抵制，到被沈川'做给你看'打动、将信将疑地跟随","from":["原创（合并：船坊众工匠）"],"tier":"support"}],"scenes":[{"id":"S01","name":"柴桑船坊","primary":true,"reusePlan":""},{"id":"S02","name":"船坊主事厅","primary":true,"reusePlan":""},{"id":"S03","name":"都督府","primary":true,"reusePlan":""},{"id":"S04","name":"战场/行军","primary":true,"reusePlan":""},{"id":"S05","name":"孙权宫室/朝堂","primary":true,"reusePlan":""},{"id":"S06","name":"木料场","primary":false,"reusePlan":"复用船坊工棚的木质环境资产，换码头上堆放的原木与料堆前景，作为船坊的室外延伸"},{"id":"S07","name":"鲁肃会客处","primary":false,"reusePlan":"复用都督府的厅堂环境资产，换更朴素的陈设与案几，弱化军旗武备元素"}],"beats":[{"id":"B01","type":"穿越死局","weight":"major","episode":1,"setup":"沈川穿越醒来即被告知三十艘船七日修不完军法处置","payoff":"他用现代盘点眼光看穿：人不是问题，管理才是问题"},{"id":"B02","type":"混乱被看见","weight":"minor","episode":2,"setup":"船坊五大困境一团乱麻","payoff":"沈川把五大问题拆成一张人人能懂的清单，混乱第一次被看见"},{"id":"B03","type":"示范见效","weight":"minor","episode":3,"setup":"老工匠集体抵制标准化","payoff":"沈川选最易见效的工序示范，提速肉眼可见，老工匠将信将疑"},{"id":"B04","type":"透明账目反将一军","weight":"minor","episode":4,"setup":"顾承的人把账目漏洞往沈川身上引","payoff":"沈川当众摊账，让漏洞在阳光下无处遁形，顾承第一次警觉"},{"id":"B05","type":"三十一艘翻盘","weight":"major","episode":5,"setup":"第七日最后关头木料被卡，工期看似已死","payoff":"沈川启动应急预案+亲手补位，三十艘要求下水三十一艘，超额翻盘"},{"id":"B06","type":"被顶级智力碾压","weight":"minor","episode":6,"setup":"沈川以为凭现代知识能惊艳周瑜","payoff":"被周瑜三言两语看穿表层心思，第一次意识到历史人物不是NPC"},{"id":"B07","type":"另辟蹊径答问","weight":"minor","episode":7,"setup":"周瑜抛出'若曹军百万南下你当如何'的军事之问","payoff":"沈川不答怎么打赢、答怎么不输，转成资源后勤问题，两人第一次互补"},{"id":"B08","type":"用工程思维办军事","weight":"minor","episode":9,"setup":"沈川第一次碰兵，纸上谈兵撞上现实","payoff":"把押运拆成路线+节点+冗余，用非军事方法办成军事的事"},{"id":"B09","type":"百人调度权","weight":"major","episode":10,"setup":"一百个兵不服一个修船小吏","payoff":"用纪律+分工+赏罚快速立威，第一次真正掌兵，身份质变"},{"id":"B10","type":"反高潮失败","weight":"minor","episode":11,"setup":"沈川第一次真正进入战争，期待主角发威","payoff":"被现实打蒙，跪在尸体旁明白知道结果不等于会打仗"},{"id":"B11","type":"以弱胜强","weight":"major","episode":14,"setup":"兵力劣势、时间劣势、内部怀疑","payoff":"纪律+情报+地形+工程+组织五样武器全用，一个不会打仗的人打赢了"},{"id":"B12","type":"名动江东","weight":"major","episode":15,"setup":"胜利消息层层上报，功劳被争抢稀释","payoff":"沈川不争功让功劳自己说话，消息第一次传到孙权耳中"},{"id":"B13","type":"软刀子困局","weight":"minor","episode":16,"setup":"士族下场不杀沈川，让他什么都做不成","payoff":"反高潮，有力使不出，连周瑜的面都见不到"},{"id":"B14","type":"供应链自救","weight":"minor","episode":17,"setup":"粮断了，一百号人等着吃饭","payoff":"用成本意识+调度自谋生路，无中生有搞到粮"},{"id":"B15","type":"政治小胜","weight":"minor","episode":18,"setup":"现代平等观撞上门第观","payoff":"学会借势，第一次玩政治小胜一局"},{"id":"B16","type":"战略眼光获认可","weight":"minor","episode":19,"setup":"鲁肃不露声色地试探","payoff":"沈川第一次展战略眼光，鲁肃判断此人与普通寒门不同"},{"id":"B17","type":"孙权召见","weight":"major","episode":20,"setup":"孙权第一次正式召见沈川","payoff":"不谄媚不夸大不藏拙，用诚实+有用通过第一道筛选"},{"id":"B17b","type":"格局骤升","weight":"minor","episode":21,"setup":"曹操南下，个人恩怨被江东存亡碾压","payoff":"沈川第一次跳出小格局看大棋，从内部竞争跳到天下大势"},{"id":"B17c","type":"历史记忆同步","weight":"minor","episode":22,"setup":"刘表病逝刘琮降曹，荆州尽归曹操","payoff":"观众看到主角的历史记忆与现实同步，代入感拉满"},{"id":"B17d","type":"数据判断","weight":"minor","episode":23,"setup":"主战主降撕裂，主降派喊曹操势大","payoff":"沈川用数据加逻辑在内部发声，曹操的军力没有想象中可怕"},{"id":"B18","type":"历史偏移","weight":"major","episode":24,"setup":"记忆中本该发生的事没有发生","payoff":"最大的外挂历史记忆第一次失灵，恐惧与重新校准"},{"id":"B19","type":"认知蜕变","weight":"major","episode":25,"setup":"失去预知安全感","payoff":"想通真正强的从来不是知道答案，而是能拆问题"},{"id":"B20","type":"国策层面认可","weight":"minor","episode":26,"setup":"主战主降之争朝堂爆发","payoff":"沈川用工程+后勤+数据为主战派提供可守的技术底气"},{"id":"B21","type":"互补成形","weight":"minor","episode":27,"setup":"周瑜统帅之才与沈川组织之才需磨合","payoff":"沈川主动补位，周瑜管怎么打、沈川管怎么把仗打得起"},{"id":"B22","type":"参与天下棋局","weight":"minor","episode":28,"setup":"鲁肃奔走孙刘之间，联刘抗曹","payoff":"沈川用战略眼光帮鲁肃补上联盟一块拼图，参与顶层设计"},{"id":"B23","type":"拆穿八十万","weight":"major","episode":30,"setup":"群臣争论曹操八十万大军，主降派气势汹汹","payoff":"最末位的小吏走到地图前，用数据+逻辑拆穿八十万的虚妄，全剧最大爽点"}],"episodes":[{"ep":1,"synopsis":"沈川穿越醒来即被告知三十艘战船七日修不完就要军法处置。他头痛欲裂中翻找这具身体的随身物件，拼出自己是负责木料、工匠、修船进度和账目的底层小吏。他强压慌乱开始盘点，问清船、工匠、木料、工期，工匠们以为这小吏疯了。盘点后他得出第一个判断：修不完不是人少，是管理混乱，并第一次用现代眼光把这个死局拆成五个可拆解的问题。夜里翻账册，突然发现一笔木料去向不明——这不止是修船，账里有别人的命。","hook":"军法处置的刀，已经架在脖子上了——三十艘船七日修不完，死","suspense":"账目对不上，这个洞可能藏着别人的命","sceneIds":["S01"],"characterIds":["C01"],"crowdPlan":"","warnings":[]},{"ep":2,"synopsis":"沈川反复核对账册，确认有漏洞、有人做假账，意识到船坊本就是个烂摊子，有人正等着一个替罪羊。他第一次见顾承，顾承和善却话里有话，笑意里藏着等他摔死。沈川不用聪明用笨办法，逐项查清五大困境：木料乱、零件不统一、工序互相等待、调度混乱、账目漏洞。他把五大问题拆成一张问题清单，用最直白的话讲给工匠听，工匠们第一次听懂自己卡在哪。追到木料来源，发现被卡住了，回头看见顾承笑得意味深长。","hook":"有人要借这艘烂船，让他顶罪","suspense":"木料被谁卡着？顾承笑得意味深长","sceneIds":["S01","S02","S06"],"characterIds":["C01","C02","C06"],"crowdPlan":"三人分处不同场次：沈川查账在木棚、顾承在主事厅、老工匠在工棚，无同框，分场拍","warnings":[]},{"ep":3,"synopsis":"沈川宣布要把修船拆成标准工序，老工匠们当场炸了，传统手艺与标准化正面碰撞。沈川不硬顶也不讲大道理，只挑最容易见效的一道工序，说别的先不动就这一道听我一天。他亲手示范流水线式分工，第一道工序提速肉眼可见，老工匠们从不信到将信将疑，有人不自觉地跟着做。收工后几个工匠私下嘀咕这小子好像有点门道，但老资格的仍不服。船坊外一个小吏匆匆离开，把沈川的新法子报了上去，沈川意识到自己每一步都被盯着。","hook":"老工匠当场甩手，嘴上没毛修什么船","suspense":"有人把新法子报给了上面，是福是祸","sceneIds":["S01","S02"],"characterIds":["C01","C06"],"crowdPlan":"","warnings":[]},{"ep":4,"synopsis":"零件尺寸不统一，一艘船返工三遍，工期被白白吃掉。沈川推行统一标准，用墨线定尺卡尺寸，返工率骤降。顾承的人开始把账目漏洞往沈川身上引，沈川意识到补账等于动别人蛋糕、不补就替人顶罪的两难。他没有私下补账，而是当众把账目摊开，让漏洞在阳光下无处遁形，做假账的人慌了，顾承第一次认真打量沈川。第六日天色渐暗，船还差得多，时间不够了。","hook":"零件不统一，一艘船返工了三遍","suspense":"第六日，船还差得多，时间不够了","sceneIds":["S01","S02"],"characterIds":["C01","C02"],"crowdPlan":"","warnings":[]},{"ep":5,"synopsis":"第七日清晨雾气未散，期限已到，工匠们垂头丧气准备等死。沈川去领最后一批木料，发现被卡住了，明白这是要让他差一艘。他没有慌，启动应急预案：提前备好的余量木料、早已说好的替补工匠，连自己都撸起袖子。他脱下外衣亲手加入修船，和工匠一起扛木头拼船板，工匠们真正服了他。要求三十艘最终下水三十一艘，多出的那一艘是留余量思维的胜利。都督府里，周瑜看着简报上的数字，抬起眼说把那个沈川带来。","hook":"第七日清晨，工期看似已死","suspense":"周瑜下令，把那个沈川带来","sceneIds":["S01","S06","S03"],"characterIds":["C01","C06","C03"],"crowdPlan":"周瑜仅在片尾都督府单切，与沈川、工匠分处两场，无同框，分场拍","warnings":["人群"]},{"ep":6,"synopsis":"沈川第一次站到周瑜面前，以为凭现代知识能惊艳全场，被周瑜三言两语看穿表层心思。他第一次意识到自己引以为傲的现代知识在真正的天才面前不够看，也第一次明白历史人物不是电视剧NPC。他选择不硬装，承认自己懂工不懂兵，反而让周瑜高看一眼。周瑜抛出一个问题：若曹军百万南下，你当如何。","hook":"沈川第一次站到周瑜面前，以为能惊艳全场","suspense":"若曹军百万南下，你当如何","sceneIds":["S03"],"characterIds":["C01","C03"],"crowdPlan":"","warnings":[]},{"ep":7,"synopsis":"周瑜的军事之问把沈川架在火上，答不好就是欺世盗名。沈川没有军事经验，他不答怎么打赢，而答怎么不输，把军事问题转成他擅长的资源与后勤问题。周瑜第一次没有完全听懂，两人第一次产生互补。周瑜说，你这样的人不该只修船。","hook":"答不好就是欺世盗名","suspense":"你这样的人，不该只修船","sceneIds":["S03"],"characterIds":["C01","C03"],"crowdPlan":"","warnings":[]},{"ep":8,"synopsis":"周瑜暗中设局考察沈川的真才实学、野心与底线，沈川浑然不觉。他的现代人平等观在江东体系里频频踩雷，但靠做实事、不站队、敢担责一点点过关。观众以上帝视角看周瑜如何面试主角。周瑜递给沈川一项真实的军事任务。","hook":"周瑜暗中设局考察沈川，沈川浑然不觉","suspense":"周瑜递给沈川一项真实的军事任务","sceneIds":["S03"],"characterIds":["C01","C03"],"crowdPlan":"","warnings":[]},{"ep":9,"synopsis":"沈川第一次碰兵，完成一项看似不起眼实则凶险的军务。他的纸上谈兵第一次撞上现实，他把押运拆成路线加节点加冗余，用工程思维办成一件军事的事。任务成功，但他看到了不该看到的东西。","hook":"不是修船，是真实的军务","suspense":"任务成功，但沈川看到了不该看到的东西","sceneIds":["S04"],"characterIds":["C01","C03"],"crowdPlan":"","warnings":["人群"]},{"ep":10,"synopsis":"周瑜把一百人的调度权交到沈川手里。一百个兵不服一个修船的小吏，沈川用纪律加分工加明确赏罚快速立威，而非靠武力或空谈，第一次真正掌兵，身份质变。周瑜意味深长地说，接下来你要见的不是船，是血。","hook":"周瑜把一百人的调度权交到沈川手里","suspense":"接下来你要见的不是船，是血","sceneIds":["S04","S03"],"characterIds":["C01","C03"],"crowdPlan":"沈川与百人同场以队列远景表现，周瑜片尾单切，分场拍","warnings":["人群"]},{"ep":11,"synopsis":"沈川第一次真正进入战争，战争的无序、血腥、信息混乱远超想象。观众期待主角发威，结果主角第一次被现实打蒙，第一次真正面对死人。这一集不破局，重在破碎。沈川跪在尸体旁，第一次明白知道结果不等于会打仗。","hook":"沈川第一次真正进入战争","suspense":"跪在尸体旁，第一次明白知道结果不等于会打仗","sceneIds":["S04"],"characterIds":["C01"],"crowdPlan":"","warnings":["人群","肢体接触"]},{"ep":12,"synopsis":"失败后沈川面临问责与自我怀疑，军中对书生掌兵充满嘲讽。他把失败拆成系统问题，纪律、情报、地形、工程、组织逐个补齐，第一次完成从会算资源到会算战场的认知升级。他忽然发现，敌方的破绽恰好是他最擅长的地方。","hook":"失败后，沈川面临问责与自我怀疑","suspense":"敌方的破绽，恰好是他最擅长的地方","sceneIds":["S04"],"characterIds":["C01"],"crowdPlan":"","warnings":[]},{"ep":13,"synopsis":"沈川决定不跟名将比用兵，而比工程与组织。他用工程手段创造局部优势，军方旧将反对不务正业的打法。他赌上仅剩的信任换一条非常规路，用一个规模小见效快的工程胜利证明这条路走得通，获得一支愿意听他的小队。更大的敌人来了，这次是真刀真枪。","hook":"沈川决定不比用兵，比工程与组织","suspense":"更大的敌人来了，这次是真刀真枪","sceneIds":["S04"],"characterIds":["C01"],"crowdPlan":"","warnings":[]},{"ep":14,"synopsis":"沈川用纪律、情报、地形、工程、组织五样武器打一场硬仗，兵力劣势、时间劣势、内部怀疑。一个不会打仗的人打赢了，全剧第二次大爽点。捷报北上，一个人的名字第一次被写进奏报。","hook":"沈川用五样武器打一场硬仗","suspense":"捷报北上，一个名字第一次被写进奏报","sceneIds":["S04"],"characterIds":["C01"],"crowdPlan":"","warnings":["人群"]},{"ep":15,"synopsis":"胜利消息层层上报，功劳被争抢、被稀释、被质疑。沈川不争功，让功劳自己说话。消息第一次传到孙权耳中，孙权第一次记住沈川这个名字。同时，士族集团也记住了这个名字，他们决定动手。","hook":"胜利的消息层层上报","suspense":"士族集团也记住了这个名字，他们决定动手","sceneIds":["S05","S02"],"characterIds":["C01","C02","C05"],"crowdPlan":"孙权在宫室、顾承在主事厅、沈川不在场，三人分处不同场景，无同框，分场拍","warnings":[]},{"ep":16,"synopsis":"沈川发现敌人换了打法，不杀他而是让他什么都做不成。士族卡粮、卡人、卡船、卡任命、卡资源的阳谋软刀子全开，沈川第一次感到技术能力在规则面前失灵，有力使不出。连周瑜的面都见不到了，他被架起来了。","hook":"敌人换了打法，让他什么都做不成","suspense":"连周瑜的面都见不到了，他被架起来了","sceneIds":["S02","S01"],"characterIds":["C01","C02"],"crowdPlan":"","warnings":[]},{"ep":17,"synopsis":"粮断了，一百号人等着吃饭，士族把路一条条堵死。沈川用成本意识加调度自谋生路，第一次理解乱世里资源就是命，硬是无中生有搞到了粮。但他搞到粮的方式，埋下了政治上的隐患。","hook":"粮断了，一百号人等着吃饭","suspense":"搞到粮的方式，埋下了政治上的隐患","sceneIds":["S04","S01"],"characterIds":["C01"],"crowdPlan":"","warnings":[]},{"ep":18,"synopsis":"沈川终于明白挡在面前不是资源是规则，从解决技术问题转向学习江东的政治规则。现代人的平等观与士族的门第观正面碰撞。他不硬碰，学会借势，借周瑜的势、借军功的势、借寒门的势，第一次玩政治并小胜一局。他忽然意识到，鲁肃一直在暗中看他。","hook":"挡在面前的不是资源，是规则","suspense":"鲁肃一直在暗中看他","sceneIds":["S02","S07"],"characterIds":["C01","C04"],"crowdPlan":"","warnings":[]},{"ep":19,"synopsis":"鲁肃正面接触沈川，进行不露声色的试探，步步致命。沈川第一次展现战略眼光，不只看眼前敢谈长远。鲁肃判断此人与普通寒门不同，起了保护培养之心。鲁肃说了一句让沈川心惊的话：你似乎在等一场仗。","hook":"鲁肃开始正面接触沈川","suspense":"你似乎在等一场仗","sceneIds":["S07"],"characterIds":["C01","C04"],"crowdPlan":"","warnings":[]},{"ep":20,"synopsis":"孙权第一次正式召见沈川。孙权多疑，沈川每一句话都在被帝王心术审视。沈川不谄媚、不夸大、不藏拙，用诚实加有用通过孙权的第一道筛选，底层小吏第一次站到江东最高统治者面前。就在这时，八百里加急，曹操南下了。","hook":"孙权第一次正式召见沈川","suspense":"八百里加急，曹操南下了","sceneIds":["S05"],"characterIds":["C01","C05"],"crowdPlan":"","warnings":[]},{"ep":21,"synopsis":"曹操大军南征，荆州告急。个人恩怨瞬间被江东存亡碾压，沈川意识到之前斗的一切在亡国面前都不值一提。格局骤升，从内部竞争跳到天下大势，沈川第一次跳出小格局看大棋。刘表病重，荆州危在旦夕。","hook":"曹操大军南征，荆州告急","suspense":"刘表病重，荆州危在旦夕","sceneIds":["S05"],"characterIds":["C01","C05"],"crowdPlan":"","warnings":[]},{"ep":22,"synopsis":"刘表病逝，刘琮投降，荆州尽归曹操。沈川发现自己知道的历史正走向记忆中的结局，既安心又恐惧，第一次认真思考我到底能改变什么。观众看到主角的历史记忆与现实同步，代入感拉满。曹军前锋已经逼近江东。","hook":"刘表病逝，刘琮投降，荆州尽归曹操","suspense":"曹军前锋，已经逼近江东","sceneIds":["S05","S03"],"characterIds":["C01","C03"],"crowdPlan":"","warnings":[]},{"ep":23,"synopsis":"曹军压境，江东人心惶惶，主战派与主降派开始撕裂。沈川用数据加逻辑在内部发声，曹操的军力没有想象中可怕，第一次在天下大事上亮出自己的判断。但有一个他记忆中本该发生的事，迟迟没有发生。","hook":"曹军压境，江东人心惶惶","suspense":"一个记忆中本该发生的事，迟迟没有发生","sceneIds":["S03","S05"],"characterIds":["C01","C03","C05"],"crowdPlan":"沈川与周瑜在都督府、孙权在宫室，分处两场，无同框，分场拍","warnings":[]},{"ep":24,"synopsis":"沈川发现一个记忆中本该发生的事件没有按原历史发生。一直以来最大的外挂，历史记忆，第一次失灵。他第一次真正恐惧：如果历史是错的，我还有什么。这是反爽点设计，为下一集认知升级蓄力。他做了一个决定：从今以后记忆只作参考不作答案。","hook":"一个本该发生的事件，没有发生","suspense":"从今以后，记忆只作参考，不作答案","sceneIds":["S03"],"characterIds":["C01","C04"],"crowdPlan":"","warnings":[]},{"ep":25,"synopsis":"沈川完成一次根本性的认知蜕变，把历史记忆从答案降级为参考。失去预知安全感的恐惧与重新站起来的勇气碰撞，他想通自己真正强的地方从来不是知道答案，而是能拆问题。主角失去金手指式的安全感，却因此变得更真实更强。主战主降之争在朝堂上彻底爆发。","hook":"沈川完成一次根本性的认知蜕变","suspense":"主战主降之争，在朝堂上彻底爆发","sceneIds":["S05"],"characterIds":["C01","C05"],"crowdPlan":"","warnings":[]},{"ep":26,"synopsis":"江东主战派与主降派正面交锋，主降派以曹操势大论压人。沈川用工程加后勤加数据的视角，为主战派提供可守的技术底气，他的现代思维第一次在国策层面被认可，成为主战派的关键助力。周瑜回归，局势为之一变。","hook":"主战派与主降派正面交锋","suspense":"周瑜回归，局势为之一变","sceneIds":["S05","S03"],"characterIds":["C01","C03","C05"],"crowdPlan":"朝堂群臣之争以全景表现，周瑜片尾回归单切，分场拍","warnings":["人群"]},{"ep":27,"synopsis":"周瑜回归，主战派有了主心骨。周瑜的统帅之才与沈川的组织之才需要磨合。沈川主动补位，周瑜管怎么打、沈川管怎么把仗打得起，两人互补关系彻底成形，成为抗曹的双核。孙权决意抗曹，但需要一个说得过去的理由。","hook":"周瑜回归，主战派有了主心骨","suspense":"孙权决意抗曹，但需要一个说得过去的理由","sceneIds":["S03","S05"],"characterIds":["C01","C03","C05"],"crowdPlan":"沈川与周瑜在都督府、孙权在宫室，分处两场，无同框，分场拍","warnings":[]},{"ep":28,"synopsis":"鲁肃奔走于孙刘之间，联刘抗曹的大计正在成形，孙刘联盟内部信任与猜忌并存。沈川用战略眼光帮鲁肃补上联盟中的一块拼图，第一次参与天下棋局的顶层设计。曹操的大军终于到了江对岸。","hook":"鲁肃奔走于孙刘之间，联刘抗曹大计成形","suspense":"曹操的大军，终于到了江对岸","sceneIds":["S07"],"characterIds":["C01","C04"],"crowdPlan":"","warnings":[]},{"ep":29,"synopsis":"孙刘联军与曹军隔江对峙，大战一触即发。战前动员、后勤、水军整备千头万绪时间紧迫。沈川用标准化加调度把混乱的备战变成井井有条，组织能力在大战前夜达到第一季顶峰，获得战前整备的实权。一封密信送到孙权案头，有人主张投降。","hook":"孙刘联军与曹军隔江对峙，大战一触即发","suspense":"一封密信送到孙权案头，有人主张投降","sceneIds":["S04","S05"],"characterIds":["C01","C05"],"crowdPlan":"","warnings":["人群"]},{"ep":30,"synopsis":"孙权召开最高军事会议，沈川以最末位入席。群臣争论曹操八十万大军，主降派气势汹汹。沈川走到地图前，用数据加逻辑拆穿八十万的虚妄。全剧最大爽点：最末位的小吏，说出改变江东命运的一句话。孙权点名沈川你来说，沈川说曹操没有八十万大军，黑屏。","hook":"沈川以最末位入席最高军议","suspense":"孙权点名，沈川说曹操没有八十万大军，黑屏","sceneIds":["S05"],"characterIds":["C01","C05"],"crowdPlan":"朝堂群臣以全景表现，沈川末位入席与孙权点名以正反打聚焦，群臣用背影与反应分摊","warnings":["人群"]}]}</script>
+<script>
+// 爽点节奏：图 / 表切换
+document.querySelectorAll('.tab').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach((b) => b.classList.toggle('on', b === btn));
+    document.querySelectorAll('.tabpane').forEach((p) => p.classList.toggle('on', p.id === btn.dataset.pane));
+  });
+});
+
+// 分集概览：默认前三集，点一下全展开（不再收起）
+const epsMore = document.querySelector('.epsmore');
+if (epsMore) {
+  epsMore.addEventListener('click', () => {
+    document.querySelector('.epswrap').classList.remove('clip');
+    epsMore.remove();
+  });
+}
+
+// 导出：报告自己带着完整的 outline.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('outline-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别立刻回收——Safari 会抢在下载读完之前撤掉 blob
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>

@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="zh" data-page-node-id="L6VGn0UinKBReojUIxTuMJ"><head data-page-node-id="PEWThylLVQ0FVUOvhtDDob">
+<meta charset="utf-8" data-page-node-id="oHh98LFAi2TMoRFOUhpjCS">
+<meta name="viewport" content="width=device-width,initial-scale=1" data-page-node-id="EsYVEoYv9bDeV1QZwprdZ7">
+<title>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季） · 美术设定集</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3,h4{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px}
+.kpi.accent{border-top:2px solid var(--seal)}
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section.top-sec{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;color:var(--ink-2);white-space:nowrap}
+.mono{font:400 11.5px/1.7 var(--mono);color:var(--ink-2);word-break:break-word}
+
+/* 场景设定卡：一排两张（方便截图宣传），卡内纵排、设定图占满卡宽 */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media(max-width:1100px){.cards{grid-template-columns:1fr}}
+.scene{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:18px 20px}
+.sc-h{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;border-bottom:1px solid var(--rule-2);padding-bottom:10px}
+.sc-id{font:500 12px/1 var(--mono);color:var(--seal)}
+.sc-h h3{font:400 20px/1.2 var(--serif);letter-spacing:.04em}
+.badge{font:500 10.5px/1 var(--sans);padding:2px 8px;border-radius:99px;border:1px solid var(--seal);color:var(--seal)}
+.badge.once{border-color:var(--seal-2);color:var(--seal-2)}
+.sc-use{margin-left:auto;font-size:12px;color:var(--ink-2)}
+.sc-sum{margin:10px 0 12px;font:400 14.5px/1.9 var(--serif)}
+.scene .blk{margin-top:16px}
+.scene .pgroup{margin-top:16px}
+
+.plate{margin:0;background:#fff;border:1px solid var(--rule-2);border-radius:2px;overflow:hidden}
+.plate .zoom{display:block;width:100%;padding:0;border:0;background:none;cursor:zoom-in}
+.plate .zoom:focus-visible{outline:2px solid var(--seal);outline-offset:-2px}
+.plate img{display:block;width:100%;height:auto}
+/* 图片弹层 */
+.lightbox{position:fixed;inset:0;z-index:50;display:none;place-items:center;
+  background:#191d21e6;padding:32px;cursor:zoom-out}
+.lightbox.on{display:grid}
+.lightbox img{max-width:100%;max-height:100%;background:#fff;border-radius:2px;
+  box-shadow:0 8px 40px #0006}
+.lightbox-x{position:absolute;top:18px;right:22px;font:500 13px/1 var(--sans);color:#fff;
+  background:none;border:1px solid #fff6;border-radius:3px;padding:8px 12px;cursor:pointer}
+.lightbox-x:hover{border-color:#fff}
+.plate figcaption{font-size:11px;letter-spacing:.08em;color:var(--ink-3);padding:6px 10px;border-top:1px solid var(--rule)}
+.plate-empty{display:grid;place-items:center;min-height:180px;text-align:center;
+  border:1px dashed var(--rule-2);background:var(--paper);color:var(--ink-3);font-size:13px}
+.plate-empty em{font-style:normal;font-size:12px;opacity:.8}
+.variant{margin:10px 0 0;font-size:12.5px;color:var(--seal);background:var(--seal-soft);padding:7px 10px;border-radius:2px}
+.variant b{font-family:var(--mono);font-weight:500}
+
+.blk{margin-bottom:16px}
+.blk h4{font:500 11px/1.6 var(--sans);letter-spacing:.18em;color:var(--seal);margin-bottom:8px}
+.blk h4 small{display:block;letter-spacing:0;font-weight:400;color:var(--ink-3);font-size:11px}
+.anchors{margin:0;padding:0 0 0 2px;list-style:none;counter-reset:an}
+/* ::before 序号也是网格项，desc 必须显式钉在第二列，否则会掉进 22px 窄列一字一行 */
+.anchors li{counter-increment:an;display:grid;grid-template-columns:22px minmax(0,1fr);column-gap:8px;
+  padding:6px 0;border-top:1px solid var(--rule);font-size:13px}
+.anchors li:first-child{border-top:0}
+.anchors li::before{content:counter(an,decimal-leading-zero);grid-column:1;grid-row:1;
+  font:500 11px/1.9 var(--mono);color:var(--seal)}
+.anchors b{grid-column:2;font-weight:500}
+.anchors span{grid-column:2;display:block;font-size:12px;color:var(--ink-2)}
+.lights{display:flex;flex-direction:column;gap:6px}
+.light{display:flex;align-items:baseline;gap:10px;background:var(--paper);border:1px solid var(--rule);
+  border-radius:2px;padding:7px 10px}
+.light i{flex:none;font-style:normal;font:500 12px/1.6 var(--sans);color:var(--ink)}
+.light .mono{flex:1;min-width:0}
+
+.pgroup{border:1px solid var(--rule);border-radius:2px;background:var(--paper);padding:4px 12px 8px;margin-top:12px}
+.pr{border-bottom:1px solid var(--rule)}
+.pgroup .pr:last-of-type{border-bottom:0}
+.pr summary{display:flex;align-items:center;gap:10px;padding:10px 0;cursor:pointer;list-style:none;
+  font:500 12px/1 var(--sans);letter-spacing:.04em}
+.pr summary::-webkit-details-marker{display:none}
+.pr summary::before{content:"▸";color:var(--seal);font-size:11px;transition:transform .15s}
+.pr[open] summary::before{transform:rotate(90deg)}
+.pr summary span{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pr p{margin:0 0 10px;padding:10px 12px;background:var(--panel);border:1px solid var(--rule);
+  border-radius:2px;font:400 12px/1.75 var(--mono);white-space:pre-wrap;word-break:break-word}
+.pgroup-f{padding:10px 0 4px}
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:4px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.wide{width:100%;padding:9px}
+.copy.mini{padding:2px 7px;font-size:10.5px}
+
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  .expo,.copy{display:none!important}
+  .pr p{display:block!important}
+  .pr summary::before{content:""}
+  .page{max-width:none;padding:0}
+  section.top-sec,.scene{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style></head><body data-page-node-id="Gn8FhjjCxHgQ5aQ6RDRhki">
+<div class="page" data-page-node-id="7fuvU5HFkw6RZiQI4dEA1a">
+
+<header class="hd" data-page-node-id="j8AkEInRLtqdWYV9rBRs9R">
+  <h1 data-page-node-id="nkHVufDZeDLoMGEZBgbKGh">江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）</h1>
+  <span class="sub" data-page-node-id="yQHlACV3bG1thOgDjB2E7J">美术设定集 · 画风：半写实厚涂</span>
+  <span class="right" data-page-node-id="FxB9lHgyUFfqePwyzOA6N9">
+    <span class="gatepill pass" data-page-node-id="WSh9zZUsD7MlF0r1ZYasWV">✓ 质量门 11 / 11</span>
+    <button class="expo" data-name="江东潜龙（三国：我在东吴从小吏杀到大都督-第一季）-art.json" data-page-node-id="VTBh1AMLG9U2AWyMhIzDzl">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis" data-page-node-id="BMrdFxZ3TEHQ5ZwYJQNFnX">
+  <div class="kpi accent" data-page-node-id="t3CrLVuN5SSrBw5ZAaFOqR"><div class="l" data-page-node-id="YkhXhuzfoBhILJH9YHP4fZ">场景</div><div class="v" data-page-node-id="14ePsqy904pMcgoD0dWRkS">4</div><div class="d" data-page-node-id="4soypo9lZXvJOvrYM5pibs">主场景 3 · 变体 1</div></div>
+  <div class="kpi" data-page-node-id="DhkGc56gwNKFLe8YsR4I82"><div class="l" data-page-node-id="hkVnc6sr3ugRROSuBEAm01">叙事道具</div><div class="v" data-page-node-id="5v2DuDAmMnX9euFp2H2DlC">2</div><div class="d" data-page-node-id="S73wG6F4YSua5ZYjBjCvjX">4 个状态变体</div></div>
+  <div class="kpi" data-page-node-id="EypufMy8TMdyEC2i0sKLkD"><div class="l" data-page-node-id="bcEDcXbVyeW7he8JZgEXVD">一致性锚点</div><div class="v" data-page-node-id="PAJiN29sIZB2yt7qIpE1ID">21</div><div class="d" data-page-node-id="S4WJybb4YV90thfSrvzQcp">生成镜头的核对表（场景 + 道具）</div></div>
+  <div class="kpi" data-page-node-id="utF6gzgzfLz9KbaPXwYLMt"><div class="l" data-page-node-id="DnHP5dAfwmccpZtpZ8PLK6">光照状态</div><div class="v" data-page-node-id="FyFOdF5S3aGBFBYKXgFDEu">7</div><div class="d" data-page-node-id="pvyJXzBBC43BUdJGRbvGft">换时段 = 重新生成</div></div>
+</div>
+
+
+<section class="top-sec" id="sec-list" data-page-node-id="mjC5S6sx3qpNHkSyplgWmS">
+  <div class="sec-h" data-page-node-id="oyiLA15KjDtVuT4YDlmqIO"><span class="no" data-page-node-id="U5RrGazGKgvvoAaKGj5Ie4">01</span><h2 data-page-node-id="gzG63GHUD3aPa3qdwWDE05">场景清单</h2></div>
+  <table data-page-node-id="eOeGkqi64Dx5XdnNNWX4zg"><thead data-page-node-id="XO9Z6lfQlzmZJtY3cgEa2A"><tr data-page-node-id="Km8C8UGeE5IYzyJHsmL6s6"><th data-page-node-id="avT4AelkPzj5t1p6u06Ovd">ID</th><th data-page-node-id="zPv5m8jMCCDy1DmEqB4Ut5">场景</th><th data-page-node-id="efLHgj4pn8IasSg4c7UaPq">类型</th><th data-page-node-id="0CKxsCIp1h1G3vL3dyCeNa">出现集</th><th data-page-node-id="25flQvsoqRwQOhIcOkDJ8W">锚点</th><th data-page-node-id="ZZGNE7xU8sksy55anBpqmA">光照</th><th data-page-node-id="ForWIcfUZKJRGjZX355KSY">变体</th></tr></thead>
+<tbody data-page-node-id="05W4JFFcxDaViVZ3IdelIA"><tr data-page-node-id="fHrXUhxQ5ayOYS1YWL2uhC"><td data-page-node-id="3QQvgvsiLl157QDA8PHZkP">S01</td><td data-page-node-id="aHJQtSfqMdeosMy3sB9JBN">柴桑船坊</td><td data-page-node-id="RQOLySY76zndm9zFpl59r0">主场景</td><td data-page-node-id="p3OehL6N2bs5cr7ForyOoo">1、2、3、4、5、16、17</td><td data-page-node-id="c82aK2VXUPm7KFf37kkXJg">4</td><td data-page-node-id="ghR5RpR0vpsY7kTKo1TTyj">晨雾未散、昏黄油灯夜</td><td data-page-node-id="VWnDbjPBFVwIRW5gKyeZlC">—</td></tr>
+<tr data-page-node-id="vIJ0eZoVTkURrua39Cnzz1"><td data-page-node-id="4A4TN76ER3LNOwzHG7dpdz">S02</td><td data-page-node-id="DkqeZN0T8uQ9ohtC7xg4ix">船坊主事厅</td><td data-page-node-id="edXySmcBXxCddPdgwR70pu">主场景</td><td data-page-node-id="UMrzm7ESQ3PRDV8SpeR03b">2、3、4、15、16、18</td><td data-page-node-id="v96AopI6DWxT6EdTCClQCZ">4</td><td data-page-node-id="VEFBArgrZABggPnytcwdj4">白日对峙、黄昏压账</td><td data-page-node-id="3iU2CzYCxiKsssTMDwvURj">—</td></tr>
+<tr data-page-node-id="8yF3y6V7cqWPognpcjCWt9"><td data-page-node-id="qZEiifoeX5c0r1KOEQC3q2">S03</td><td data-page-node-id="hG53YELOfmsyzHOmLj2LKe">都督府</td><td data-page-node-id="6HUcqiglDtA3ZXT9ClrcaN">主场景</td><td data-page-node-id="xBmDmwgXlzB2N4Mn1OliRU">5、6、7、8、10、22、23、24、26、27</td><td data-page-node-id="weWf44pvQyzQHYdSwnDn7A">4</td><td data-page-node-id="x1YrExlTioXlGHLTVufQ31">冷峻昼光、烛火军议</td><td data-page-node-id="BZ9GNxOuYXfXGFoucfvNvq">—</td></tr>
+<tr data-page-node-id="a2tfcULBUfVsBmWX1w6q4y"><td data-page-node-id="NthIf9pKZaRaVyzEB7LvrY">S06</td><td data-page-node-id="eE5fU7Q6G7hxrBsoyW2ltq">木料场</td><td data-page-node-id="zQYAqDxJBD8jl4uCg9LbGn">变体 ← S01</td><td data-page-node-id="aX5MVNynoED0Sq80AWMH9p">2、5</td><td data-page-node-id="TOdtYo9J8xMxR6Be8gpQJ1">3</td><td data-page-node-id="v8CRN9sRXSipNsXK8i0CgM">冷清清晨</td><td data-page-node-id="GmnfqcBIJX7RLCQY9OEV6i">复用船坊的江边码头与木质环境资产，前景替换为成堆的原木与料堆，去掉待修战船阵列，突出'木料被卡'的空荡与紧绷；换晨雾更薄、色温更冷的清晨光照</td></tr></tbody></table>
+</section>
+
+<section class="top-sec" id="sec-cards" data-page-node-id="d3ptEsJjO1m4u1gW8C0v3P">
+  <div class="sec-h" data-page-node-id="JfDwX8ANTpGylrbVSPUQzh"><span class="no" data-page-node-id="xjLuN3REA4Px2aNQ62cS3G">02</span><h2 data-page-node-id="SEMa3lDcvbAd9MEXf2Pwei">场景设定卡</h2></div>
+  <div class="cards" data-page-node-id="6GFNBimFraWLfVEbf9AFY7">
+<article class="scene" id="sc-S01" data-page-node-id="VzjnhLnwfAXD6rXgxY5oXv">
+  <header class="sc-h" data-page-node-id="rgrmC3Ow81kK8WUMkYt2pO">
+    <span class="sc-id" data-page-node-id="KNRgAHKoHSnVKwXx06P5oe">S01</span>
+    <h3 data-page-node-id="6WHE8l9tXIbZ02HEleXF41">柴桑船坊</h3>
+    <span class="badge" data-page-node-id="6V4BKL3GkglGgTAHayHqMB">主场景</span>
+    <span class="sc-use" data-page-node-id="iGvAy0lhQnCX4BzlkJBict">出现集 1、2、3、4、5、16、17　承载爽点 穿越死局 · 混乱被看见 · 示范见效 · 透明账目反将一军 · 三十一艘翻盘 · 软刀子困局 · 供应链自救</span>
+  </header>
+  <p class="sc-sum" data-page-node-id="mis01o5A8mX8VC6BDK7DVX">第一季前五集的主舞台：东汉末年柴桑江畔的一座造船工坊，木棚、工棚、码头连成一片。空间要同时容纳'破败到逼人'的压迫感和'堆满待修战船'的紧迫感——这里是沈川穿越后接下的死局现场，所有'修不完就死'的窒息感都从这里压出来。船坊要像一座被遗弃又硬撑着运转的工场：木料杂乱、半成品战船横陈、到处是修补的痕迹，但细节要有真实的手工艺质感，不能是废墟。</p>
+  <div class="plate plate-empty" data-page-node-id="pSuCkiruPluRZUJhgrnGqt"><span data-page-node-id="JhJ5CGj9XyyXrq2ah5POq0">柴桑船坊 · 尚未出图<br data-page-node-id="hLSxRm8UMf4IAF3Yh1eCEx"><em data-page-node-id="NH104JXekVpvRtPVZbhbAH">用下方提示词生成</em></span></div>
+  
+  <section class="blk" data-page-node-id="DdFHHXErNXJHKHwxCQG1uS">
+    <h4 data-page-node-id="dp2KXJzdU8E2mYma4cx4ms">一致性锚点<small data-page-node-id="gPaKJoKQ3qOiRATzx8gJbB">每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors" data-page-node-id="GSuJdBFdxX4hr1KuqDb7Dw"><li data-page-node-id="xeRAGMOe3ZsWC1HUhVK1jW"><b data-page-node-id="0suWr6lX7yWeua0Vf0peN4">待修战船阵列</b><span data-page-node-id="oDwxddBl7RzrNC1WMU4dck">码头边一字排开的木壳战船，船体斑驳、局部破损，船头朝江，未完工的船骸形成压迫性的剪影</span></li><li data-page-node-id="8lFasyLkdkHumGSM6HpfoV"><b data-page-node-id="digCIzrntkqyDyzyBsFCET">漏光木棚顶</b><span data-page-node-id="EMF0Ft29trszZ4zRUFX63G">工棚茅草顶有多处破损，几道光柱从破洞斜射下来，照亮空气中的木屑浮尘</span></li><li data-page-node-id="6MQVO3Ag9MtvC5u3nQw9RD"><b data-page-node-id="z9o2V3D1gnEBGIOvyPpcBF">满地木料与半成品构件</b><span data-page-node-id="ZndvQRcaSvLjyV2h9JbkeZ">船板、龙骨、桨、榫卯构件杂乱堆放，尺寸不一的部件散落一地，是'管理混乱'的视觉证据</span></li><li data-page-node-id="hqN1o7jMIZjzqKPlutvdUX"><b data-page-node-id="ffCk1WizuTGCvHA9oYFnYT">江边水码头</b><span data-page-node-id="oBfYD5f3x6JVEzdYtGFoLa">探入江中的木栈码头，缆桩上拴着半成品船的缆绳，江水拍打木桩</span></li></ol>
+  </section>
+  <section class="blk" data-page-node-id="81j4aGq5oSYJDQYp57aCdC">
+    <h4 data-page-node-id="2GvfYZhVOiCDsu5fCkUdT7">光照与时段</h4>
+    <div class="lights" data-page-node-id="gABA7Je6VCFqUO9MIMiNzr"><div class="light" data-page-node-id="y01lKZz7Cn3ruvhn76x4IR"><i data-page-node-id="3pbYQAm5Blwo7lsb1kocXg">晨雾未散</i><span class="mono" data-page-node-id="qLDLpMTFNl3cSKeUXj3PA0">early morning fog over the riverside, soft diffuse light with faint shadows, cool grey-blue palette, light shafts piercing the broken canopy roof, dust motes floating in the beams</span><button class="copy mini" data-copy="early morning fog over the riverside, soft diffuse light with faint shadows, cool grey-blue palette, light shafts piercing the broken canopy roof, dust motes floating in the beams" data-page-node-id="sq70JzYOxZGzlrhNRLilr3">复制</button></div><div class="light" data-page-node-id="SGG8LvQsvJExa2HCiH0Oqr"><i data-page-node-id="hkM8oCj7nNHu7sC1qS1ALL">昏黄油灯夜</i><span class="mono" data-page-node-id="82RrJUAWFgkcT1fs4Og6Yq">night interior lit by a single oil lamp, warm amber pool of light with deep shadows beyond, the ledger and hands catching the warm glow, darkness pressing in</span><button class="copy mini" data-copy="night interior lit by a single oil lamp, warm amber pool of light with deep shadows beyond, the ledger and hands catching the warm glow, darkness pressing in" data-page-node-id="Hvpg6f0og5l6v4U1B8pIUF">复制</button></div></div>
+  </section>
+  <div class="pgroup" data-page-node-id="42Wvt9s0AoALLi5C3OQAnJ">
+    <details class="pr" data-page-node-id="kjZne8HVGg3WFCVdR2ahzI">
+  <summary data-page-node-id="3yFJMf911SjczlUAgL8TQP"><span data-page-node-id="QFhP4gB7MhwvKJIhjEqnaw">主视角 EN</span><button class="copy" data-copy="A riverside shipyard in Chaisang during the late Eastern Han Dynasty Three Kingdoms era, rows of half-repaired wooden warships along a wooden dock, thatched work-shed roofs with light shafts piercing through holes, scattered timber and unfinished ship parts everywhere, a wooden pier extending into the river, empty scene with no people" data-page-node-id="9xnObpTuFze5nYKVUl8cjB">复制</button></summary>
+  <p data-page-node-id="0XHkIbjrMmafFPC34hS55N">A riverside shipyard in Chaisang during the late Eastern Han Dynasty Three Kingdoms era, rows of half-repaired wooden warships along a wooden dock, thatched work-shed roofs with light shafts piercing through holes, scattered timber and unfinished ship parts everywhere, a wooden pier extending into the river, empty scene with no people</p>
+</details>
+    <details class="pr" data-page-node-id="bVZpCHjkIutoZA18C9uVVS">
+  <summary data-page-node-id="G0WoiPLBHIzkxsZh9045cL"><span data-page-node-id="kMIxBrIlQ1PGtxpQAC8qdp">设定图 EN</span><button class="copy" data-copy="Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the riverside shipyard with rows of half-repaired wooden warships along the dock, broken thatched roof with light shafts, scattered timber, the wooden pier into the river — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the broken thatched roof with a light shaft and floating dust, and the rope-bound mooring post at the pier. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of scattered unfinished ship parts and mismatched joinery components, the worn timber grain of the half-built warship hulls, and the weathered dock planks. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows" data-page-node-id="W6ylCX40v53L93zklxBcwp">复制</button></summary>
+  <p data-page-node-id="VldyEtNpfg8IYjbpe6CQwv">Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the riverside shipyard with rows of half-repaired wooden warships along the dock, broken thatched roof with light shafts, scattered timber, the wooden pier into the river — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the broken thatched roof with a light shaft and floating dust, and the rope-bound mooring post at the pier. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of scattered unfinished ship parts and mismatched joinery components, the worn timber grain of the half-built warship hulls, and the weathered dock planks. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows</p>
+</details>
+    <details class="pr" data-page-node-id="mF8YvyP1c4NuEG3dP1eztq">
+  <summary data-page-node-id="KU38gw1a7tTsQE2zDBUNHl"><span data-page-node-id="vx0AqAF3XMQG7wKBv2mzxc">反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature" data-page-node-id="0mPjg3JJQCEk9YFGb4M795">复制</button></summary>
+  <p data-page-node-id="i8ew4zFzHcpKTizMqe4CHl">people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f" data-page-node-id="TZbPa06SFC5uxH94Wrdo7L"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S01&quot;,
+  &quot;name&quot;: &quot;柴桑船坊&quot;,
+  &quot;primary&quot;: true,
+  &quot;summary&quot;: &quot;第一季前五集的主舞台：东汉末年柴桑江畔的一座造船工坊，木棚、工棚、码头连成一片。空间要同时容纳'破败到逼人'的压迫感和'堆满待修战船'的紧迫感——这里是沈川穿越后接下的死局现场，所有'修不完就死'的窒息感都从这里压出来。船坊要像一座被遗弃又硬撑着运转的工场：木料杂乱、半成品战船横陈、到处是修补的痕迹，但细节要有真实的手工艺质感，不能是废墟。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;待修战船阵列&quot;,
+      &quot;desc&quot;: &quot;码头边一字排开的木壳战船，船体斑驳、局部破损，船头朝江，未完工的船骸形成压迫性的剪影&quot;
+    },
+    {
+      &quot;name&quot;: &quot;漏光木棚顶&quot;,
+      &quot;desc&quot;: &quot;工棚茅草顶有多处破损，几道光柱从破洞斜射下来，照亮空气中的木屑浮尘&quot;
+    },
+    {
+      &quot;name&quot;: &quot;满地木料与半成品构件&quot;,
+      &quot;desc&quot;: &quot;船板、龙骨、桨、榫卯构件杂乱堆放，尺寸不一的部件散落一地，是'管理混乱'的视觉证据&quot;
+    },
+    {
+      &quot;name&quot;: &quot;江边水码头&quot;,
+      &quot;desc&quot;: &quot;探入江中的木栈码头，缆桩上拴着半成品船的缆绳，江水拍打木桩&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;晨雾未散&quot;,
+      &quot;prompt&quot;: &quot;early morning fog over the riverside, soft diffuse light with faint shadows, cool grey-blue palette, light shafts piercing the broken canopy roof, dust motes floating in the beams&quot;
+    },
+    {
+      &quot;state&quot;: &quot;昏黄油灯夜&quot;,
+      &quot;prompt&quot;: &quot;night interior lit by a single oil lamp, warm amber pool of light with deep shadows beyond, the ledger and hands catching the warm glow, darkness pressing in&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;A riverside shipyard in Chaisang during the late Eastern Han Dynasty Three Kingdoms era, rows of half-repaired wooden warships along a wooden dock, thatched work-shed roofs with light shafts piercing through holes, scattered timber and unfinished ship parts everywhere, a wooden pier extending into the river, empty scene with no people&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the riverside shipyard with rows of half-repaired wooden warships along the dock, broken thatched roof with light shafts, scattered timber, the wooden pier into the river — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the broken thatched roof with a light shaft and floating dust, and the rope-bound mooring post at the pier. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of scattered unfinished ship parts and mismatched joinery components, the worn timber grain of the half-built warship hulls, and the weathered dock planks. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;riverside shipyard&quot;,
+      &quot;Han Dynasty dockyard&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      1,
+      2,
+      3,
+      4,
+      5,
+      16,
+      17
+    ],
+    &quot;beats&quot;: [
+      &quot;穿越死局&quot;,
+      &quot;混乱被看见&quot;,
+      &quot;示范见效&quot;,
+      &quot;透明账目反将一军&quot;,
+      &quot;三十一艘翻盘&quot;,
+      &quot;软刀子困局&quot;,
+      &quot;供应链自救&quot;
+    ]
+  }
+}" data-page-node-id="660CDLWEYiWaDiROHZnbsl">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="sc-S02" data-page-node-id="YOwkVJgD8XVYNr9KChPgVQ">
+  <header class="sc-h" data-page-node-id="dMWCNDsWziH6XOZeEsciC4">
+    <span class="sc-id" data-page-node-id="JgZp8EFpBDLOVcMH2ukqTi">S02</span>
+    <h3 data-page-node-id="G529tPLvSEX0BcAfjc9YAh">船坊主事厅</h3>
+    <span class="badge" data-page-node-id="RI9hv7jBKNj2HEQSUfjA9S">主场景</span>
+    <span class="sc-use" data-page-node-id="SaFRNX0bmqBq28zCG7Axwi">出现集 2、3、4、15、16、18　承载爽点 混乱被看见 · 示范见效 · 透明账目反将一军 · 名动江东 · 软刀子困局 · 政治小胜</span>
+  </header>
+  <p class="sc-sum" data-page-node-id="kSnz5qWVGrfKWylXqX3frW">船坊里主事议事、登记工籍、存放账册的厅堂。它是权力与暗流的交汇点——顾承在这里笑里藏刀地'提醒'沈川，账目在这里被当众摊开。空间要透出'旧体系'的体面与压迫：木案、账册架、主事坐席，格局规整却透着一股陈腐的秩序感，与外面混乱的工场形成反差。</p>
+  <div class="plate plate-empty" data-page-node-id="MlJGhdDPOUYw7T07v3a202"><span data-page-node-id="QNNddnE3DJSy4FoBLCPOPV">船坊主事厅 · 尚未出图<br data-page-node-id="YPDsJCE7JLQqQo9NeKdx4J"><em data-page-node-id="bwJ8yKJrbYRsYjmogbO1Wv">用下方提示词生成</em></span></div>
+  
+  <section class="blk" data-page-node-id="RLpNfpx6hKiU1VHCA3a9Ui">
+    <h4 data-page-node-id="SeAk5pM89yNigfTXJptVEI">一致性锚点<small data-page-node-id="oz7Qn9NqobYHseonFQUjcZ">每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors" data-page-node-id="YfjJSTtsvpA7BcXr0rvTQw"><li data-page-node-id="EWxJNChIiS7BCu1SXKwLnn"><b data-page-node-id="4KIOI1XHG6yfe2CwZZwdby">主事坐席与长案</b><span data-page-node-id="DzJjsj5pUhrg4kTprLPMwZ">厅堂正中一张宽木长案，案后是主事的坐席，案上摆着账册、笔墨与算筹</span></li><li data-page-node-id="fYcqBpVsycrDU3LcKKz26W"><b data-page-node-id="AChhEDKWhFKzDZ9HXBfaOA">账册木架</b><span data-page-node-id="SCgFJ5bi9EqFtHJEKw7ZPZ">靠墙一排木架，塞满卷起的竹简账册与麻绳捆扎的簿册，是账目世界的实体</span></li><li data-page-node-id="U9nKmh5UDccPdHsin6Ilhp"><b data-page-node-id="x4irLnalOYVbJUFC5zPkdA">门楣木牌</b><span data-page-node-id="sEHyXEkTJFAt5AoiK9Sz9m">厅门上方一块暗红木牌，字迹斑驳，是船坊的官家标识</span></li><li data-page-node-id="lvqv61Bnld6PtEmL11kZZj"><b data-page-node-id="0GEy4NBz02JBxPLJYBTUOy">漏风的窗棂</b><span data-page-node-id="IOCZUKw1NQfHTQPIabt5ec">木窗棂半敞，江风透入，吹得账册页角微微翻动，透出'这里也守不住'的破败</span></li></ol>
+  </section>
+  <section class="blk" data-page-node-id="nQqqF0WY8ugIMytb3Zfomx">
+    <h4 data-page-node-id="tfDH5MROrkYGkPoKEw3Ev5">光照与时段</h4>
+    <div class="lights" data-page-node-id="IvYZcmQtu4EB299J0fgZF5"><div class="light" data-page-node-id="r8NJLb9Gdtpw0XBgF5CJg1"><i data-page-node-id="vibaiPeZYFnAgOFQ0sRpUy">白日对峙</i><span class="mono" data-page-node-id="JB06dC8BNq5i8k1mfcDMeh">cool daylight through the half-open lattice window, even illumination with a cold cast, the ledger pages catching the light, a tense formal atmosphere</span><button class="copy mini" data-copy="cool daylight through the half-open lattice window, even illumination with a cold cast, the ledger pages catching the light, a tense formal atmosphere" data-page-node-id="1xZPa2w7mjSRp0VcmUp4N0">复制</button></div><div class="light" data-page-node-id="NxXN3VZ5mH0qBEon7rS4Xh"><i data-page-node-id="ZcQqaNCkK6ELfhYJHl1uaw">黄昏压账</i><span class="mono" data-page-node-id="JmIub2UND2iFJMltz6k5QI">late afternoon warm light slanting low through the window, long shadows across the floor, dust in the golden beams, a hushed confrontational mood</span><button class="copy mini" data-copy="late afternoon warm light slanting low through the window, long shadows across the floor, dust in the golden beams, a hushed confrontational mood" data-page-node-id="7w1ul9ynfA6xGGCaOlvU5R">复制</button></div></div>
+  </section>
+  <div class="pgroup" data-page-node-id="o8XVLepLcxaUELWR15QRTh">
+    <details class="pr" data-page-node-id="SFbSoo4ifWE5qEuxixQMAJ">
+  <summary data-page-node-id="BBBMFseRmRn9YkaeNwWDAw"><span data-page-node-id="S3f8huWdCZ8BMy7rAEFKFD">主视角 EN</span><button class="copy" data-copy="A shipyard supervisor's hall during the late Eastern Han Dynasty Three Kingdoms era, a wide wooden desk with ledger scrolls and ink and counting rods, wooden shelves packed with bound bamboo-slip ledgers along the wall, a dark red official name board above the door, half-open lattice windows with river wind stirring the ledger corners, empty scene with no people" data-page-node-id="6HfTnWgJiouwO3MrYsyw7c">复制</button></summary>
+  <p data-page-node-id="oETuz6RK7xTCRmDTOT0lv3">A shipyard supervisor's hall during the late Eastern Han Dynasty Three Kingdoms era, a wide wooden desk with ledger scrolls and ink and counting rods, wooden shelves packed with bound bamboo-slip ledgers along the wall, a dark red official name board above the door, half-open lattice windows with river wind stirring the ledger corners, empty scene with no people</p>
+</details>
+    <details class="pr" data-page-node-id="E4r4YfXVsqz0DwgsGtzPb1">
+  <summary data-page-node-id="0puzxCV43xYPYlj0G4AcUd"><span data-page-node-id="8CxQGnC9sFDduLdTOqqXNa">设定图 EN</span><button class="copy" data-copy="Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the shipyard supervisor's hall with the long wooden desk, ledger scrolls and counting rods on top, the wall of bound ledger shelves, the dark red name board over the door — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the ledger scrolls and counting rods on the desk, and the dark red official name board. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the bound bamboo-slip ledgers on the shelves, the worn grain of the wide wooden desk, and the half-open lattice window with river wind stirring paper corners. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows" data-page-node-id="lPghirJlNSEFiivjZJvLZN">复制</button></summary>
+  <p data-page-node-id="OnykEmyxpdniTypl16WPwS">Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the shipyard supervisor's hall with the long wooden desk, ledger scrolls and counting rods on top, the wall of bound ledger shelves, the dark red name board over the door — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the ledger scrolls and counting rods on the desk, and the dark red official name board. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the bound bamboo-slip ledgers on the shelves, the worn grain of the wide wooden desk, and the half-open lattice window with river wind stirring paper corners. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows</p>
+</details>
+    <details class="pr" data-page-node-id="SGD4bmU4hPqSFts0pUMJ8H">
+  <summary data-page-node-id="tgu1PzdA3inOEstdxTZFbq"><span data-page-node-id="8AkQ5YD2Fk50nNhuVf0Gdh">反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature" data-page-node-id="Yz0DkSrlgwvC8K3wHsOHbQ">复制</button></summary>
+  <p data-page-node-id="zMu5VT5VTncFSrADyfSWK8">people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f" data-page-node-id="L9iiQM8zfgtsiaPX0l9ots"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S02&quot;,
+  &quot;name&quot;: &quot;船坊主事厅&quot;,
+  &quot;primary&quot;: true,
+  &quot;summary&quot;: &quot;船坊里主事议事、登记工籍、存放账册的厅堂。它是权力与暗流的交汇点——顾承在这里笑里藏刀地'提醒'沈川，账目在这里被当众摊开。空间要透出'旧体系'的体面与压迫：木案、账册架、主事坐席，格局规整却透着一股陈腐的秩序感，与外面混乱的工场形成反差。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;主事坐席与长案&quot;,
+      &quot;desc&quot;: &quot;厅堂正中一张宽木长案，案后是主事的坐席，案上摆着账册、笔墨与算筹&quot;
+    },
+    {
+      &quot;name&quot;: &quot;账册木架&quot;,
+      &quot;desc&quot;: &quot;靠墙一排木架，塞满卷起的竹简账册与麻绳捆扎的簿册，是账目世界的实体&quot;
+    },
+    {
+      &quot;name&quot;: &quot;门楣木牌&quot;,
+      &quot;desc&quot;: &quot;厅门上方一块暗红木牌，字迹斑驳，是船坊的官家标识&quot;
+    },
+    {
+      &quot;name&quot;: &quot;漏风的窗棂&quot;,
+      &quot;desc&quot;: &quot;木窗棂半敞，江风透入，吹得账册页角微微翻动，透出'这里也守不住'的破败&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;白日对峙&quot;,
+      &quot;prompt&quot;: &quot;cool daylight through the half-open lattice window, even illumination with a cold cast, the ledger pages catching the light, a tense formal atmosphere&quot;
+    },
+    {
+      &quot;state&quot;: &quot;黄昏压账&quot;,
+      &quot;prompt&quot;: &quot;late afternoon warm light slanting low through the window, long shadows across the floor, dust in the golden beams, a hushed confrontational mood&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;A shipyard supervisor's hall during the late Eastern Han Dynasty Three Kingdoms era, a wide wooden desk with ledger scrolls and ink and counting rods, wooden shelves packed with bound bamboo-slip ledgers along the wall, a dark red official name board above the door, half-open lattice windows with river wind stirring the ledger corners, empty scene with no people&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the shipyard supervisor's hall with the long wooden desk, ledger scrolls and counting rods on top, the wall of bound ledger shelves, the dark red name board over the door — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the ledger scrolls and counting rods on the desk, and the dark red official name board. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the bound bamboo-slip ledgers on the shelves, the worn grain of the wide wooden desk, and the half-open lattice window with river wind stirring paper corners. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;official hall&quot;,
+      &quot;Han Dynasty interior&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      2,
+      3,
+      4,
+      15,
+      16,
+      18
+    ],
+    &quot;beats&quot;: [
+      &quot;混乱被看见&quot;,
+      &quot;示范见效&quot;,
+      &quot;透明账目反将一军&quot;,
+      &quot;名动江东&quot;,
+      &quot;软刀子困局&quot;,
+      &quot;政治小胜&quot;
+    ]
+  }
+}" data-page-node-id="CRIfEVUkXupJGciWn07c7d">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="sc-S03" data-page-node-id="DRYZSorS5FvHt9vtawi7N0">
+  <header class="sc-h" data-page-node-id="oww7sZ5VkzQK2LQ4DeIFnX">
+    <span class="sc-id" data-page-node-id="vfQZsA75uqD4a8TpbC8eNf">S03</span>
+    <h3 data-page-node-id="RvASslPS9h4BOH9Mc9aE5d">都督府</h3>
+    <span class="badge" data-page-node-id="ghEoVLl8lQDMwFJMHjDCdb">主场景</span>
+    <span class="sc-use" data-page-node-id="Xpv9TythYunSnDMhqHxVQT">出现集 5、6、7、8、10、22、23、24、26、27　承载爽点 三十一艘翻盘 · 被顶级智力碾压 · 另辟蹊径答问 · 百人调度权 · 历史记忆同步 · 数据判断 · 历史偏移 · 国策层面认可 · 互补成形</span>
+  </header>
+  <p class="sc-sum" data-page-node-id="So8Q1FRgMzXkAtWjGCgCBQ">江东大都督周瑜的府衙。第5集结尾周瑜在这里点名的场景，是第一季'权柄'的具象——从破败船坊到威严都督府的跨越，本身就构成强烈的身份反差。空间要透出统帅的威仪与军令的肃杀：军旗、兵器架、地图与案牍，格局庄重，光线冷峻。</p>
+  <div class="plate plate-empty" data-page-node-id="u15S7Bh8dVplmj5Bs24RDQ"><span data-page-node-id="0fTCnCeK4qv6YXYLYGi82w">都督府 · 尚未出图<br data-page-node-id="8XejCyKW51jWCdA3NB4EFM"><em data-page-node-id="tqN7N4INIz7yWWrDClUILT">用下方提示词生成</em></span></div>
+  
+  <section class="blk" data-page-node-id="IC529e8EpIlCmEFIfxtCNp">
+    <h4 data-page-node-id="piiBqHgmJ89hQUpcbIlKlT">一致性锚点<small data-page-node-id="CSw5idf4jlqqWpynOBdFIG">每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors" data-page-node-id="hzo66hXu2rbR2ms6AHvLv2"><li data-page-node-id="KQmS1tewnZnA6EDCIzLqDn"><b data-page-node-id="anstmEaDpFaixAbaAEoq3c">军旗与兵器架</b><span data-page-node-id="nNOkWJMSHXQ6ulQ2niV6cB">厅侧立着军旗与一排兵器架，刀枪剑戟整齐陈列，是都督府的武备标识</span></li><li data-page-node-id="HM5zzqgdYkAaNtVsgAojBF"><b data-page-node-id="UB7UoOxYeYf54WOVLmUUf7">舆图长案</b><span data-page-node-id="UT4ELEPH7gQ8BSdOkRuwnH">厅中一张铺着大幅舆图的长案，图上标着江防与渡口，案角压着镇纸与令箭</span></li><li data-page-node-id="8GEkSYbt4WxRGIozdjhY82"><b data-page-node-id="F3Z062mnVGDBLXOhNqQBYM">令箭筒</b><span data-page-node-id="BPsG0XN6qEOJfsJS685gOH">案头一筒军令箭，箭杆朱漆，是都督府发号施令的权威象征</span></li><li data-page-node-id="JTO7yatXzjYl76RR2y3X33"><b data-page-node-id="PkCTcrwen5caJPtGdQmm0S">高阔的厅堂穹顶</b><span data-page-node-id="aeW3A7lP2EGvhfbkw1G6m2">都督府厅堂高阔，木柱粗壮，光线从高处泄下，衬托人的渺小与威压</span></li></ol>
+  </section>
+  <section class="blk" data-page-node-id="dlrMcpPYOwxZnG0HFjbVRW">
+    <h4 data-page-node-id="gF4hakWOKFLEKdEEeDcfYC">光照与时段</h4>
+    <div class="lights" data-page-node-id="0KzHux7rR2jRTPChSIkBHP"><div class="light" data-page-node-id="mAqjLwYkK8aydUpubMyx68"><i data-page-node-id="1Jrjrvv3OUgNsAdEo2Cw46">冷峻昼光</i><span class="mono" data-page-node-id="fwmKCSSnqtAaFc5bZHf9cm">cold clear daylight from high windows, strong directional light with deep shadows, the war banners and weapon racks sharply lit, an authoritative solemn mood</span><button class="copy mini" data-copy="cold clear daylight from high windows, strong directional light with deep shadows, the war banners and weapon racks sharply lit, an authoritative solemn mood" data-page-node-id="VAGNucHakIVjr83BakBoLb">复制</button></div><div class="light" data-page-node-id="IlsO3mOkGZPHoUMu8xNGPk"><i data-page-node-id="1A4tqInwt4NuzakNATfmUt">烛火军议</i><span class="mono" data-page-node-id="cO6XHOPyexFHsTjaX8Jt1h">warm candlelight for a night military council, the map on the long desk under a pool of amber light, weapon racks receding into shadow, tension in the air</span><button class="copy mini" data-copy="warm candlelight for a night military council, the map on the long desk under a pool of amber light, weapon racks receding into shadow, tension in the air" data-page-node-id="8A0KTILiuicjDYeHGjFT1P">复制</button></div></div>
+  </section>
+  <div class="pgroup" data-page-node-id="ZEDbImvfRkbnMnE2jyD9IT">
+    <details class="pr" data-page-node-id="NauibN6y0oSsT7QOEJES7B">
+  <summary data-page-node-id="7UkFvZ7MHznH2aINe94yWY"><span data-page-node-id="cxyubWbW1Z4wm0vXVZF698">主视角 EN</span><button class="copy" data-copy="A grand commander's headquarters during the late Eastern Han Dynasty Three Kingdoms era, war banners and a rack of weapons along the hall, a long desk with a large military map and command arrows, a tall hall with massive wooden columns and high light, an authoritative solemn atmosphere, empty scene with no people" data-page-node-id="kPJuwURcgDbC7027qtZW5I">复制</button></summary>
+  <p data-page-node-id="ULRzz35A6bSGmzPD2TP2Cx">A grand commander's headquarters during the late Eastern Han Dynasty Three Kingdoms era, war banners and a rack of weapons along the hall, a long desk with a large military map and command arrows, a tall hall with massive wooden columns and high light, an authoritative solemn atmosphere, empty scene with no people</p>
+</details>
+    <details class="pr" data-page-node-id="U0j6cqnDts9WlhCHK1U3pa">
+  <summary data-page-node-id="ADEd1urbxFc0THmcviNId8"><span data-page-node-id="NfULHpoOfSbu3auyLPIgux">设定图 EN</span><button class="copy" data-copy="Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the grand commander's headquarters with war banners and the weapon rack, the long desk with the large military map, the tall hall with massive columns — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the command arrow tube and the military map with river crossings marked. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the war banners, the polished weapon rack, and the massive wooden columns rising to the high light. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows" data-page-node-id="3YPNimKJcx1zENiBr3eAIY">复制</button></summary>
+  <p data-page-node-id="FaxtxWuVJfuYUvAuWdoBGP">Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the grand commander's headquarters with war banners and the weapon rack, the long desk with the large military map, the tall hall with massive columns — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the command arrow tube and the military map with river crossings marked. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the war banners, the polished weapon rack, and the massive wooden columns rising to the high light. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows</p>
+</details>
+    <details class="pr" data-page-node-id="oR1IYTy5s2XWqxCOH7QO1e">
+  <summary data-page-node-id="1OR9KrjQPoxaxaIsRe2hIp"><span data-page-node-id="1B0G8PQwjgygE1ek5mb0uD">反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature" data-page-node-id="bq9h5m9d2S6jy0cdxYmMHM">复制</button></summary>
+  <p data-page-node-id="YaVl23T7s8gJHY3MKbTPYP">people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f" data-page-node-id="0KLYaxuCMKB0yA3ixkDCyc"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S03&quot;,
+  &quot;name&quot;: &quot;都督府&quot;,
+  &quot;primary&quot;: true,
+  &quot;summary&quot;: &quot;江东大都督周瑜的府衙。第5集结尾周瑜在这里点名的场景，是第一季'权柄'的具象——从破败船坊到威严都督府的跨越，本身就构成强烈的身份反差。空间要透出统帅的威仪与军令的肃杀：军旗、兵器架、地图与案牍，格局庄重，光线冷峻。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;军旗与兵器架&quot;,
+      &quot;desc&quot;: &quot;厅侧立着军旗与一排兵器架，刀枪剑戟整齐陈列，是都督府的武备标识&quot;
+    },
+    {
+      &quot;name&quot;: &quot;舆图长案&quot;,
+      &quot;desc&quot;: &quot;厅中一张铺着大幅舆图的长案，图上标着江防与渡口，案角压着镇纸与令箭&quot;
+    },
+    {
+      &quot;name&quot;: &quot;令箭筒&quot;,
+      &quot;desc&quot;: &quot;案头一筒军令箭，箭杆朱漆，是都督府发号施令的权威象征&quot;
+    },
+    {
+      &quot;name&quot;: &quot;高阔的厅堂穹顶&quot;,
+      &quot;desc&quot;: &quot;都督府厅堂高阔，木柱粗壮，光线从高处泄下，衬托人的渺小与威压&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;冷峻昼光&quot;,
+      &quot;prompt&quot;: &quot;cold clear daylight from high windows, strong directional light with deep shadows, the war banners and weapon racks sharply lit, an authoritative solemn mood&quot;
+    },
+    {
+      &quot;state&quot;: &quot;烛火军议&quot;,
+      &quot;prompt&quot;: &quot;warm candlelight for a night military council, the map on the long desk under a pool of amber light, weapon racks receding into shadow, tension in the air&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;A grand commander's headquarters during the late Eastern Han Dynasty Three Kingdoms era, war banners and a rack of weapons along the hall, a long desk with a large military map and command arrows, a tall hall with massive wooden columns and high light, an authoritative solemn atmosphere, empty scene with no people&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the grand commander's headquarters with war banners and the weapon rack, the long desk with the large military map, the tall hall with massive columns — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the command arrow tube and the military map with river crossings marked. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the war banners, the polished weapon rack, and the massive wooden columns rising to the high light. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;commander headquarters&quot;,
+      &quot;Han Dynasty military hall&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      5,
+      6,
+      7,
+      8,
+      10,
+      22,
+      23,
+      24,
+      26,
+      27
+    ],
+    &quot;beats&quot;: [
+      &quot;三十一艘翻盘&quot;,
+      &quot;被顶级智力碾压&quot;,
+      &quot;另辟蹊径答问&quot;,
+      &quot;百人调度权&quot;,
+      &quot;历史记忆同步&quot;,
+      &quot;数据判断&quot;,
+      &quot;历史偏移&quot;,
+      &quot;国策层面认可&quot;,
+      &quot;互补成形&quot;
+    ]
+  }
+}" data-page-node-id="okvVuJO8IaxcTzLefX76Ce">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="sc-S06" data-page-node-id="rgsOO01jfeFwodp47kkqwV">
+  <header class="sc-h" data-page-node-id="5pLu35GnX4cNGi1Z8RQLwj">
+    <span class="sc-id" data-page-node-id="C2VneWNc17NPGVyAsMcHII">S06</span>
+    <h3 data-page-node-id="xf3CbKU4c2DCFCeWHQSQVq">木料场</h3>
+    <span class="badge once" data-page-node-id="aWxTDHJsakaeeN7CYRg4hL">变体</span>
+    <span class="sc-use" data-page-node-id="2E5r3tR5c2xTLqLvCjdBQC">出现集 2、5　承载爽点 混乱被看见 · 三十一艘翻盘</span>
+  </header>
+  <p class="sc-sum" data-page-node-id="mtPLZCbGBQPdlZCceVWSxy">船坊室外堆放木料的场地，第2、5集'木料被谁卡着'的危机现场。它只需要'空荡的料堆'这个存在感——本应堆满木料的地方空了，就是'有人在卡资源'的最强视觉。作为船坊的室外延伸变体生成，省一套环境资产。</p>
+  <div class="plate plate-empty" data-page-node-id="99uQB8LCGY65nZloi2jnvN"><span data-page-node-id="FvmOT7gITE7VpuwMhS68Es">木料场 · 尚未出图<br data-page-node-id="desGRt7tkOZGswAtmhst1J"><em data-page-node-id="aPHFB1DoOAwMmqAJTWFVzI">用下方提示词生成</em></span></div>
+  <p class="variant" data-page-node-id="0ZmqJeTI81dRSvD0c6nHpC">变体来源：<b data-page-node-id="EiGe7ylyfxkToqEEY4JL01">S01</b>　改动：复用船坊的江边码头与木质环境资产，前景替换为成堆的原木与料堆，去掉待修战船阵列，突出'木料被卡'的空荡与紧绷；换晨雾更薄、色温更冷的清晨光照</p>
+  <section class="blk" data-page-node-id="Top1XFfxQqGzoSWG4WnA1w">
+    <h4 data-page-node-id="4vCopAXd6cstAQWFwBqWLq">一致性锚点<small data-page-node-id="uIHLZL19FWWXLEKFgGyzqQ">每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors" data-page-node-id="KazXynMoQtzM2bqZoJi8Kz"><li data-page-node-id="UQPAIYjA8TGH1FFNeErQZJ"><b data-page-node-id="p5fE4Xejg7jJSevxG195fn">空荡的料堆</b><span data-page-node-id="ZYbun0AP0lv6YPDKamTU4S">本应堆满原木的料场空空荡荡，只剩零星几根木料和满地的木屑与捆绳</span></li><li data-page-node-id="FwZEqEA2dHuDzOGjl0ens2"><b data-page-node-id="2CKa2jdYtgVf3GSu4quStd">成堆的原木轮廓</b><span data-page-node-id="oA6DVnbITgGjrNRQZuHqYv">料场一角残余的原木堆，横七竖八地摞着，木纹清晰，是新砍伐的淡黄木色</span></li><li data-page-node-id="UHQlXlFc619w7xVOpglM3C"><b data-page-node-id="qIq24q76jgUqZbbteL4si6">捆木麻绳</b><span data-page-node-id="fJM9S3jlCdGhHxrqnqazfF">散落在地上的粗麻绳与断开的捆扎绳，是木料被搬走后的残留</span></li></ol>
+  </section>
+  <section class="blk" data-page-node-id="6WmBFMDtvxP8Kyb4wIlvve">
+    <h4 data-page-node-id="pFBAZeoOqArZi2FzLtngsZ">光照与时段</h4>
+    <div class="lights" data-page-node-id="qGGABbvweX1Iakt7ubgubw"><div class="light" data-page-node-id="lKw5ofor9DvLowNMcNa5Iw"><i data-page-node-id="C2j6acS8ebZg6ws3BFYzhQ">冷清清晨</i><span class="mono" data-page-node-id="kwfEkVgK2GjA6AYbCr2zRt">thin cold early morning light, a pale desaturated palette, the empty timber yard feeling exposed and tense, faint river fog at the far edge</span><button class="copy mini" data-copy="thin cold early morning light, a pale desaturated palette, the empty timber yard feeling exposed and tense, faint river fog at the far edge" data-page-node-id="FDoBc1L3QsYDZ7obOoBBYp">复制</button></div></div>
+  </section>
+  <div class="pgroup" data-page-node-id="kBL56ybFbPvfstEG4QWObH">
+    <details class="pr" data-page-node-id="nVkYMKJLSQUr7bSFRWYxd8">
+  <summary data-page-node-id="AQcEyWWBQ1QoaHNzTwhGnp"><span data-page-node-id="RFniY7yjGsA4fMGkOziSFH">主视角 EN</span><button class="copy" data-copy="An empty timber storage yard beside a riverside shipyard, late Eastern Han Dynasty Three Kingdoms era, mostly empty ground scattered with a few logs, leftover sawdust and broken ropes, a residual stack of freshly cut pale logs in one corner, cold pale morning light, empty scene with no people" data-page-node-id="9EfulKgID3irIfxTHTyEC1">复制</button></summary>
+  <p data-page-node-id="ynL0Sp0CMEpjKAvEmJftlo">An empty timber storage yard beside a riverside shipyard, late Eastern Han Dynasty Three Kingdoms era, mostly empty ground scattered with a few logs, leftover sawdust and broken ropes, a residual stack of freshly cut pale logs in one corner, cold pale morning light, empty scene with no people</p>
+</details>
+    <details class="pr" data-page-node-id="n4cIeSNsx1CnEFLsyfQF2G">
+  <summary data-page-node-id="C49Uo7BSshPGqrx0hPG364"><span data-page-node-id="LAnwoQvEpN9CX6ONWl5wya">设定图 EN</span><button class="copy" data-copy="Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the mostly empty timber yard with scattered logs, leftover sawdust and broken ropes, a residual stack of pale logs in one corner, cold morning light — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the residual stack of freshly cut pale logs and the broken rope scattered on the ground. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the leftover sawdust on the bare ground, the fresh cut grain of the pale logs, and the weathered rope fibres. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows" data-page-node-id="74OfU0N9xiERRzoH7lStVn">复制</button></summary>
+  <p data-page-node-id="g7IgvXzfy1HthWb9pXpaE9">Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the mostly empty timber yard with scattered logs, leftover sawdust and broken ropes, a residual stack of pale logs in one corner, cold morning light — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the residual stack of freshly cut pale logs and the broken rope scattered on the ground. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the leftover sawdust on the bare ground, the fresh cut grain of the pale logs, and the weathered rope fibres. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows</p>
+</details>
+    <details class="pr" data-page-node-id="AtamFpYoC1YyXbLlax5y9m">
+  <summary data-page-node-id="lEIf9qyKNvQgJZVSh2JWBA"><span data-page-node-id="PA4Hr6LKpFXJYhyhI2aDKa">反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature" data-page-node-id="aIltoKwofZNDrrH4s5Ar2m">复制</button></summary>
+  <p data-page-node-id="pIxADnOsLg6jdj8iveqZyH">people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f" data-page-node-id="i3DUKInPC6EhGfXQ9JFmIi"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;S06&quot;,
+  &quot;name&quot;: &quot;木料场&quot;,
+  &quot;primary&quot;: false,
+  &quot;variantOf&quot;: &quot;S01&quot;,
+  &quot;changes&quot;: &quot;复用船坊的江边码头与木质环境资产，前景替换为成堆的原木与料堆，去掉待修战船阵列，突出'木料被卡'的空荡与紧绷；换晨雾更薄、色温更冷的清晨光照&quot;,
+  &quot;summary&quot;: &quot;船坊室外堆放木料的场地，第2、5集'木料被谁卡着'的危机现场。它只需要'空荡的料堆'这个存在感——本应堆满木料的地方空了，就是'有人在卡资源'的最强视觉。作为船坊的室外延伸变体生成，省一套环境资产。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;空荡的料堆&quot;,
+      &quot;desc&quot;: &quot;本应堆满原木的料场空空荡荡，只剩零星几根木料和满地的木屑与捆绳&quot;
+    },
+    {
+      &quot;name&quot;: &quot;成堆的原木轮廓&quot;,
+      &quot;desc&quot;: &quot;料场一角残余的原木堆，横七竖八地摞着，木纹清晰，是新砍伐的淡黄木色&quot;
+    },
+    {
+      &quot;name&quot;: &quot;捆木麻绳&quot;,
+      &quot;desc&quot;: &quot;散落在地上的粗麻绳与断开的捆扎绳，是木料被搬走后的残留&quot;
+    }
+  ],
+  &quot;lighting&quot;: [
+    {
+      &quot;state&quot;: &quot;冷清清晨&quot;,
+      &quot;prompt&quot;: &quot;thin cold early morning light, a pale desaturated palette, the empty timber yard feeling exposed and tense, faint river fog at the far edge&quot;
+    }
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;An empty timber storage yard beside a riverside shipyard, late Eastern Han Dynasty Three Kingdoms era, mostly empty ground scattered with a few logs, leftover sawdust and broken ropes, a residual stack of freshly cut pale logs in one corner, cold pale morning light, empty scene with no people&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the mostly empty timber yard with scattered logs, leftover sawdust and broken ropes, a residual stack of pale logs in one corner, cold morning light — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the residual stack of freshly cut pale logs and the broken rope scattered on the ground. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the leftover sawdust on the bare ground, the fresh cut grain of the pale logs, and the weathered rope fibres. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows&quot;,
+    &quot;tags&quot;: [
+      &quot;semi-realistic&quot;,
+      &quot;environment sheet&quot;,
+      &quot;painterly&quot;,
+      &quot;timber yard&quot;,
+      &quot;empty storage&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      2,
+      5
+    ],
+    &quot;beats&quot;: [
+      &quot;混乱被看见&quot;,
+      &quot;三十一艘翻盘&quot;
+    ]
+  }
+}" data-page-node-id="fIgeqi9tmdnf9KeTHqRSUE">复制整个场景 JSON</button></div>
+  </div>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-prop-list" data-page-node-id="7Oxz0dIqUu0APHjcnA0ONG">
+  <div class="sec-h" data-page-node-id="kqxDDd0rQ1Sm8gQVMy8j6x"><span class="no" data-page-node-id="eDnRUn92nHgUVnbw2LEy5G">03</span><h2 data-page-node-id="ABAIvYYTfYaViTDGpJbHn4">道具清单</h2></div>
+  <table data-page-node-id="lS9Mrwzx1TsHrzJq7jiEBW"><thead data-page-node-id="CVosKDlHk2S5ovkNyAoDmn"><tr data-page-node-id="EuVVA2M5WD1Qx8GwEo6m9r"><th data-page-node-id="uYK8rGAqnkQJnRvOOIHln9">ID</th><th data-page-node-id="gWy4JN6mN7x5FrGDvv2oqG">道具</th><th data-page-node-id="peLg0pJow5el9AIzX8MTTQ">尺度</th><th data-page-node-id="b2x2qY0XYH5IZzlKpmjL17">状态</th><th data-page-node-id="v3P5n2iRDMpuW9eYZR9koZ">关联场景</th><th data-page-node-id="ge0dHcaRumAADcmpOLcbb2">出现集</th><th data-page-node-id="Ehbl2Xm0tIXgcHyfrL8Fsm">锚点</th></tr></thead>
+<tbody data-page-node-id="mwdxBABXniUJUKO0vyULUA"><tr data-page-node-id="1OzX8NL3oFDBjjDGf2CWRM"><td data-page-node-id="8mIJesKBRXp8UQjQj1Z3TI">P01</td><td data-page-node-id="kGRPEC2vHzaWWT2DkXhCiS">修船账册</td><td data-page-node-id="bFLtr2XeJg6plKsVHzWQBe">手持级</td><td data-page-node-id="55Km10dazpKZG5CWbg28hX">合拢、摊开</td><td data-page-node-id="Mp737KYqAuCUpvTmprSU87">S01、S02</td><td data-page-node-id="qC2RrSxuEHUqmEraUmKHEh">1、2、4</td><td data-page-node-id="xGrwC7yrCKBsdniO3i67Wc">3</td></tr>
+<tr data-page-node-id="5sECSIWzTGYNKekwPLVe5r"><td data-page-node-id="LiZgPL8WousYqBv7ssKlTC">P02</td><td data-page-node-id="RuxpkUcXRLPV7zLjWDy3Cs">墨斗与定尺</td><td data-page-node-id="62kQgUD9d31XfVLj6JbDxF">手持级</td><td data-page-node-id="Lm82ijM0tEJH1uBHR8UKra">收拢、弹线使用</td><td data-page-node-id="darn7TDvnhpVjkJ5XZC4D3">S01</td><td data-page-node-id="iSqrAkHh15k79OaA3L60tV">3、4</td><td data-page-node-id="Ng8IJYC7UBgbnvzodcgCQ3">3</td></tr></tbody></table>
+</section>
+
+<section class="top-sec" id="sec-prop-cards" data-page-node-id="0aztMvN6N5BVcULN5cAR2n">
+  <div class="sec-h" data-page-node-id="DSCrlsEt4csfxJLULDsa1o"><span class="no" data-page-node-id="PTFgLQgMHcJ0lAaxfT335a">04</span><h2 data-page-node-id="FJHy61VlppBS4xMqFaAwpF">道具设定卡</h2></div>
+  <div class="cards" data-page-node-id="3xQXKSrw7HLRwb54gXm6pg">
+<article class="scene" id="pr-P01" data-page-node-id="i3x9BVaqM8wKqEXm8HrERR">
+  <header class="sc-h" data-page-node-id="lQqt4r0cVffP7gosBN6ztD">
+    <span class="sc-id" data-page-node-id="5DS2lutoBblHavFpDcOcIN">P01</span>
+    <h3 data-page-node-id="On45TiZkPfuO8I2ow1q8Kt">修船账册</h3>
+    <span class="badge" data-page-node-id="Y9K2Kk9gXHjSAhjEB8OV7i">手持级</span>
+    <span class="sc-use" data-page-node-id="6kigl4E7hDntR5Smn1tjTr">出现集 1、2、4　承载爽点 穿越死局 · 混乱被看见 · 透明账目反将一军</span>
+  </header>
+  <p class="sc-sum" data-page-node-id="EoIAlCCYqtNJ5kjJdJAN8G">沈川身份拼图与账目漏洞的双重载体。第1集他靠翻账册拼出自己的身份，第2、4集账册里'对不上的数字'成为他识破有人做假账、有人要拿他顶罪的关键线索。观众要在特写里反复看到账页上的墨字，账册就是第一季前五集'暗流'的实体。</p>
+  <div class="plate plate-empty" data-page-node-id="f6ItUxXISqccnLrQHorn9U"><span data-page-node-id="TEVd8PmBV7CZEswEWYgelD">修船账册 · 尚未出图<br data-page-node-id="q3VhOirvenOjL5eHKnORjK"><em data-page-node-id="gR0savLR7h1LlDCdGWRKNO">用下方提示词生成</em></span></div>
+  <p class="variant" data-page-node-id="HlXEulg4ljI2LVgY38PUyM">关联场景：<b data-page-node-id="EnAkvvJOWBUTFMDdF1Aw9p">S01、S02</b>　关联角色：沈川</p>
+  <section class="blk" data-page-node-id="fWHD7CAk5gFMnW5jiAxmoO">
+    <h4 data-page-node-id="ufsQD3VVKNk25D1BbNYFbq">一致性锚点<small data-page-node-id="XFwrIGtcBWmWlqUdFPAcri">每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors" data-page-node-id="oGRuD1V9zOIkqLGEbEMbnx"><li data-page-node-id="TspHn9mzj7iHd0EOkXbhIs"><b data-page-node-id="M56gNj6E0Uf7VukRBc9eMJ">发黄的账页</b><span data-page-node-id="jbs2SI7kXFFht2xipCpwsT">账页用麻纸，泛黄发脆，页角卷起，墨字是手写的竖排小楷</span></li><li data-page-node-id="HDQNupmvlaWPU5XHV8cduk"><b data-page-node-id="mt0IpV3GiV8615yuEOuNly">对不上的数字</b><span data-page-node-id="9nVmIFx2wLf892oDMFkBOm">某页上两处墨写的数字明显对不上，一处被浓墨涂改过，透着刻意</span></li><li data-page-node-id="EUEUu2A5qzbmzDV6suw4mV"><b data-page-node-id="AXZFa5T1qDdZGtonvm2NmD">麻绳装订</b><span data-page-node-id="dEAUyoatNHKE1BHaFpbJNC">账册用粗麻绳穿孔装订，绳头散开，系着一枚木片标签</span></li></ol>
+  </section>
+  <section class="blk" data-page-node-id="NBsq3VCaIbkPZRFlS5h80t">
+    <h4 data-page-node-id="VNaojHAlFjIz7yPj6SZpYd">状态变体</h4>
+    <div class="lights" data-page-node-id="3CBr0TSBHqmGcuZYYKAprS"><div class="light" data-page-node-id="2UPTGODolFD90Azviy3At5"><i data-page-node-id="380ta5Iu80WA18XEWe3y4p">合拢</i><span class="mono" data-page-node-id="YyJ5yDplH97hGxQOii2rPV">the ledger closed, bound with rough hemp cord, a small wooden tag tied to the loose cord ends, worn paper edges showing</span><button class="copy mini" data-copy="the ledger closed, bound with rough hemp cord, a small wooden tag tied to the loose cord ends, worn paper edges showing" data-page-node-id="3hPHHIMU1ACIAOmSXuij0H">复制</button></div><div class="light" data-page-node-id="aoP4Q9oz67GKra9fEQduyA"><i data-page-node-id="idGQvdnJ8e6r4uLPyFp4m5">摊开</i><span class="mono" data-page-node-id="9PxIVtmObgnS9FEyj1IXsg">the ledger lying open, yellowed pages of handwritten vertical Chinese characters, one entry visibly crossed out with thick ink, the mismatched numbers catching the light</span><button class="copy mini" data-copy="the ledger lying open, yellowed pages of handwritten vertical Chinese characters, one entry visibly crossed out with thick ink, the mismatched numbers catching the light" data-page-node-id="DZwH5XG9RIg0XnDdiSp7Ms">复制</button></div></div>
+  </section>
+  <div class="pgroup" data-page-node-id="HLEjYJVhDH1XOB1sG9UiGz">
+    <details class="pr" data-page-node-id="IQG2GRsPaTkLTDzIcGXnYf">
+  <summary data-page-node-id="BuKhs5Z8dSJ0u6NIbZQ3FV"><span data-page-node-id="qwK42pPi8E939fgTlw7Xf5">主视角 EN</span><button class="copy" data-copy="A worn hand-bound account ledger from the late Eastern Han Dynasty, at handheld scale, yellowed hemp paper pages with vertical handwritten Chinese characters, one entry crossed out with thick ink, bound with rough hemp cord and a small wooden tag, isolated on a pure white background, no people, no hands" data-page-node-id="ATDDhaYwlUfE3aLFHWinGM">复制</button></summary>
+  <p data-page-node-id="WhZZeMGMu6DbPSMS0HCDIl">A worn hand-bound account ledger from the late Eastern Han Dynasty, at handheld scale, yellowed hemp paper pages with vertical handwritten Chinese characters, one entry crossed out with thick ink, bound with rough hemp cord and a small wooden tag, isolated on a pure white background, no people, no hands</p>
+</details>
+    <details class="pr" data-page-node-id="d6zwJrFVSpQPrvRjmhcJ0T">
+  <summary data-page-node-id="eonsBiwWSJlFA1OAQcCYnA"><span data-page-node-id="H7Ig2Tpt5qOeBklOwnEj2b">设定图 EN</span><button class="copy" data-copy="Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ledger closed, three-quarter hero view at handheld scale — the canonical look of this prop. RIGHT COLUMN, stacked small panels: close-up detail studies of the rough hemp cord binding and the small wooden tag. BOTTOM ROW beneath the main zone: the ledger lying open showing yellowed pages of handwritten characters with the crossed-out entry, a straight-on side profile, and a macro close-up of the mismatched numbers. Every panel shows the SAME ledger — same wear, same binding, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows" data-page-node-id="mc3rVYPOQusT2v0GUhpCr5">复制</button></summary>
+  <p data-page-node-id="tXkG1KrvZ2rMak6qWyaYFP">Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ledger closed, three-quarter hero view at handheld scale — the canonical look of this prop. RIGHT COLUMN, stacked small panels: close-up detail studies of the rough hemp cord binding and the small wooden tag. BOTTOM ROW beneath the main zone: the ledger lying open showing yellowed pages of handwritten characters with the crossed-out entry, a straight-on side profile, and a macro close-up of the mismatched numbers. Every panel shows the SAME ledger — same wear, same binding, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows</p>
+</details>
+    <details class="pr" data-page-node-id="GkxWFHA4LdsuUJ2OJzD84w">
+  <summary data-page-node-id="NVXrhJOlyIG3xeUeUdx6vl"><span data-page-node-id="MYJpAbfJpHRQYUpLIOsCBk">反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature" data-page-node-id="tOCXI8qc2K5tDpl63UJjMV">复制</button></summary>
+  <p data-page-node-id="6Mldc3YqYkV3AArMMpRtQ1">people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f" data-page-node-id="uhZxUxtQRw8GUFx3D6NzNm"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P01&quot;,
+  &quot;name&quot;: &quot;修船账册&quot;,
+  &quot;scale&quot;: &quot;手持级&quot;,
+  &quot;summary&quot;: &quot;沈川身份拼图与账目漏洞的双重载体。第1集他靠翻账册拼出自己的身份，第2、4集账册里'对不上的数字'成为他识破有人做假账、有人要拿他顶罪的关键线索。观众要在特写里反复看到账页上的墨字，账册就是第一季前五集'暗流'的实体。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;发黄的账页&quot;,
+      &quot;desc&quot;: &quot;账页用麻纸，泛黄发脆，页角卷起，墨字是手写的竖排小楷&quot;
+    },
+    {
+      &quot;name&quot;: &quot;对不上的数字&quot;,
+      &quot;desc&quot;: &quot;某页上两处墨写的数字明显对不上，一处被浓墨涂改过，透着刻意&quot;
+    },
+    {
+      &quot;name&quot;: &quot;麻绳装订&quot;,
+      &quot;desc&quot;: &quot;账册用粗麻绳穿孔装订，绳头散开，系着一枚木片标签&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;合拢&quot;,
+      &quot;prompt&quot;: &quot;the ledger closed, bound with rough hemp cord, a small wooden tag tied to the loose cord ends, worn paper edges showing&quot;
+    },
+    {
+      &quot;state&quot;: &quot;摊开&quot;,
+      &quot;prompt&quot;: &quot;the ledger lying open, yellowed pages of handwritten vertical Chinese characters, one entry visibly crossed out with thick ink, the mismatched numbers catching the light&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S01&quot;,
+    &quot;S02&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;沈川&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;A worn hand-bound account ledger from the late Eastern Han Dynasty, at handheld scale, yellowed hemp paper pages with vertical handwritten Chinese characters, one entry crossed out with thick ink, bound with rough hemp cord and a small wooden tag, isolated on a pure white background, no people, no hands&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ledger closed, three-quarter hero view at handheld scale — the canonical look of this prop. RIGHT COLUMN, stacked small panels: close-up detail studies of the rough hemp cord binding and the small wooden tag. BOTTOM ROW beneath the main zone: the ledger lying open showing yellowed pages of handwritten characters with the crossed-out entry, a straight-on side profile, and a macro close-up of the mismatched numbers. Every panel shows the SAME ledger — same wear, same binding, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows&quot;,
+    &quot;tags&quot;: [
+      &quot;prop sheet&quot;,
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;account ledger&quot;,
+      &quot;white background&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      1,
+      2,
+      4
+    ],
+    &quot;beats&quot;: [
+      &quot;穿越死局&quot;,
+      &quot;混乱被看见&quot;,
+      &quot;透明账目反将一军&quot;
+    ]
+  }
+}" data-page-node-id="1xr4GZLV9vteGoAe0ZVZFt">复制整个场景 JSON</button></div>
+  </div>
+</article>
+<article class="scene" id="pr-P02" data-page-node-id="K6JhnmU84qIupnyw8oaY5P">
+  <header class="sc-h" data-page-node-id="4UoAcyiTngXBoZ9ZHAo1q8">
+    <span class="sc-id" data-page-node-id="GCWLZJPlkiwSv8nuVSmSoC">P02</span>
+    <h3 data-page-node-id="aQxqgHVL8iW0ATxKamubax">墨斗与定尺</h3>
+    <span class="badge" data-page-node-id="cK9CADWg3lfdjUYu0p3lzZ">手持级</span>
+    <span class="sc-use" data-page-node-id="aMxS3igFcFH41MIhmTl41k">出现集 3、4　承载爽点 示范见效 · 透明账目反将一军</span>
+  </header>
+  <p class="sc-sum" data-page-node-id="KtknW8DrSFeFWkOoTktefh">沈川推行'标准化'的实体工具。第3、4集他靠墨斗弹线、定尺卡尺寸来统一零件标准、破除返工——这是'现代工程思维'在古代船坊第一次落地的道具化身，也是老工匠们从将信将疑到服气的见证物。</p>
+  <div class="plate plate-empty" data-page-node-id="EqPNyVzjTz6GssD7EPDBBr"><span data-page-node-id="O8KDRyovNkwKqAkOfohjDF">墨斗与定尺 · 尚未出图<br data-page-node-id="R79qYUlTi1DtvgGle5MEtf"><em data-page-node-id="Md4NIZWyAzAp8RLNPDgLbj">用下方提示词生成</em></span></div>
+  <p class="variant" data-page-node-id="5ejzV1RY7M3NjPaPcO5GcG">关联场景：<b data-page-node-id="OzemY7gU0MUlQg18f5T0Fn">S01</b>　关联角色：沈川</p>
+  <section class="blk" data-page-node-id="GQaAZahzOuIsIZ7xcTzrpR">
+    <h4 data-page-node-id="nVAu2cyQcPxwUVZTvMg8ES">一致性锚点<small data-page-node-id="OJggRaiDt3YMEXo6rkqBb6">每次生成都必须出现的特征——认场景靠它，QC 也靠它</small></h4>
+    <ol class="anchors" data-page-node-id="onNAaotjToOryPFRRHfMTZ"><li data-page-node-id="PPyxIKUrSwNIYRe6TNUEJH"><b data-page-node-id="3rgp4XDOYhYyXbJ0lnSxGk">墨斗的墨线轮</b><span data-page-node-id="sYjYJXLDhRPdBfFGwXiUAV">木制墨斗，一侧是缠墨线的转轮，线头吸饱了墨，是弹线的核心</span></li><li data-page-node-id="XdZHlqfYmdKEafjnqdH6MB"><b data-page-node-id="IddFHICNBVjBk3PrbGl4PO">定尺刻度</b><span data-page-node-id="1gKDheqOkkr9XF4G4KT6nf">一把木制定尺，边缘刻着均匀的刻度，尺身因常年使用磨得发亮</span></li><li data-page-node-id="x63MpejA73dutBmC2aLhyH"><b data-page-node-id="YzuQBlCW9j7OcOV8Cr2x5R">吸墨的线头</b><span data-page-node-id="m8H2TajdFm8CIYGwXZN8Zw">墨线从墨池里拉出，线头浸透黑墨，弹在木料上会留下笔直的墨痕</span></li></ol>
+  </section>
+  <section class="blk" data-page-node-id="afwiBG0S43Tb3E6ZtqfSiB">
+    <h4 data-page-node-id="BJbpnMn643raCQHpAeNAEC">状态变体</h4>
+    <div class="lights" data-page-node-id="233yEtdDCRifXm8GdzMgOG"><div class="light" data-page-node-id="Cp6EBAlY42BVRf1WDFs60W"><i data-page-node-id="CHT4f1b2saZzIfoQSJbrEO">收拢</i><span class="mono" data-page-node-id="c8Ubsq14y0eqXCqb5W27oV">the ink line reel wound tight, the wooden ink box closed with the line drawn back in, the marked ruler laid flat beside it</span><button class="copy mini" data-copy="the ink line reel wound tight, the wooden ink box closed with the line drawn back in, the marked ruler laid flat beside it" data-page-node-id="yfAGVy2LKkoOQ0vaqKG8jT">复制</button></div><div class="light" data-page-node-id="QiEyBlMOzRS4hNPrNpX7ah"><i data-page-node-id="sx7OypjKT0vEMhU4BYgkFX">弹线使用</i><span class="mono" data-page-node-id="VrsFIJopcF5VzCLRRDa0XV">the ink line pulled taut out of the ink box, the black-stained line stretched straight, the marked ruler laid across a timber surface</span><button class="copy mini" data-copy="the ink line pulled taut out of the ink box, the black-stained line stretched straight, the marked ruler laid across a timber surface" data-page-node-id="O6PBIDTNCeCLD0YaubmEet">复制</button></div></div>
+  </section>
+  <div class="pgroup" data-page-node-id="hbKgelCAUuUHb64pC4qHwo">
+    <details class="pr" data-page-node-id="vNJIX6uAEu09skABLiL1By">
+  <summary data-page-node-id="6jvrHvQ5tpqhh5dzuRGmAD"><span data-page-node-id="u54LSx6dmAv6Be6W4pPQ1B">主视角 EN</span><button class="copy" data-copy="A traditional carpenter's ink line tool and a marked wooden ruler from the late Eastern Han Dynasty, at handheld scale, a wooden ink box with a wound string reel and an ink-soaked line, a wooden measuring ruler with worn bright edges and even graduation marks, isolated on a pure white background, no people, no hands" data-page-node-id="zgER8eYYTQsvxVlSONbhpN">复制</button></summary>
+  <p data-page-node-id="P3L3tMVXDhFeJBKUsEJ77G">A traditional carpenter's ink line tool and a marked wooden ruler from the late Eastern Han Dynasty, at handheld scale, a wooden ink box with a wound string reel and an ink-soaked line, a wooden measuring ruler with worn bright edges and even graduation marks, isolated on a pure white background, no people, no hands</p>
+</details>
+    <details class="pr" data-page-node-id="BuTQ87J9hB3s1DkvJHRAqh">
+  <summary data-page-node-id="mtZ3pa7U3rqN23CDJomQ8s"><span data-page-node-id="noCASokIqmfa3zYrEFnQAA">设定图 EN</span><button class="copy" data-copy="Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ink line tool and the marked ruler together, three-quarter hero view at handheld scale — the canonical look of these props. RIGHT COLUMN, stacked small panels: close-up detail studies of the ink-soaked line and the wound string reel. BOTTOM ROW beneath the main zone: the ink line pulled taut in use, the marked ruler laid flat showing its graduation marks, and a straight-on side profile. Every panel shows the SAME tools — same wear, same marks, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows" data-page-node-id="IhcHqmOOpgHk0AG5oc8rw2">复制</button></summary>
+  <p data-page-node-id="rsSJ1AoOmp0Gu0jtcFujoP">Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ink line tool and the marked ruler together, three-quarter hero view at handheld scale — the canonical look of these props. RIGHT COLUMN, stacked small panels: close-up detail studies of the ink-soaked line and the wound string reel. BOTTOM ROW beneath the main zone: the ink line pulled taut in use, the marked ruler laid flat showing its graduation marks, and a straight-on side profile. Every panel shows the SAME tools — same wear, same marks, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows</p>
+</details>
+    <details class="pr" data-page-node-id="mNPp0v5gTxBzEHcaPniTFm">
+  <summary data-page-node-id="migsTmsgcFcdd8fNfouty6"><span data-page-node-id="fFN8mfrqoM0Pm8vbROr267">反向提示词</span><button class="copy" data-copy="people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature" data-page-node-id="CONzYbpVYujgDFIyM9kf6w">复制</button></summary>
+  <p data-page-node-id="dHRNPSnVn8DRIRLdHUblC5">people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature</p>
+</details>
+    <div class="pgroup-f" data-page-node-id="FAfV2QNVINZYlWwX2igAZP"><button class="copy wide" data-copy="{
+  &quot;id&quot;: &quot;P02&quot;,
+  &quot;name&quot;: &quot;墨斗与定尺&quot;,
+  &quot;scale&quot;: &quot;手持级&quot;,
+  &quot;summary&quot;: &quot;沈川推行'标准化'的实体工具。第3、4集他靠墨斗弹线、定尺卡尺寸来统一零件标准、破除返工——这是'现代工程思维'在古代船坊第一次落地的道具化身，也是老工匠们从将信将疑到服气的见证物。&quot;,
+  &quot;anchors&quot;: [
+    {
+      &quot;name&quot;: &quot;墨斗的墨线轮&quot;,
+      &quot;desc&quot;: &quot;木制墨斗，一侧是缠墨线的转轮，线头吸饱了墨，是弹线的核心&quot;
+    },
+    {
+      &quot;name&quot;: &quot;定尺刻度&quot;,
+      &quot;desc&quot;: &quot;一把木制定尺，边缘刻着均匀的刻度，尺身因常年使用磨得发亮&quot;
+    },
+    {
+      &quot;name&quot;: &quot;吸墨的线头&quot;,
+      &quot;desc&quot;: &quot;墨线从墨池里拉出，线头浸透黑墨，弹在木料上会留下笔直的墨痕&quot;
+    }
+  ],
+  &quot;states&quot;: [
+    {
+      &quot;state&quot;: &quot;收拢&quot;,
+      &quot;prompt&quot;: &quot;the ink line reel wound tight, the wooden ink box closed with the line drawn back in, the marked ruler laid flat beside it&quot;
+    },
+    {
+      &quot;state&quot;: &quot;弹线使用&quot;,
+      &quot;prompt&quot;: &quot;the ink line pulled taut out of the ink box, the black-stained line stretched straight, the marked ruler laid across a timber surface&quot;
+    }
+  ],
+  &quot;relatedScenes&quot;: [
+    &quot;S01&quot;
+  ],
+  &quot;carriedBy&quot;: [
+    &quot;沈川&quot;
+  ],
+  &quot;image&quot;: {
+    &quot;prompt&quot;: &quot;A traditional carpenter's ink line tool and a marked wooden ruler from the late Eastern Han Dynasty, at handheld scale, a wooden ink box with a wound string reel and an ink-soaked line, a wooden measuring ruler with worn bright edges and even graduation marks, isolated on a pure white background, no people, no hands&quot;,
+    &quot;negativePrompt&quot;: &quot;people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature&quot;,
+    &quot;sheet&quot;: &quot;Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ink line tool and the marked ruler together, three-quarter hero view at handheld scale — the canonical look of these props. RIGHT COLUMN, stacked small panels: close-up detail studies of the ink-soaked line and the wound string reel. BOTTOM ROW beneath the main zone: the ink line pulled taut in use, the marked ruler laid flat showing its graduation marks, and a straight-on side profile. Every panel shows the SAME tools — same wear, same marks, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows&quot;,
+    &quot;tags&quot;: [
+      &quot;prop sheet&quot;,
+      &quot;semi-realistic&quot;,
+      &quot;painterly&quot;,
+      &quot;ink line tool&quot;,
+      &quot;white background&quot;
+    ]
+  },
+  &quot;usage&quot;: {
+    &quot;episodes&quot;: [
+      3,
+      4
+    ],
+    &quot;beats&quot;: [
+      &quot;示范见效&quot;,
+      &quot;透明账目反将一军&quot;
+    ]
+  }
+}" data-page-node-id="SbI33Seec79h4FL7ZSDNlk">复制整个场景 JSON</button></div>
+  </div>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-gates" data-page-node-id="blIgScu33B6oZqNp6Z2DLs">
+  <div class="sec-h" data-page-node-id="LypRHkmpeSjq9vJDQJwMKV"><span class="no" data-page-node-id="7ocAwPEL8JMZeWbaE62zCq">05</span><h2 data-page-node-id="T6pHTPc0KKn9V3zL36NP71">质量门</h2></div>
+  <ul class="gate" data-page-node-id="nBAy6C8wGsQ67pX9pXsJUT">
+  <li class="ok" data-page-node-id="KUJxAVFpR2DBzeHIbd2jvD"><span class="m" data-page-node-id="rjaAu5weZ4Po2N7ASpDDoh">✓</span><span data-page-node-id="SrouFuTKN3nvDvJ4XvtclO">一致性锚点 3–5 个</span></li>
+  <li class="ok" data-page-node-id="oEu2kRE2UR4kTV2ogKf2qp"><span class="m" data-page-node-id="SBf6tR4X13ynAZp19E9Knu">✓</span><span data-page-node-id="h8EhTVFExBMpcVNCgY5AIb">光照状态至少 1 个且落成提示词</span></li>
+  <li class="ok" data-page-node-id="cRl0RxkLwmP6EU1GZKRHET"><span class="m" data-page-node-id="Y2noUXJZK8nTJBdMY7NP92">✓</span><span data-page-node-id="SRvnVbeL6WmmR4rvaxxIlm">参考图无人：反向提示词禁人（场景与道具都查）</span></li>
+  <li class="ok" data-page-node-id="9d7NgyTB5gODB1mkdcjGut"><span class="m" data-page-node-id="8mIx8CRZzbvvbce1HV8azM">✓</span><span data-page-node-id="H9u2CPNmah6gHFDyjpcM80">出图提示词全部英文</span></li>
+  <li class="ok" data-page-node-id="bC4dshRljBcSaOLhNs3a3Z"><span class="m" data-page-node-id="WysMjQVWNvHnmyJkKa0vMb">✓</span><span data-page-node-id="p1i1G3sM0GHrAOwWP6yUAD">提示词不含角色名<small data-page-node-id="CVNCD9Hczgr0ova03tQziY">未提供 cast.json，本门跳过（视为通过）</small></span></li>
+  <li class="ok" data-page-node-id="H2wcAVtGiAkWfz61xSat27"><span class="m" data-page-node-id="iC8NYJ73eHo3pcDthrvzl5">✓</span><span data-page-node-id="yaKW1F6w0w7cdFcQnTv6jJ">变体引用完整（variantOf 存在且带 changes）</span></li>
+  <li class="ok" data-page-node-id="F2lGjJ7Vn5KcqW7DcScO9r"><span class="m" data-page-node-id="AQHwQDFeFL0HZmtHTtyg4Y">✓</span><span data-page-node-id="PvK5Cg6sQtBRcjsFOCco3v">风格与反向提示词匹配</span></li>
+  <li class="ok" data-page-node-id="d8bekPT2JPeYvfJtG9DzHx"><span class="m" data-page-node-id="k9iFhjt9do5fgUlfqun9yB">✓</span><span data-page-node-id="GXjssZPYH6O0vHW7ur46g5">道具状态至少 1 个且落成提示词</span></li>
+  <li class="ok" data-page-node-id="XyW4ytgPoJKYCmFl7WBaMn"><span class="m" data-page-node-id="U6GdDZ4W1KsKOAFtfXfcnQ">✓</span><span data-page-node-id="3I3VErFBxTyVEwLH6m4syk">道具尺度参照写进提示词</span></li>
+  <li class="ok" data-page-node-id="3zBg83OB5Ke3A0ekTfV9vr"><span class="m" data-page-node-id="bZpXgGix7AVQXJBZBYirYA">✓</span><span data-page-node-id="GA8529EPaFZKFeI0mAuMJB">道具参考图无手：反向提示词禁手</span></li>
+  <li class="ok" data-page-node-id="57mNl8xPUYyibbP5rQceVm"><span class="m" data-page-node-id="I2xMwGsdmPfdKrZNXgt99Z">✓</span><span data-page-node-id="vDAT4NqIFPRZGOqNansBxz">道具设定图纯白背景可抠</span></li>
+</ul>
+  <p class="gsum" data-page-node-id="F326yiHzZISSKHXgXEtUEJ">全部通过</p>
+</section>
+
+<p class="foot" data-page-node-id="AikHyQ6pptQBlDhHC9lLrk">设定与提示词由模型依据大纲/原文生成，质量门由脚本确定性检查。参考图一律无人——人是另一层资产；道具参考图另加无手、纯白背景。</p>
+</div>
+
+<div class="lightbox" role="dialog" aria-modal="true" data-page-node-id="06EuG3WHoyb0JByeG2C2nM">
+  <button class="lightbox-x" aria-label="关闭" data-page-node-id="IbHxzdfpuTYnw9olO7srhH">关闭</button>
+  <img alt="" data-page-node-id="cJlWnEUSRNH8ELV9UnwXoq">
+</div>
+
+<script type="application/json" id="art-data">{"source":"江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）","style":"realistic","scenes":[{"id":"S01","name":"柴桑船坊","primary":true,"summary":"第一季前五集的主舞台：东汉末年柴桑江畔的一座造船工坊，木棚、工棚、码头连成一片。空间要同时容纳'破败到逼人'的压迫感和'堆满待修战船'的紧迫感——这里是沈川穿越后接下的死局现场，所有'修不完就死'的窒息感都从这里压出来。船坊要像一座被遗弃又硬撑着运转的工场：木料杂乱、半成品战船横陈、到处是修补的痕迹，但细节要有真实的手工艺质感，不能是废墟。","anchors":[{"name":"待修战船阵列","desc":"码头边一字排开的木壳战船，船体斑驳、局部破损，船头朝江，未完工的船骸形成压迫性的剪影"},{"name":"漏光木棚顶","desc":"工棚茅草顶有多处破损，几道光柱从破洞斜射下来，照亮空气中的木屑浮尘"},{"name":"满地木料与半成品构件","desc":"船板、龙骨、桨、榫卯构件杂乱堆放，尺寸不一的部件散落一地，是'管理混乱'的视觉证据"},{"name":"江边水码头","desc":"探入江中的木栈码头，缆桩上拴着半成品船的缆绳，江水拍打木桩"}],"lighting":[{"state":"晨雾未散","prompt":"early morning fog over the riverside, soft diffuse light with faint shadows, cool grey-blue palette, light shafts piercing the broken canopy roof, dust motes floating in the beams"},{"state":"昏黄油灯夜","prompt":"night interior lit by a single oil lamp, warm amber pool of light with deep shadows beyond, the ledger and hands catching the warm glow, darkness pressing in"}],"image":{"prompt":"A riverside shipyard in Chaisang during the late Eastern Han Dynasty Three Kingdoms era, rows of half-repaired wooden warships along a wooden dock, thatched work-shed roofs with light shafts piercing through holes, scattered timber and unfinished ship parts everywhere, a wooden pier extending into the river, empty scene with no people","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the riverside shipyard with rows of half-repaired wooden warships along the dock, broken thatched roof with light shafts, scattered timber, the wooden pier into the river — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the broken thatched roof with a light shaft and floating dust, and the rope-bound mooring post at the pier. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of scattered unfinished ship parts and mismatched joinery components, the worn timber grain of the half-built warship hulls, and the weathered dock planks. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows","tags":["semi-realistic","environment sheet","painterly","riverside shipyard","Han Dynasty dockyard"]},"usage":{"episodes":[1,2,3,4,5,16,17],"beats":["穿越死局","混乱被看见","示范见效","透明账目反将一军","三十一艘翻盘","软刀子困局","供应链自救"]}},{"id":"S02","name":"船坊主事厅","primary":true,"summary":"船坊里主事议事、登记工籍、存放账册的厅堂。它是权力与暗流的交汇点——顾承在这里笑里藏刀地'提醒'沈川，账目在这里被当众摊开。空间要透出'旧体系'的体面与压迫：木案、账册架、主事坐席，格局规整却透着一股陈腐的秩序感，与外面混乱的工场形成反差。","anchors":[{"name":"主事坐席与长案","desc":"厅堂正中一张宽木长案，案后是主事的坐席，案上摆着账册、笔墨与算筹"},{"name":"账册木架","desc":"靠墙一排木架，塞满卷起的竹简账册与麻绳捆扎的簿册，是账目世界的实体"},{"name":"门楣木牌","desc":"厅门上方一块暗红木牌，字迹斑驳，是船坊的官家标识"},{"name":"漏风的窗棂","desc":"木窗棂半敞，江风透入，吹得账册页角微微翻动，透出'这里也守不住'的破败"}],"lighting":[{"state":"白日对峙","prompt":"cool daylight through the half-open lattice window, even illumination with a cold cast, the ledger pages catching the light, a tense formal atmosphere"},{"state":"黄昏压账","prompt":"late afternoon warm light slanting low through the window, long shadows across the floor, dust in the golden beams, a hushed confrontational mood"}],"image":{"prompt":"A shipyard supervisor's hall during the late Eastern Han Dynasty Three Kingdoms era, a wide wooden desk with ledger scrolls and ink and counting rods, wooden shelves packed with bound bamboo-slip ledgers along the wall, a dark red official name board above the door, half-open lattice windows with river wind stirring the ledger corners, empty scene with no people","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the shipyard supervisor's hall with the long wooden desk, ledger scrolls and counting rods on top, the wall of bound ledger shelves, the dark red name board over the door — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the ledger scrolls and counting rods on the desk, and the dark red official name board. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the bound bamboo-slip ledgers on the shelves, the worn grain of the wide wooden desk, and the half-open lattice window with river wind stirring paper corners. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows","tags":["semi-realistic","environment sheet","painterly","official hall","Han Dynasty interior"]},"usage":{"episodes":[2,3,4,15,16,18],"beats":["混乱被看见","示范见效","透明账目反将一军","名动江东","软刀子困局","政治小胜"]}},{"id":"S03","name":"都督府","primary":true,"summary":"江东大都督周瑜的府衙。第5集结尾周瑜在这里点名的场景，是第一季'权柄'的具象——从破败船坊到威严都督府的跨越，本身就构成强烈的身份反差。空间要透出统帅的威仪与军令的肃杀：军旗、兵器架、地图与案牍，格局庄重，光线冷峻。","anchors":[{"name":"军旗与兵器架","desc":"厅侧立着军旗与一排兵器架，刀枪剑戟整齐陈列，是都督府的武备标识"},{"name":"舆图长案","desc":"厅中一张铺着大幅舆图的长案，图上标着江防与渡口，案角压着镇纸与令箭"},{"name":"令箭筒","desc":"案头一筒军令箭，箭杆朱漆，是都督府发号施令的权威象征"},{"name":"高阔的厅堂穹顶","desc":"都督府厅堂高阔，木柱粗壮，光线从高处泄下，衬托人的渺小与威压"}],"lighting":[{"state":"冷峻昼光","prompt":"cold clear daylight from high windows, strong directional light with deep shadows, the war banners and weapon racks sharply lit, an authoritative solemn mood"},{"state":"烛火军议","prompt":"warm candlelight for a night military council, the map on the long desk under a pool of amber light, weapon racks receding into shadow, tension in the air"}],"image":{"prompt":"A grand commander's headquarters during the late Eastern Han Dynasty Three Kingdoms era, war banners and a rack of weapons along the hall, a long desk with a large military map and command arrows, a tall hall with massive wooden columns and high light, an authoritative solemn atmosphere, empty scene with no people","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the grand commander's headquarters with war banners and the weapon rack, the long desk with the large military map, the tall hall with massive columns — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the command arrow tube and the military map with river crossings marked. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the war banners, the polished weapon rack, and the massive wooden columns rising to the high light. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows","tags":["semi-realistic","environment sheet","painterly","commander headquarters","Han Dynasty military hall"]},"usage":{"episodes":[5,6,7,8,10,22,23,24,26,27],"beats":["三十一艘翻盘","被顶级智力碾压","另辟蹊径答问","百人调度权","历史记忆同步","数据判断","历史偏移","国策层面认可","互补成形"]}},{"id":"S06","name":"木料场","primary":false,"variantOf":"S01","changes":"复用船坊的江边码头与木质环境资产，前景替换为成堆的原木与料堆，去掉待修战船阵列，突出'木料被卡'的空荡与紧绷；换晨雾更薄、色温更冷的清晨光照","summary":"船坊室外堆放木料的场地，第2、5集'木料被谁卡着'的危机现场。它只需要'空荡的料堆'这个存在感——本应堆满木料的地方空了，就是'有人在卡资源'的最强视觉。作为船坊的室外延伸变体生成，省一套环境资产。","anchors":[{"name":"空荡的料堆","desc":"本应堆满原木的料场空空荡荡，只剩零星几根木料和满地的木屑与捆绳"},{"name":"成堆的原木轮廓","desc":"料场一角残余的原木堆，横七竖八地摞着，木纹清晰，是新砍伐的淡黄木色"},{"name":"捆木麻绳","desc":"散落在地上的粗麻绳与断开的捆扎绳，是木料被搬走后的残留"}],"lighting":[{"state":"冷清清晨","prompt":"thin cold early morning light, a pale desaturated palette, the empty timber yard feeling exposed and tense, faint river fog at the far edge"}],"image":{"prompt":"An empty timber storage yard beside a riverside shipyard, late Eastern Han Dynasty Three Kingdoms era, mostly empty ground scattered with a few logs, leftover sawdust and broken ropes, a residual stack of freshly cut pale logs in one corner, cold pale morning light, empty scene with no people","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, plastic CG look, oversaturated colours, sterile showroom cleanliness, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Environment reference sheet on ONE 16:9 landscape canvas, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the master establishing view: a wide shot of the mostly empty timber yard with scattered logs, leftover sawdust and broken ropes, a residual stack of pale logs in one corner, cold morning light — the canonical look of this location. RIGHT COLUMN, full height along the right edge, stacked small panels: close-up detail studies of the residual stack of freshly cut pale logs and the broken rope scattered on the ground. BOTTOM ROW, spanning beneath the main zone: close-up detail studies of the leftover sawdust on the bare ground, the fresh cut grain of the pale logs, and the weathered rope fibres. Every detail panel is a close-up crop of the SAME space shown in the master view — same geometry, same materials, same wear marks; nothing invented that is not present in the master view. Absolutely no people anywhere on the sheet. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows","tags":["semi-realistic","environment sheet","painterly","timber yard","empty storage"]},"usage":{"episodes":[2,5],"beats":["混乱被看见","三十一艘翻盘"]}}],"props":[{"id":"P01","name":"修船账册","scale":"手持级","summary":"沈川身份拼图与账目漏洞的双重载体。第1集他靠翻账册拼出自己的身份，第2、4集账册里'对不上的数字'成为他识破有人做假账、有人要拿他顶罪的关键线索。观众要在特写里反复看到账页上的墨字，账册就是第一季前五集'暗流'的实体。","anchors":[{"name":"发黄的账页","desc":"账页用麻纸，泛黄发脆，页角卷起，墨字是手写的竖排小楷"},{"name":"对不上的数字","desc":"某页上两处墨写的数字明显对不上，一处被浓墨涂改过，透着刻意"},{"name":"麻绳装订","desc":"账册用粗麻绳穿孔装订，绳头散开，系着一枚木片标签"}],"states":[{"state":"合拢","prompt":"the ledger closed, bound with rough hemp cord, a small wooden tag tied to the loose cord ends, worn paper edges showing"},{"state":"摊开","prompt":"the ledger lying open, yellowed pages of handwritten vertical Chinese characters, one entry visibly crossed out with thick ink, the mismatched numbers catching the light"}],"relatedScenes":["S01","S02"],"carriedBy":["沈川"],"image":{"prompt":"A worn hand-bound account ledger from the late Eastern Han Dynasty, at handheld scale, yellowed hemp paper pages with vertical handwritten Chinese characters, one entry crossed out with thick ink, bound with rough hemp cord and a small wooden tag, isolated on a pure white background, no people, no hands","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ledger closed, three-quarter hero view at handheld scale — the canonical look of this prop. RIGHT COLUMN, stacked small panels: close-up detail studies of the rough hemp cord binding and the small wooden tag. BOTTOM ROW beneath the main zone: the ledger lying open showing yellowed pages of handwritten characters with the crossed-out entry, a straight-on side profile, and a macro close-up of the mismatched numbers. Every panel shows the SAME ledger — same wear, same binding, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows","tags":["prop sheet","semi-realistic","painterly","account ledger","white background"]},"usage":{"episodes":[1,2,4],"beats":["穿越死局","混乱被看见","透明账目反将一军"]}},{"id":"P02","name":"墨斗与定尺","scale":"手持级","summary":"沈川推行'标准化'的实体工具。第3、4集他靠墨斗弹线、定尺卡尺寸来统一零件标准、破除返工——这是'现代工程思维'在古代船坊第一次落地的道具化身，也是老工匠们从将信将疑到服气的见证物。","anchors":[{"name":"墨斗的墨线轮","desc":"木制墨斗，一侧是缠墨线的转轮，线头吸饱了墨，是弹线的核心"},{"name":"定尺刻度","desc":"一把木制定尺，边缘刻着均匀的刻度，尺身因常年使用磨得发亮"},{"name":"吸墨的线头","desc":"墨线从墨池里拉出，线头浸透黑墨，弹在木料上会留下笔直的墨痕"}],"states":[{"state":"收拢","prompt":"the ink line reel wound tight, the wooden ink box closed with the line drawn back in, the marked ruler laid flat beside it"},{"state":"弹线使用","prompt":"the ink line pulled taut out of the ink box, the black-stained line stretched straight, the marked ruler laid across a timber surface"}],"relatedScenes":["S01"],"carriedBy":["沈川"],"image":{"prompt":"A traditional carpenter's ink line tool and a marked wooden ruler from the late Eastern Han Dynasty, at handheld scale, a wooden ink box with a wound string reel and an ink-soaked line, a wooden measuring ruler with worn bright edges and even graduation marks, isolated on a pure white background, no people, no hands","negativePrompt":"people, human figures, characters, crowds, silhouettes of people, hands, fingers, plastic CG look, oversaturated colours, warped perspective, melted geometry, floating objects, text, watermark, signature","sheet":"Prop reference sheet on ONE 16:9 landscape canvas on a pure white background, panels separated by thin hairline rules. MAIN ZONE, top-left, about 72% of the canvas width and 70% of its height: the ink line tool and the marked ruler together, three-quarter hero view at handheld scale — the canonical look of these props. RIGHT COLUMN, stacked small panels: close-up detail studies of the ink-soaked line and the wound string reel. BOTTOM ROW beneath the main zone: the ink line pulled taut in use, the marked ruler laid flat showing its graduation marks, and a straight-on side profile. Every panel shows the SAME tools — same wear, same marks, same proportions. Absolutely no people and no hands anywhere. Pure white background in every panel for clean cut-out. Semi-realistic environment concept art, painterly rendering with visible brush texture, grounded architectural perspective, cinematic depth. Weathered, lived-in materials: chipped paint, water stains, patina on metal, worn wood grain, dust in corners and light shafts; fabric and paper props show creases and age; nothing looks factory-new. Atmospheric depth with haze or volumetric light where the space allows","tags":["prop sheet","semi-realistic","painterly","ink line tool","white background"]},"usage":{"episodes":[3,4],"beats":["示范见效","透明账目反将一军"]}}]}</script>
+<script>
+const L = {"copied":"已复制","failed":"复制失败"};
+
+// 图片弹层：点图放大，点背景或 Esc 关闭
+const lb = document.querySelector('.lightbox');
+const lbImg = lb.querySelector('img');
+function closeLb() { lb.classList.remove('on'); lbImg.removeAttribute('src'); }
+document.addEventListener('click', (e) => {
+  const z = e.target.closest('.zoom');
+  if (z) { lbImg.src = z.dataset.src; lb.classList.add('on'); return; }
+  if (e.target.closest('.lightbox')) closeLb();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLb(); });
+
+// 复制按钮
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+// 导出：报告自己带着完整的 art.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('art-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别立刻回收——Safari 会抢在下载读完之前撤掉 blob
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>
