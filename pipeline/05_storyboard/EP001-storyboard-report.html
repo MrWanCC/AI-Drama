@@ -1,0 +1,1490 @@
+<!doctype html>
+<html lang="zh"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季） · 分镜（第 1 集）</title>
+<style>
+:root{
+  --paper:#eceded; --panel:#f5f6f5; --side:#e4e6e3; --ink:#191d21; --ink-2:#5b636a; --ink-3:#8c9298;
+  --rule:#d2d5d0; --rule-2:#c2c6bf; --seal:#8a3324; --seal-2:#c56a4e; --seal-soft:#8a332412; --ok:#3d6b4f;
+  --serif:"Songti SC","STSong","Source Han Serif SC","Noto Serif CJK SC",Georgia,serif;
+  --sans:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+.page{max-width:1600px;margin:0 auto;padding:24px 32px 90px}
+h1,h2,h3{margin:0;font-weight:400}
+
+.hd{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:12px}
+.hd h1{font:400 28px/1.1 var(--serif);letter-spacing:.06em}
+.hd .sub{font-size:13px;color:var(--ink-2)}
+.hd .right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.gatepill{display:inline-flex;align-items:center;gap:6px;font:500 12px/1 var(--sans);border-radius:99px;padding:6px 12px}
+.gatepill.pass{color:var(--ok);border:1px solid var(--ok)}
+.gatepill.fail{color:var(--seal);border:1px solid var(--seal);background:var(--seal-soft)}
+.expo{font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:7px 11px;cursor:pointer;transition:.15s}
+.expo:hover{border-color:var(--seal);color:var(--seal)}
+.expo:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:980px){.kpis{grid-template-columns:repeat(2,1fr)}}
+.kpi{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:11px 14px 9px}
+.kpi .l{font:500 10px/1 var(--sans);letter-spacing:.18em;color:var(--ink-3)}
+.kpi .v{font:400 28px/1.15 var(--serif);margin-top:5px}
+.kpi .v small{font:400 14px var(--serif);color:var(--ink-2)}
+.kpi .d{font-size:11px;color:var(--ink-2);margin-top:1px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kpi.accent{border-top:2px solid var(--seal)}
+.galert{margin:14px 0 0;border:1px solid var(--seal);background:var(--seal-soft);border-radius:2px;
+  padding:10px 14px;font-size:13px}
+.galert b{color:var(--seal)}
+.galert span{display:block;font-size:12px;color:var(--ink-2)}
+
+section.top-sec{margin-top:34px}
+.sec-h{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--rule-2);padding-bottom:8px;margin-bottom:16px}
+.sec-h .no{font:500 12px/1 var(--mono);color:var(--seal)}
+.sec-h h2{font:400 20px/1.2 var(--serif);letter-spacing:.05em}
+.sec-h .note{margin-left:auto;font-size:12px;color:var(--ink-3)}
+
+/* 01 分镜节奏带 */
+.rhythm{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:16px 20px 10px}
+.rrow{display:grid;grid-template-columns:44px minmax(0,1fr) 150px;gap:12px;align-items:center;padding:5px 0}
+.rep{font:500 12px/1 var(--mono);color:var(--ink-2)}
+.rtrack{display:flex;height:22px;border:1px solid var(--rule);border-radius:2px;overflow:hidden;background:var(--paper)}
+.rseg{display:flex;border-right:2px solid var(--ink-2)}
+.rseg:last-child{border-right:0}
+.seg{display:block;border-right:1px solid var(--panel)}
+.rseg .seg:last-child{border-right:0}
+.seg:hover{outline:2px solid var(--ink);outline-offset:-2px}
+.rval{font:500 12px/1.5 var(--sans);color:var(--ink-2)}
+.legend{display:flex;gap:16px;font-size:12px;color:var(--ink-2);margin:8px 0 2px;flex-wrap:wrap}
+.legend i{font-style:normal;display:inline-flex;align-items:center;gap:6px}
+.sw{display:inline-block;width:10px;height:10px;border-radius:2px}
+
+/* 02 分集分镜表 */
+.ep{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:18px 22px;margin-bottom:16px}
+.ep-h{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:1px solid var(--rule-2);padding-bottom:10px;margin-bottom:14px}
+.ep-n{font:400 22px/1 var(--serif);letter-spacing:.04em;color:var(--seal)}
+.ep-est{font-size:12.5px;color:var(--ink-2)}
+.shots{position:relative}
+.shots.clip{max-height:760px;overflow:hidden}
+.shots.clip::after{content:'';position:absolute;left:0;right:0;bottom:0;height:80px;
+  background:linear-gradient(180deg,transparent,var(--panel));pointer-events:none}
+.shmore{display:block;width:100%;margin-top:8px;font:500 11.5px/1 var(--sans);letter-spacing:.06em;
+  color:var(--ink-2);background:var(--paper);border:1px solid var(--rule-2);border-radius:2px;
+  padding:7px 0;cursor:pointer;transition:.15s}
+.shmore:hover{border-color:var(--seal);color:var(--seal)}
+.shmore:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.seggrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:1100px){.seggrid{grid-template-columns:minmax(0,1fr)}}
+.segcard{background:var(--paper);border:1px solid var(--rule);border-radius:2px;padding:12px 14px;display:flex;flex-direction:column;gap:8px}
+.seg-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.seg-h b{font:500 14px/1 var(--mono);color:var(--seal)}
+.sec-badge{font:500 11px/1 var(--mono);border:1px solid var(--seal);color:var(--seal);border-radius:99px;padding:2px 8px}
+.beatsref{margin-left:auto;font-size:10.5px;color:var(--ink-3)}
+.frame{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule-2);border-radius:2px;
+  cursor:zoom-in;display:block;background:var(--side)}
+.frame.ph{display:flex;flex-direction:column;gap:6px;padding:10px 12px;cursor:default;overflow:hidden}
+.frame.ph b{font:500 10px/1 var(--sans);letter-spacing:.14em;color:var(--ink-3)}
+.frame.ph span{font:400 10.5px/1.55 var(--mono);color:var(--ink-2);overflow:hidden;display:-webkit-box;
+  -webkit-line-clamp:5;-webkit-box-orient:vertical}
+.subs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.subf{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule-2);border-radius:2px;
+  cursor:zoom-in;display:block;background:var(--side)}
+.subf.ph{display:flex;align-items:center;justify-content:center;cursor:default;
+  font:500 10px/1 var(--sans);color:var(--ink-3);letter-spacing:.08em}
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:start;border-top:1px solid var(--rule);padding-top:4px}
+@media(max-width:900px){.duo{grid-template-columns:minmax(0,1fr)}}
+.ppanel{border:1px solid var(--rule);border-radius:2px;background:var(--panel);margin-top:7px}
+.pp-h{display:flex;align-items:center;gap:6px;padding:7px 10px;border-bottom:1px solid var(--rule)}
+.pp-h b{font:500 11px/1 var(--sans);letter-spacing:.08em;color:var(--ink-2);margin-right:auto}
+.pp{display:none;margin:0;padding:9px 12px;font:400 12px/1.8 var(--sans);color:var(--ink);
+  white-space:pre-wrap;word-break:break-word;max-height:400px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--rule-2) transparent}
+.pp.on{display:block}
+.pp::-webkit-scrollbar{width:6px}
+.pp::-webkit-scrollbar-thumb{background:var(--rule-2);border-radius:3px}
+.cuts{margin:0;padding:0;list-style:none}
+.cut{padding:7px 0;border-bottom:1px solid var(--rule)}
+.cut:first-child{padding-top:11px}
+.cut:last-child{border-bottom:0}
+.cut-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.cut-h b{font:500 12px/1 var(--mono);color:var(--seal)}
+.cut-t{font:500 10.5px/1.6 var(--mono);color:var(--ink-3)}
+.cut-sc{font-size:11.5px;color:var(--ink-2)}
+.cut-h .copy{margin-left:auto;opacity:0;transition:.15s}
+.cut:hover .copy{opacity:1}
+.cut p{margin:3px 0 0;font-size:12px;line-height:1.6}
+.sact{color:var(--ink-2)}
+.sline{font-family:var(--serif)}
+.sline b{font-weight:500;margin-right:6px;color:var(--seal)}
+.chip{font:400 10.5px/1.6 var(--mono);border:1px solid var(--rule-2);border-radius:2px;
+  padding:0 6px;background:var(--panel);color:var(--ink-2);text-decoration:none}
+.chip.lite{border-color:var(--seal-2);color:var(--seal-2)}
+.chip.prop{border-color:var(--seal);color:var(--seal)}
+.chip.mono{font-family:var(--mono)}
+a.chip:hover{border-color:var(--seal);color:var(--seal)}
+.prompts{display:flex;gap:6px}
+.seg-note{margin:0;font-size:11px;color:var(--ink-3)}
+
+/* 03 生成批次单 */
+.batches{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-items:start}
+@media(max-width:1100px){.batches{grid-template-columns:minmax(0,1fr)}}
+.batch{background:var(--panel);border:1px solid var(--rule);border-radius:2px;padding:14px 18px}
+.bimg{width:100%;aspect-ratio:16/9;object-fit:cover;border:1px solid var(--rule-2);border-radius:2px;
+  cursor:zoom-in;display:block;margin-bottom:10px}
+.batch-h{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.batch-h b{font:500 13px var(--serif);letter-spacing:.06em}
+.batch-shots{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.batch-need{margin:8px 0 0;font-size:12px;color:var(--ink-2)}
+
+/* 04 配音对齐单 */
+table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--rule);font-size:13px}
+th,td{padding:8px 12px;border-bottom:1px solid var(--rule);text-align:left;vertical-align:top}
+th{font:500 11px/1 var(--sans);letter-spacing:.1em;color:var(--ink-3);background:var(--side)}
+tr:last-child td{border-bottom:0}
+td:first-child{font-family:var(--mono);font-size:12px;white-space:nowrap}
+td a{color:var(--seal);text-decoration:none}
+td.serif{font-family:var(--serif)}
+
+.copy{flex:none;font:500 11px/1 var(--sans);color:var(--ink-2);background:var(--panel);
+  border:1px solid var(--rule-2);border-radius:2px;padding:5px 10px;cursor:pointer;transition:.15s}
+.copy:hover{border-color:var(--seal);color:var(--seal)}
+.copy:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+.copy[data-done]{border-color:var(--seal);color:var(--seal)}
+.copy.mini{padding:3px 7px;font-size:10px}
+.copy.h3{border-color:var(--seal-2);color:var(--seal-2);width:100%}
+.copy.h3:hover,.copy.h3[data-done]{border-color:var(--seal);color:var(--seal)}
+
+.gate{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:2px 28px}
+@media(max-width:900px){.gate{grid-template-columns:1fr}}
+.gate li{display:flex;gap:8px;padding:5px 0;font-size:12.5px;line-height:1.55}
+.gate .m{flex:none;font-weight:700}
+.gate li.ok .m{color:var(--ok)}
+.gate li.bad .m{color:var(--seal)}
+.gate li.bad{background:var(--seal-soft);border-radius:2px;padding-left:6px}
+.gate small{display:block;color:var(--ink-3)}
+.gsum{margin:10px 0 0;font-size:12px;color:var(--ink-2)}
+.gsum b{color:var(--seal)}
+
+.lightbox{position:fixed;inset:0;background:rgba(20,22,24,.88);display:none;align-items:center;
+  justify-content:center;z-index:9;cursor:zoom-out;padding:32px}
+.lightbox.on{display:flex}
+.lightbox img{max-width:96%;max-height:96%;border:1px solid #555;border-radius:2px}
+
+.foot{margin-top:40px;font-size:11px;color:var(--ink-3);border-top:1px solid var(--rule);padding-top:14px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{
+  .expo,.copy,.shmore{display:none!important}
+  .pp{max-height:none;overflow:visible}
+  .duo{grid-template-columns:minmax(0,1fr)}
+  .shots.clip{max-height:none}
+  .shots.clip::after{display:none}
+  .seggrid,.batches{grid-template-columns:minmax(0,1fr)}
+  .page{max-width:none;padding:0}
+  section.top-sec,.segcard,.batch{page-break-inside:avoid}
+  body{background:#fff}
+}
+</style></head><body>
+<div class="page">
+
+<header class="hd">
+  <h1>江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）</h1>
+  <span class="sub">分镜 · 第 1 集</span>
+  <span class="right">
+    <span class="gatepill pass">✓ 质量门 16 / 16</span>
+    <button class="expo" data-name="江东潜龙（三国：我在东吴从小吏杀到大都督-第一季）-storyboard.json">导出 JSON</button>
+  </span>
+</header>
+
+<div class="kpis">
+  <div class="kpi accent"><div class="l">生成段</div><div class="v">13 <small>段</small></div><div class="d">一段一次调用，上限 15 秒</div></div>
+  <div class="kpi"><div class="l">分镜</div><div class="v">51 <small>切</small></div><div class="d">平均 3.1 秒一切</div></div>
+  <div class="kpi"><div class="l">预估总时长</div><div class="v">2 分 37 秒</div><div class="d">目标 3 分 0 秒</div></div>
+  <div class="kpi"><div class="l">生成批次</div><div class="v">2</div><div class="d">同场景同光照共用环境参考图</div></div>
+  <div class="kpi"><div class="l">台词段</div><div class="v">12 <small>段</small></div><div class="d">其余是纯画面段</div></div>
+</div>
+
+
+<section class="top-sec" id="sec-rhythm">
+  <div class="sec-h"><span class="no">01</span><h2>分镜节奏带</h2><span class="note">粗分隔 = 生成段边界 · 段宽 = 分镜时长占比 · 颜色越深景别越近</span></div>
+  <div class="rhythm">
+    <div class="legend"><i><span class="sw" style="background:rgba(138,51,36,0.25)"></span>大远景</i><i><span class="sw" style="background:rgba(138,51,36,0.4)"></span>全景</i><i><span class="sw" style="background:rgba(138,51,36,0.58)"></span>中景</i><i><span class="sw" style="background:rgba(138,51,36,0.78)"></span>特写</i><i><span class="sw" style="background:rgba(138,51,36,1)"></span>大特写</i></div>
+<div class="rrow"><span class="rep">E01</span><div class="rtrack"><span class="rseg" style="width:9.2%"><a class="seg" href="#seg-E01-01" style="width:1.6%;background:rgba(138,51,36,0.25)" title="E01-01#1 · 2.5s · 大远景 · Static Shot"></a><a class="seg" href="#seg-E01-01" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-01#2 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-01" style="width:1.8%;background:rgba(138,51,36,0.58)" title="E01-01#3 · 2.9s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-01" style="width:1.6%;background:rgba(138,51,36,0.58)" title="E01-01#4 · 2.5s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-01" style="width:2.5%;background:rgba(138,51,36,0.58)" title="E01-01#5 · 4s · 中景 · Static Shot"></a></span><span class="rseg" style="width:9.5%"><a class="seg" href="#seg-E01-02" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-02#1 · 2.5s · 全景 · Static Shot"></a><a class="seg" href="#seg-E01-02" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-02#2 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-02" style="width:1.3%;background:rgba(138,51,36,0.78)" title="E01-02#3 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-02" style="width:2.5%;background:rgba(138,51,36,0.58)" title="E01-02#4 · 4s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-02" style="width:2.5%;background:rgba(138,51,36,0.58)" title="E01-02#5 · 4s · 中景 · Push In"></a></span><span class="rseg" style="width:8.4%"><a class="seg" href="#seg-E01-03" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-03#1 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-03" style="width:3.1%;background:rgba(138,51,36,0.58)" title="E01-03#2 · 4.9s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-03" style="width:2.1%;background:rgba(138,51,36,0.58)" title="E01-03#3 · 3.3s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-03" style="width:1.6%;background:rgba(138,51,36,0.58)" title="E01-03#4 · 2.5s · 中景 · Static Shot"></a></span><span class="rseg" style="width:3.2%"><a class="seg" href="#seg-E01-04" style="width:3.2%;background:rgba(138,51,36,0.58)" title="E01-04#1 · 5.1s · 中景 · Push In"></a></span><span class="rseg" style="width:9.4%"><a class="seg" href="#seg-E01-05" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-05#1 · 2.5s · 全景 · Tracking Shot"></a><a class="seg" href="#seg-E01-05" style="width:1.8%;background:rgba(138,51,36,0.58)" title="E01-05#2 · 2.9s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-05" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-05#3 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-05" style="width:2.8%;background:rgba(138,51,36,0.58)" title="E01-05#4 · 4.4s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-05" style="width:1.6%;background:rgba(138,51,36,0.58)" title="E01-05#5 · 2.5s · 中景 · Pan Left"></a></span><span class="rseg" style="width:9.2%"><a class="seg" href="#seg-E01-06" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-06#1 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-06" style="width:1.3%;background:rgba(138,51,36,0.78)" title="E01-06#2 · 2s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-06" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-06#3 · 2.5s · 全景 · Static Shot"></a><a class="seg" href="#seg-E01-06" style="width:3.1%;background:rgba(138,51,36,0.58)" title="E01-06#4 · 4.9s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-06" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-06#5 · 2.5s · 全景 · Pan Right"></a></span><span class="rseg" style="width:9.5%"><a class="seg" href="#seg-E01-07" style="width:2%;background:rgba(138,51,36,0.58)" title="E01-07#1 · 3.1s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-07" style="width:3.4%;background:rgba(138,51,36,0.58)" title="E01-07#2 · 5.3s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-07" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-07#3 · 2.5s · 全景 · Static Shot"></a><a class="seg" href="#seg-E01-07" style="width:2.5%;background:rgba(138,51,36,0.58)" title="E01-07#4 · 4s · 中景 · Static Shot"></a></span><span class="rseg" style="width:9%"><a class="seg" href="#seg-E01-08" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-08#1 · 2.5s · 全景 · Static Shot"></a><a class="seg" href="#seg-E01-08" style="width:3.4%;background:rgba(138,51,36,0.4)" title="E01-08#2 · 5.3s · 全景 · Push In"></a><a class="seg" href="#seg-E01-08" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-08#3 · 2.5s · 全景 · Static Shot"></a><a class="seg" href="#seg-E01-08" style="width:2.4%;background:rgba(138,51,36,0.58)" title="E01-08#4 · 3.8s · 中景 · Static Shot"></a></span><span class="rseg" style="width:4.6%"><a class="seg" href="#seg-E01-09" style="width:3%;background:rgba(138,51,36,0.58)" title="E01-09#1 · 4.7s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-09" style="width:1.6%;background:rgba(138,51,36,0.58)" title="E01-09#2 · 2.5s · 中景 · Static Shot"></a></span><span class="rseg" style="width:8.3%"><a class="seg" href="#seg-E01-10" style="width:1.6%;background:rgba(138,51,36,0.58)" title="E01-10#1 · 2.5s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-10" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-10#2 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-10" style="width:2%;background:rgba(138,51,36,0.78)" title="E01-10#3 · 3.1s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-10" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-10#4 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-10" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-10#5 · 2.5s · 特写 · Static Shot"></a></span><span class="rseg" style="width:8%"><a class="seg" href="#seg-E01-11" style="width:2.3%;background:rgba(138,51,36,0.78)" title="E01-11#1 · 3.6s · 特写 · Push In"></a><a class="seg" href="#seg-E01-11" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-11#2 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-11" style="width:1.6%;background:rgba(138,51,36,0.58)" title="E01-11#3 · 2.5s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-11" style="width:2.5%;background:rgba(138,51,36,0.58)" title="E01-11#4 · 4s · 中景 · Static Shot"></a></span><span class="rseg" style="width:8.6%"><a class="seg" href="#seg-E01-12" style="width:1.7%;background:rgba(138,51,36,0.58)" title="E01-12#1 · 2.7s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-12" style="width:1.6%;background:rgba(138,51,36,0.58)" title="E01-12#2 · 2.5s · 中景 · Static Shot"></a><a class="seg" href="#seg-E01-12" style="width:2.4%;background:rgba(138,51,36,0.58)" title="E01-12#3 · 3.8s · 中景 · Push In"></a><a class="seg" href="#seg-E01-12" style="width:1.6%;background:rgba(138,51,36,0.78)" title="E01-12#4 · 2.5s · 特写 · Static Shot"></a><a class="seg" href="#seg-E01-12" style="width:1.3%;background:rgba(138,51,36,0.78)" title="E01-12#5 · 2s · 特写 · Static Shot"></a></span><span class="rseg" style="width:3.2%"><a class="seg" href="#seg-E01-13" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-13#1 · 2.5s · 全景 · Static Shot"></a><a class="seg" href="#seg-E01-13" style="width:1.6%;background:rgba(138,51,36,0.4)" title="E01-13#2 · 2.5s · 全景 · Static Shot"></a></span></div><span class="rval">13 段 51 切 · 157.3s</span></div>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-segments">
+  <div class="sec-h"><span class="no">02</span><h2>分集分镜表</h2><span class="note">一段 = 一次生成：主分镜图钉 0.00 秒，子分镜图钉各自切点</span></div>
+<section class="ep" id="ep-1">
+  <header class="ep-h">
+    <span class="ep-n">E01</span>
+    <span class="ep-est">13 段 51 切 · 共 157.3 秒 / 目标 180 秒</span>
+  </header>
+  <div class="shots clip">
+    <div class="seggrid">
+<article class="segcard" id="seg-E01-01">
+  <header class="seg-h">
+    <b>E01-01</b>
+    <span class="sec-badge">14.4s · 5 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 1 场 第 1–5 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall, extreme wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span><span class="subf ph">#5 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">大远景 · Static Shot</span>
+    
+    
+    <button class="copy mini" data-copy="a broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall, extreme wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">江雾未散。码头边一字排开的战船，破洞、断桨、没装好的龙骨，从雾里压出来，像一堵摇摇欲坠的墙。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a military order slapped hard onto a wooden desk, a vermilion seal staining the paper like blood, wisps of fog curling over the wood, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">一记军令重重拍在木案上。朱红的印子像道血，落在雾气里。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">5.00s 起 · 2.9s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="an old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>姓沈的，别装死。军令到了。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">7.90s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">沈川从案边直起，额角还沁着冷汗。他盯着那军令上的字，眼珠子一寸寸读过去。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#5</b>
+    <span class="cut-t">10.40s 起 · 4s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk reading the order aloud, his voice dry as if pronouncing his own death sentence, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>三十艘……七日……修不完，军法处置。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.40-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A military order slapped hard onto a wooden desk, a vermilion seal staining the paper like blood, wisps of fog curling over the wood. Camera movement: static shot.
+[Shot 3] At 00:05.000, Cinematic, live-action. An old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]姓沈的，别装死。军令到了。&lt;/d&gt;
+[Shot 4] At 00:07.900, Cinematic, live-action. A young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands. Camera movement: static shot.
+[Shot 5] At 00:10.400, Cinematic, live-action. A young clerk reading the order aloud, his voice dry as if pronouncing his own death sentence. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]三十艘……七日……修不完，军法处置。&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.40-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A military order slapped hard onto a wooden desk, a vermilion seal staining the paper like blood, wisps of fog curling over the wood. Camera movement: static shot.
+[Shot 3] At 00:05.000, Cinematic, live-action. An old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]姓沈的，别装死。军令到了。&lt;/d&gt;
+[Shot 4] At 00:07.900, Cinematic, live-action. A young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands. Camera movement: static shot.
+[Shot 5] At 00:10.400, Cinematic, live-action. A young clerk reading the order aloud, his voice dry as if pronouncing his own death sentence. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]三十艘……七日……修不完，军法处置。&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-02">
+  <header class="seg-h">
+    <b>E01-02</b>
+    <span class="sec-badge">15s · 5 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 1 场 第 6–10 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span><span class="subf ph">#5 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">他抬头望去。雾里三十艘船一艘艘排开，破得数不清。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a hand touching a bronze token at the waist and turning it over, the engraved title of a dockyard clerk catching the cold light, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">沈川的手摸向腰间，摸到一枚铜牌，翻过来，背面刻着：船坊小吏，掌木料、工匠、进度、账目。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">5.00s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>画外音</b>醒过来，就在这了。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">7.00s 起 · 4s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>全坊的工匠都到齐了，就等你拿个章程。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#5</b>
+    <span class="cut-t">11.00s 起 · 4s</span>
+    <span class="cut-sc">中景 · Push In</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>多少工匠？多少木料？船修到哪一步了？</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A hand touching a bronze token at the waist and turning it over, the engraved title of a dockyard clerk catching the cold light. Camera movement: static shot.
+[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: &lt;d&gt;[Chinese]醒过来，就在这了。&lt;/d&gt;
+[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]全坊的工匠都到齐了，就等你拿个章程。&lt;/d&gt;
+[Shot 5] At 00:11.000, Cinematic, live-action. A young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]多少工匠？多少木料？船修到哪一步了？&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.00-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A hand touching a bronze token at the waist and turning it over, the engraved title of a dockyard clerk catching the cold light. Camera movement: static shot.
+[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: &lt;d&gt;[Chinese]醒过来，就在这了。&lt;/d&gt;
+[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]全坊的工匠都到齐了，就等你拿个章程。&lt;/d&gt;
+[Shot 5] At 00:11.000, Cinematic, live-action. A young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]多少工匠？多少木料？船修到哪一步了？&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-03">
+  <header class="seg-h">
+    <b>E01-03</b>
+    <span class="sec-badge">13.2s · 4 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 1 场 第 11–14 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>the old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="the old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">老工匠一愣，跟身边的人对了下眼，像是头回听见有人问这些。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 4.9s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="the old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>问这些作甚？日子就七天，人都在这，修就是了。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">7.40s 起 · 3.3s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk answering back with a tight throat, refusing to be waved off, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>不数清楚，怎么知道修不修得完。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">10.70s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk pushing up from the desk, sweeping his eyes over the gathered craftsmen and the thirty ships, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">他撑着案站起来，扫过满场工匠，又扫过那三十艘船。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.70-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. The old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. The old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]问这些作甚？日子就七天，人都在这，修就是了。&lt;/d&gt;
+[Shot 3] At 00:07.400, Cinematic, live-action. A young clerk answering back with a tight throat, refusing to be waved off. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]不数清楚，怎么知道修不修得完。&lt;/d&gt;
+[Shot 4] At 00:10.700, Cinematic, live-action. A young clerk pushing up from the desk, sweeping his eyes over the gathered craftsmen and the thirty ships. Camera movement: static shot.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.70-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. The old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. The old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]问这些作甚？日子就七天，人都在这，修就是了。&lt;/d&gt;
+[Shot 3] At 00:07.400, Cinematic, live-action. A young clerk answering back with a tight throat, refusing to be waved off. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]不数清楚，怎么知道修不修得完。&lt;/d&gt;
+[Shot 4] At 00:10.700, Cinematic, live-action. A young clerk pushing up from the desk, sweeping his eyes over the gathered craftsmen and the thirty ships. Camera movement: static shot.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-04">
+  <header class="seg-h">
+    <b>E01-04</b>
+    <span class="sec-badge">5.1s · 1 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 1 场 第 15 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk's voice low but holding the yard, demanding a roster of every man, material and task, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 5.1s</span>
+    <span class="cut-sc">中景 · Push In</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk's voice low but holding the yard, demanding a roster of every man, material and task, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>给我一份花名册。今天，人、料、活，一样一样点。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="For the target video, at 0.00 seconds into the target video, &lt;Picture 1&gt; (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk's voice low but holding the yard, demanding a roster of every man, material and task. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]给我一份花名册。今天，人、料、活，一样一样点。&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">For the target video, at 0.00 seconds into the target video, &lt;Picture 1&gt; (from [Shot 1]) is fully referenced.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk's voice low but holding the yard, demanding a roster of every man, material and task. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]给我一份花名册。今天，人、料、活，一样一样点。&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-05">
+  <header class="seg-h">
+    <b>E01-05</b>
+    <span class="sec-badge">14.8s · 5 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 2 场 第 1–5 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span><span class="subf ph">#5 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Tracking Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">沈川沿着船走，指尖从破损的船帮上擦过去。账册摊着，他边看边在泥地上划记号。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 2.9s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk muttering a tally to himself, eyes still on the broken hull, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>这艘，龙骨没上，船板缺半。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">5.40s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    
+    <button class="copy mini" data-copy="a pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">他在一堆半成品前蹲下，捡起两块船板对到一处——缝大得能插进一根手指。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">7.90s 起 · 4.4s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>哪艘坏了补哪艘，一直这样干，能装上就行。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#5</b>
+    <span class="cut-t">12.30s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Pan Left</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">沈川没接话，走到料堆前。原木横七竖八摞着，新料旧料混在一处，几根已经裂了。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 12.30-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud. Camera movement: tracking shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk muttering a tally to himself, eyes still on the broken hull. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]这艘，龙骨没上，船板缺半。&lt;/d&gt;
+[Shot 3] At 00:05.400, Cinematic, live-action. A pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them. Camera movement: static shot.
+[Shot 4] At 00:07.900, Cinematic, live-action. An old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]哪艘坏了补哪艘，一直这样干，能装上就行。&lt;/d&gt;
+[Shot 5] At 00:12.300, Cinematic, live-action. A young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split. Camera movement: pan left.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 12.30-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud. Camera movement: tracking shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk muttering a tally to himself, eyes still on the broken hull. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]这艘，龙骨没上，船板缺半。&lt;/d&gt;
+[Shot 3] At 00:05.400, Cinematic, live-action. A pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them. Camera movement: static shot.
+[Shot 4] At 00:07.900, Cinematic, live-action. An old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]哪艘坏了补哪艘，一直这样干，能装上就行。&lt;/d&gt;
+[Shot 5] At 00:12.300, Cinematic, live-action. A young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split. Camera movement: pan left.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-06">
+  <header class="seg-h">
+    <b>E01-06</b>
+    <span class="sec-badge">14.4s · 5 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 2 场 第 6–10 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk's fingers flipping the ledger open, counting the timber against the written numbers, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span><span class="subf ph">#5 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk's fingers flipping the ledger open, counting the timber against the written numbers, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">他翻开账册对料。册上写着木料若干，地上数不出那个数。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk's brow knotting as the timber and the ledger refuse to match in the cold light, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>料和账，对不上。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">4.50s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a few craftsmen squatting idle by a hull in the distance, tools resting on the ground, eyes glancing sidelong toward the clerk, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">不远处，几个工匠蹲在船边等活，手里的家伙搁在地上，眼睛瞟着这边。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">7.00s 起 · 4.9s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>小沈官，你数这些有个屁用？船又不会自己长好。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#5</b>
+    <span class="cut-t">11.90s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Pan Right</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">沈川朝船尾一指——两个匠人正把刚装上的船板又撬下来。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.90-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk's fingers flipping the ledger open, counting the timber against the written numbers. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk's brow knotting as the timber and the ledger refuse to match in the cold light. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]料和账，对不上。&lt;/d&gt;
+[Shot 3] At 00:04.500, Cinematic, live-action. A few craftsmen squatting idle by a hull in the distance, tools resting on the ground, eyes glancing sidelong toward the clerk. Camera movement: static shot.
+[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]小沈官，你数这些有个屁用？船又不会自己长好。&lt;/d&gt;
+[Shot 5] At 00:11.900, Cinematic, live-action. A young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened. Camera movement: pan right.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.90-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk's fingers flipping the ledger open, counting the timber against the written numbers. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk's brow knotting as the timber and the ledger refuse to match in the cold light. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]料和账，对不上。&lt;/d&gt;
+[Shot 3] At 00:04.500, Cinematic, live-action. A few craftsmen squatting idle by a hull in the distance, tools resting on the ground, eyes glancing sidelong toward the clerk. Camera movement: static shot.
+[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]小沈官，你数这些有个屁用？船又不会自己长好。&lt;/d&gt;
+[Shot 5] At 00:11.900, Cinematic, live-action. A young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened. Camera movement: pan right.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-07">
+  <header class="seg-h">
+    <b>E01-07</b>
+    <span class="sec-badge">14.9s · 4 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 2 场 第 11–14 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk asking why the plank is being taken down again, his finger still leveled at the stern, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 3.1s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk asking why the plank is being taken down again, his finger still leveled at the stern, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>那板不是才装上去？怎么又拆？</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">3.10s 起 · 5.3s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>尺寸错了，不拆重做，下水就散架。返工的活天天有。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">8.40s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk turning to scan the whole yard, some men idle, some redoing finished work, the timber that does not add up, his eyes closing once, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">沈川回头扫过全场：一堆人等活，一堆人返工，一堆料数不上。他闭了闭眼。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">10.90s 起 · 4s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    
+    
+    <button class="copy mini" data-copy="a young clerk's inner voice, lips closed, as the realization settles over him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>画外音</b>人够，料也够。是没人把这一摊子捋顺。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.10-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.90-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk asking why the plank is being taken down again, his finger still leveled at the stern. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]那板不是才装上去？怎么又拆？&lt;/d&gt;
+[Shot 2] At 00:03.100, Cinematic, live-action. An old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]尺寸错了，不拆重做，下水就散架。返工的活天天有。&lt;/d&gt;
+[Shot 3] At 00:08.400, Cinematic, live-action. A young clerk turning to scan the whole yard, some men idle, some redoing finished work, the timber that does not add up, his eyes closing once. Camera movement: static shot.
+[Shot 4] At 00:10.900, Cinematic, live-action. A young clerk's inner voice, lips closed, as the realization settles over him. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: &lt;d&gt;[Chinese]人够，料也够。是没人把这一摊子捋顺。&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.10-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.90-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk asking why the plank is being taken down again, his finger still leveled at the stern. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]那板不是才装上去？怎么又拆？&lt;/d&gt;
+[Shot 2] At 00:03.100, Cinematic, live-action. An old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]尺寸错了，不拆重做，下水就散架。返工的活天天有。&lt;/d&gt;
+[Shot 3] At 00:08.400, Cinematic, live-action. A young clerk turning to scan the whole yard, some men idle, some redoing finished work, the timber that does not add up, his eyes closing once. Camera movement: static shot.
+[Shot 4] At 00:10.900, Cinematic, live-action. A young clerk's inner voice, lips closed, as the realization settles over him. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: &lt;d&gt;[Chinese]人够，料也够。是没人把这一摊子捋顺。&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-08">
+  <header class="seg-h">
+    <b>E01-08</b>
+    <span class="sec-badge">14.1s · 4 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 2 场 第 15–18 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk walking to the dock edge and pointing back at the row of broken warships, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk walking to the dock edge and pointing back at the row of broken warships, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">他走到码头边，指着那一排破损的战船，回头看向众人。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 5.3s</span>
+    <span class="cut-sc">全景 · Push In</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk laying out to the crowd what is blocked and where, one flaw at a time, his voice sharpening, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>船坏得杂，料不齐，有人闲、有人返工——全堵死了。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">7.80s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Static Shot</span>
+    
+    
+    <button class="copy mini" data-copy="the yard falling still as a few of the craftsmen who had watched coldly shuffle a half step closer, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">满场安静下来。几个刚才冷眼看他的工匠，悄悄往前凑了凑。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">10.30s 起 · 3.8s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>……那你倒是说说，头一样先弄哪个？</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.80-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.30-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk walking to the dock edge and pointing back at the row of broken warships. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk laying out to the crowd what is blocked and where, one flaw at a time, his voice sharpening. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]船坏得杂，料不齐，有人闲、有人返工——全堵死了。&lt;/d&gt;
+[Shot 3] At 00:07.800, Cinematic, live-action. The yard falling still as a few of the craftsmen who had watched coldly shuffle a half step closer. Camera movement: static shot.
+[Shot 4] At 00:10.300, Cinematic, live-action. An old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]……那你倒是说说，头一样先弄哪个？&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.80-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.30-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk walking to the dock edge and pointing back at the row of broken warships. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk laying out to the crowd what is blocked and where, one flaw at a time, his voice sharpening. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]船坏得杂，料不齐，有人闲、有人返工——全堵死了。&lt;/d&gt;
+[Shot 3] At 00:07.800, Cinematic, live-action. The yard falling still as a few of the craftsmen who had watched coldly shuffle a half step closer. Camera movement: static shot.
+[Shot 4] At 00:10.300, Cinematic, live-action. An old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]……那你倒是说说，头一样先弄哪个？&lt;/d&gt;
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-09">
+  <header class="seg-h">
+    <b>E01-09</b>
+    <span class="sec-badge">7.2s · 2 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">晨雾未散</span>
+    <span class="beatsref">第 2 场 第 19–20 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk answering flatly to count the hands first, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 4.7s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk answering flatly to count the hands first, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>先点清多少人。连人手都数不上，谈什么修船。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">4.70s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="the old craftsman staring two beats, then turning to wave the scattered craftsmen over, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight">分镜图提示词</button>
+  </div>
+  <p class="sact">老工匠盯着他看了两息，转身一挥手，把散在各处的匠人都吆喝过来。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.70-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk answering flatly to count the hands first. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]先点清多少人。连人手都数不上，谈什么修船。&lt;/d&gt;
+[Shot 2] At 00:04.700, Cinematic, live-action. The old craftsman staring two beats, then turning to wave the scattered craftsmen over. Camera movement: static shot.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.70-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk answering flatly to count the hands first. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]先点清多少人。连人手都数不上，谈什么修船。&lt;/d&gt;
+[Shot 2] At 00:04.700, Cinematic, live-action. The old craftsman staring two beats, then turning to wave the scattered craftsmen over. Camera movement: static shot.
+
+overall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.
+
+non_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-10">
+  <header class="seg-h">
+    <b>E01-10</b>
+    <span class="sec-badge">13.1s · 5 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">昏黄油灯夜</span>
+    <span class="beatsref">第 3 场 第 1–5 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span><span class="subf ph">#5 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">夜。工棚里只点一盏油灯。沈川就着灯，一页页翻那本旧账册。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a hand dipping a brush in ink and writing five characters on a wooden board, then drawing a line beneath each, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">他蘸了墨，在木板上写下五个字：船、人、料、序、账。写完，又各画一条线。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">5.00s 起 · 3.1s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    
+    <button class="copy mini" data-copy="a young clerk's inner voice, lips closed, the five characters catching the lamp glow, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>画外音</b>七日修船，是五件事压在一处。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">8.10s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a finger stopping on a page where a number has been smeared over with thick ink, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">油灯忽地跳了一下。沈川翻到一页，指尖停在一处被浓墨涂改过的数目上。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#5</b>
+    <span class="cut-t">10.60s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    <span class="chip">沈川</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="a young clerk leaning into the lamp, the written count of three hundred sitting against a different count on the prior page, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">他凑近灯下。那一处写着木料三百根，可前页领的是三百五十根，中间凭空少了一截。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.10-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.60-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A hand dipping a brush in ink and writing five characters on a wooden board, then drawing a line beneath each. Camera movement: static shot.
+[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's inner voice, lips closed, the five characters catching the lamp glow. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: &lt;d&gt;[Chinese]七日修船，是五件事压在一处。&lt;/d&gt;
+[Shot 4] At 00:08.100, Cinematic, live-action. A finger stopping on a page where a number has been smeared over with thick ink. Camera movement: static shot.
+[Shot 5] At 00:10.600, Cinematic, live-action. A young clerk leaning into the lamp, the written count of three hundred sitting against a different count on the prior page. Camera movement: static shot.
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.10-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.60-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. A hand dipping a brush in ink and writing five characters on a wooden board, then drawing a line beneath each. Camera movement: static shot.
+[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's inner voice, lips closed, the five characters catching the lamp glow. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: &lt;d&gt;[Chinese]七日修船，是五件事压在一处。&lt;/d&gt;
+[Shot 4] At 00:08.100, Cinematic, live-action. A finger stopping on a page where a number has been smeared over with thick ink. Camera movement: static shot.
+[Shot 5] At 00:10.600, Cinematic, live-action. A young clerk leaning into the lamp, the written count of three hundred sitting against a different count on the prior page. Camera movement: static shot.
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-11">
+  <header class="seg-h">
+    <b>E01-11</b>
+    <span class="sec-badge">12.6s · 4 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">昏黄油灯夜</span>
+    <span class="beatsref">第 3 场 第 6–9 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk's face tightening as he reads the three hundred against the three hundred fifty, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 3.6s</span>
+    <span class="cut-sc">特写 · Push In</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk's face tightening as he reads the three hundred against the three hundred fifty, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>三百五十根……进账怎么成了三百？</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">3.60s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="hands flipping forward and back through the ledger, the missing fifty nowhere accounted for on any page, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">他翻前翻后反复对，越对脸色越沉。那少掉的五十根，前后几页都没个说法。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">6.10s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="a faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">身后突然传来一声轻响。老工匠不知何时站在工棚口，手里提着半盏灯。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">8.60s 起 · 4s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>小沈官，夜深了。那账……别看那么细。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.60-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.10-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.60-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk's face tightening as he reads the three hundred against the three hundred fifty. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]三百五十根……进账怎么成了三百？&lt;/d&gt;
+[Shot 2] At 00:03.600, Cinematic, live-action. Hands flipping forward and back through the ledger, the missing fifty nowhere accounted for on any page. Camera movement: static shot.
+[Shot 3] At 00:06.100, Cinematic, live-action. A faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow. Camera movement: static shot.
+[Shot 4] At 00:08.600, Cinematic, live-action. An old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]小沈官，夜深了。那账……别看那么细。&lt;/d&gt;
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.60-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.10-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.60-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk's face tightening as he reads the three hundred against the three hundred fifty. Camera movement: push in. (S1) a young clerk says: &lt;d&gt;[Chinese]三百五十根……进账怎么成了三百？&lt;/d&gt;
+[Shot 2] At 00:03.600, Cinematic, live-action. Hands flipping forward and back through the ledger, the missing fifty nowhere accounted for on any page. Camera movement: static shot.
+[Shot 3] At 00:06.100, Cinematic, live-action. A faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow. Camera movement: static shot.
+[Shot 4] At 00:08.600, Cinematic, live-action. An old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts. Camera movement: static shot. (S2) an old craftsman says: &lt;d&gt;[Chinese]小沈官，夜深了。那账……别看那么细。&lt;/d&gt;
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-12">
+  <header class="seg-h">
+    <b>E01-12</b>
+    <span class="sec-badge">13.5s · 5 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">昏黄油灯夜</span>
+    <span class="beatsref">第 3 场 第 10–14 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>a young clerk looking up and pinning the old man with a question, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span><span class="subf ph">#3 未生成</span><span class="subf ph">#4 未生成</span><span class="subf ph">#5 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.7s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk looking up and pinning the old man with a question, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>这五十根木料，上哪去了？</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.70s 起 · 2.5s</span>
+    <span class="cut-sc">中景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="the old craftsman's face draining of color as he lurches to close the ledger, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">老工匠脸上的血色一点点退下去。他猛地伸手，要去合那本账册。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#3</b>
+    <span class="cut-t">5.20s 起 · 3.8s</span>
+    <span class="cut-sc">中景 · Push In</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman hissing in a near-roar that this account will cost a life if it is followed, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>老工匠</b>别问了。这账查下去，是要出人命的。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#4</b>
+    <span class="cut-t">9.00s 起 · 2.5s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="an old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">他的手悬在账册上方，又缩了回去。油灯的火苗被他的袖风一带，忽明忽灭。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#5</b>
+    <span class="cut-t">11.50s 起 · 2s</span>
+    <span class="cut-sc">特写 · Static Shot</span>
+    <span class="chip">沈川</span>
+    
+    <button class="copy mini" data-copy="a young clerk's lips moving in a single low word, his eyes fixed on the old craftsman, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sline"><b>沈川</b>谁的命？</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.70-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.20-second mark of the target video; Picture 4 (from Shot 4) aligns with the 9.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk looking up and pinning the old man with a question. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]这五十根木料，上哪去了？&lt;/d&gt;
+[Shot 2] At 00:02.700, Cinematic, live-action. The old craftsman's face draining of color as he lurches to close the ledger. Camera movement: static shot.
+[Shot 3] At 00:05.200, Cinematic, live-action. An old craftsman hissing in a near-roar that this account will cost a life if it is followed. Camera movement: push in. (S2) an old craftsman says: &lt;d&gt;[Chinese]别问了。这账查下去，是要出人命的。&lt;/d&gt;
+[Shot 4] At 00:09.000, Cinematic, live-action. An old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters. Camera movement: static shot.
+[Shot 5] At 00:11.500, Cinematic, live-action. A young clerk's lips moving in a single low word, his eyes fixed on the old craftsman. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]谁的命？&lt;/d&gt;
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.70-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.20-second mark of the target video; Picture 4 (from Shot 4) aligns with the 9.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. A young clerk looking up and pinning the old man with a question. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]这五十根木料，上哪去了？&lt;/d&gt;
+[Shot 2] At 00:02.700, Cinematic, live-action. The old craftsman's face draining of color as he lurches to close the ledger. Camera movement: static shot.
+[Shot 3] At 00:05.200, Cinematic, live-action. An old craftsman hissing in a near-roar that this account will cost a life if it is followed. Camera movement: push in. (S2) an old craftsman says: &lt;d&gt;[Chinese]别问了。这账查下去，是要出人命的。&lt;/d&gt;
+[Shot 4] At 00:09.000, Cinematic, live-action. An old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters. Camera movement: static shot.
+[Shot 5] At 00:11.500, Cinematic, live-action. A young clerk's lips moving in a single low word, his eyes fixed on the old craftsman. Camera movement: static shot. (S1) a young clerk says: &lt;d&gt;[Chinese]谁的命？&lt;/d&gt;
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.</pre>
+    </div>
+  </div>
+  
+</article>
+<article class="segcard" id="seg-E01-13">
+  <header class="seg-h">
+    <b>E01-13</b>
+    <span class="sec-badge">5s · 2 切</span>
+    <span class="chip">S01 柴桑船坊</span>
+    <span class="chip lite">昏黄油灯夜</span>
+    <span class="beatsref">第 3 场 第 15–16 拍</span>
+  </header>
+  <div class="frame ph"><b>主分镜图 · #1 未生成</b><span>an old craftsman turning and vanishing into the dark outside the workshop, his throat working, wide shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette</span></div>
+  <div class="subs"><span class="subf ph">#2 未生成</span></div>
+  <div class="duo">
+    <ol class="cuts">
+<li class="cut">
+  <div class="cut-h">
+    <b>#1</b>
+    <span class="cut-t">0.00s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Static Shot</span>
+    <span class="chip">老工匠</span>
+    
+    <button class="copy mini" data-copy="an old craftsman turning and vanishing into the dark outside the workshop, his throat working, wide shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">老工匠没答，只盯着那页被涂改的账，喉咙滚了滚，转身没入棚外的黑里。</p>
+</li>
+<li class="cut">
+  <div class="cut-h">
+    <b>#2</b>
+    <span class="cut-t">2.50s 起 · 2.5s</span>
+    <span class="cut-sc">全景 · Static Shot</span>
+    
+    <span class="chip prop">修船账册</span>
+    <button class="copy mini" data-copy="the wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole, wide shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette">分镜图提示词</button>
+  </div>
+  <p class="sact">江风猛地灌进来，油灯压到几乎熄灭。账册停在涂改的那一页，那个被涂掉的数目像只黑洞。</p>
+</li>
+    </ol>
+    <div class="ppanel">
+      <div class="pp-h">
+        <b>H3 提示词</b>
+        <button class="copy" data-copy="How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. An old craftsman turning and vanishing into the dark outside the workshop, his throat working. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. The wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole. Camera movement: static shot.
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.">复制</button>
+      </div>
+      <pre class="pp on">How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video.
+
+integrated_multimodal_description:
+[Shot 1] Cinematic, live-action. An old craftsman turning and vanishing into the dark outside the workshop, his throat working. Camera movement: static shot.
+[Shot 2] At 00:02.500, Cinematic, live-action. The wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole. Camera movement: static shot.
+
+overall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.
+
+non_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.</pre>
+    </div>
+  </div>
+  
+</article>
+    </div>
+  </div>
+  <button class="shmore">▾ 展开全部段</button>
+</section>
+</section>
+
+<section class="top-sec" id="sec-batches">
+  <div class="sec-h"><span class="no">03</span><h2>生成批次单</h2><span class="note">自动汇总 · 同批段共用同一张环境参考图</span></div>
+  <div class="batches">
+<article class="batch">
+  
+  <header class="batch-h"><b>批次 01</b><span class="chip">S01 柴桑船坊</span><span class="chip lite">晨雾未散</span></header>
+  <div class="batch-shots"><a class="chip mono" href="#seg-E01-01">E01-01</a><a class="chip mono" href="#seg-E01-02">E01-02</a><a class="chip mono" href="#seg-E01-03">E01-03</a><a class="chip mono" href="#seg-E01-04">E01-04</a><a class="chip mono" href="#seg-E01-05">E01-05</a><a class="chip mono" href="#seg-E01-06">E01-06</a><a class="chip mono" href="#seg-E01-07">E01-07</a><a class="chip mono" href="#seg-E01-08">E01-08</a><a class="chip mono" href="#seg-E01-09">E01-09</a></div>
+  <p class="batch-need">需要：老工匠、沈川 的角色设定图 · 修船账册</p>
+</article>
+<article class="batch">
+  
+  <header class="batch-h"><b>批次 02</b><span class="chip">S01 柴桑船坊</span><span class="chip lite">昏黄油灯夜</span></header>
+  <div class="batch-shots"><a class="chip mono" href="#seg-E01-10">E01-10</a><a class="chip mono" href="#seg-E01-11">E01-11</a><a class="chip mono" href="#seg-E01-12">E01-12</a><a class="chip mono" href="#seg-E01-13">E01-13</a></div>
+  <p class="batch-need">需要：沈川、老工匠 的角色设定图 · 修船账册</p>
+</article>
+  </div>
+</section>
+
+<section class="top-sec" id="sec-dialogue">
+  <div class="sec-h"><span class="no">04</span><h2>配音对齐单</h2><span class="note">自动汇总 · TTS 音频对到哪一段的第几切</span></div>
+  <table><thead><tr><th>段 · 切</th><th>说话人</th><th>台词</th><th>台词秒数</th></tr></thead>
+  <tbody>
+<tr><td><a href="#seg-E01-01">E01-01</a> #3</td><td>老工匠</td><td class="serif">姓沈的，别装死。军令到了。</td><td>2.9</td></tr>
+<tr><td><a href="#seg-E01-01">E01-01</a> #5</td><td>沈川</td><td class="serif">三十艘……七日……修不完，军法处置。</td><td>4</td></tr>
+<tr><td><a href="#seg-E01-02">E01-02</a> #3</td><td>画外音</td><td class="serif">醒过来，就在这了。</td><td>2</td></tr>
+<tr><td><a href="#seg-E01-02">E01-02</a> #4</td><td>老工匠</td><td class="serif">全坊的工匠都到齐了，就等你拿个章程。</td><td>4</td></tr>
+<tr><td><a href="#seg-E01-02">E01-02</a> #5</td><td>沈川</td><td class="serif">多少工匠？多少木料？船修到哪一步了？</td><td>4</td></tr>
+<tr><td><a href="#seg-E01-03">E01-03</a> #2</td><td>老工匠</td><td class="serif">问这些作甚？日子就七天，人都在这，修就是了。</td><td>4.9</td></tr>
+<tr><td><a href="#seg-E01-03">E01-03</a> #3</td><td>沈川</td><td class="serif">不数清楚，怎么知道修不修得完。</td><td>3.3</td></tr>
+<tr><td><a href="#seg-E01-04">E01-04</a> #1</td><td>沈川</td><td class="serif">给我一份花名册。今天，人、料、活，一样一样点。</td><td>5.1</td></tr>
+<tr><td><a href="#seg-E01-05">E01-05</a> #2</td><td>沈川</td><td class="serif">这艘，龙骨没上，船板缺半。</td><td>2.9</td></tr>
+<tr><td><a href="#seg-E01-05">E01-05</a> #4</td><td>老工匠</td><td class="serif">哪艘坏了补哪艘，一直这样干，能装上就行。</td><td>4.4</td></tr>
+<tr><td><a href="#seg-E01-06">E01-06</a> #2</td><td>沈川</td><td class="serif">料和账，对不上。</td><td>1.8</td></tr>
+<tr><td><a href="#seg-E01-06">E01-06</a> #4</td><td>老工匠</td><td class="serif">小沈官，你数这些有个屁用？船又不会自己长好。</td><td>4.9</td></tr>
+<tr><td><a href="#seg-E01-07">E01-07</a> #1</td><td>沈川</td><td class="serif">那板不是才装上去？怎么又拆？</td><td>3.1</td></tr>
+<tr><td><a href="#seg-E01-07">E01-07</a> #2</td><td>老工匠</td><td class="serif">尺寸错了，不拆重做，下水就散架。返工的活天天有。</td><td>5.3</td></tr>
+<tr><td><a href="#seg-E01-07">E01-07</a> #4</td><td>画外音</td><td class="serif">人够，料也够。是没人把这一摊子捋顺。</td><td>4</td></tr>
+<tr><td><a href="#seg-E01-08">E01-08</a> #2</td><td>沈川</td><td class="serif">船坏得杂，料不齐，有人闲、有人返工——全堵死了。</td><td>5.3</td></tr>
+<tr><td><a href="#seg-E01-08">E01-08</a> #4</td><td>老工匠</td><td class="serif">……那你倒是说说，头一样先弄哪个？</td><td>3.8</td></tr>
+<tr><td><a href="#seg-E01-09">E01-09</a> #1</td><td>沈川</td><td class="serif">先点清多少人。连人手都数不上，谈什么修船。</td><td>4.7</td></tr>
+<tr><td><a href="#seg-E01-10">E01-10</a> #3</td><td>画外音</td><td class="serif">七日修船，是五件事压在一处。</td><td>3.1</td></tr>
+<tr><td><a href="#seg-E01-11">E01-11</a> #1</td><td>沈川</td><td class="serif">三百五十根……进账怎么成了三百？</td><td>3.6</td></tr>
+<tr><td><a href="#seg-E01-11">E01-11</a> #4</td><td>老工匠</td><td class="serif">小沈官，夜深了。那账……别看那么细。</td><td>4</td></tr>
+<tr><td><a href="#seg-E01-12">E01-12</a> #1</td><td>沈川</td><td class="serif">这五十根木料，上哪去了？</td><td>2.7</td></tr>
+<tr><td><a href="#seg-E01-12">E01-12</a> #3</td><td>老工匠</td><td class="serif">别问了。这账查下去，是要出人命的。</td><td>3.8</td></tr>
+<tr><td><a href="#seg-E01-12">E01-12</a> #5</td><td>沈川</td><td class="serif">谁的命？</td><td>0.9</td></tr>
+  </tbody></table>
+</section>
+
+<section class="top-sec" id="sec-gates">
+  <div class="sec-h"><span class="no">05</span><h2>质量门</h2></div>
+  <ul class="gate">
+  <li class="ok"><span class="m">✓</span><span>剧本节拍被恰好一次、按顺序、连续认领（分镜级）</span></li>
+  <li class="ok"><span class="m">✓</span><span>每段 0 &lt; 总秒数 ≤ 15（一次生成的上限）</span></li>
+  <li class="ok"><span class="m">✓</span><span>每个分镜 2–5.5 秒——短剧的注意力节奏</span></li>
+  <li class="ok"><span class="m">✓</span><span>认领节拍的台词装得进分镜秒数</span></li>
+  <li class="ok"><span class="m">✓</span><span>每集总时长在剧本目标 ±15% 内</span></li>
+  <li class="ok"><span class="m">✓</span><span>单个分镜同框 ≤ 3 人，超了必须带拆解说明</span></li>
+  <li class="ok"><span class="m">✓</span><span>段号 E01-01 格式、按顺序连号</span></li>
+  <li class="ok"><span class="m">✓</span><span>景别短语写进分镜图提示词</span></li>
+  <li class="ok"><span class="m">✓</span><span>运镜用 H3 官方词表，且出现在自己的 [Shot k] 段落里</span></li>
+  <li class="ok"><span class="m">✓</span><span>H3 首行对齐指令由分镜结构推导逐字对账，切点时刻逐个对</span></li>
+  <li class="ok"><span class="m">✓</span><span>认领节拍的台词逐字进 H3 提示词的 &lt;d&gt; 块</span></li>
+  <li class="ok"><span class="m">✓</span><span>H3 提示词语言与设定一致（promptLang=en，正文全英文、骨架 token 官方英文格式）</span></li>
+  <li class="ok"><span class="m">✓</span><span>分镜图风格短语统一（realistic：cinematic film still）——同剧不许画风漂</span></li>
+  <li class="ok"><span class="m">✓</span><span>分镜图提示词全英文且非空</span></li>
+  <li class="ok"><span class="m">✓</span><span>英文提示词不含角色名（分镜图提示词恒查；中文 H3 提示词放行）</span></li>
+  <li class="ok"><span class="m">✓</span><span>场次／人物／道具对账剧本</span></li>
+</ul>
+  <p class="gsum">全部通过</p>
+</section>
+
+<p class="foot">分镜由模型依据剧本切分：段 = 一次生成（≤15 秒），分镜 = 段内 2–5 秒的剪切，每个分镜一张关键帧图。对齐指令、切点时刻、台词、提示词纪律全部由脚本确定性对账。分镜图出图走 codex，环境与角色设定图当参考图。</p>
+</div>
+
+<div class="lightbox" id="lightbox"><img alt=""></div>
+
+<script type="application/json" id="storyboard-data">{"source":"江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）","style":"realistic","promptLang":"en","params":{"maxSegmentSeconds":15,"minCutSeconds":2,"maxCutSeconds":5.5,"maxOnScreen":3,"tolerance":0.15},"episodes":[{"ep":1,"segments":[{"sceneIndex":1,"cuts":[{"beats":[1,1],"seconds":2.5,"size":"extreme-wide","camera":"Static Shot","characters":[],"props":[],"frame":"a broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall, extreme wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[2,2],"seconds":2.5,"size":"close","camera":"Static Shot","characters":[],"props":["P01"],"frame":"a military order slapped hard onto a wooden desk, a vermilion seal staining the paper like blood, wisps of fog curling over the wood, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[3,3],"seconds":2.9,"size":"medium","camera":"Static Shot","characters":["C06"],"props":["P01"],"frame":"an old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[4,4],"seconds":2.5,"size":"medium","camera":"Static Shot","characters":["C01"],"props":["P01"],"frame":"a young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[5,5],"seconds":4,"size":"medium","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk reading the order aloud, his voice dry as if pronouncing his own death sentence, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.40-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A military order slapped hard onto a wooden desk, a vermilion seal staining the paper like blood, wisps of fog curling over the wood. Camera movement: static shot.\n[Shot 3] At 00:05.000, Cinematic, live-action. An old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]姓沈的，别装死。军令到了。\u003c/d>\n[Shot 4] At 00:07.900, Cinematic, live-action. A young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands. Camera movement: static shot.\n[Shot 5] At 00:10.400, Cinematic, live-action. A young clerk reading the order aloud, his voice dry as if pronouncing his own death sentence. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]三十艘……七日……修不完，军法处置。\u003c/d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-01"},{"sceneIndex":1,"cuts":[{"beats":[6,6],"seconds":2.5,"size":"wide","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[7,7],"seconds":2.5,"size":"close","camera":"Static Shot","characters":["C01"],"props":["P01"],"frame":"a hand touching a bronze token at the waist and turning it over, the engraved title of a dockyard clerk catching the cold light, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[8,8],"seconds":2,"size":"close","camera":"Static Shot","characters":[],"props":["P01"],"frame":"a young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[9,9],"seconds":4,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"an old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[10,10],"seconds":4,"size":"medium","camera":"Push In","characters":["C01"],"props":[],"frame":"a young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A hand touching a bronze token at the waist and turning it over, the engraved title of a dockyard clerk catching the cold light. Camera movement: static shot.\n[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: \u003cd>[Chinese]醒过来，就在这了。\u003c/d>\n[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]全坊的工匠都到齐了，就等你拿个章程。\u003c/d>\n[Shot 5] At 00:11.000, Cinematic, live-action. A young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him. Camera movement: push in. (S1) a young clerk says: \u003cd>[Chinese]多少工匠？多少木料？船修到哪一步了？\u003c/d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-02"},{"sceneIndex":1,"cuts":[{"beats":[11,11],"seconds":2.5,"size":"close","camera":"Static Shot","characters":["C06"],"props":[],"frame":"the old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[12,12],"seconds":4.9,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"the old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[13,13],"seconds":3.3,"size":"medium","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk answering back with a tight throat, refusing to be waved off, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[14,14],"seconds":2.5,"size":"medium","camera":"Static Shot","characters":["C01"],"props":["P01"],"frame":"a young clerk pushing up from the desk, sweeping his eyes over the gathered craftsmen and the thirty ships, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.70-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. The old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. The old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]问这些作甚？日子就七天，人都在这，修就是了。\u003c/d>\n[Shot 3] At 00:07.400, Cinematic, live-action. A young clerk answering back with a tight throat, refusing to be waved off. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]不数清楚，怎么知道修不修得完。\u003c/d>\n[Shot 4] At 00:10.700, Cinematic, live-action. A young clerk pushing up from the desk, sweeping his eyes over the gathered craftsmen and the thirty ships. Camera movement: static shot.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-03"},{"sceneIndex":1,"cuts":[{"beats":[15,15],"seconds":5.1,"size":"medium","camera":"Push In","characters":["C01"],"props":[],"frame":"a young clerk's voice low but holding the yard, demanding a roster of every man, material and task, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"For the target video, at 0.00 seconds into the target video, \u003cPicture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk's voice low but holding the yard, demanding a roster of every man, material and task. Camera movement: push in. (S1) a young clerk says: \u003cd>[Chinese]给我一份花名册。今天，人、料、活，一样一样点。\u003c/d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-04"},{"sceneIndex":2,"cuts":[{"beats":[1,1],"seconds":2.5,"size":"wide","camera":"Tracking Shot","characters":["C01"],"props":["P01"],"frame":"a young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[2,2],"seconds":2.9,"size":"medium","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk muttering a tally to himself, eyes still on the broken hull, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[3,3],"seconds":2.5,"size":"close","camera":"Static Shot","characters":[],"props":[],"frame":"a pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[4,4],"seconds":4.4,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"an old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[5,5],"seconds":2.5,"size":"medium","camera":"Pan Left","characters":["C01"],"props":[],"frame":"a young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 12.30-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud. Camera movement: tracking shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk muttering a tally to himself, eyes still on the broken hull. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]这艘，龙骨没上，船板缺半。\u003c/d>\n[Shot 3] At 00:05.400, Cinematic, live-action. A pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them. Camera movement: static shot.\n[Shot 4] At 00:07.900, Cinematic, live-action. An old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]哪艘坏了补哪艘，一直这样干，能装上就行。\u003c/d>\n[Shot 5] At 00:12.300, Cinematic, live-action. A young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split. Camera movement: pan left.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-05"},{"sceneIndex":2,"cuts":[{"beats":[6,6],"seconds":2.5,"size":"close","camera":"Static Shot","characters":["C01"],"props":["P01"],"frame":"a young clerk's fingers flipping the ledger open, counting the timber against the written numbers, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[7,7],"seconds":2,"size":"close","camera":"Static Shot","characters":["C01"],"props":["P01"],"frame":"a young clerk's brow knotting as the timber and the ledger refuse to match in the cold light, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[8,8],"seconds":2.5,"size":"wide","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a few craftsmen squatting idle by a hull in the distance, tools resting on the ground, eyes glancing sidelong toward the clerk, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[9,9],"seconds":4.9,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"an old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[10,10],"seconds":2.5,"size":"wide","camera":"Pan Right","characters":["C01"],"props":[],"frame":"a young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.90-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk's fingers flipping the ledger open, counting the timber against the written numbers. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk's brow knotting as the timber and the ledger refuse to match in the cold light. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]料和账，对不上。\u003c/d>\n[Shot 3] At 00:04.500, Cinematic, live-action. A few craftsmen squatting idle by a hull in the distance, tools resting on the ground, eyes glancing sidelong toward the clerk. Camera movement: static shot.\n[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]小沈官，你数这些有个屁用？船又不会自己长好。\u003c/d>\n[Shot 5] At 00:11.900, Cinematic, live-action. A young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened. Camera movement: pan right.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-06"},{"sceneIndex":2,"cuts":[{"beats":[11,11],"seconds":3.1,"size":"medium","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk asking why the plank is being taken down again, his finger still leveled at the stern, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[12,12],"seconds":5.3,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"an old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[13,13],"seconds":2.5,"size":"wide","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk turning to scan the whole yard, some men idle, some redoing finished work, the timber that does not add up, his eyes closing once, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[14,14],"seconds":4,"size":"medium","camera":"Static Shot","characters":[],"props":[],"frame":"a young clerk's inner voice, lips closed, as the realization settles over him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.10-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.90-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk asking why the plank is being taken down again, his finger still leveled at the stern. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]那板不是才装上去？怎么又拆？\u003c/d>\n[Shot 2] At 00:03.100, Cinematic, live-action. An old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]尺寸错了，不拆重做，下水就散架。返工的活天天有。\u003c/d>\n[Shot 3] At 00:08.400, Cinematic, live-action. A young clerk turning to scan the whole yard, some men idle, some redoing finished work, the timber that does not add up, his eyes closing once. Camera movement: static shot.\n[Shot 4] At 00:10.900, Cinematic, live-action. A young clerk's inner voice, lips closed, as the realization settles over him. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: \u003cd>[Chinese]人够，料也够。是没人把这一摊子捋顺。\u003c/d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-07"},{"sceneIndex":2,"cuts":[{"beats":[15,15],"seconds":2.5,"size":"wide","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk walking to the dock edge and pointing back at the row of broken warships, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[16,16],"seconds":5.3,"size":"wide","camera":"Push In","characters":["C01"],"props":[],"frame":"a young clerk laying out to the crowd what is blocked and where, one flaw at a time, his voice sharpening, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[17,17],"seconds":2.5,"size":"wide","camera":"Static Shot","characters":[],"props":[],"frame":"the yard falling still as a few of the craftsmen who had watched coldly shuffle a half step closer, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[18,18],"seconds":3.8,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"an old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.80-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.30-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk walking to the dock edge and pointing back at the row of broken warships. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk laying out to the crowd what is blocked and where, one flaw at a time, his voice sharpening. Camera movement: push in. (S1) a young clerk says: \u003cd>[Chinese]船坏得杂，料不齐，有人闲、有人返工——全堵死了。\u003c/d>\n[Shot 3] At 00:07.800, Cinematic, live-action. The yard falling still as a few of the craftsmen who had watched coldly shuffle a half step closer. Camera movement: static shot.\n[Shot 4] At 00:10.300, Cinematic, live-action. An old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]……那你倒是说说，头一样先弄哪个？\u003c/d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-08"},{"sceneIndex":2,"cuts":[{"beats":[19,19],"seconds":4.7,"size":"medium","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk answering flatly to count the hands first, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"},{"beats":[20,20],"seconds":2.5,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"the old craftsman staring two beats, then turning to wave the scattered craftsmen over, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.70-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk answering flatly to count the hands first. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]先点清多少人。连人手都数不上，谈什么修船。\u003c/d>\n[Shot 2] At 00:04.700, Cinematic, live-action. The old craftsman staring two beats, then turning to wave the scattered craftsmen over. Camera movement: static shot.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.","id":"E01-09"},{"sceneIndex":3,"cuts":[{"beats":[1,1],"seconds":2.5,"size":"medium","camera":"Static Shot","characters":["C01"],"props":["P01"],"frame":"a young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[2,2],"seconds":2.5,"size":"close","camera":"Static Shot","characters":[],"props":["P01"],"frame":"a hand dipping a brush in ink and writing five characters on a wooden board, then drawing a line beneath each, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[3,3],"seconds":3.1,"size":"close","camera":"Static Shot","characters":[],"props":[],"frame":"a young clerk's inner voice, lips closed, the five characters catching the lamp glow, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[4,4],"seconds":2.5,"size":"close","camera":"Static Shot","characters":[],"props":["P01"],"frame":"a finger stopping on a page where a number has been smeared over with thick ink, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[5,5],"seconds":2.5,"size":"close","camera":"Static Shot","characters":["C01"],"props":["P01"],"frame":"a young clerk leaning into the lamp, the written count of three hundred sitting against a different count on the prior page, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.10-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.60-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A hand dipping a brush in ink and writing five characters on a wooden board, then drawing a line beneath each. Camera movement: static shot.\n[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's inner voice, lips closed, the five characters catching the lamp glow. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: \u003cd>[Chinese]七日修船，是五件事压在一处。\u003c/d>\n[Shot 4] At 00:08.100, Cinematic, live-action. A finger stopping on a page where a number has been smeared over with thick ink. Camera movement: static shot.\n[Shot 5] At 00:10.600, Cinematic, live-action. A young clerk leaning into the lamp, the written count of three hundred sitting against a different count on the prior page. Camera movement: static shot.\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.","id":"E01-10"},{"sceneIndex":3,"cuts":[{"beats":[6,6],"seconds":3.6,"size":"close","camera":"Push In","characters":["C01"],"props":[],"frame":"a young clerk's face tightening as he reads the three hundred against the three hundred fifty, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[7,7],"seconds":2.5,"size":"close","camera":"Static Shot","characters":[],"props":["P01"],"frame":"hands flipping forward and back through the ledger, the missing fifty nowhere accounted for on any page, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[8,8],"seconds":2.5,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"a faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[9,9],"seconds":4,"size":"medium","camera":"Static Shot","characters":["C06"],"props":[],"frame":"an old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.60-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.10-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.60-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk's face tightening as he reads the three hundred against the three hundred fifty. Camera movement: push in. (S1) a young clerk says: \u003cd>[Chinese]三百五十根……进账怎么成了三百？\u003c/d>\n[Shot 2] At 00:03.600, Cinematic, live-action. Hands flipping forward and back through the ledger, the missing fifty nowhere accounted for on any page. Camera movement: static shot.\n[Shot 3] At 00:06.100, Cinematic, live-action. A faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow. Camera movement: static shot.\n[Shot 4] At 00:08.600, Cinematic, live-action. An old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts. Camera movement: static shot. (S2) an old craftsman says: \u003cd>[Chinese]小沈官，夜深了。那账……别看那么细。\u003c/d>\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.","id":"E01-11"},{"sceneIndex":3,"cuts":[{"beats":[10,10],"seconds":2.7,"size":"medium","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk looking up and pinning the old man with a question, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[11,11],"seconds":2.5,"size":"medium","camera":"Static Shot","characters":["C06"],"props":["P01"],"frame":"the old craftsman's face draining of color as he lurches to close the ledger, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[12,12],"seconds":3.8,"size":"medium","camera":"Push In","characters":["C06"],"props":[],"frame":"an old craftsman hissing in a near-roar that this account will cost a life if it is followed, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[13,13],"seconds":2.5,"size":"close","camera":"Static Shot","characters":["C06"],"props":["P01"],"frame":"an old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[14,14],"seconds":2,"size":"close","camera":"Static Shot","characters":["C01"],"props":[],"frame":"a young clerk's lips moving in a single low word, his eyes fixed on the old craftsman, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.70-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.20-second mark of the target video; Picture 4 (from Shot 4) aligns with the 9.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk looking up and pinning the old man with a question. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]这五十根木料，上哪去了？\u003c/d>\n[Shot 2] At 00:02.700, Cinematic, live-action. The old craftsman's face draining of color as he lurches to close the ledger. Camera movement: static shot.\n[Shot 3] At 00:05.200, Cinematic, live-action. An old craftsman hissing in a near-roar that this account will cost a life if it is followed. Camera movement: push in. (S2) an old craftsman says: \u003cd>[Chinese]别问了。这账查下去，是要出人命的。\u003c/d>\n[Shot 4] At 00:09.000, Cinematic, live-action. An old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters. Camera movement: static shot.\n[Shot 5] At 00:11.500, Cinematic, live-action. A young clerk's lips moving in a single low word, his eyes fixed on the old craftsman. Camera movement: static shot. (S1) a young clerk says: \u003cd>[Chinese]谁的命？\u003c/d>\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.","id":"E01-12"},{"sceneIndex":3,"cuts":[{"beats":[15,15],"seconds":2.5,"size":"wide","camera":"Static Shot","characters":["C06"],"props":[],"frame":"an old craftsman turning and vanishing into the dark outside the workshop, his throat working, wide shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"},{"beats":[16,16],"seconds":2.5,"size":"wide","camera":"Static Shot","characters":[],"props":["P01"],"frame":"the wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole, wide shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"}],"h3Prompt":"How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. An old craftsman turning and vanishing into the dark outside the workshop, his throat working. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. The wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole. Camera movement: static shot.\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.","id":"E01-13"}]}]}</script>
+<script>
+const L = {"copied":"已复制","failed":"复制失败","show":"▾ 展开全部段","hide":"▴ 收起"};
+
+// 分集分镜表：段卡区默认最多 760px。不超高的集直接放开；超高的集点开/收起
+document.querySelectorAll('.shmore').forEach((btn) => {
+  const zone = btn.previousElementSibling;
+  if (zone.scrollHeight <= 780) {
+    zone.classList.remove('clip');
+    btn.remove();
+    return;
+  }
+  btn.addEventListener('click', () => {
+    const clipped = zone.classList.toggle('clip');
+    btn.textContent = clipped ? L.show : L.hide;
+    if (clipped) zone.closest('.ep').scrollIntoView({ block: 'nearest' });
+  });
+});
+
+// 点图放大（主分镜图 / 子分镜图 / 批次场景图）
+const lb = document.getElementById('lightbox');
+document.addEventListener('click', (e) => {
+  const img = e.target.closest('img.frame, img.subf, img.bimg');
+  if (img) {
+    lb.querySelector('img').src = img.src;
+    lb.classList.add('on');
+    return;
+  }
+  if (e.target.closest('#lightbox')) lb.classList.remove('on');
+});
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') lb.classList.remove('on');
+});
+
+// 复制提示词
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.copy');
+  if (!btn) return;
+  e.preventDefault();
+  const label = btn.textContent;
+  try {
+    await navigator.clipboard.writeText(btn.dataset.copy);
+    btn.textContent = L.copied;
+    btn.dataset.done = '1';
+  } catch {
+    btn.textContent = L.failed;
+  }
+  setTimeout(() => { btn.textContent = label; delete btn.dataset.done; }, 1600);
+});
+
+// 导出：报告自己带着完整的 storyboard.json，下载的是它原样
+document.querySelector('.expo').addEventListener('click', (e) => {
+  const btn = e.currentTarget;
+  const url = URL.createObjectURL(
+    new Blob([document.getElementById('storyboard-data').textContent], { type: 'application/json' }),
+  );
+  const a = Object.assign(document.createElement('a'), { href: url, download: btn.dataset.name });
+  a.click();
+  // 别立刻回收——Safari 会抢在下载读完之前撤掉 blob
+  setTimeout(() => URL.revokeObjectURL(url), 10000);
+});
+</script>
+</body></html>

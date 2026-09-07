@@ -1,0 +1,836 @@
+{
+  "source": "江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）",
+  "style": "realistic",
+  "promptLang": "en",
+  "params": {
+    "maxSegmentSeconds": 15,
+    "minCutSeconds": 2,
+    "maxCutSeconds": 5.5,
+    "maxOnScreen": 3,
+    "tolerance": 0.15
+  },
+  "episodes": [
+    {
+      "ep": 1,
+      "segments": [
+        {
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 2.5,
+              "size": "extreme-wide",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [],
+              "frame": "a broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall, extreme wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "a military order slapped hard onto a wooden desk, a vermilion seal staining the paper like blood, wisps of fog curling over the wood, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                3,
+                3
+              ],
+              "seconds": 2.9,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "an old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                4,
+                4
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 4.0,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk reading the order aloud, his voice dry as if pronouncing his own death sentence, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.40-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A military order slapped hard onto a wooden desk, a vermilion seal staining the paper like blood, wisps of fog curling over the wood. Camera movement: static shot.\n[Shot 3] At 00:05.000, Cinematic, live-action. An old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]姓沈的，别装死。军令到了。</d>\n[Shot 4] At 00:07.900, Cinematic, live-action. A young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands. Camera movement: static shot.\n[Shot 5] At 00:10.400, Cinematic, live-action. A young clerk reading the order aloud, his voice dry as if pronouncing his own death sentence. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]三十艘……七日……修不完，军法处置。</d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-01"
+        },
+        {
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                6,
+                6
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                7,
+                7
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a hand touching a bronze token at the waist and turning it over, the engraved title of a dockyard clerk catching the cold light, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                8,
+                8
+              ],
+              "seconds": 2.0,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                9,
+                9
+              ],
+              "seconds": 4.0,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                10,
+                10
+              ],
+              "seconds": 4.0,
+              "size": "medium",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.00-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A hand touching a bronze token at the waist and turning it over, the engraved title of a dockyard clerk catching the cold light. Camera movement: static shot.\n[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: <d>[Chinese]醒过来，就在这了。</d>\n[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]全坊的工匠都到齐了，就等你拿个章程。</d>\n[Shot 5] At 00:11.000, Cinematic, live-action. A young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him. Camera movement: push in. (S1) a young clerk says: <d>[Chinese]多少工匠？多少木料？船修到哪一步了？</d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-02"
+        },
+        {
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                11,
+                11
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "the old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                12,
+                12
+              ],
+              "seconds": 4.9,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "the old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                13,
+                13
+              ],
+              "seconds": 3.3,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk answering back with a tight throat, refusing to be waved off, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                14,
+                14
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk pushing up from the desk, sweeping his eyes over the gathered craftsmen and the thirty ships, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.70-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. The old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. The old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]问这些作甚？日子就七天，人都在这，修就是了。</d>\n[Shot 3] At 00:07.400, Cinematic, live-action. A young clerk answering back with a tight throat, refusing to be waved off. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]不数清楚，怎么知道修不修得完。</d>\n[Shot 4] At 00:10.700, Cinematic, live-action. A young clerk pushing up from the desk, sweeping his eyes over the gathered craftsmen and the thirty ships. Camera movement: static shot.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-03"
+        },
+        {
+          "sceneIndex": 1,
+          "cuts": [
+            {
+              "beats": [
+                15,
+                15
+              ],
+              "seconds": 5.1,
+              "size": "medium",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk's voice low but holding the yard, demanding a roster of every man, material and task, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "For the target video, at 0.00 seconds into the target video, <Picture 1> (from [Shot 1]) is fully referenced.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk's voice low but holding the yard, demanding a roster of every man, material and task. Camera movement: push in. (S1) a young clerk says: <d>[Chinese]给我一份花名册。今天，人、料、活，一样一样点。</d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-04"
+        },
+        {
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Tracking Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 2.9,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk muttering a tally to himself, eyes still on the broken hull, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                3,
+                3
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [],
+              "frame": "a pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                4,
+                4
+              ],
+              "seconds": 4.4,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Pan Left",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.90-second mark of the target video; Picture 5 (from Shot 5) aligns with the 12.30-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud. Camera movement: tracking shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk muttering a tally to himself, eyes still on the broken hull. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]这艘，龙骨没上，船板缺半。</d>\n[Shot 3] At 00:05.400, Cinematic, live-action. A pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them. Camera movement: static shot.\n[Shot 4] At 00:07.900, Cinematic, live-action. An old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]哪艘坏了补哪艘，一直这样干，能装上就行。</d>\n[Shot 5] At 00:12.300, Cinematic, live-action. A young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split. Camera movement: pan left.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-05"
+        },
+        {
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                6,
+                6
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk's fingers flipping the ledger open, counting the timber against the written numbers, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                7,
+                7
+              ],
+              "seconds": 2.0,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk's brow knotting as the timber and the ledger refuse to match in the cold light, close-up, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                8,
+                8
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a few craftsmen squatting idle by a hull in the distance, tools resting on the ground, eyes glancing sidelong toward the clerk, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                9,
+                9
+              ],
+              "seconds": 4.9,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                10,
+                10
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Pan Right",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 4.50-second mark of the target video; Picture 4 (from Shot 4) aligns with the 7.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.90-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk's fingers flipping the ledger open, counting the timber against the written numbers. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk's brow knotting as the timber and the ledger refuse to match in the cold light. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]料和账，对不上。</d>\n[Shot 3] At 00:04.500, Cinematic, live-action. A few craftsmen squatting idle by a hull in the distance, tools resting on the ground, eyes glancing sidelong toward the clerk. Camera movement: static shot.\n[Shot 4] At 00:07.000, Cinematic, live-action. An old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]小沈官，你数这些有个屁用？船又不会自己长好。</d>\n[Shot 5] At 00:11.900, Cinematic, live-action. A young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened. Camera movement: pan right.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-06"
+        },
+        {
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                11,
+                11
+              ],
+              "seconds": 3.1,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk asking why the plank is being taken down again, his finger still leveled at the stern, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                12,
+                12
+              ],
+              "seconds": 5.3,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                13,
+                13
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk turning to scan the whole yard, some men idle, some redoing finished work, the timber that does not add up, his eyes closing once, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                14,
+                14
+              ],
+              "seconds": 4.0,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [],
+              "frame": "a young clerk's inner voice, lips closed, as the realization settles over him, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.10-second mark of the target video; Picture 3 (from Shot 3) aligns with the 8.40-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.90-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk asking why the plank is being taken down again, his finger still leveled at the stern. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]那板不是才装上去？怎么又拆？</d>\n[Shot 2] At 00:03.100, Cinematic, live-action. An old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]尺寸错了，不拆重做，下水就散架。返工的活天天有。</d>\n[Shot 3] At 00:08.400, Cinematic, live-action. A young clerk turning to scan the whole yard, some men idle, some redoing finished work, the timber that does not add up, his eyes closing once. Camera movement: static shot.\n[Shot 4] At 00:10.900, Cinematic, live-action. A young clerk's inner voice, lips closed, as the realization settles over him. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: <d>[Chinese]人够，料也够。是没人把这一摊子捋顺。</d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-07"
+        },
+        {
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                15,
+                15
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk walking to the dock edge and pointing back at the row of broken warships, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                16,
+                16
+              ],
+              "seconds": 5.3,
+              "size": "wide",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk laying out to the crowd what is blocked and where, one flaw at a time, his voice sharpening, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                17,
+                17
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [],
+              "frame": "the yard falling still as a few of the craftsmen who had watched coldly shuffle a half step closer, wide shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                18,
+                18
+              ],
+              "seconds": 3.8,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 7.80-second mark of the target video; Picture 4 (from Shot 4) aligns with the 10.30-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk walking to the dock edge and pointing back at the row of broken warships. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A young clerk laying out to the crowd what is blocked and where, one flaw at a time, his voice sharpening. Camera movement: push in. (S1) a young clerk says: <d>[Chinese]船坏得杂，料不齐，有人闲、有人返工——全堵死了。</d>\n[Shot 3] At 00:07.800, Cinematic, live-action. The yard falling still as a few of the craftsmen who had watched coldly shuffle a half step closer. Camera movement: static shot.\n[Shot 4] At 00:10.300, Cinematic, live-action. An old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]……那你倒是说说，头一样先弄哪个？</d>\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-08"
+        },
+        {
+          "sceneIndex": 2,
+          "cuts": [
+            {
+              "beats": [
+                19,
+                19
+              ],
+              "seconds": 4.7,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk answering flatly to count the hands first, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            },
+            {
+              "beats": [
+                20,
+                20
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "the old craftsman staring two beats, then turning to wave the scattered craftsmen over, medium shot, cinematic film still, foggy riverside morning, broken warships, worn timber, muted grey-green palette, soft diffuse daylight"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 4.70-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk answering flatly to count the hands first. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]先点清多少人。连人手都数不上，谈什么修船。</d>\n[Shot 2] At 00:04.700, Cinematic, live-action. The old craftsman staring two beats, then turning to wave the scattered craftsmen over. Camera movement: static shot.\n\noverall_soundscape: River fog and lapping water at the dock, the creak of timber, muffled voices of craftsmen across the yard, a military order striking the desk.\n\nnon_diegetic_music: Sparse percussion and a low war-drum pulse under the opening, tightening as the deadline is read.",
+          "id": "E01-09"
+        },
+        {
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                1,
+                1
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                2,
+                2
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "a hand dipping a brush in ink and writing five characters on a wooden board, then drawing a line beneath each, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                3,
+                3
+              ],
+              "seconds": 3.1,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [],
+              "frame": "a young clerk's inner voice, lips closed, the five characters catching the lamp glow, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                4,
+                4
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "a finger stopping on a page where a number has been smeared over with thick ink, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                5,
+                5
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "a young clerk leaning into the lamp, the written count of three hundred sitting against a different count on the prior page, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.00-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.10-second mark of the target video; Picture 5 (from Shot 5) aligns with the 10.60-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. A hand dipping a brush in ink and writing five characters on a wooden board, then drawing a line beneath each. Camera movement: static shot.\n[Shot 3] At 00:05.000, Cinematic, live-action. A young clerk's inner voice, lips closed, the five characters catching the lamp glow. Camera movement: static shot. A young man says in an off-screen voiceover while his lips remain completely closed: <d>[Chinese]七日修船，是五件事压在一处。</d>\n[Shot 4] At 00:08.100, Cinematic, live-action. A finger stopping on a page where a number has been smeared over with thick ink. Camera movement: static shot.\n[Shot 5] At 00:10.600, Cinematic, live-action. A young clerk leaning into the lamp, the written count of three hundred sitting against a different count on the prior page. Camera movement: static shot.\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.",
+          "id": "E01-10"
+        },
+        {
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                6,
+                6
+              ],
+              "seconds": 3.6,
+              "size": "close",
+              "camera": "Push In",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk's face tightening as he reads the three hundred against the three hundred fifty, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                7,
+                7
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "hands flipping forward and back through the ledger, the missing fifty nowhere accounted for on any page, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                8,
+                8
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "a faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                9,
+                9
+              ],
+              "seconds": 4.0,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 3.60-second mark of the target video; Picture 3 (from Shot 3) aligns with the 6.10-second mark of the target video; Picture 4 (from Shot 4) aligns with the 8.60-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk's face tightening as he reads the three hundred against the three hundred fifty. Camera movement: push in. (S1) a young clerk says: <d>[Chinese]三百五十根……进账怎么成了三百？</d>\n[Shot 2] At 00:03.600, Cinematic, live-action. Hands flipping forward and back through the ledger, the missing fifty nowhere accounted for on any page. Camera movement: static shot.\n[Shot 3] At 00:06.100, Cinematic, live-action. A faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow. Camera movement: static shot.\n[Shot 4] At 00:08.600, Cinematic, live-action. An old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts. Camera movement: static shot. (S2) an old craftsman says: <d>[Chinese]小沈官，夜深了。那账……别看那么细。</d>\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.",
+          "id": "E01-11"
+        },
+        {
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                10,
+                10
+              ],
+              "seconds": 2.7,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk looking up and pinning the old man with a question, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                11,
+                11
+              ],
+              "seconds": 2.5,
+              "size": "medium",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "the old craftsman's face draining of color as he lurches to close the ledger, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                12,
+                12
+              ],
+              "seconds": 3.8,
+              "size": "medium",
+              "camera": "Push In",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman hissing in a near-roar that this account will cost a life if it is followed, medium shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                13,
+                13
+              ],
+              "seconds": 2.5,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [
+                "P01"
+              ],
+              "frame": "an old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                14,
+                14
+              ],
+              "seconds": 2.0,
+              "size": "close",
+              "camera": "Static Shot",
+              "characters": [
+                "C01"
+              ],
+              "props": [],
+              "frame": "a young clerk's lips moving in a single low word, his eyes fixed on the old craftsman, close-up, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.70-second mark of the target video; Picture 3 (from Shot 3) aligns with the 5.20-second mark of the target video; Picture 4 (from Shot 4) aligns with the 9.00-second mark of the target video; Picture 5 (from Shot 5) aligns with the 11.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. A young clerk looking up and pinning the old man with a question. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]这五十根木料，上哪去了？</d>\n[Shot 2] At 00:02.700, Cinematic, live-action. The old craftsman's face draining of color as he lurches to close the ledger. Camera movement: static shot.\n[Shot 3] At 00:05.200, Cinematic, live-action. An old craftsman hissing in a near-roar that this account will cost a life if it is followed. Camera movement: push in. (S2) an old craftsman says: <d>[Chinese]别问了。这账查下去，是要出人命的。</d>\n[Shot 4] At 00:09.000, Cinematic, live-action. An old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters. Camera movement: static shot.\n[Shot 5] At 00:11.500, Cinematic, live-action. A young clerk's lips moving in a single low word, his eyes fixed on the old craftsman. Camera movement: static shot. (S1) a young clerk says: <d>[Chinese]谁的命？</d>\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.",
+          "id": "E01-12"
+        },
+        {
+          "sceneIndex": 3,
+          "cuts": [
+            {
+              "beats": [
+                15,
+                15
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [
+                "C06"
+              ],
+              "props": [],
+              "frame": "an old craftsman turning and vanishing into the dark outside the workshop, his throat working, wide shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            },
+            {
+              "beats": [
+                16,
+                16
+              ],
+              "seconds": 2.5,
+              "size": "wide",
+              "camera": "Static Shot",
+              "characters": [],
+              "props": [
+                "P01"
+              ],
+              "frame": "the wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole, wide shot, cinematic film still, night workshop interior, single oil lamp, warm amber light, deep shadows, worn timber, muted palette"
+            }
+          ],
+          "h3Prompt": "How the reference pictures align with the target video — Picture 1 (from Shot 1) aligns with the 0.00-second mark of the target video; Picture 2 (from Shot 2) aligns with the 2.50-second mark of the target video.\n\nintegrated_multimodal_description:\n[Shot 1] Cinematic, live-action. An old craftsman turning and vanishing into the dark outside the workshop, his throat working. Camera movement: static shot.\n[Shot 2] At 00:02.500, Cinematic, live-action. The wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole. Camera movement: static shot.\n\noverall_soundscape: Night silence inside the workshop, the faint hiss of the oil lamp, distant river wind through the timber shed.\n\nnon_diegetic_music: Low, tense drone with sparse plucked strings, a single dark note held under the revelation.",
+          "id": "E01-13"
+        }
+      ]
+    }
+  ]
+}
