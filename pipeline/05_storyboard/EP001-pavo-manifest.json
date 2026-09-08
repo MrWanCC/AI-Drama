@@ -1,0 +1,1675 @@
+{
+  "platform": "Pavo (app.pavo.al.cn)",
+  "model": "Agnes Video 2.1 Flash（图生视频） + Agnes Image 2.1 Flash（首帧）",
+  "source": "江东潜龙（三国：我在东吴从小吏杀到大都督 第一季）",
+  "style": "半写实厚涂、东汉末三国风格",
+  "version": "Pavo-1.0",
+  "note": "本清单为 Pavo 一站式平台生产清单。每镜手动上传 referenceImages.primary + referenceImages.style，按 pavoPrompt 粘贴。",
+  "referenceImageConvention": "primary=主图（首帧参考）；style=场景基准图（保持空间一致）；characters=角色脸/正/侧/背/表情/服装全套；props=道具参考图",
+  "shots": [
+    {
+      "shotId": "E01-S01",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [],
+      "props": [],
+      "shotSize": "extreme-wide",
+      "size_cn": "极远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a broken warship docked by a misty riverside, its hull pockmarked with holes and...",
+      "referenceImages": {
+        "primary": "refs/scenes/S01_chaisang_shipyard.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、极远景。a broken warship docked by a misty riverside, its hull pockmarked with holes and a snapped oar, an unfinished keel jutting out, looming out of the morning fog like a collapsing wall。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止。晨雾缓慢飘过破损战船，断桨和未装好的龙骨在河风中轻微晃动。",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S02",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [],
+      "props": [
+        "P02"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a weathered military order bearing a large vermilion seal slapped hard onto a wo...",
+      "referenceImages": {
+        "primary": "refs/props/P02_military_order.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [],
+        "props": [
+          "refs/props/P02_military_order.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a weathered military order bearing a large vermilion seal slapped hard onto a wooden desk, the red seal stain vivid against aged paper, wisps of fog curling over the wood。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止。雾气在木案上轻轻卷动，军令落在案上铺平，朱红官印在冷光中闪一下。",
+      "postOverlayText": [
+        "军令"
+      ],
+      "postOverlayNote": "军令",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S03",
+      "seconds": 2.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "中",
+      "characters": [
+        "C06",
+        "C01"
+      ],
+      "props": [
+        "P02"
+      ],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman with a hoarse scowl barking across the desk at a young clerk se...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png",
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": [
+          "refs/props/P02_military_order.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman with a hoarse scowl barking across the desk at a young clerk seated on the far side, warped timber of the workshop behind them。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止。老工匠身子前倾、张口大吼，下颌绷紧、目光凌厉；对面青年小吏（沈川）被吼得微微一颤。",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S04",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P02"
+      ],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk straightening from the desk, cold sweat beading his forehead, eyes...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P02_military_order.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk straightening from the desk, cold sweat beading his forehead, eyes crawling line by line over the military order in his hands。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止。沈川缓缓从案前直起，冷汗沿鬓角滑下，目光一行一行扫过手中军令。",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S05",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P02"
+      ],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk reading a weathered military order aloud, his voice dry as if pron...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P02_military_order.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk reading a weathered military order aloud, his voice dry as if pronouncing his own death sentence, the sealed paper held in both hands。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓推近沈川。沈川念出军令，眼眶微睁，喉头收紧，视线从纸面缓缓抬向远处的雾。",
+      "postOverlayText": [
+        "三十艘 · 七日 · 军法处置"
+      ],
+      "postOverlayNote": "三十艘 · 七日 · 军法处置",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S06",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk looking up toward a line of thirty broken warships fading into fog...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。a young clerk looking up toward a line of thirty broken warships fading into fog along the dock, their hulls too damaged to count。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S07",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P03"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a hand touching a weathered bronze identity token at the waist and turning it ov...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P03_identity_token.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a hand touching a weathered bronze identity token at the waist and turning it over, worn engraved marks on the bronze catching the cold light。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [
+        "船坊小吏"
+      ],
+      "postOverlayNote": "船坊小吏",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S08",
+      "seconds": 2.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P03"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk's eyes tightening, his lips barely moving in an off-screen voiceov...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P03_identity_token.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a young clerk's eyes tightening, his lips barely moving in an off-screen voiceover, the bronze token still clutched in his fingers。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S09",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman with arms folded and a cold stare, telling the young clerk the ...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman with arms folded and a cold stare, telling the young clerk the whole workshop is waiting on his word。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S10",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "中",
+      "characters": [
+        "C01",
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Push In",
+      "subject_one_liner": "a young clerk leaning forward, firing questions in a strained steady voice, the ...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png",
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk leaning forward, firing questions in a strained steady voice, the old craftsman blinking in surprise across from him。镜头运动：镜头缓缓推近。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓推近",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S11",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "the old craftsman exchanging a glance with a nearby laborer, both baffled as if ...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。the old craftsman exchanging a glance with a nearby laborer, both baffled as if hearing such questions for the first time。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S12",
+      "seconds": 4.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "the old craftsman frowning, insisting seven days is seven days and the ship will...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。the old craftsman frowning, insisting seven days is seven days and the ship will be mended as it always has been。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S13",
+      "seconds": 3.3,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk answering back with a tight throat, refusing to be waved off",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk answering back with a tight throat, refusing to be waved off。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S14",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "高",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk pushing up from the desk, sweeping his eyes over blurred silhouett...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk pushing up from the desk, sweeping his eyes over blurred silhouettes of gathered craftsmen and the row of broken warships in the far fog。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": "建议主图上传正面半身基准，运镜慢"
+    },
+    {
+      "shotId": "E01-S15",
+      "seconds": 5.1,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "高",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Push In",
+      "subject_one_liner": "a young clerk standing and addressing the gathered craftsmen, his voice low but ...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk standing and addressing the gathered craftsmen, his voice low but holding the yard, the craftsmen a soft out-of-focus crowd behind him。镜头运动：镜头缓缓推近。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓推近",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": "建议主图上传正面半身基准，运镜慢"
+    },
+    {
+      "shotId": "E01-S16",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Tracking Shot",
+      "subject_one_liner": "a young clerk walking along a warship, fingertips grazing its damaged hull, an o...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。a young clerk walking along a warship, fingertips grazing its damaged hull, an open ledger in his other hand as he scratches marks into the mud。镜头运动：镜头跟拍。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头跟拍",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S17",
+      "seconds": 2.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk muttering a tally to himself, eyes still on the broken hull",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk muttering a tally to himself, eyes still on the broken hull。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S18",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a pair of hands crouching over scattered half-finished timbers, pressing two shi...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a pair of hands crouching over scattered half-finished timbers, pressing two ship planks together, a gap wide enough to fit a finger between them。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S19",
+      "seconds": 4.4,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman shrugging off the gap, saying they patch whichever ship is brok...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman shrugging off the gap, saying they patch whichever ship is broken and always have, as long as it fits。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S20",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Pan Left",
+      "subject_one_liner": "a young clerk stepping to the timber pile, logs heaped at all angles, new and ol...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk stepping to the timber pile, logs heaped at all angles, new and old mixed together, several already split。镜头运动：镜头缓缓左摇。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓左摇",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S21",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk's fingers flipping a weathered ledger open, counting the timber ag...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a young clerk's fingers flipping a weathered ledger open, counting the timber against the marked entries, the yellowed pages catching the cold light。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S22",
+      "seconds": 2.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk's brow knotting as the counted timber and the ledger entries refus...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a young clerk's brow knotting as the counted timber and the ledger entries refuse to match in the cold light。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S23",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a few craftsmen squatting idle by a hull in the distance, tools resting on the g...",
+      "referenceImages": {
+        "primary": "refs/scenes/S01_chaisang_shipyard.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。a few craftsmen squatting idle by a hull in the distance, tools resting on the ground, blurred and out of focus。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S24",
+      "seconds": 4.9,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman stomping up behind, voice raised, demanding what use the counti...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman stomping up behind, voice raised, demanding what use the counting is when the ship will not mend itself。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S25",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Pan Right",
+      "subject_one_liner": "a young clerk pointing toward the stern where two craftsmen pry off a plank they...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。a young clerk pointing toward the stern where two craftsmen pry off a plank they had just fastened。镜头运动：镜头缓缓右摇。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓右摇",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S26",
+      "seconds": 3.1,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk asking why the plank is being taken down again, his finger still l...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk asking why the plank is being taken down again, his finger still leveled at the stern。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S27",
+      "seconds": 5.3,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman explaining the size was wrong and redoing it is a daily chore, ...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman explaining the size was wrong and redoing it is a daily chore, the loose plank dangling behind him。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S28",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "高",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk turning to scan the whole yard, blurred craftsmen idle in the far ...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。a young clerk turning to scan the whole yard, blurred craftsmen idle in the far ground, some redoing finished work, the timber that does not add up, his eyes closing once。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": "建议主图上传正面半身基准，运镜慢"
+    },
+    {
+      "shotId": "E01-S29",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk with lips closed in silent inner thought, the realization settling...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk with lips closed in silent inner thought, the realization settling over his face。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S30",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk walking to the dock edge and pointing back at the row of broken wa...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。a young clerk walking to the dock edge and pointing back at the row of broken warships。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S31",
+      "seconds": 5.3,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "高",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Push In",
+      "subject_one_liner": "a young clerk at the dock edge pointing back at the row of broken warships, layi...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。a young clerk at the dock edge pointing back at the row of broken warships, laying out the flaws one by one to an out-of-focus crowd of craftsmen seen from behind, shoulders and backs。镜头运动：镜头缓缓推近。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓推近",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": "建议主图上传正面半身基准，运镜慢"
+    },
+    {
+      "shotId": "E01-S32",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "高",
+      "characters": [],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "the yard falling still, a few craftsmen in the foreground as blurred silhouettes...",
+      "referenceImages": {
+        "primary": "refs/scenes/S01_chaisang_shipyard.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。the yard falling still, a few craftsmen in the foreground as blurred silhouettes and turned backs shuffling a half step closer。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": "建议主图上传正面半身基准，运镜慢"
+    },
+    {
+      "shotId": "E01-S33",
+      "seconds": 3.8,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman's voice dropping as he asks, for the first time in earnest, whi...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman's voice dropping as he asks, for the first time in earnest, which task to tackle first。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S34",
+      "seconds": 4.7,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk answering flatly to count the hands first",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk answering flatly to count the hands first。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S35",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "晨雾未散",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "the old craftsman staring two beats, then turning to wave the scattered craftsme...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。the old craftsman staring two beats, then turning to wave the scattered craftsmen over。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S36",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk alone in a timber workshop at night, a single oil lamp pooling amb...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk alone in a timber workshop at night, a single oil lamp pooling amber light as he turns page after page of an old ledger。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S37",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a hand dipping a brush in ink and writing on a wooden board, then drawing a line...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a hand dipping a brush in ink and writing on a wooden board, then drawing a line beneath each mark。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [
+        "船 · 人 · 料 · 序 · 账"
+      ],
+      "postOverlayNote": "船 · 人 · 料 · 序 · 账",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S38",
+      "seconds": 3.1,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk with lips closed in silent inner thought, the fresh ink marks on t...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a young clerk with lips closed in silent inner thought, the fresh ink marks on the wooden board catching the lamp glow。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S39",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a finger stopping on a page where an entry has been smeared over with thick ink",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a finger stopping on a page where an entry has been smeared over with thick ink。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [
+        "三百"
+      ],
+      "postOverlayNote": "三百",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S40",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk leaning into the lamp, a thickly crossed-out entry on the ledger p...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a young clerk leaning into the lamp, a thickly crossed-out entry on the ledger page sitting against a different count on the prior page。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [
+        "三百 · 三百五十"
+      ],
+      "postOverlayNote": "三百 · 三百五十",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S41",
+      "seconds": 3.6,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Push In",
+      "subject_one_liner": "a young clerk's face tightening as he reads the crossed-out entry against a diff...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a young clerk's face tightening as he reads the crossed-out entry against a different count on the prior page。镜头运动：镜头缓缓推近。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓推近",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S42",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C01"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "hands flipping forward and back through the ledger, the crossed-out entry nowher...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。hands flipping forward and back through the ledger, the crossed-out entry nowhere reconciled on any page。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S43",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a faint sound from behind as an old craftsman appears at the doorway of the work...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a faint sound from behind as an old craftsman appears at the doorway of the workshop, holding half a lamp, face half in shadow。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S44",
+      "seconds": 4.0,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman with a tight voice warning the clerk it is late and not to look...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman with a tight voice warning the clerk it is late and not to look so closely at those accounts。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S45",
+      "seconds": 2.7,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "中",
+      "characters": [
+        "C01",
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk looking up and pinning the old man with a question",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png",
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。a young clerk looking up and pinning the old man with a question。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S46",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Static Shot",
+      "subject_one_liner": "the old craftsman's face draining of color as he lurches to close the ledger",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。the old craftsman's face draining of color as he lurches to close the ledger。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S47",
+      "seconds": 3.8,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "medium",
+      "size_cn": "中景",
+      "camera": "Push In",
+      "subject_one_liner": "an old craftsman hissing in a near-roar that this account will cost a life if it...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、中景。an old craftsman hissing in a near-roar that this account will cost a life if it is followed。镜头运动：镜头缓缓推近。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头缓缓推近",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S48",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman's hand hovering over the ledger then withdrawing as the lamp fl...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。an old craftsman's hand hovering over the ledger then withdrawing as the lamp flame gutters。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S49",
+      "seconds": 2.0,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "中",
+      "characters": [
+        "C01",
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "close",
+      "size_cn": "近景特写",
+      "camera": "Static Shot",
+      "subject_one_liner": "a young clerk's lips moving in a single low word, his eyes fixed on the old craf...",
+      "referenceImages": {
+        "primary": "refs/characters/C01_face.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C01_face.png",
+          "refs/characters/C01_front.png",
+          "refs/characters/C01_side.png",
+          "refs/characters/C01_back.png",
+          "refs/characters/C01_expressions.png",
+          "refs/characters/C01_costume.png",
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、近景特写。a young clerk's lips moving in a single low word, his eyes fixed on the old craftsman。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S50",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [
+        "C06"
+      ],
+      "props": [],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "an old craftsman turning and vanishing into the dark outside the workshop, his t...",
+      "referenceImages": {
+        "primary": "refs/characters/C06_laogongjiang.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [
+          "refs/characters/C06_laogongjiang.png"
+        ],
+        "props": []
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。an old craftsman turning and vanishing into the dark outside the workshop, his throat working。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    },
+    {
+      "shotId": "E01-S51",
+      "seconds": 2.5,
+      "sceneId": "S01",
+      "lighting": "昏黄油灯夜",
+      "difficulty": "低",
+      "characters": [],
+      "props": [
+        "P01"
+      ],
+      "shotSize": "wide",
+      "size_cn": "远景",
+      "camera": "Static Shot",
+      "subject_one_liner": "the wind surging through and nearly killing the lamp, the ledger open on the blo...",
+      "referenceImages": {
+        "primary": "refs/props/P01_shipyard_ledger.png",
+        "style": "refs/scenes/S01_chaisang_shipyard_night.png",
+        "characters": [],
+        "props": [
+          "refs/props/P01_shipyard_ledger.png"
+        ]
+      },
+      "pavoPrompt": "半写实厚涂、东汉末三国风格、画面有笔触、远景。the wind surging through and nearly killing the lamp, the ledger open on the blotted page like a black hole。镜头运动：镜头完全静止。不要水印、不要AI生成乱码文字、不要塑料感、布料和木料要有质感、面部要保留人物个性特征、不要对称脸。",
+      "motionPrompt": "镜头完全静止",
+      "postOverlayText": [],
+      "postOverlayNote": "",
+      "difficulty_hint": ""
+    }
+  ]
+}

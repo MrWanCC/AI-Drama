@@ -56,7 +56,26 @@ dramatic but natural lighting
 - `S01_chaisang_shipyard.png` 与 `S01_chaisang_shipyard_night.png` **必须保持同一空间结构**
 - 夜景只是换光照（昏黄油灯），**不允许像换了一个船坊**：码头、木棚、料堆、待修战船阵列的位置和形态必须一致
 
-## 使用方式（ComfyUI）
+## 使用方式（Pavo / 一站式图生视频平台）
+
+生产清单：`pipeline/05_storyboard/EP001-pavo-manifest.json` + `EP001-pavo-manifest.md`
+
+每镜 `referenceImages` 字段分组如下，Pavo 平台手动上传：
+
+| 引用类型 | 规则 |
+|---|---|
+| `primary`（必传） | 首帧主图：人物镜用角色主图（`C01_face.png` / `C01_front.png`），空镜/道具镜用场景基准图 |
+| `style`（强烈建议） | 场景基准图：按 `sceneId` + `lighting` 引用（夜戏用 `S01_chaisang_shipyard_night.png`） |
+| `characters` | 角色全套参考图（脸/正/侧/背/表情/服装）—— Pavo 多张参考图上传时选全部 |
+| `props` | 道具参考图（账册/军令/铜牌） |
+
+**Pavo 提示词直接复制 `pavoPrompt` 字段**，已翻译为中英混合，匹配 Agnes 2.1 Flash 模型。
+
+**运动指令复制 `motionPrompt` 字段**——前 5 镜已精修（人物微动作+表情+视线+运镜），后 46 镜只翻译了运镜，生成后按需精修。
+
+## 使用方式（ComfyUI，本地部署）
+
+备选清单：`pipeline/05_storyboard/EP001-comfyui-manifest.json`
 
 各镜头 `referenceImages` 字段按以下规则自动引用本目录：
 
