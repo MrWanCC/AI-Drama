@@ -18,7 +18,20 @@ refs/
    └─ P03_identity_token.png      # 船坊小吏铜牌
 ```
 
-## 命名规范
+## 资产现状（2026-09-08）
+
+| 类别 | 文件 | 状态 |
+|---|---|---|
+| 角色 | `C01_face/front/side/back/expressions/costume.png` | ✅ 用户上传全套 6 张 |
+| 角色 | `C06_laogongjiang.png` | ✅ 用户上传角色板（含正/侧/背/面部/发/衣/手/工具全套） |
+| 场景 | `S01_chaisang_shipyard.png` | ✅ 用户上传晨雾主视角 |
+| 场景 | `S01_chaisang_shipyard_night.png` | ⏳ 待生成（用 Pavo Agnes Image 2.1 Flash 基于晨雾版换光照生成） |
+| 道具 | `P01_shipyard_ledger.png` | ⏳ 待生成 |
+| 道具 | `P02_military_order.png` | ⏳ 待生成 |
+| 道具 | `P03_identity_token.png` | ⏳ 待生成 |
+
+> 用户上传的 C01/C06 角色板含中文标注（"老船匠"/"造舟是..."等），按用户意见**保留原图未去水印**。Pavo 生成时会学进去，作为风格妥协接受。
+> 场景 S01 晨雾版无水印，干净。
 
 - **角色**：`{角色ID}_{拼音名}.png`，如 `C01_shenchuan.png`
 - **场景**：`{场景ID}_{拼音名}.png`，光照变体加 `_night` 后缀
